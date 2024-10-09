@@ -7,7 +7,7 @@ import { cn } from "@/app/utils/tailwind";
 import Footer from "@/app/components/footer";
 import Console from "@/app/components/console";
 import Script from "next/script";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

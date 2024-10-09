@@ -6,7 +6,7 @@ import {
   ContextMenuItem,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
 export default function LogoWithContextMenu({
   downloadables,
@@ -15,8 +15,6 @@ export default function LogoWithContextMenu({
   downloadables: { text: string; url: string; fileName: string }[];
   children: React.ReactNode;
 }) {
-  const { toast } = useToast();
-
   const downloadImage = async (imgUrl: string, fileName: string) => {
     try {
       const response = await fetch(
@@ -36,17 +34,10 @@ export default function LogoWithContextMenu({
 
       URL.revokeObjectURL(blobUrl);
 
-      toast({
-        title: "Logo downloaded",
-        description: `${fileName} logo has been downloaded`,
-      });
+      toast(`${fileName} logo has been downloaded`);
     } catch (error) {
       console.error("Failed to download logo:", error);
-      toast({
-        title: "Error",
-        description: "Failed to download logo. Please try again.",
-        variant: "destructive",
-      });
+      toast("Failed to download logo. Please try again.");
     }
   };
 
