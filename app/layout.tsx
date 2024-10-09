@@ -8,6 +8,8 @@ import Nav from "@/app/components/nav";
 import Footer from "@/app/components/footer";
 import Console from "@/app/components/console";
 import ScrollObserver from "@/app/components/scroll-observer";
+import Script from "next/script";
+import Hero from "@/app/components/hero";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,9 +50,11 @@ export default function RootLayout({
       >
         <ScrollObserver />
         <Nav />
+        <Hero />
         {children}
         <Console />
         <Footer />
+        <Script src="https://kit.fontawesome.com/f6999a3218.js" />
       </body>
     </html>
   );
