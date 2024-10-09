@@ -10,7 +10,7 @@ The repository for Hyperjump Technology's landing page. [https://hyperjump.tech]
 
 # Tech Stack
 
-- [Next.js](https://nextjs.org).
+- [Next.js](https://nextjs.org) with App Router.
 - [Tailwind CSS](https://tailwindcss.com) and [Shadcn/UI](https://ui.shadcn.com/).
 - [simple-i18n-next](https://github.com/nicnocquee/simple-i18n-next#readme).
 - [TypeScript](https://www.typescriptlang.org).
