@@ -6,11 +6,8 @@ import TrustedBy from "./trusted";
 import CaseStudies from "./case-studies";
 import ContactForm from "./contact-form";
 
-export const getStaticPaths = async () => {
-  return {
-    paths: [{ params: { lang: "en" } }, { params: { lang: "id" } }],
-    fallback: false,
-  };
+export const generateStaticParams = async () => {
+  return [{ lang: "en" }, { lang: "id" }];
 };
 
 export default function Home({

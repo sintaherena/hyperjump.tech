@@ -1,13 +1,8 @@
 import data from "@/data.json";
 import { notFound } from "next/navigation";
 
-export const getStaticPaths = async () => {
-  return {
-    paths: data.jobs.map((job) => ({
-      params: { id: job.url.split("/").pop() },
-    })),
-    fallback: false,
-  };
+export const generateStaticParams = async () => {
+  return data.jobs.map((job) => ({ id: job.url.split("/").pop() }));
 };
 
 export default function JobDetail({ params }: { params: { id: string } }) {
