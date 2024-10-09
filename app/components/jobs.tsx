@@ -1,4 +1,4 @@
-import { jobs } from "@/data.json";
+import data from "@/data.json";
 import GridItemsContainer, {
   GridItems,
   GridItemsTitle,
@@ -8,7 +8,7 @@ export default function Jobs() {
   return (
     <GridItemsContainer>
       <GridItemsTitle title="Available Positions" />
-      <GridItems items={jobs} />
+      <GridItems items={data.jobs} />
     </GridItemsContainer>
   );
 }

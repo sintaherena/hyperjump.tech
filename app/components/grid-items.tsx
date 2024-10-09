@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Children, isValidElement } from "react";
 
 export function GridItemsTitle({ title }: { title: string }) {
@@ -70,12 +71,21 @@ export function GridItems({
                 </div>
               ) : (
                 <div className="flex items-center justify-center">
-                  <a
-                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-                    href={p.url}
-                  >
-                    Read more
-                  </a>
+                  {p.url.startsWith("http") ? (
+                    <a
+                      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                      href={p.url}
+                    >
+                      Read more
+                    </a>
+                  ) : (
+                    <Link
+                      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                      href={p.url}
+                    >
+                      Read more
+                    </Link>
+                  )}
                 </div>
               )}
             </div>

@@ -4,12 +4,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import data from "@/data.json";
 import { cn } from "@/app/utils/tailwind";
-import Nav from "@/app/components/nav";
 import Footer from "@/app/components/footer";
 import Console from "@/app/components/console";
-import ScrollObserver from "@/app/components/scroll-observer";
 import Script from "next/script";
-import Hero from "@/app/components/hero";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,9 +45,6 @@ export default function RootLayout({
           "leading-normal tracking-normal text-white bg-black"
         )}
       >
-        <ScrollObserver />
-        <Nav />
-        <Hero />
         {children}
         <Console />
         <Footer />

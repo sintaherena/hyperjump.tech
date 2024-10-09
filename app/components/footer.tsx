@@ -1,4 +1,4 @@
-import { copyright, socials } from "@/data.json";
+import data from "@/data.json";
 
 export default function Footer() {
   return (
@@ -6,11 +6,11 @@ export default function Footer() {
       <div className="container mx-auto px-8">
         <div className="w-full flex flex-col md:flex-row py-6 items-center justify-center">
           <div className="flex-1 mb-6 text-gray-600 text-center md:text-left">
-            {copyright}
+            {data.copyright}
           </div>
           <div className="flex-1 justify-center md:justify-end">
             <ul className="flex justify-center md:justify-end flex-1 items-center">
-              {socials.map((s, i) => {
+              {data.socials.map((s, i) => {
                 return (
                   <li key={i} className="mr-3">
                     <a
