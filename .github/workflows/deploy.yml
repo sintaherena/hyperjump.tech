@@ -21,8 +21,8 @@ jobs:
       - name: Build and export
         run: bun run build
 
-      # - name: Create CNAME file
-      #   run: echo "hyperjump.tech" > out/CNAME
+      - name: Create CNAME file
+        run: echo "hyperjump.tech" > out/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
