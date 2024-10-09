@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import data from "@/data.json";
 import StickyNavigation from "@/app/components/sticky-nav";
 import { cn } from "@/app/utils/tailwind";
 import { ReactNode } from "react";
+import LogoWithContextMenu from "./logo-with-context-menu";
+import Link from "next/link";
+import ClientOnly from "./client-only";
 
 export default function Nav() {
   return (
@@ -54,29 +59,35 @@ export function RightNavItems({ children }: { children: React.ReactNode }) {
 export function HyperjumpLogo() {
   return (
     <div className="pl-4 flex items-center">
-      <a
+      <Link
         className="toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
         href={"/"}
       >
-        {["/images/hyperjump-white.png", "/images/hyperjump-black.png"].map(
+        {["/images/hyperjump-white.png", "/images/hyperjump-colored.png"].map(
           (src, i) => (
-            <Image
-              key={i}
-              id="brandlogo"
-              className={cn(
-                "w-32",
-                src === "/images/hyperjump-white.png"
-                  ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
-                  : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
-              )}
-              src={src}
-              alt="Hyperjump Logo"
-              width={128}
-              height={32}
-            />
+            <ClientOnly key={i}>
+              <LogoWithContextMenu
+                coloredLogo="/images/hyperjump-colored.png"
+                blackAndWhiteLogo="/images/hyperjump-black.png"
+              >
+                <Image
+                  id="brandlogo"
+                  className={cn(
+                    "w-32",
+                    src === "/images/hyperjump-white.png"
+                      ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
+                      : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
+                  )}
+                  src={src}
+                  alt="Hyperjump Logo"
+                  width={128}
+                  height={32}
+                />
+              </LogoWithContextMenu>
+            </ClientOnly>
           )
         )}
-      </a>
+      </Link>
     </div>
   );
 }

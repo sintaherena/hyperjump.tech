@@ -7,6 +7,7 @@ import { cn } from "@/app/utils/tailwind";
 import Footer from "@/app/components/footer";
 import Console from "@/app/components/console";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,6 +49,7 @@ export default function RootLayout({
         {children}
         <Console />
         <Footer />
+        <Toaster />
         <Script src="https://kit.fontawesome.com/f6999a3218.js" />
       </body>
     </html>
