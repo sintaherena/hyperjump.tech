@@ -1,0 +1,68 @@
+{
+  "GTM_ID": "G-L825T5QT2S",
+  "SMDD_2024_SUBMIT_FORM_EMAIL": "gary@hyperjump.tech",
+  "title": "Hyperjump Technology",
+  "description": "Open source first. Cloud native. DevOps excellence.",
+  "copyright": "Copyright © 2024 PT. Artha Rajamas Mandiri",
+  "github": "https://github.com/hyperjumptech",
+  "projects": [
+    {
+      "name": "Monika",
+      "language": "TypeScript",
+      "description": "Monika is a command line application to monitor every part of your web app using a simple JSON configuration file. Get alert not only when your site is down but also when it's slow.",
+      "url": "https://github.com/hyperjumptech/monika"
+    },
+    {
+      "name": "React Native Confetti",
+      "language": "React Native",
+      "description": "React native component to show confetti. It can be used as raining snow effect animation, with option to use unicode, emoji, or image as the flying pieces.",
+      "url": "https://github.com/hyperjumptech/react-native-confetti"
+    },
+    {
+      "name": "Grule Rule Engine",
+      "language": "Golang",
+      "description": "Grule is a Rule Engine library for Golang programming language. Inspired by the acclaimed JBOSS Drools, done in a much simple manner.",
+      "url": "https://github.com/hyperjumptech/grule-rule-engine"
+    },
+    {
+      "name": "HttpTarget",
+      "language": "Golang",
+      "description": "HttpTarget is a very simple, small and lightweight HTTP server that would be helpful for http client development tool. Simply start the server and it'll be ready to accept incoming http requests. It can easily simulate heavy server side load by implementing random delay range, or simulate any kind of http response code.",
+      "url": "https://github.com/hyperjumptech/httptarget"
+    },
+    {
+      "name": "Firebase Cronjob",
+      "language": "JavaScript",
+      "description": "Using the Scheduled functions feature, the function autoIncrementJobCounter gets executed once every minute. This function does a very simple thing, i.e. it increments the value of jobConfig/counter in the Firestore database.",
+      "url": "https://github.com/hyperjumptech/firebase-cronjob"
+    },
+    {
+      "name": "Universal Update Checker",
+      "language": "React Native",
+      "description": "React component to check if there is a new version of your mobile app.",
+      "url": "https://github.com/hyperjumptech/universal-update-checker"
+    }
+  ],
+  "socials": [
+    {
+      "platform": "Linked In",
+      "url": "https://www.linkedin.com/company/hyperjump",
+      "icon": "fa fa-linkedin"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/hyperjumptech",
+      "icon": "fa fa-github"
+    },
+    {
+      "platform": "Medium",
+      "url": "https://medium.com/hyperjump-tech",
+      "icon": "fab fa-medium-m"
+    },
+    {
+      "platform": "Substack",
+      "url": "https://hyperjump.substack.com",
+      "icon": "fa fa-newspaper"
+    }
+  ]
+}
