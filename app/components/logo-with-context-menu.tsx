@@ -9,27 +9,26 @@ import {
 import { useToast } from "@/hooks/use-toast";
 
 export default function LogoWithContextMenu({
-  coloredLogo,
-  blackAndWhiteLogo,
+  downloadables,
   children,
 }: {
-  coloredLogo: string;
-  blackAndWhiteLogo: string;
+  downloadables: { text: string; url: string; fileName: string }[];
   children: React.ReactNode;
 }) {
   const { toast } = useToast();
   const baseUrl = window.location.origin;
 
-  const downloadImage = async (isColored: boolean) => {
+  const downloadImage = async (imgUrl: string, fileName: string) => {
     try {
-      const imgUrl = isColored ? coloredLogo : blackAndWhiteLogo;
-      const response = await fetch(imgUrl);
+      const response = await fetch(
+        imgUrl.startsWith("http") ? imgUrl : `${baseUrl}${imgUrl}`
+      );
       const blob = await response.blob();
       const blobUrl = URL.createObjectURL(blob);
 
       const link = document.createElement("a");
       link.href = blobUrl;
-      link.download = `logo-${isColored ? "colored" : "bw"}.png`;
+      link.download = fileName;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -38,9 +37,7 @@ export default function LogoWithContextMenu({
 
       toast({
         title: "Logo downloaded",
-        description: `${
-          isColored ? "Colored" : "Black and White"
-        } logo has been downloaded`,
+        description: `${fileName} logo has been downloaded`,
       });
     } catch (error) {
       console.error("Failed to download logo:", error);
@@ -56,12 +53,16 @@ export default function LogoWithContextMenu({
     <ContextMenu>
       <ContextMenuTrigger>{children}</ContextMenuTrigger>
       <ContextMenuContent>
-        <ContextMenuItem onSelect={() => downloadImage(true)}>
-          Download colored logo
-        </ContextMenuItem>
-        <ContextMenuItem onSelect={() => downloadImage(false)}>
-          Download Black and White logo
-        </ContextMenuItem>
+        {downloadables.map((downloadable, i) => (
+          <ContextMenuItem
+            key={i}
+            onSelect={() =>
+              downloadImage(downloadable.url, downloadable.fileName)
+            }
+          >
+            {downloadable.text}
+          </ContextMenuItem>
+        ))}
       </ContextMenuContent>
     </ContextMenu>
   );

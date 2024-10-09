@@ -63,30 +63,52 @@ export function HyperjumpLogo() {
         className="toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
         href={"/"}
       >
-        {["/images/hyperjump-white.png", "/images/hyperjump-colored.png"].map(
-          (src, i) => (
-            <ClientOnly key={i}>
-              <LogoWithContextMenu
-                coloredLogo="/images/hyperjump-colored.png"
-                blackAndWhiteLogo="/images/hyperjump-black.png"
-              >
-                <Image
-                  id="brandlogo"
-                  className={cn(
-                    "w-32",
-                    src === "/images/hyperjump-white.png"
-                      ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
-                      : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
-                  )}
-                  src={src}
-                  alt="Hyperjump Logo"
-                  width={128}
-                  height={32}
-                />
-              </LogoWithContextMenu>
-            </ClientOnly>
-          )
-        )}
+        <ClientOnly>
+          <LogoWithContextMenu
+            downloadables={[
+              {
+                text: "Download colored logo",
+                url: "/images/hyperjump-colored.png",
+                fileName: "hyperjump-logo-colored.png",
+              },
+              {
+                text: "Download Black and White logo",
+                url: "/images/hyperjump-black.png",
+                fileName: "hyperjump-logo-bw.png",
+              },
+              {
+                text: "Download icon",
+                url: "/images/hyperjump-icon-only.png",
+                fileName: "hyperjump-icon-only.png",
+              },
+              {
+                text: "Download SVG logo",
+                url: "/images/hyperjump-svg.svg",
+                fileName: "hyperjump-svg.svg",
+              },
+            ]}
+          >
+            {[
+              "/images/hyperjump-white.png",
+              "/images/hyperjump-colored.png",
+            ].map((src, i) => (
+              <Image
+                key={i}
+                id="brandlogo"
+                className={cn(
+                  "w-32",
+                  src === "/images/hyperjump-white.png"
+                    ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
+                    : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
+                )}
+                src={src}
+                alt="Hyperjump Logo"
+                width={128}
+                height={32}
+              />
+            ))}
+          </LogoWithContextMenu>
+        </ClientOnly>
       </Link>
     </div>
   );
