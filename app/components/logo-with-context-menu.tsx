@@ -16,12 +16,13 @@ export default function LogoWithContextMenu({
   children: React.ReactNode;
 }) {
   const { toast } = useToast();
-  const baseUrl = window.location.origin;
 
   const downloadImage = async (imgUrl: string, fileName: string) => {
     try {
       const response = await fetch(
-        imgUrl.startsWith("http") ? imgUrl : `${baseUrl}${imgUrl}`
+        imgUrl.startsWith("http")
+          ? imgUrl
+          : `${window.location.origin}${imgUrl}`
       );
       const blob = await response.blob();
       const blobUrl = URL.createObjectURL(blob);
