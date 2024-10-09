@@ -2,6 +2,7 @@
 const nextConfig = {
   output: "export",
   basePath: "/hyperjump.tech",
+  assetPrefix: "/hyperjump.tech",
   images: {
     unoptimized: true,
   },
