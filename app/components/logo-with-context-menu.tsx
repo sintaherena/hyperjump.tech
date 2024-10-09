@@ -56,9 +56,10 @@ export default function LogoWithContextMenu({
         {downloadables.map((downloadable, i) => (
           <ContextMenuItem
             key={i}
-            onSelect={() =>
-              downloadImage(downloadable.url, downloadable.fileName)
-            }
+            onSelect={() => {
+              console.log(downloadable.url);
+              downloadImage(downloadable.url, downloadable.fileName);
+            }}
           >
             {downloadable.text}
           </ContextMenuItem>
