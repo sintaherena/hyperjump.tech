@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# About
 
-## Getting Started
+The repository for Hyperjump Technology's landing page. [https://hyperjump.tech](https://hyperjump.tech)
 
-First, run the development server:
+# Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Clone the repository
+- Install dependencies using [Bun](https://bun.sh): `bun install`
+- Run the development server: `bun dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Next.js](https://nextjs.org).
+- [Tailwind CSS](https://tailwindcss.com) and [Shadcn/UI](https://ui.shadcn.com/).
+- [simple-i18n-next](https://github.com/nicnocquee/simple-i18n-next#readme).
+- [TypeScript](https://www.typescriptlang.org).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Deployment
 
-## Learn More
+The website is deployed to GitHub Pages using the [export output](https://nextjs.org/docs/app/building-your-application/deploying/static-exports#configuration) of Next.js.
 
-To learn more about Next.js, take a look at the following resources:
+# License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
