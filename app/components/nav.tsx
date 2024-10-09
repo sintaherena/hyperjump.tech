@@ -8,6 +8,11 @@ import { ReactNode } from "react";
 import LogoWithContextMenu from "./logo-with-context-menu";
 import Link from "next/link";
 import ClientOnly from "./client-only";
+import WhiteLogo from "@/public/images/hyperjump-white.png";
+import ColoredLogo from "@/public/images/hyperjump-colored.png";
+import BlackLogo from "@/public/images/hyperjump-black.png";
+import IconOnlyLogo from "@/public/images/hyperjump-icon-only.png";
+import SVGLogo from "@/public/images/hyperjump-svg.svg";
 
 export default function Nav() {
   return (
@@ -68,45 +73,44 @@ export function HyperjumpLogo() {
             downloadables={[
               {
                 text: "Download colored logo",
-                url: "/images/hyperjump-colored.png",
+                url: ColoredLogo.src,
                 fileName: "hyperjump-logo-colored.png",
               },
               {
                 text: "Download Black and White logo",
-                url: "/images/hyperjump-black.png",
+                url: BlackLogo.src,
                 fileName: "hyperjump-logo-bw.png",
               },
               {
                 text: "Download icon",
-                url: "/images/hyperjump-icon-only.png",
+                url: IconOnlyLogo.src,
                 fileName: "hyperjump-icon-only.png",
               },
               {
                 text: "Download SVG logo",
-                url: "/images/hyperjump-svg.svg",
+                url: SVGLogo.src,
                 fileName: "hyperjump-svg.svg",
               },
             ]}
           >
-            {[
-              "/images/hyperjump-white.png",
-              "/images/hyperjump-colored.png",
-            ].map((src, i) => (
-              <Image
-                key={i}
-                id="brandlogo"
-                className={cn(
-                  "w-32",
-                  src === "/images/hyperjump-white.png"
-                    ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
-                    : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
-                )}
-                src={src}
-                alt="Hyperjump Logo"
-                width={128}
-                height={32}
-              />
-            ))}
+            {[WhiteLogo, ColoredLogo].map((image, i) => {
+              return (
+                <Image
+                  key={i}
+                  id="brandlogo"
+                  className={cn(
+                    "w-32",
+                    image.src.includes("hyperjump-white")
+                      ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
+                      : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
+                  )}
+                  src={image}
+                  alt="Hyperjump Logo"
+                  width={128}
+                  height={32}
+                />
+              );
+            })}
           </LogoWithContextMenu>
         </ClientOnly>
       </Link>

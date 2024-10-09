@@ -1,8 +1,9 @@
+const basePath = process.env.NODE_ENV === "production" ? "/hyperjump.tech" : "";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/hyperjump.tech",
-  assetPrefix: "/hyperjump.tech",
+  basePath,
+  assetPrefix: basePath,
   images: {
     unoptimized: true,
   },
