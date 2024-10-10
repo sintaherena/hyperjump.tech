@@ -4,11 +4,23 @@ import { useEffect } from "react";
 
 export default function ScrollObserver() {
   useEffect(() => {
+    let rafId: number | null = null;
+    let isScrolled = false;
+
     const handleScroll = () => {
-      document.body.setAttribute(
-        "data-scroll",
-        window.scrollY > 0 ? "true" : "false"
-      );
+      if (rafId) return;
+
+      rafId = requestAnimationFrame(() => {
+        const shouldBeScrolled = window.scrollY > 0;
+        if (isScrolled !== shouldBeScrolled) {
+          isScrolled = shouldBeScrolled;
+          document.body.setAttribute(
+            "data-scroll",
+            isScrolled ? "true" : "false"
+          );
+        }
+        rafId = null;
+      });
     };
 
     handleScroll(); // Call once to set initial state
@@ -16,6 +28,7 @@ export default function ScrollObserver() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 

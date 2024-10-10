@@ -40,6 +40,7 @@ export default function RootLayout({
     <html lang="en">
       <GoogleTagManager gtmId={data.GTM_ID} />
       <body
+        data-scroll="false"
         className={cn(
           "group",
           `${geistSans.variable} ${geistMono.variable} antialiased`,
