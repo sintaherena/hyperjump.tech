@@ -10,14 +10,14 @@ import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "../public/fonts/Switzer-Regular.woff2",
   variable: "--font-geist-sans",
-  weight: "100 900",
+  weight: "400 500",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "/../public/fonts/Switzer-Semibold.woff2",
   variable: "--font-geist-mono",
-  weight: "100 900",
+  weight: "600 700",
 });
 
 export const metadata: Metadata = {
@@ -29,6 +29,13 @@ export const metadata: Metadata = {
       url: "https://nico.fyi",
     },
   ],
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/icons/icon-192x192.png",
+    apple: "/icons/apple-touch-icon.png",
+    shortcut: "/icons/icon-192x192.png",
+  },
+  themeColor: "#1C1F2E",
 };
 
 export default function RootLayout({
@@ -38,7 +45,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId={data.GTM_ID} />
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#1C1F2E" />
+        <link rel="icon" href="/icons/icon-192x192.png" />
+        <GoogleTagManager gtmId={data.GTM_ID} />
+      </head>
       <body
         data-scroll="false"
         className={cn(

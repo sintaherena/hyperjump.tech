@@ -33,6 +33,8 @@ const config: Config = {
         foreground: "hsl(var(--foreground))",
         "smdd-red": "#cb3635",
         "hyperjump-blue": "#3276F5",
+        "hyperjump-black": "#020F15",
+        "hyperjump-gray": "#73767E",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

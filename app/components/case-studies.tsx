@@ -1,6 +1,7 @@
 import data from "@/data.json";
 import GridItemsContainer, {
   GridItems,
+  GridItemsMoreButton,
   GridItemsTitle,
 } from "@/app/components/grid-items";
 
@@ -15,9 +16,11 @@ export default function CaseStudies() {
         growth."
         />
         <GridItems
+          withCard={false}
           items={data.caseStudies}
           columns={{ base: 1, md: 2, lg: 2 }}
         />
+        <GridItemsMoreButton text="Schedule Consultation" href="#" />
       </GridItemsContainer>
     </>
   );

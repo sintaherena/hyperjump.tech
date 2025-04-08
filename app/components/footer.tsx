@@ -39,9 +39,7 @@ export default function Footer() {
 
           <Separator className="bg-[#2D364A] w-full" />
 
-          <p className="text-sm text-gray-400 text-center">
-            &copy; 2025 Hyperjump. All rights reserved.
-          </p>
+          <p className="text-sm text-gray-400 text-center">{data.copyright}</p>
         </div>
       </div>
     </footer>

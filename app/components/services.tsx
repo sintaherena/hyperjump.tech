@@ -1,6 +1,7 @@
 import data from "@/data.json";
 import GridItemsContainer, {
   GridItems,
+  GridItemsMoreButton,
   GridItemsTitle,
 } from "@/app/components/grid-items";
 
@@ -17,6 +18,10 @@ export default function Services() {
         <GridItems
           items={data.services}
           columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+        />
+         <GridItemsMoreButton
+          text="Schedule Consultation"
+          href="#"
         />
       </GridItemsContainer>
     </>

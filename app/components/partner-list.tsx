@@ -5,21 +5,18 @@ import data from "@/data.json";
 export const PartnersList = () => {
   return (
     <div className="relative py-4">
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="flex flex-wrap items-center justify-center gap-8">
         {data.partners.map((partner, index) => (
-          <div
-            key={index}
-            className="relative w-24 h-12 md:w-28 md:h-14 flex items-center justify-center"
-          >
+          <div key={index} className="flexh-[36px] w-auto">
             <Image
               src={partner}
               alt={`Partner ${index + 1}`}
+              height={36}
+              width={120}
               className={cn(
-                "object-contain",
+                "object-contain h-[30px] w-auto",
                 "grayscale opacity-60 hover:opacity-100 transition"
               )}
-              fill
-              sizes="112px"
             />
           </div>
         ))}

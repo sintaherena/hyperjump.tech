@@ -1,13 +1,39 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function StickyNavigation({
   children,
+  isMenuOpen = false,
 }: {
-  children: React.ReactNode;
+  children: (params: {
+    isScrolled: boolean;
+    shouldBeWhite: boolean;
+  }) => React.ReactNode;
+  isMenuOpen?: boolean;
 }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const shouldBeWhite = isScrolled || isMenuOpen;
+
   return (
-    <nav className="sticky top-0 z-50 group">
-      <div className="flex items-center justify-between h-16 transition-colors duration-300 group-[[data-scroll='true']]:bg-white group-[[data-scroll='true']]:shadow-md">
-        {children}
-      </div>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+        shouldBeWhite
+          ? "bg-white backdrop-blur-[3px] shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      {children({ isScrolled, shouldBeWhite })}
     </nav>
   );
 }

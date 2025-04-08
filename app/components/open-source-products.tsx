@@ -1,6 +1,7 @@
 import data from "@/data.json";
 import GridItemsContainer, {
   GridItems,
+  GridItemsMoreButton,
   GridItemsTitle,
 } from "@/app/components/grid-items";
 
@@ -18,6 +19,7 @@ export default function OpenSourceProducts() {
           items={data.openSourceProducts}
           columns={{ base: 1, md: 2, lg: 3 }}
         />
+        <GridItemsMoreButton text="View More" variant="outline" href="#" />
       </GridItemsContainer>
     </>
   );
