@@ -1,6 +1,7 @@
 import data from "@/data.json";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -8,14 +9,16 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center space-y-6">
           <div className="flex items-center">
-            <Image
-              src="/images/hyperjump-white.png"
-              alt="Hyperjump Logo"
-              width={120}
-              height={32}
-              className="h-8 w-auto"
-              priority
-            />
+            <a href="/">
+              <Image
+                src="/images/hyperjump-white.png"
+                alt="Hyperjump Logo"
+                width={120}
+                height={32}
+                className="h-8 w-auto"
+                priority
+              />
+            </a>
           </div>
 
           <p className="text-center text-gray-400 max-w-md text-sm md:text-base">
