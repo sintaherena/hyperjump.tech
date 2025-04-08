@@ -1,31 +1,47 @@
 import data from "@/data.json";
+import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
-      <div className="container mx-auto px-8">
-        <div className="w-full flex flex-col md:flex-row py-6 items-center justify-center">
-          <div className="flex-1 mb-6 text-gray-600 text-center md:text-left">
-            {data.copyright}
+    <footer className="bg-footer-gradient text-white px-4 py-10 md:py-14 md:px-20">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center justify-center space-y-6">
+          <div className="flex items-center">
+            <Image
+              src="/images/hyperjump-white.png"
+              alt="Hyperjump Logo"
+              width={120}
+              height={32}
+              className="h-8 w-auto"
+              priority
+            />
           </div>
-          <div className="flex-1 justify-center md:justify-end">
-            <ul className="flex justify-center md:justify-end flex-1 items-center">
-              {data.socials.map((s, i) => {
-                return (
-                  <li key={i} className="mr-3">
-                    <a
-                      className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className={s.icon} aria-hidden="true"></i>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
+
+          <p className="text-center text-gray-400 max-w-md text-sm md:text-base">
+            Accelerating Business Growth with Cutting-Edge Technology Solutions
+          </p>
+
+          <div className="flex space-x-6">
+            {data.socials.map((s, i) => (
+              <a
+                key={i}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 text-xl"
+                aria-label={s.platform}
+              >
+                <i className={s.icon} aria-hidden="true"></i>
+              </a>
+            ))}
           </div>
+
+          <Separator className="bg-[#2D364A] w-full" />
+
+          <p className="text-sm text-gray-400 text-center">
+            &copy; 2025 Hyperjump. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

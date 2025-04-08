@@ -1,5 +1,15 @@
-import Projects from "@/app/components/projects";
+import Faqs from "../components/faqs";
+import OpenSourceProducts from "../components/open-source-products";
+import CaseStudies from "../components/case-studies";
+import Services from "../components/services";
 
 export default function Home() {
-  return <Projects />;
+  return (
+    <>
+      <Services />
+      <CaseStudies />
+      <OpenSourceProducts />
+      <Faqs />
+    </>
+  );
 }
