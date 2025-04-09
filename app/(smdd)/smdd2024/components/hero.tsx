@@ -5,7 +5,7 @@ export default function SmddHero({ lang }: { lang: SupportedLanguage }) {
   return (
     <div className="bg-[url('/images/smdd/bg.jpg')] bg-cover bg-center w-full h-full pt-16 px-4 relative">
       <div className="bg-black absolute inset-0 opacity-40 z-10"></div>
-      <div className="w-full max-w-7xl mx-auto text-white my-8 container relative z-40">
+      <div className="w-full container mx-auto text-white my-8 relative z-40">
         <h1 className="mt-0 xl:my-4 xl:text-5xl text-2xl font-bold leading-tight mb-8">
           Hyperjump @ Sinarmas Digital Day
         </h1>

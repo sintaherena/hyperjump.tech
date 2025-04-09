@@ -18,12 +18,14 @@ type GridItemsTitleProps = {
   title: string;
   description?: string;
   layout?: "horizontal" | "vertical";
+  descriptionStyle?: React.HTMLAttributes<HTMLDivElement>["className"];
 };
 
 export function GridItemsTitle({
   title,
   description,
   layout = "horizontal",
+  descriptionStyle,
 }: GridItemsTitleProps) {
   const isHorizontal = layout === "horizontal";
 
@@ -57,7 +59,7 @@ export function GridItemsTitle({
           "text-hyperjump-gray text-base md:text-lg",
           isHorizontal
             ? "text-left max-w-lg"
-            : "w-full md:w-2/3 xl:w-3/4 text-left md:text-center"
+            : `w-full md:w-2/3 xl:w-3/4 text-left md:text-center ${descriptionStyle}`
         )}
       >
         {description}
@@ -183,7 +185,9 @@ export function GridItems({
             <CardContent className="flex-1 -mt-3 flex flex-col gap-4">
               <div>
                 <CardDescription
-                  ref={(el) => (textRefs.current[idx] = el)}
+                  ref={(el) => {
+                    textRefs.current[idx] = el;
+                  }}
                   className={cn(
                     "transition-all duration-300",
                     expandedIndex !== idx ? "line-clamp-4" : ""
@@ -310,7 +314,7 @@ export default function GridItemsContainer({
   );
 
   return (
-    <section id={id} className="bg-white">
+    <section id={id} className="bg-white scroll-mt-20">
       <div className="mx-auto flex py-5 md:py-8 px-8 md:px-20  flex-wrap justify-center items-center">
         {title}
         <div>{body || others}</div>

@@ -1,7 +1,6 @@
 import data from "@/data.json";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Footer() {
   return (

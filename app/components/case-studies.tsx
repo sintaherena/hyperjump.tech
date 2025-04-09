@@ -20,7 +20,10 @@ export default function CaseStudies() {
           items={data.caseStudies}
           columns={{ base: 1, md: 2, lg: 2 }}
         />
-        <GridItemsMoreButton text="Schedule Consultation" href="#" />
+        <GridItemsMoreButton
+          text="Schedule Consultation"
+          href="mailto:solutions@hyperjump.tech"
+        />
       </GridItemsContainer>
     </>
   );

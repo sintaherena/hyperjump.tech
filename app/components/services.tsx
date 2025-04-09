@@ -19,9 +19,9 @@ export default function Services() {
           items={data.services}
           columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
         />
-         <GridItemsMoreButton
+        <GridItemsMoreButton
           text="Schedule Consultation"
-          href="#"
+          href="mailto:solutions@hyperjump.tech"
         />
       </GridItemsContainer>
     </>

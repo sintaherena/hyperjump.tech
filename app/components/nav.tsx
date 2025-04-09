@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import data from "@/data.json";
-import StickyNavigation from "@/app/components/sticky-nav";
 import { cn } from "@/app/utils/tailwind";
 import { ReactNode, useEffect, useState } from "react";
 import WhiteLogo from "@/public/images/hyperjump-white.png";
@@ -13,6 +12,12 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import StickyNavigationMain from "./sticky-nav-main";
+import ClientOnly from "./client-only";
+import IconOnlyLogo from "@/public/images/hyperjump-icon-only.png";
+import SVGLogo from "@/public/images/hyperjump-svg.svg";
+import ColoredLogo from "@/public/images/hyperjump-colored.png";
+import LogoWithContextMenu from "./logo-with-context-menu";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,12 +27,12 @@ export default function Nav() {
   );
 
   return (
-    <StickyNavigation isMenuOpen={isOpen}>
+    <StickyNavigationMain isMenuOpen={isOpen}>
       {({ shouldBeWhite }) => (
         <>
           <NavContainer>
             <Link href="/" className="flex items-center">
-              <HyperjumpLogo isOpen={isOpen} />
+              <HyperjumpLogoMain isOpen={isOpen} />
             </Link>
 
             <CenterNavItems>
@@ -131,7 +136,7 @@ export default function Nav() {
           )}
         </>
       )}
-    </StickyNavigation>
+    </StickyNavigationMain>
   );
 }
 
@@ -175,7 +180,7 @@ export function RightNavItems({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function HyperjumpLogo({ isOpen }: { isOpen: boolean }) {
+function HyperjumpLogoMain({ isOpen }: { isOpen: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -197,5 +202,62 @@ export function HyperjumpLogo({ isOpen }: { isOpen: boolean }) {
       height={32}
       className="h-8"
     />
+  );
+}
+
+export function HyperjumpLogo() {
+  return (
+    <div className="pl-4 flex items-center">
+      <Link
+        className="toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+        href={"/"}
+      >
+        <ClientOnly>
+          <LogoWithContextMenu
+            downloadables={[
+              {
+                text: "Download colored logo",
+                url: ColoredLogo.src,
+                fileName: "hyperjump-logo-colored.png",
+              },
+              {
+                text: "Download Black and White logo",
+                url: BlackLogo.src,
+                fileName: "hyperjump-logo-bw.png",
+              },
+              {
+                text: "Download icon",
+                url: IconOnlyLogo.src,
+                fileName: "hyperjump-icon-only.png",
+              },
+              {
+                text: "Download SVG logo",
+                url: SVGLogo.src,
+                fileName: "hyperjump-svg.svg",
+              },
+            ]}
+          >
+            {[WhiteLogo, ColoredLogo].map((image, i) => {
+              return (
+                <Image
+                  key={i}
+                  id="brandlogo"
+                  className={cn(
+                    "w-32",
+                    image.src.includes("hyperjump-white")
+                      ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
+                      : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
+                  )}
+                  src={image}
+                  alt="Hyperjump Logo"
+                  width={128}
+                  height={32}
+                />
+              );
+            })}
+          </LogoWithContextMenu>
+        </ClientOnly>
+      </Link>
+    </div>
   );
 }
