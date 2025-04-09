@@ -18,7 +18,7 @@ export default function Faqs() {
         description="Find answers to commonly asked questions. If you need further assistance, feel free to reach out to us."
         layout="vertical"
       />
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="single" collapsible className="w-full space-y-4">
         {data.faqs.map((item, i) => (
           <AccordionItem key={i} value={`faq-${i}`} asChild>
             <Card className="bg-white border border-gray-200 shadow-sm transition-all duration-300 w-full">
