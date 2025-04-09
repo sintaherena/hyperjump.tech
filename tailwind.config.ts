@@ -7,12 +7,34 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    "grid-cols-1",
+    "grid-cols-2",
+    "grid-cols-3",
+    "grid-cols-4",
+    "grid-cols-5",
+    "sm:grid-cols-1",
+    "sm:grid-cols-2",
+    "md:grid-cols-1",
+    "md:grid-cols-2",
+    "md:grid-cols-3",
+    "lg:grid-cols-1",
+    "lg:grid-cols-2",
+    "lg:grid-cols-3",
+    "lg:grid-cols-4",
+    "xl:grid-cols-3",
+    "xl:grid-cols-4",
+    "xl:grid-cols-5",
+  ],
   theme: {
     extend: {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         "smdd-red": "#cb3635",
+        "hyperjump-blue": "#3276F5",
+        "hyperjump-black": "#020F15",
+        "hyperjump-gray": "#73767E",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -78,6 +100,10 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        "footer-gradient":
+          "linear-gradient(44.24deg, #0D0B1E 0%, #161D29 109.69%)",
       },
     },
   },

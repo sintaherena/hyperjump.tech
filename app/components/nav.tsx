@@ -1,48 +1,167 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import data from "@/data.json";
 import StickyNavigation from "@/app/components/sticky-nav";
 import { cn } from "@/app/utils/tailwind";
-import { ReactNode } from "react";
-import LogoWithContextMenu from "./logo-with-context-menu";
-import Link from "next/link";
-import ClientOnly from "./client-only";
+import { ReactNode, useEffect, useState } from "react";
 import WhiteLogo from "@/public/images/hyperjump-white.png";
-import ColoredLogo from "@/public/images/hyperjump-colored.png";
 import BlackLogo from "@/public/images/hyperjump-black.png";
-import IconOnlyLogo from "@/public/images/hyperjump-icon-only.png";
-import SVGLogo from "@/public/images/hyperjump-svg.svg";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
 
 export default function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const scheduleButton = data.navLinks.find(
+    (item) => item.type === "button" && item.label === "Schedule Consultation"
+  );
+
   return (
-    <StickyNavigation>
-      <NavContainer>
-        <HyperjumpLogo />
+    <StickyNavigation isMenuOpen={isOpen}>
+      {({ shouldBeWhite }) => (
+        <>
+          <NavContainer>
+            <Link href="/" className="flex items-center">
+              <HyperjumpLogo isOpen={isOpen} />
+            </Link>
 
-        <RightNavItems>
-          <li className="mr-3">
-            <a
-              className="flex flex-row space-x-2 items-center no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-              target="blank"
-              rel="noopener noreferrer"
-              href={data.github}
+            <CenterNavItems>
+              <NavigationMenu>
+                <NavigationMenuList className="flex gap-8">
+                  {data.navLinks
+                    .filter((item) => item.type !== "button")
+                    .map((item, idx) => (
+                      <NavigationMenuItem key={idx}>
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            shouldBeWhite
+                              ? "text-hyperjump-black hover:text-hyperjump-blue"
+                              : "text-white hover:border-b-2",
+                            "font-medium text-xl transition-colors"
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                      </NavigationMenuItem>
+                    ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </CenterNavItems>
+
+            <RightNavItems>
+              {scheduleButton && (
+                <Link
+                  href={scheduleButton.href}
+                  className={cn(
+                    shouldBeWhite
+                      ? "bg-hyperjump-blue text-white hover:bg-blue-400"
+                      : "border border-white text-white hover:bg-white hover:text-black",
+                    "px-4 py-2 text-sm rounded transition-colors"
+                  )}
+                >
+                  {scheduleButton.label}
+                </Link>
+              )}
+            </RightNavItems>
+
+            {/* Mobile Toggle */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2"
+              aria-label="Toggle menu"
             >
-              <i className="fa fa-github" aria-hidden="true"></i>
-              <span>Github</span>
-            </a>
-          </li>
-        </RightNavItems>
-      </NavContainer>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke={shouldBeWhite ? "black" : "white"}
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </NavContainer>
 
-      <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
+          {/* Mobile Menu */}
+          {isOpen && (
+            <div className="lg:hidden bg-white shadow-md">
+              <div className="flex flex-col px-4 md:px-20 mx-auto py-6 space-y-4">
+                {data.navLinks
+                  .filter((item) => item.type !== "button")
+                  .map((item, idx) => (
+                    <Link
+                      key={idx}
+                      href={item.href}
+                      className="text-hyperjump-black text-2xl hover:text-gray-400"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                {scheduleButton && (
+                  <Link
+                    href={scheduleButton.href}
+                    className="mt-2 border text-base border-hyperjump-black hover:text-gray-400 text-hyperjump-black py-3 text-center rounded hover:border-gray-400"
+                  >
+                    {scheduleButton.label}
+                  </Link>
+                )}
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </StickyNavigation>
   );
 }
 
 export function NavContainer({ children }: { children: ReactNode }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const showBorder = isScrolled ? "boder border-b-2" : "boder-none2";
+
   return (
-    <div className="w-full group-[[data-scroll='true']]:text-black group-[[data-scroll='false']]:text-white container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+    <div
+      className={cn(
+        showBorder,
+        "w-full px-4 md:px-20 mx-auto flex flex-wrap items-center justify-between mt-0 py-5"
+      )}
+    >
+      {children}
+    </div>
+  );
+}
+
+export function CenterNavItems({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="hidden lg:flex items-center justify-center space-x-8 flex-1">
       {children}
     </div>
   );
@@ -50,70 +169,33 @@ export function NavContainer({ children }: { children: ReactNode }) {
 
 export function RightNavItems({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      className="w-full flex-grow lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent p-4 lg:p-0 z-20"
-      id="nav-content"
-    >
-      <ul className="list-reset lg:flex justify-end flex-1 items-center">
-        {children}
-      </ul>
+    <div className="hidden lg:flex items-center justify-end space-x-4">
+      {children}
     </div>
   );
 }
 
-export function HyperjumpLogo() {
+export function HyperjumpLogo({ isOpen }: { isOpen: boolean }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const showBlack = isOpen || isScrolled;
+
+  const logoSrc = showBlack ? BlackLogo : WhiteLogo;
+
   return (
-    <div className="pl-4 flex items-center">
-      <Link
-        className="toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-        href={"/"}
-      >
-        <ClientOnly>
-          <LogoWithContextMenu
-            downloadables={[
-              {
-                text: "Download colored logo",
-                url: ColoredLogo.src,
-                fileName: "hyperjump-logo-colored.png",
-              },
-              {
-                text: "Download Black and White logo",
-                url: BlackLogo.src,
-                fileName: "hyperjump-logo-bw.png",
-              },
-              {
-                text: "Download icon",
-                url: IconOnlyLogo.src,
-                fileName: "hyperjump-icon-only.png",
-              },
-              {
-                text: "Download SVG logo",
-                url: SVGLogo.src,
-                fileName: "hyperjump-svg.svg",
-              },
-            ]}
-          >
-            {[WhiteLogo, ColoredLogo].map((image, i) => {
-              return (
-                <Image
-                  key={i}
-                  id="brandlogo"
-                  className={cn(
-                    "w-32",
-                    image.src.includes("hyperjump-white")
-                      ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
-                      : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
-                  )}
-                  src={image}
-                  alt="Hyperjump Logo"
-                  width={128}
-                  height={32}
-                />
-              );
-            })}
-          </LogoWithContextMenu>
-        </ClientOnly>
-      </Link>
-    </div>
+    <Image
+      src={logoSrc}
+      alt="Hyperjump Logo"
+      width={187}
+      height={32}
+      className="h-8"
+    />
   );
 }

@@ -1,52 +1,214 @@
-import Link from "next/link";
-import { Children, isValidElement } from "react";
+"use client";
 
-export function GridItemsTitle({ title }: { title: string }) {
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { Children, isValidElement, useEffect, useRef, useState } from "react";
+
+type GridItemsTitleProps = {
+  title: string;
+  description?: string;
+  layout?: "horizontal" | "vertical";
+};
+
+export function GridItemsTitle({
+  title,
+  description,
+  layout = "horizontal",
+}: GridItemsTitleProps) {
+  const isHorizontal = layout === "horizontal";
+
+  if (!description) {
+    return (
+      <h1 className="w-full my-2 text-4xl font-menium leading-tight text-center text-hyperjump-black">
+        {title}
+      </h1>
+    );
+  }
+
   return (
-    <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-      {title}
-    </h1>
+    <div
+      className={cn(
+        "w-full pt-4 pb-7 bg-white",
+        isHorizontal
+          ? "flex flex-wrap justify-between gap-4"
+          : "flex flex-col md:items-center md:text-center"
+      )}
+    >
+      <h2
+        className={cn(
+          "text-4xl font-medium text-hyperjump-black",
+          isHorizontal ? "mb-0 text-left" : "mb-6"
+        )}
+      >
+        {title}
+      </h2>
+      <p
+        className={cn(
+          "text-hyperjump-gray text-base md:text-lg",
+          isHorizontal
+            ? "text-left max-w-lg"
+            : "w-full md:w-2/3 xl:w-3/4 text-left md:text-center"
+        )}
+      >
+        {description}
+      </p>
+    </div>
   );
 }
 
+type Item = {
+  image?: string;
+  title: string;
+  description: string;
+  url?: string;
+  category?: string;
+  icon?: string;
+};
+
 export function GridItems({
   items,
+  columns = {
+    base: 1,
+    md: 2,
+    xl: 3,
+  },
+  withCard = true,
 }: {
-  items: {
-    title: string;
-    description: string;
-    category: string;
-    url: string;
-  }[];
+  items: Item[];
+  columns?: {
+    base?: number;
+    sm?: number;
+    md?: number;
+    lg?: number;
+    xl?: number;
+  };
+  withCard?: boolean;
 }) {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [overflowMap, setOverflowMap] = useState<Record<number, boolean>>({});
+
+  useEffect(() => {
+    const newOverflowMap: Record<number, boolean> = {};
+    textRefs.current.forEach((el, index) => {
+      if (el) {
+        newOverflowMap[index] = el.scrollHeight > el.clientHeight;
+      }
+    });
+    setOverflowMap(newOverflowMap);
+  }, [items]);
+
+  const columnClassMap = (prefix: string, count?: number) => {
+    if (!count) return "";
+    return `${prefix}grid-cols-${count}`;
+  };
+
+  const columnClasses = [
+    columnClassMap("", columns.base ?? 1),
+    columnClassMap("sm:", columns.sm),
+    columnClassMap("md:", columns.md),
+    columnClassMap("lg:", columns.lg),
+    columnClassMap("xl:", columns.xl),
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-4">
-      {items.map((p, i) => {
+    <div className={`grid gap-6 ${columnClasses}`}>
+      {items.map((item, idx) => {
+        const { image, title, description, url, category, icon } = item;
+
+        const CardWrapper = withCard
+          ? Card
+          : ({ children }: { children: React.ReactNode }) => (
+              <div>{children}</div>
+            );
+
         return (
-          <div key={i} className="flex flex-col flex-grow flex-shrink">
-            <div className="flex-1  bg-white rounded-t rounded-b-none overflow-hidden shadow pt-6">
-              <a
-                href={p.url}
-                className="flex flex-wrap no-underline hover:no-underline space-y-2"
-              >
-                <p className="w-full text-gray-600 text-xs md:text-sm px-6">
-                  {p.category}
+          <CardWrapper
+            key={idx}
+            className={withCard ? "flex flex-col overflow-hidden" : undefined}
+          >
+            {image ? (
+              <div className="relative w-full aspect-[16/9]">
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
+            ) : null}
+
+            <CardHeader>
+              {icon ? (
+                <Avatar className="mb-6 w-14 h-14">
+                  <AvatarImage className="w-14 h-14" src={icon} alt={title} />
+                  <AvatarFallback className="w-14 h-14">{title}</AvatarFallback>
+                </Avatar>
+              ) : null}
+              {category && (
+                <p className="text-hyperjump-black font-semibold w-28 rounded-3xl text-center bg-[#020F151A] px-2 py-1.5 text-sm">
+                  {category}
                 </p>
-                <div className="w-full font-bold text-xl text-gray-800 px-6">
-                  {p.title}
-                </div>
-                <p className="text-gray-800 text-base px-6 mb-5">
-                  {p.description}
-                </p>
-              </a>
-            </div>
-            <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-              {p.url.includes("github.com") ? (
-                <div className="flex items-center justify-center">
+              )}
+              {url ? (
+                <Link
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  <CardTitle className="text-xl font-semibold text-hyperjump-black">
+                    {title}
+                  </CardTitle>
+                </Link>
+              ) : (
+                <CardTitle className="text-xl font-semibold text-hyperjump-black">
+                  {title}
+                </CardTitle>
+              )}
+            </CardHeader>
+
+            <CardContent className="flex-1 -mt-3 flex flex-col gap-4">
+              <div>
+                <CardDescription
+                  ref={(el) => (textRefs.current[idx] = el)}
+                  className={cn(
+                    "transition-all duration-300",
+                    expandedIndex !== idx ? "line-clamp-4" : ""
+                  )}
+                >
+                  {description}
+                </CardDescription>
+
+                {overflowMap[idx] && (
+                  <button
+                    onClick={() =>
+                      setExpandedIndex((prev) => (prev === idx ? null : idx))
+                    }
+                    className="mt-1 text-sm text-gray-600 hover:underline"
+                  >
+                    {expandedIndex === idx ? "See Less" : "See More"}
+                  </button>
+                )}
+              </div>
+              {url && (
+                <div className="flex justify-center gap-4 flex-wrap">
                   <span className="mx-2">
                     <a
                       className="github-button"
-                      href={p.url}
+                      href={url}
                       data-icon="octicon-star"
                       data-size="large"
                       data-show-count="true"
@@ -59,7 +221,7 @@ export function GridItems({
                   <span className="mx-2">
                     <a
                       className="github-button"
-                      href={p.url + "/fork"}
+                      href={`${url}/fork`}
                       data-icon="octicon-repo-forked"
                       data-size="large"
                       data-show-count="true"
@@ -69,58 +231,65 @@ export function GridItems({
                     </a>
                   </span>
                 </div>
-              ) : (
-                <div className="flex items-center justify-center">
-                  {p.url.startsWith("http") ? (
-                    <a
-                      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-                      href={p.url}
-                    >
-                      Read more
-                    </a>
-                  ) : (
-                    <Link
-                      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-                      href={p.url}
-                    >
-                      Read more
-                    </Link>
-                  )}
-                </div>
               )}
-            </div>
-          </div>
+            </CardContent>
+          </CardWrapper>
         );
       })}
     </div>
   );
 }
 
-export const GridItemsMoreButton = ({
-  href,
-  text = "and more ...",
-}: {
+type GridItemsMoreButtonProps = {
   href: string;
   text?: string;
-}) => {
+  variant?: "default" | "outline" | "link";
+};
+
+export const GridItemsMoreButton = ({
+  href,
+  text,
+  variant = "default",
+}: GridItemsMoreButtonProps) => {
+  const customClass = cn(
+    "py-3 mt-10 px-5 transition-all duration-200 ease-in-out transform hover:shadow-md hover:scale-[1.02]",
+    {
+      // Primary (default)
+      "bg-hyperjump-blue text-white hover:bg-hyperjump-blue/90 hover:text-white":
+        variant === "default",
+
+      // Outline
+      "border border-hyperjump-blue text-hyperjump-blue hover:bg-hyperjump-blue/10 hover:text-hyperjump-blue":
+        variant === "outline",
+
+      // Link
+      "text-hyperjump-blue hover:underline hover:text-hyperjump-blue":
+        variant === "link",
+    }
+  );
+
   return (
-    <div className="w-full my-4 flex items-center justify-center">
-      <a
-        className="text-gray-500"
-        href={href}
-        target="blank"
-        rel="noreferrer noopenner"
-      >
-        {text}
-      </a>
+    <div className="w-full flex items-center justify-center">
+      <Button variant="ghost" className={customClass} asChild>
+        <Link
+          className="font-semibold"
+          href={href}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          {text}
+        </Link>
+      </Button>
     </div>
   );
 };
 
 export default function GridItemsContainer({
   children,
+  id,
 }: {
   children: React.ReactNode;
+  id?: string;
 }) {
   const childrenArray = Children.toArray(children);
 
@@ -136,11 +305,15 @@ export default function GridItemsContainer({
     (child) => isValidElement(child) && child.type === GridItemsMoreButton
   );
 
+  const others = childrenArray.filter(
+    (child) => child !== title && child !== body && child !== more
+  );
+
   return (
-    <section className="bg-white border-b py-8">
-      <div className="container mx-auto flex flex-wrap pt-4 pb-12">
+    <section id={id} className="bg-white">
+      <div className="mx-auto flex py-5 md:py-8 px-8 md:px-20  flex-wrap justify-center items-center">
         {title}
-        <div className="py-12">{body}</div>
+        <div>{body || others}</div>
         {more}
       </div>
     </section>

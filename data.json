@@ -3,8 +3,27 @@
   "SMDD_2024_SUBMIT_FORM_EMAIL": "gary@hyperjump.tech",
   "title": "Hyperjump Technology",
   "description": "Open source first. Cloud native. DevOps excellence.",
-  "copyright": "Copyright © 2024 PT. Artha Rajamas Mandiri",
+  "copyright": "Copyright © 2025 Hyperjump. All rights reserved.",
   "github": "https://github.com/hyperjumptech",
+  "navLinks": [
+    { "label": "Services", "href": "#services", "type": "link" },
+    { "label": "Case Studies", "href": "#case-studies", "type": "link" },
+    { "label": "Open Source", "href": "#open-source", "type": "link" },
+    { "label": "FAQ", "href": "#faqs", "type": "link" },
+    {
+      "label": "Schedule Consultation",
+      "href": "mailto:solutions@hyperjump.tech",
+      "type": "button",
+      "style": "outline"
+    }
+  ],
+  "partners": [
+    "/icons/partners/amman.svg",
+    "/icons/partners/bank-tabungan-negara.svg",
+    "/icons/partners/my-republic.svg",
+    "/icons/partners/smdv.svg",
+    "/icons/partners/smartfren.svg"
+  ],
   "projects": [
     {
       "title": "Monika",
@@ -183,6 +202,80 @@
         "A sufficiently thorough documentation of the key building blocks and deployment aspects",
         "A fully agreed-upon and comprehensive test plan for all the major and minor product features"
       ]
+    }
+  ],
+  "services": [
+    {
+      "icon": "/icons/cto-as-a-service.svg",
+      "title": "CTO as a Service",
+      "description": "Finding, hiring, managing, and retaining top software engineers is complex and time-consuming. Let us handle it all for you."
+    },
+    {
+      "icon": "/icons/software-as-a-service.svg",
+      "title": "Software as a Service",
+      "description": "Deploy and scale software solutions tailored to your enterprise for optimal performance and growth."
+    },
+    {
+      "icon": "/icons/tech-due-diligence.svg",
+      "title": "Tech Due Diligence",
+      "description": "We help verify and assess your company's ability to execute its roadmap and evaluate its current state."
+    },
+    {
+      "icon": "/icons/erp-implementation.svg",
+      "title": "ERP Implementation",
+      "description": "Streamline operations with enterprise-grade ERP solutions, boosting efficiency and business intelligence."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Technical Due Diligence for a Media Company",
+      "description": "System, which struggled to meet operational demands and data availability requirements. These issues were causing inefficiencies and hindering the company's ability to deliver optimal services to its audience. To address these concerns, we conducted a comprehensive technical due diligence assessment of the system's infrastructure, design, and architecture. The objective was to identify gaps and provide insights that would help align the system with the company's operational needs. As a result of our assessment, we delivered a detailed report outlining key findings and recommendations. This report served as a strategic tool for the company to make informed decisions on system improvements. By acting on these recommendations, the company aimed to enhance system performance, improve efficiency, and drive better business outcomes.",
+      "image": "/images/case-studies-left.webp",
+      "category": "Case Studies"
+    },
+    {
+      "title": "Streamlining Operations for a Fisheries Company with Odoo",
+      "description": "A fisheries company focused on improving the livelihoods of fishermen by providing better market access faced operational challenges as it expanded into remote Indonesian villages. The company relied heavily on shared spreadsheets, making coordination complex as operations grew. This approach led to inconsistent data, difficulties in monitoring transactions, inventory inaccuracies, and cumbersome auditing processes. Additionally, limited internet connectivity in these remote areas further complicated transaction recording, impacting the company's ability to maintain accurate and timely data. To address these challenges, we developed a scalable management system using Odoo, an open-source ERP system. We worked closely with the company's team to fully understand their needs and objectives, ensuring that the solution was aligned with their operations. By defining clear goals, we set the foundation for standardizing processes and enhancing accountability, even in areas with poor internet access. The system was rolled out in phases, beginning with regions that had better infrastructure, which allowed us to minimize risks and gather feedback to improve the implementation. One of the key components of the solution was the development of a mobile application designed to function offline. This allowed remote staff to record transactions without needing a constant internet connection. Data collected offline could then be seamlessly synced to Odoo when connectivity was available, ensuring that the company could maintain up-to-date records and streamline its operations, regardless of location challenges. This approach not only standardized operations but also improved data accuracy and accountability across the organization.",
+      "image": "/images/case-studies-right.webp",
+      "category": "Case Studies"
+    }
+  ],
+  "openSourceProducts": [
+    {
+      "title": "Monika",
+      "description": "Monika is a command line application to monitor every part of your web app using a simple JSON configuration file. Get alert not only when your site is down but also when it's slow.",
+      "image": "/images/monika.svg",
+      "url": "https://github.com/hyperjumptech/monika"
+    },
+    {
+      "title": "Firebase Cronjob",
+      "description": "The Scheduled functions feature runs autoIncrementJobCounter automatically every minute, incrementing jobConfigCounter in the Firestore database.",
+      "image": "/images/firebase-cronjob.svg",
+      "url": "https://github.com/hyperjumptech/firebase-cronjob"
+    },
+    {
+      "title": "WhatsApp Chatbot Connector",
+      "description": "WhatsApp Chatbot Connector backend built using Express.js. It is designed to integrate with the WhatsApp Business API and supports various AI platforms such as Dify and Rasa.",
+      "image": "/images/whatsapp-chatbot-connector.svg",
+      "url": "https://github.com/hyperjumptech/whatsapp-chatbot-connector"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is CTO as a Service (CTOaaS), and how can it benefit my company?",
+      "answer": "CTOaaS provides on-demand access to experienced technology leadership without the cost of a full-time executive. It helps enterprises with strategic IT planning, digital transformation, and technical decision-making to scale efficiently."
+    },
+    {
+      "question": "How do you approach ERP implementation for enterprises?",
+      "answer": "We follow a structured process that includes business analysis, system selection, customization, integration, training, and post-implementation support to ensure seamless adoption and long-term success."
+    },
+    {
+      "question": "What does your tech due diligence service cover?",
+      "answer": "Our tech due diligence includes codebase reviews, security assessments, scalability analysis, infrastructure evaluation, and compliance checks to ensure that your technology investments are low-risk and high-value."
+    },
+    {
+      "question": "Why should we choose your consulting services over hiring an in-house team?",
+      "answer": "We offer specialized expertise, flexibility, and cost-effective solutions without the overhead of full-time employees. Our team brings years of experience in enterprise IT, ensuring faster implementation and better ROI."
     }
   ]
 }
