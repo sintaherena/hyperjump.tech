@@ -85,8 +85,12 @@ export function GridItems({
     xl: 3,
   },
   withCard = true,
+  classNameTitle,
+  classNameDesctiption,
 }: {
   items: Item[];
+  classNameTitle?: string;
+  classNameDesctiption?: string;
   columns?: {
     base?: number;
     sm?: number;
@@ -139,7 +143,7 @@ export function GridItems({
         return (
           <CardWrapper
             key={idx}
-            className={withCard ? "flex flex-col overflow-hidden" : undefined}
+            className={withCard ? `flex flex-col overflow-hidden` : undefined}
           >
             {image ? (
               <div className="relative w-full aspect-[16/9]">
@@ -152,7 +156,7 @@ export function GridItems({
               </div>
             ) : null}
 
-            <CardHeader>
+            <CardHeader className={classNameTitle}>
               {icon ? (
                 <Avatar className="mb-6 w-14 h-14">
                   <AvatarImage className="w-14 h-14" src={icon} alt={title} />
@@ -182,7 +186,12 @@ export function GridItems({
               )}
             </CardHeader>
 
-            <CardContent className="flex-1 -mt-3 flex flex-col gap-4">
+            <CardContent
+              className={cn(
+                classNameDesctiption,
+                "flex-1 -mt-3 flex flex-col gap-4"
+              )}
+            >
               <div>
                 <CardDescription
                   ref={(el) => {
