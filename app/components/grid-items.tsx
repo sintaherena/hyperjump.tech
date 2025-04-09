@@ -186,7 +186,7 @@ export function GridItems({
                   ref={(el) => (textRefs.current[idx] = el)}
                   className={cn(
                     "transition-all duration-300",
-                    expandedIndex !== idx ? "line-clamp-3" : ""
+                    expandedIndex !== idx ? "line-clamp-4" : ""
                   )}
                 >
                   {description}
@@ -197,9 +197,9 @@ export function GridItems({
                     onClick={() =>
                       setExpandedIndex((prev) => (prev === idx ? null : idx))
                     }
-                    className="mt-1 text-sm text-blue-500 hover:underline"
+                    className="mt-1 text-sm text-gray-600 hover:underline"
                   >
-                    {expandedIndex === idx ? "Show Less" : "Read More"}
+                    {expandedIndex === idx ? "See Less" : "See More"}
                   </button>
                 )}
               </div>
