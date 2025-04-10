@@ -21,7 +21,7 @@ export default function Services() {
         />
         <GridItemsMoreButton
           text="Schedule Consultation"
-          href="mailto:solutions@hyperjump.tech"
+          href="https://forms.office.com/Pages/ResponsePage.aspx?id=YB_vnVvdsku6UOy9eolc4lSE-1zhiHZGuckpAFLZgMNUNzFXVlZCQjA0UFJRR1IyUk9aSjBZVENENS4u"
         />
       </GridItemsContainer>
     </>
