@@ -228,13 +228,13 @@
   ],
   "caseStudies": [
     {
-      "title": "Technical Due Diligence for a Media Company",
-      "description": "System, which struggled to meet operational demands and data availability requirements. These issues were causing inefficiencies and hindering the company's ability to deliver optimal services to its audience. To address these concerns, we conducted a comprehensive technical due diligence assessment of the system's infrastructure, design, and architecture. The objective was to identify gaps and provide insights that would help align the system with the company's operational needs. As a result of our assessment, we delivered a detailed report outlining key findings and recommendations. This report served as a strategic tool for the company to make informed decisions on system improvements. By acting on these recommendations, the company aimed to enhance system performance, improve efficiency, and drive better business outcomes.",
+      "title": "Improving System Efficiency for a Media Company",
+      "description": "We conducted a technical due diligence to identify performance gaps in the media company’s system. Our findings helped the team enhance infrastructure and architecture, resulting in better efficiency and more reliable data access.",
       "category": "Case Studies"
     },
     {
-      "title": "Streamlining Operations for a Fisheries Company with Odoo",
-      "description": "A fisheries company focused on improving the livelihoods of fishermen by providing better market access faced operational challenges as it expanded into remote Indonesian villages. The company relied heavily on shared spreadsheets, making coordination complex as operations grew. This approach led to inconsistent data, difficulties in monitoring transactions, inventory inaccuracies, and cumbersome auditing processes. Additionally, limited internet connectivity in these remote areas further complicated transaction recording, impacting the company's ability to maintain accurate and timely data. To address these challenges, we developed a scalable management system using Odoo, an open-source ERP system. We worked closely with the company's team to fully understand their needs and objectives, ensuring that the solution was aligned with their operations. By defining clear goals, we set the foundation for standardizing processes and enhancing accountability, even in areas with poor internet access. The system was rolled out in phases, beginning with regions that had better infrastructure, which allowed us to minimize risks and gather feedback to improve the implementation. One of the key components of the solution was the development of a mobile application designed to function offline. This allowed remote staff to record transactions without needing a constant internet connection. Data collected offline could then be seamlessly synced to Odoo when connectivity was available, ensuring that the company could maintain up-to-date records and streamline its operations, regardless of location challenges. This approach not only standardized operations but also improved data accuracy and accountability across the organization.",
+      "title": "Optimizing Operations for a Fisheries Company with Odoo",
+      "description": "To reduce operational inefficiencies, we implemented a scalable ERP system using Odoo. The system, including an offline-capable mobile app, improved data accuracy and standardized processes across remote regions.",
       "category": "Case Studies"
     }
   ],

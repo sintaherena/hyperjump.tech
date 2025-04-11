@@ -210,7 +210,7 @@ export function GridItems({
                     onClick={() =>
                       setExpandedIndex((prev) => (prev === idx ? null : idx))
                     }
-                    className="mt-1 text-sm text-gray-600 hover:underline"
+                    className="mt-1 text-gray-600 hover:underline"
                   >
                     {expandedIndex === idx ? "See Less" : "See More"}
                   </button>
