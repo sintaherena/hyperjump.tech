@@ -85,12 +85,10 @@ export function GridItems({
     xl: 3,
   },
   withCard = true,
-  classNameTitle,
-  classNameDesctiption,
+  classNameCard,
 }: {
   items: Item[];
-  classNameTitle?: string;
-  classNameDesctiption?: string;
+  classNameCard?: string;
   columns?: {
     base?: number;
     sm?: number;
@@ -143,7 +141,14 @@ export function GridItems({
         return (
           <CardWrapper
             key={idx}
-            className={withCard ? `flex flex-col overflow-hidden` : undefined}
+            className={
+              withCard
+                ? cn(
+                    classNameCard,
+                    "flex flex-col overflow-hidden border-[#D9D9D9] bg-white"
+                  )
+                : undefined
+            }
           >
             {image ? (
               <div className="relative w-full aspect-[16/9]">
@@ -156,7 +161,7 @@ export function GridItems({
               </div>
             ) : null}
 
-            <CardHeader className={classNameTitle}>
+            <CardHeader>
               {icon ? (
                 <Avatar className="mb-6 w-14 h-14">
                   <AvatarImage className="w-14 h-14" src={icon} alt={title} />
@@ -164,7 +169,7 @@ export function GridItems({
                 </Avatar>
               ) : null}
               {category && (
-                <p className="text-hyperjump-black font-semibold w-28 rounded-3xl text-center bg-[#020F151A] px-2 py-1.5 text-sm">
+                <p className="text-hyperjump-black font-medium mb-2 w-28 rounded-3xl text-center bg-hyperjump-black/10 px-2 py-1.5 text-sm">
                   {category}
                 </p>
               )}
@@ -175,23 +180,18 @@ export function GridItems({
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
-                  <CardTitle className="text-xl font-semibold text-hyperjump-black">
+                  <CardTitle className="md:text-[22px] text-xl font-semibold text-hyperjump-black">
                     {title}
                   </CardTitle>
                 </Link>
               ) : (
-                <CardTitle className="text-xl font-semibold text-hyperjump-black">
+                <CardTitle className="md:text-[22px] text-xl font-semibold text-hyperjump-black">
                   {title}
                 </CardTitle>
               )}
             </CardHeader>
 
-            <CardContent
-              className={cn(
-                classNameDesctiption,
-                "flex-1 -mt-3 flex flex-col gap-4"
-              )}
-            >
+            <CardContent className="flex-1 -mt-3 flex flex-col gap-4">
               <div>
                 <CardDescription
                   ref={(el) => {
@@ -324,7 +324,7 @@ export default function GridItemsContainer({
 
   return (
     <section id={id} className="bg-white scroll-mt-20">
-      <div className="mx-auto flex py-5 md:py-8 px-8 md:px-20  flex-wrap justify-center items-center">
+      <div className="mx-auto flex py-5 md:py-8 px-4 md:px-20 flex-wrap justify-center items-center">
         {title}
         <div>{body || others}</div>
         {more}
