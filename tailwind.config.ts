@@ -101,10 +101,6 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      backgroundImage: {
-        "footer-gradient":
-          "linear-gradient(44.24deg, #0D0B1E 0%, #161D29 109.69%)",
-      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
