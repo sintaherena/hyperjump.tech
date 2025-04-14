@@ -134,7 +134,7 @@ export function GridItems({
     .join(" ");
 
   return (
-    <div className={`grid gap-6 space-x-6 ${columnClasses}`}>
+    <div className={`grid gap-6 ${columnClasses}`}>
       {items.map((item, idx) => {
         const { image, title, description, url, category, icon } = item;
 
