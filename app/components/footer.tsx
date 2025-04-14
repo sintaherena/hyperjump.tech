@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="relative text-white px-4 py-10 md:py-14 md:px-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/swatch.svg"
+          src="/images/swatch.svg"
           alt="Footer background"
           layout="fill"
           objectFit="cover"
@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
 
       <div className="relative z-20 container mx-auto px-4">
-        <div className="flex flex-col items-center justify-center space-y-6">
+        <div className="flex flex-col md:items-center space-y-6">
           <div className="flex items-center">
             <a href="/">
               <Image
@@ -38,7 +38,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <p className="text-left md:text-center text-[#C7CDCD] max-w-md text-sm">
+          <p className="text-[#C7CDCD] max-w-md text-sm">
             Accelerating Business Growth with Cutting-Edge Technology Solutions
           </p>
 
