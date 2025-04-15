@@ -9,9 +9,8 @@ export default function Footer() {
         <Image
           src="/images/swatch.svg"
           alt="Footer background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
+          width={1440}
+          height={308}
           className="pointer-events-none select-none"
         />
         <div

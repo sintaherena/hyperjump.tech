@@ -23,7 +23,7 @@ export default function OpenSourceProducts() {
         <GridItemsMoreButton
           text="View More"
           variant="outline"
-          href="https://github.com/hyperjumptech"
+          href={data.github}
         />
       </GridItemsContainer>
     </>
