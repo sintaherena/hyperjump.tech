@@ -6,6 +6,8 @@ import GridItemsContainer, {
 } from "@/app/components/grid-items";
 
 export default function CaseStudies() {
+  const { gaEventName, label, link } = data.cta;
+
   return (
     <>
       <GridItemsContainer className="bg-[#F6F8F9]" id="case-studies">
@@ -19,9 +21,17 @@ export default function CaseStudies() {
         <GridItems
           items={data.caseStudies}
           columns={{ base: 1, md: 2, lg: 2 }}
-          classNameCard="rounded-xl"
+          classNameCard="rounded"
         />
-        <GridItemsMoreButton text={data.cta.label} href={data.cta.link} />
+        <GridItemsMoreButton
+          text={label}
+          href={link}
+          gaEvent={{
+            event: gaEventName,
+            category: "engagement",
+            label: "Case Study CTA",
+          }}
+        />
       </GridItemsContainer>
     </>
   );

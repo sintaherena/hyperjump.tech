@@ -1,10 +1,11 @@
 "use client";
 
+import { sendGAEvent } from "@next/third-parties/google";
 import Image from "next/image";
 import Link from "next/link";
 import data from "@/data.json";
 import { cn } from "@/app/utils/tailwind";
-import { ReactNode, useEffect, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import WhiteLogo from "@/public/images/hyperjump-white.png";
 import BlackLogo from "@/public/images/hyperjump-black.png";
 import {
@@ -18,9 +19,11 @@ import IconOnlyLogo from "@/public/images/hyperjump-icon-only.png";
 import SVGLogo from "@/public/images/hyperjump-svg.svg";
 import ColoredLogo from "@/public/images/hyperjump-colored.png";
 import LogoWithContextMenu from "./logo-with-context-menu";
+import { Button } from "@/components/ui/button";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const { gaEventName, label, link } = data.cta;
 
   return (
     <StickyNavigationMain isMenuOpen={isOpen}>
@@ -54,17 +57,27 @@ export default function Nav() {
             </CenterNavItems>
 
             <RightNavItems>
-              <Link
-                href={data.cta.link}
+              <Button
+                asChild
+                variant="outline"
                 className={cn(
                   shouldBeWhite
-                    ? "bg-hyperjump-blue text-white hover:bg-blue-400"
-                    : "border border-white text-white hover:bg-white hover:text-black",
-                  "px-4 py-2 text-sm rounded transition-colors"
+                    ? "bg-hyperjump-blue hover:text-white hover:bg-hyperjump-blue/90"
+                    : "bg-transparent",
+                  "font-semibold"
                 )}
+                onClick={() => {
+                  sendGAEvent({
+                    event: gaEventName,
+                    category: "engagement",
+                    label: "Navigation CTA",
+                  });
+                }}
               >
-                {data.cta.label}
-              </Link>
+                <Link href={link} target="_blank" rel="noreferrer noopener">
+                  {label}
+                </Link>
+              </Button>
             </RightNavItems>
 
             {/* Mobile Toggle */}
@@ -107,17 +120,24 @@ export default function Nav() {
                   <Link
                     key={idx}
                     href={item.href}
-                    className="text-hyperjump-black text-2xl hover:text-gray-400"
+                    className="transition text-hyperjump-black text-2xl hover:text-gray-400"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
                   </Link>
                 ))}
                 <Link
-                  href={data.cta.link}
-                  className="mt-2 border text-base border-hyperjump-black hover:text-gray-400 text-hyperjump-black py-3 text-center rounded hover:border-gray-400"
+                  href={link}
+                  className="transition mt-2 border text-base border-hyperjump-black hover:text-gray-400 text-hyperjump-black py-3 text-center rounded hover:border-gray-400"
+                  onClick={() => {
+                    sendGAEvent({
+                      event: gaEventName,
+                      category: "engagement",
+                      label: "Navigation CTA",
+                    });
+                  }}
                 >
-                  {data.cta.label}
+                  {label}
                 </Link>
               </div>
             </div>
@@ -144,7 +164,7 @@ export function NavContainer({ children }: { children: ReactNode }) {
     <div
       className={cn(
         showBorder,
-        "w-full px-4 md:px-20 mx-auto flex flex-wrap items-center justify-between mt-0 py-5"
+        "w-full px-4 md:px-20 mx-auto flex flex-wrap items-center justify-between mt-0 py-5 max-w-5xl xl:px-0"
       )}
     >
       {children}
@@ -197,7 +217,7 @@ export function HyperjumpLogo() {
   return (
     <div className="pl-4 flex items-center">
       <Link
-        className="toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+        className="transition toggleColour no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
         href={"/"}
       >
         <ClientOnly>

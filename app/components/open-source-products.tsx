@@ -17,8 +17,8 @@ export default function OpenSourceProducts() {
         />
         <GridItems
           items={data.openSourceProducts}
-          columns={{ base: 1, md: 2, lg: 3 }}
-          classNameCard="rounded-md"
+          columns={{ base: 1, lg: 3 }}
+          classNameCard="rounded"
         />
         <GridItemsMoreButton
           text="View More"

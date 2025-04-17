@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function Faqs() {
   return (
-    <section id="faqs" className="bg-white scroll-mt-20">
+    <section id="faqs" className="bg-[#F6F8F9] scroll-mt-20 py-10">
       <div className="mx-auto flex py-5 md:py-8 px-4 md:px-20 flex-wrap justify-center items-center">
         <div className="w-full">
           <GridItemsTitle
@@ -18,17 +18,18 @@ export default function Faqs() {
             description="Find answers to commonly asked questions. If you need further assistance, feel free to reach out to us."
             layout="vertical"
             descriptionStyle="w-full md:max-w-2xl"
+            className="bg-[#F6F8F9]"
           />
           <Accordion
             type="single"
             collapsible
-            className="w-full max-w-4xl space-y-4 mx-auto"
+            className="w-full max-w-5xl space-y-4 mx-auto"
           >
             {data.faqs.map((item, i) => (
               <AccordionItem key={i} value={`faq-${i}`} asChild>
                 <Card className="bg-white border border-gray-200 shadow-sm transition-all duration-300 w-full">
                   <CardHeader className="py-2 px-4">
-                    <AccordionTrigger className="flex items-center justify-between gap-2 text-left text-xl font-medium text-[#020F15] w-full no-underline hover:no-underline focus:no-underline">
+                    <AccordionTrigger className="transition flex items-center justify-between gap-2 text-left text-xl font-medium text-[#020F15] w-full no-underline hover:no-underline focus:no-underline">
                       {item.question}
                     </AccordionTrigger>
                   </CardHeader>

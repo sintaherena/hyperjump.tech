@@ -1,5 +1,6 @@
 "use client";
 
+import { sendGAEvent } from "@next/third-parties/google";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -183,7 +184,7 @@ export function GridItems({
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline"
+                  className="transition hover:underline"
                 >
                   <CardTitle className="md:text-[22px] text-xl font-semibold text-hyperjump-black">
                     {title}
@@ -215,7 +216,7 @@ export function GridItems({
                     onClick={() =>
                       setExpandedIndex((prev) => (prev === idx ? null : idx))
                     }
-                    className="mt-1 text-gray-600 hover:underline"
+                    className="transition mt-1 text-gray-600 hover:underline"
                   >
                     {expandedIndex === idx ? "See Less" : "See More"}
                   </button>
@@ -224,26 +225,32 @@ export function GridItems({
               {url && (
                 <div className="flex flex-row justify-between gap-4 space-x-4">
                   {/* Star Button */}
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full text-hyperjump-blue font-semibold items-center gap-2 rounded-md border border-[#D1D5DB] px-auto py-3 justify-center text-sm shadow-sm transition hover:bg-gray-50"
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full text-hyperjump-blue border-hyperjump-blue hover:bg-hyperjump-blue hover:text-white"
                   >
-                    <Star className="h-4 w-4 " />
-                    <span>Star</span>
-                  </a>
+                    <Link href={url} target="_blank" rel="noopener noreferrer">
+                      <Star className="h-4 w-4" />
+                      <span>Star</span>
+                    </Link>
+                  </Button>
 
                   {/* Fork Button */}
-                  <a
-                    href={`${url}/fork`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full text-hyperjump-blue font-semibold items-center gap-2 rounded-md border border-[#D1D5DB] px-auto py-3 justify-center text-sm shadow-sm transition hover:bg-gray-50"
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full text-hyperjump-blue border-hyperjump-blue hover:bg-hyperjump-blue hover:text-white"
                   >
-                    <GitFork className="h-4 w-4 text-[#0056D2]" />
-                    <span>Fork</span>
-                  </a>
+                    <Link
+                      href={`${url}/fork`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <GitFork className="h-4 w-4" />
+                      <span>Fork</span>
+                    </Link>
+                  </Button>
                 </div>
               )}
             </CardContent>
@@ -254,42 +261,43 @@ export function GridItems({
   );
 }
 
-type GridItemsMoreButtonProps = {
+type GAEvent = {
+  event: string;
+  category: string;
+  label: string;
+};
+
+export type GridItemsMoreButtonProps = {
   href: string;
   text?: string;
   variant?: "default" | "outline" | "link";
+  gaEvent?: GAEvent;
 };
 
 export const GridItemsMoreButton = ({
   href,
   text,
   variant = "default",
+  gaEvent,
 }: GridItemsMoreButtonProps) => {
-  const customClass = cn(
-    "py-3 mt-10 px-5 transition-all duration-200 ease-in-out transform hover:shadow-md hover:scale-[1.02]",
-    {
-      // Primary (default)
-      "bg-hyperjump-blue text-white hover:bg-hyperjump-blue/90 hover:text-white":
-        variant === "default",
-
-      // Outline
-      "border border-hyperjump-blue text-hyperjump-blue hover:bg-hyperjump-blue/10 hover:text-hyperjump-blue":
-        variant === "outline",
-
-      // Link
-      "text-hyperjump-blue hover:underline hover:text-hyperjump-blue":
-        variant === "link",
-    }
-  );
+  const customClass = cn("font-semibold", {
+    "bg-hyperjump-blue hover:bg-hyperjump-blue/90": variant === "default",
+    "text-hyperjump-blue border-hyperjump-blue hover:bg-hyperjump-blue hover:text-white":
+      variant === "outline",
+  });
 
   return (
-    <div className="w-full flex items-center justify-center">
-      <Button variant="ghost" className={customClass} asChild>
+    <div className="w-full flex items-center justify-center mt-10">
+      <Button asChild className={customClass} variant={variant}>
         <Link
-          className="font-semibold"
           href={href}
           target="_blank"
           rel="noreferrer noopener"
+          onClick={() => {
+            if (gaEvent) {
+              sendGAEvent(gaEvent);
+            }
+          }}
         >
           {text}
         </Link>
@@ -330,7 +338,7 @@ export default function GridItemsContainer({
 
   return (
     <section id={id} className={finalClass}>
-      <div className="mx-auto flex py-5 md:py-8 px-4 md:px-20 flex-wrap justify-center items-center">
+      <div className="mx-auto flex py-5 md:py-14 px-4 md:px-20 flex-wrap justify-center items-center max-w-5xl xl:px-0">
         {title}
         <div>{body || others}</div>
         {more}
