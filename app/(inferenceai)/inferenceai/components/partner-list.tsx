@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import data from "../inferenceai-data.json";
+import data from "@/locales/inferenceai-data.json";
 
 export default function PartnersList() {
   const { header, logos } = data.partners;

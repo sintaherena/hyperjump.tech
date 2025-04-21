@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import data from "../inferenceai-data.json";
+import data from "@/locales/inferenceai-data.json";
 import { HeroCTAButton } from "./hero-cta-button";
 
 export default function Hero() {

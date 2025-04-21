@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import Image from "next/image";
-import data from "./inferenceai-data.json";
+import data from "@/locales/inferenceai-data.json";
 import {
   GridItems,
   GridItemsSection,

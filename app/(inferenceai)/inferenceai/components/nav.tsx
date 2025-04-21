@@ -9,7 +9,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList
 } from "@/components/ui/navigation-menu";
-import data from "../inferenceai-data.json";
+import data from "@/locales/inferenceai-data.json";
 import StickyNavigationMain from "@/app/components/sticky-nav-main";
 import { HeroCTAButton } from "./hero-cta-button";
 

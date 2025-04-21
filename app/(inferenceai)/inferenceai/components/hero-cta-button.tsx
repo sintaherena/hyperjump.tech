@@ -4,7 +4,7 @@ import { sendGAEvent } from "@next/third-parties/google";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import data from "../inferenceai-data.json";
+import data from "@/locales/inferenceai-data.json";
 
 export function HeroCTAButton() {
   const { gaEventName, label, link } = data.cta;
