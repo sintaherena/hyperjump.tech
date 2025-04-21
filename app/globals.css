@@ -131,3 +131,14 @@ body {
   pointer-events: none;
   z-index: 1;
 }
+
+.btn-gradient-purple {
+  border: 1px solid #6d5697;
+  background:
+    radial-gradient(50% 50% at 50% 50%, #413aa3 0%, #332c95 100%),
+    linear-gradient(
+      177.61deg,
+      rgba(255, 255, 255, 0) 2%,
+      rgba(255, 255, 255, 0.12) 98.17%
+    );
+}

@@ -10,7 +10,7 @@ import { SupportedLanguage } from "@/locales/.generated/types";
 export default function Nav({ lang }: { lang: SupportedLanguage }) {
   return (
     <StickyNavigation>
-      <NavContainer>
+      <NavContainer className="container">
         <HyperjumpLogo />
 
         <RightNavItems>

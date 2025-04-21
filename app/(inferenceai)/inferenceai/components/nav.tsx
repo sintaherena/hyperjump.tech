@@ -9,16 +9,16 @@ import {
   NavigationMenuItem,
   NavigationMenuList
 } from "@/components/ui/navigation-menu";
-import StickyNavigation from "./sticky-nav";
 import data from "../inferenceai-data.json";
-import { ScheduleConsultationButton } from "./grid-items";
+import StickyNavigationMain from "@/app/components/sticky-nav-main";
+import { HeroCTAButton } from "@/app/components/hero-cta-button";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const { navLinks } = data;
 
   return (
-    <StickyNavigation isMenuOpen={isOpen}>
+    <StickyNavigationMain isMenuOpen={isOpen}>
       {({ shouldBeWhite }) => (
         <>
           <NavContainer>
@@ -48,7 +48,7 @@ export default function Nav() {
             </CenterNavItems>
 
             <RightNavItems>
-              <ScheduleConsultationButton />
+              <HeroCTAButton className="btn-gradient-purple rounded-full text-white" />
             </RightNavItems>
 
             {/* Mobile Toggle */}
@@ -94,13 +94,13 @@ export default function Nav() {
                     {item.label}
                   </Link>
                 ))}
-                <ScheduleConsultationButton />
+                <HeroCTAButton className="btn-gradient-purple rounded-full text-white" />
               </div>
             </div>
           )}
         </>
       )}
-    </StickyNavigation>
+    </StickyNavigationMain>
   );
 }
 

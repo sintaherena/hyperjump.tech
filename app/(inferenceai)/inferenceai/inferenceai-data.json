@@ -12,6 +12,7 @@
     "subheader": "Chat with our team to discover how AI can streamline your business.",
     "link": "https://forms.office.com/Pages/ResponsePage.aspx?id=YB_vnVvdsku6UOy9eolc4lSE-1zhiHZGuckpAFLZgMNUQ0pPVFE0UFczTU5GNDYxN1FPTUVZRTIwOS4u",
     "label": "Schedule Consultation",
+    "gaEventName": "cta_click",
     "background": "/images/inferenceai/cta-background.svg"
   },
   "navLinks": [
@@ -137,13 +138,11 @@
       {
         "title": "AI Knowledge Assistant with RAG",
         "category": "Case Studies",
-        "url": "#",
         "description": "We built a custom AI agent that augments internal knowledge with Retrieval-Augmented Generation (RAG) using internal docs."
       },
       {
         "title": "AI-Powered Meeting Notes Agent",
         "category": "Case Studies",
-        "url": "#",
         "description": "We deployed a Slack agent that summarizes meetings, takes key points, and auto-syncs into project tools—saving hours every week."
       }
     ]
@@ -151,7 +150,7 @@
   "aboutUs": {
     "header": "About Us",
     "subheader": "We’re a team of AI engineers, product strategists, and automation nerds passionate about building agents that actually work. We've helped startups, agencies, and enterprise teams harness AI in ways that are simple, strategic, and impactful.",
-    "image": "/images/inferenceai/about-us.png"
+    "image": "/images/inferenceai/about-us.webp"
   },
   "faq": {
     "header": "Frequently asked questions",

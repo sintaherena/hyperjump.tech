@@ -5,8 +5,9 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import data from "@/data.json";
+import { cn } from "@/lib/utils";
 
-export function HeroCTAButton() {
+export function HeroCTAButton({ className }: { className?: string }) {
   const { gaEventName, label, link } = data.cta;
 
   return (
@@ -14,7 +15,7 @@ export function HeroCTAButton() {
       asChild
       variant="secondary"
       size="lg"
-      className="font-semibold"
+      className={cn(className, "font-semibold")}
       onClick={() => {
         sendGAEvent({
           event: gaEventName,

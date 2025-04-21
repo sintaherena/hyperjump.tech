@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import data from "../inferenceai-data.json";
-import { ScheduleConsultationButton } from "./grid-items";
+import { HeroCTAButton } from "@/app/components/hero-cta-button";
 
 export default function Hero() {
   const { header, subheader, image, banner } = data.hero;
@@ -48,7 +48,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}>
-            <ScheduleConsultationButton />
+            <HeroCTAButton className="btn-gradient-purple transform rounded-full text-white transition-all duration-200 ease-in-out hover:scale-[1.05] hover:shadow-md" />
           </motion.div>
         </motion.div>
       </article>

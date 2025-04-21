@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import Image from "next/image";
 import data from "./inferenceai-data.json";
 import {
   GridItems,
   GridItemsSection,
-  ScheduleConsultationButton
-} from "./components/grid-items";
+  GridItemsMoreButton
+} from "@/app/components/grid-items";
 import {
   Accordion,
   AccordionContent,
@@ -45,7 +45,9 @@ function WhyWorkWithUs() {
       <GridItems
         items={content}
         columns={{ base: 1, sm: 1, md: 3, lg: 3 }}
-        classNameCard="rounded-[20px]"
+        cardClassName="rounded-[20px]"
+        borderClassName="card-border-gradient"
+        titleClassName="text-white"
       />
     </GridItemsSection>
   );
@@ -158,16 +160,29 @@ function WhatYouGet() {
 
 function CaseStudies() {
   const { header, subheader, content } = data.caseStudies;
+  const { label, link, gaEventName } = data.cta;
 
   return (
     <GridItemsSection id="case-studies" title={header} description={subheader}>
       <GridItems
         items={content}
         columns={{ base: 1, md: 2, lg: 2 }}
-        classNameCard="rounded-2xl mt-8"
+        cardClassName="rounded-2xl mt-8"
+        borderClassName="card-border-gradient"
+        categoryClassName="bg-white/10 text-white"
+        titleClassName="text-white"
       />
       <div className="mt-8 flex w-full justify-center">
-        <ScheduleConsultationButton />
+        <GridItemsMoreButton
+          type="inferenceai"
+          text={label}
+          href={link}
+          gaEvent={{
+            event: gaEventName,
+            category: "engagement",
+            label: "Case Study Inference AI"
+          }}
+        />
       </div>
     </GridItemsSection>
   );
@@ -223,7 +238,7 @@ function Faqs() {
 }
 
 function CTASection() {
-  const { header, subheader, background } = data.cta;
+  const { header, subheader, background, label, link, gaEventName } = data.cta;
 
   return (
     <section className="w-full px-4 py-5 md:py-8">
@@ -244,7 +259,16 @@ function CTASection() {
           <p className="mx-auto max-w-xl text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
             {subheader}
           </p>
-          <ScheduleConsultationButton />
+          <GridItemsMoreButton
+            type="inferenceai"
+            text={label}
+            href={link}
+            gaEvent={{
+              event: gaEventName,
+              category: "engagement",
+              label: "CTA Inference AI"
+            }}
+          />
         </div>
       </div>
     </section>

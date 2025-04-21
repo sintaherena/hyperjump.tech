@@ -75,7 +75,7 @@ function Services() {
       <GridItems
         items={data.services}
         columns={{ base: 1, sm: 2, lg: 4 }}
-        classNameCard="rounded"
+        cardClassName="rounded"
       />
       <GridItemsMoreButton
         text={label}
@@ -103,7 +103,7 @@ function CaseStudies() {
       <GridItems
         items={data.caseStudies}
         columns={{ base: 1, md: 2, lg: 2 }}
-        classNameCard="rounded"
+        cardClassName="rounded"
       />
       <CaseStudiesCTA />
     </GridItemsContainer>
@@ -122,7 +122,7 @@ function OpenSourceProducts() {
       <GridItems
         items={data.openSourceProducts}
         columns={{ base: 1, lg: 3 }}
-        classNameCard="rounded"
+        cardClassName="rounded"
       />
       <GridItemsMoreButton
         text="View More"

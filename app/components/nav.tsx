@@ -142,7 +142,13 @@ export default function Nav() {
   );
 }
 
-export function NavContainer({ children }: { children: ReactNode }) {
+export function NavContainer({
+  children,
+  className = "max-w-5xl"
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -152,13 +158,14 @@ export function NavContainer({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const showBorder = isScrolled ? "border border-b-2" : "border-none";
+  const showBorder = isScrolled ? "" : "border-none";
 
   return (
     <div
       className={cn(
         showBorder,
-        "mx-auto mt-0 flex w-full max-w-5xl flex-wrap items-center justify-between px-4 py-5 md:px-20 xl:px-0"
+        className,
+        "mx-auto mt-0 flex w-full flex-wrap items-center justify-between px-4 py-5 md:px-20 xl:px-0"
       )}>
       {children}
     </div>
