@@ -12,7 +12,7 @@ export default function WhatYouGet() {
       description={subheader}
       layout="vertical"
     >
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 text-white bg-[#0A0713] px-6 py-12">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 text-white bg-[#0A0713] pt-8">
         {data.map((item, idx) => (
           <div
             key={idx}

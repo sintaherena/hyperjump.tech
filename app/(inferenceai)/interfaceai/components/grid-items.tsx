@@ -12,72 +12,9 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { Children, isValidElement, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GitFork, Star } from "lucide-react";
 import data from "../interfaceai-data.json";
-
-type GridItemsTitleProps = {
-  className?: string;
-  title: string;
-  description?: string;
-  layout?: "horizontal" | "vertical";
-  descriptionStyle?: React.HTMLAttributes<HTMLDivElement>["className"];
-};
-
-export function GridItemsTitle({
-  title,
-  description,
-  className = "",
-  layout = "horizontal",
-  descriptionStyle,
-}: GridItemsTitleProps) {
-  const isHorizontal = layout === "horizontal";
-  const hasBgClass = /\bbg-/.test(className);
-  const finalClass = cn(
-    "scroll-mt-20",
-    !hasBgClass && "bg-interface-ai-indigo text-white",
-    className
-  );
-
-  if (!description) {
-    return (
-      <h1 className="w-full text-4xl md:text-[40px] font-menium leading-tight text-center text-white">
-        {title}
-      </h1>
-    );
-  }
-
-  return (
-    <div
-      className={cn(
-        finalClass,
-        "w-full mb-8 flex",
-        isHorizontal
-          ? "flex flex-wrap justify-between gap-4 flex-1"
-          : "flex flex-col md:items-center md:text-center"
-      )}
-    >
-      <h2
-        className={cn(
-          "text-4xl md:text-[40px] font-medium leading-tight flex-1",
-          isHorizontal ? "mb-0 text-left" : "mb-4"
-        )}
-      >
-        {title}
-      </h2>
-      <p
-        className={cn(
-          "text-[#AFB0C3] text-base md:text-lg flex-1",
-          isHorizontal
-            ? "text-left max-w-lg"
-            : `w-full md:w-2/3 xl:w-3/4 text-left md:text-center ${descriptionStyle}`
-        )}
-      >
-        {description}
-      </p>
-    </div>
-  );
-}
 
 type Item = {
   image?: string;
@@ -257,102 +194,6 @@ export function GridItems({
   );
 }
 
-type GridItemsMoreButtonProps = {
-  href: string;
-  text?: string;
-  variant?: "default" | "outline" | "link";
-};
-
-export const GridItemsMoreButton = ({
-  href,
-  text,
-  variant = "default",
-}: GridItemsMoreButtonProps) => {
-  const customClass = cn(
-    "py-3 mt-10 px-5 transition-all duration-200 ease-in-out transform hover:shadow-md hover:scale-[1.02]",
-    {
-      // Primary (default)
-      "bg-hyperjump-blue text-white hover:bg-hyperjump-blue/90 hover:text-white":
-        variant === "default",
-
-      // Outline
-      "border border-hyperjump-blue text-hyperjump-blue hover:bg-hyperjump-blue/10 hover:text-hyperjump-blue":
-        variant === "outline",
-
-      // Link
-      "text-hyperjump-blue hover:underline hover:text-hyperjump-blue":
-        variant === "link",
-    }
-  );
-
-  return (
-    <div className="w-full flex items-center justify-center">
-      <Button variant="ghost" className={customClass} asChild>
-        <Link
-          className="font-semibold"
-          href={href}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          {text}
-        </Link>
-      </Button>
-    </div>
-  );
-};
-
-export default function GridItemsContainer({
-  children,
-  className = "",
-  id,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-}) {
-  const childrenArray = Children.toArray(children);
-
-  const title = childrenArray.find(
-    (child) => isValidElement(child) && child.type === GridItemsTitle
-  );
-
-  const body = childrenArray.find(
-    (child) => isValidElement(child) && child.type === GridItems
-  );
-
-  const more = childrenArray.find(
-    (child) => isValidElement(child) && child.type === GridItemsMoreButton
-  );
-
-  const others = childrenArray.filter(
-    (child) => child !== title && child !== body && child !== more
-  );
-
-  const hasBgClass = /\bbg-/.test(className);
-  const finalClass = cn("scroll-mt-20", className);
-
-  return (
-    <section
-      id={id}
-      className={finalClass}
-      style={
-        !hasBgClass
-          ? {
-              background:
-                "linear-gradient(0deg, #050013, #050013), linear-gradient(180deg, #1513374D 0%, #15133700 23.58%)",
-            }
-          : undefined
-      }
-    >
-      <div className="mx-auto flex py-5 md:py-8 px-4 md:px-20 flex-wrap justify-center items-center">
-        {title}
-        <div>{body || others}</div>
-        {more}
-      </div>
-    </section>
-  );
-}
-
 export const ScheduleConsultationButton = () => {
   const { cta } = data;
 
@@ -363,6 +204,7 @@ export const ScheduleConsultationButton = () => {
       size="lg"
       className="transition-all rounded-full duration-200 ease-in-out transform hover:shadow-md hover:scale-[1.02] text-white"
       style={{
+        border: "#6D5697",
         background: `radial-gradient(50% 50% at 50% 50%, #413AA3 0%, #332C95 100%), linear-gradient(177.61deg, rgba(255, 255, 255, 0) 2%, rgba(255, 255, 255, 0.12) 98.17%)`,
       }}
     >

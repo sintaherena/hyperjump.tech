@@ -103,3 +103,28 @@ body {
   border-image-slice: 1;
   border-image-repeat: stretch;
 }
+
+.custom-glow-border {
+  position: relative;
+  border-radius: 1.5rem;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.custom-glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    44.41% 76.63% at 63.16% 77.26%,
+    #877f9f 0%,
+    rgba(135, 127, 159, 0.4) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}

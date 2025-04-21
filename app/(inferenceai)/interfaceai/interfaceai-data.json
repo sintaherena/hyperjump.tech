@@ -2,11 +2,14 @@
   "hero": {
     "header": "Build Custom AI Agents That Actually Get Work Done",
     "subheader": "We help businesses design, develop, and deploy purpose-built AI agents that save time, cut costs, and scale operations—without the technical overwhelm.",
-    "image": "/images/swatch.svg"
+    "image": "/images/Swatch.svg"
   },
   "cta": {
+    "header": "Ready to Transform Your Workflow?",
+    "subheader": "Chat with our team to discover how AI can streamline your business.",
     "link": "https://teams.microsoft.com/l/message/19:meeting_ZTI5MTJhNmEtNzU5My00ZTBiLTg5YmMtNGNlZGE1Y2U0ZGVj@thread.v2/1744773620067?context=%7B%22contextType%22%3A%22chat%22%7D",
-    "label": "Schedule Consultation"
+    "label": "Schedule Consultation",
+    "background": "/images/interfaceai/cta-background.svg"
   },
   "navLinks": [
     { "label": "How It Works", "href": "#how-it-works" },
@@ -44,6 +47,7 @@
   },
   "partners": {
     "header": "Chosen by Industry Leaders",
+    "background": "/images/interfaceai/banner.png",
     "logos": [
       "/images/interfaceai/client/amman.svg",
       "/images/interfaceai/client/bank-tabungan-negara.svg",
