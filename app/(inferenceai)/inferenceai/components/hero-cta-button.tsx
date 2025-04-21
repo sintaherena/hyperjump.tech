@@ -4,7 +4,7 @@ import { sendGAEvent } from "@next/third-parties/google";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import data from "@/data.json";
+import data from "../inferenceai-data.json";
 
 export function HeroCTAButton() {
   const { gaEventName, label, link } = data.cta;
@@ -12,14 +12,14 @@ export function HeroCTAButton() {
   return (
     <Button
       asChild
-      variant="secondary"
+      variant="default"
       size="lg"
-      className="font-semibold"
+      className="btn-gradient-purple transform rounded-full text-white transition-all duration-200 ease-in-out hover:scale-[1.05] hover:shadow-md"
       onClick={() => {
         sendGAEvent({
           event: gaEventName,
           category: "engagement",
-          label: "Hero Banner CTA"
+          label: "Hero Banner Inference AI"
         });
       }}>
       <Link href={link} target="_blank" rel="noreferrer noopener">

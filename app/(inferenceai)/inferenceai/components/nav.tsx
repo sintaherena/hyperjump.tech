@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import data from "../inferenceai-data.json";
 import StickyNavigationMain from "@/app/components/sticky-nav-main";
-import { HeroCTAButton } from "@/app/components/hero-cta-button";
+import { HeroCTAButton } from "./hero-cta-button";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +48,7 @@ export default function Nav() {
             </CenterNavItems>
 
             <RightNavItems>
-              <HeroCTAButton className="btn-gradient-purple rounded-full text-white" />
+              <HeroCTAButton />
             </RightNavItems>
 
             {/* Mobile Toggle */}
@@ -94,7 +94,7 @@ export default function Nav() {
                     {item.label}
                   </Link>
                 ))}
-                <HeroCTAButton className="btn-gradient-purple rounded-full text-white" />
+                <HeroCTAButton />
               </div>
             </div>
           )}
