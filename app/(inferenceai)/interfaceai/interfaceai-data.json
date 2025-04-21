@@ -2,7 +2,8 @@
   "hero": {
     "header": "Build Custom AI Agents That Actually Get Work Done",
     "subheader": "We help businesses design, develop, and deploy purpose-built AI agents that save time, cut costs, and scale operations—without the technical overwhelm.",
-    "image": "/images/Swatch.svg"
+    "image": "/images/Swatch.svg",
+    "banner": "/images/interfaceai/banner.png"
   },
   "cta": {
     "header": "Ready to Transform Your Workflow?",
@@ -47,7 +48,6 @@
   },
   "partners": {
     "header": "Chosen by Industry Leaders",
-    "background": "/images/interfaceai/banner.png",
     "logos": [
       "/images/interfaceai/client/amman.svg",
       "/images/interfaceai/client/bank-tabungan-negara.svg",

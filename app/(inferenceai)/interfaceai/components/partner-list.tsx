@@ -3,21 +3,10 @@ import { cn } from "@/lib/utils";
 import data from "../interfaceai-data.json";
 
 export default function PartnersList() {
-  const { header, logos, background } = data.partners;
+  const { header, logos } = data.partners;
 
   return (
-    <section className="relative w-full pt-60 pb-20 overflow-hidden bg-[#050013]">
-      <div className="absolute top-[-150px] left-0 w-full h-[300px] z-0 pointer-events-none select-none">
-        <Image
-          src={background}
-          alt="Background"
-          fill
-          className="object-cover object-top translate-y-28 opacity-50 z-0"
-        />
-      </div>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-0" />
-
+    <section className="relative w-full py-16 overflow-hidden bg-[#050013]">
       <div className="relative px-4 md:px-20 z-10 mx-auto flex flex-col md:flex-row md:items-center justify-center md:justify-between gap-y-8">
         <h2 className="text-white text-2xl xl:text-[32px] font-medium">
           {header}

@@ -1,4 +1,3 @@
-import PartnersList from "./components/partner-list";
 import WhyWorkWithUs from "./components/why-work-with-us";
 import HowItWorks from "./components/how-it-works";
 import WhatYouGet from "./components/what-you-get";
@@ -10,7 +9,6 @@ import CTASection from "./components/cta-section";
 export default function InterfaceAI() {
   return (
     <>
-      <PartnersList />
       <WhyWorkWithUs />
       <HowItWorks />
       <WhatYouGet />
