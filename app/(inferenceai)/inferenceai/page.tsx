@@ -227,7 +227,7 @@ function CTASection() {
 
   return (
     <section className="w-full px-4 py-5 md:py-8">
-      <div className="custom-glow-border relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-inferenceai-ai-indigo p-6 text-center md:p-10">
+      <div className="custom-glow-border relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-inferenceai-indigo p-6 text-center md:p-10">
         <div className="absolute inset-0 z-0">
           <Image
             src={background}

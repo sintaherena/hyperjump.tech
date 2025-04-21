@@ -35,7 +35,7 @@ export default function Nav() {
                         href={item.href}
                         className={cn(
                           shouldBeWhite
-                            ? "text-inferenceai-ai-indigo hover:text-hyperjump-blue"
+                            ? "text-inferenceai-indigo hover:text-hyperjump-blue"
                             : "text-white hover:text-hyperjump-blue",
                           "text-xl font-medium transition-colors"
                         )}>
@@ -89,7 +89,7 @@ export default function Nav() {
                   <Link
                     key={idx}
                     href={item.href}
-                    className="text-2xl text-inferenceai-ai-indigo hover:text-hyperjump-blue"
+                    className="text-2xl text-inferenceai-indigo hover:text-hyperjump-blue"
                     onClick={() => setIsOpen(false)}>
                     {item.label}
                   </Link>
