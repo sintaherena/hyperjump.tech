@@ -67,10 +67,10 @@ export default function HowItWorks() {
                   key={i}
                   onClick={() => setActiveIndex(i)}
                   className={cn(
-                    "cursor-pointer bg-[#1B1728] p-4 border rounded-xl shadow-sm transition-all",
+                    "cursor-pointer bg-[#1B1728] p-4 border rounded-2xl transition-all duration-300 ease-in-out",
                     i === activeIndex
-                      ? "border-white/30 bg-[#292343]"
-                      : "border-white/10 hover:border-white/20"
+                      ? "bg-[#2E2843] border-white/20 shadow-lg shadow-white/10 ring-1 ring-white/10"
+                      : "border-white/10"
                   )}
                 >
                   <h3 className="text-white font-semibold mb-1">

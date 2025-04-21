@@ -147,11 +147,13 @@
       {
         "title": "AI Knowledge Assistant with RAG",
         "category": "Case Studies",
+        "url": "#",
         "description": "We built a custom AI agent that augments internal knowledge with Retrieval-Augmented Generation (RAG) using internal docs."
       },
       {
         "title": "AI-Powered Meeting Notes Agent",
         "category": "Case Studies",
+        "url": "#",
         "description": "We deployed a Slack agent that summarizes meetings, takes key points, and auto-syncs into project tools—saving hours every week."
       }
     ]

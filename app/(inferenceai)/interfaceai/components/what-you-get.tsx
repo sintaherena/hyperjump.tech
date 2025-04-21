@@ -16,11 +16,11 @@ export default function WhatYouGet() {
         {data.map((item, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-start justify-start gap-4 relative pl-4"
+            className="flex flex-col items-start justify-start gap-4 relative pl-6"
           >
-            <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-white/0 via-white/40 to-white/0" />
+            <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-white/20 to-transparent" />
             <Image src={item.icon} alt={item.title} width={32} height={32} />
-            <p className="text-sm md:text-base">{item.title}</p>
+            <p className="text-sm md:text-base text-white/90">{item.title}</p>
           </div>
         ))}
       </div>

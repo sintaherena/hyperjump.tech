@@ -13,8 +13,8 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { GitFork, Star } from "lucide-react";
 import data from "../interfaceai-data.json";
+import { motion } from "framer-motion";
 
 type Item = {
   image?: string;
@@ -92,7 +92,8 @@ export function GridItems({
           <CardWrapper
             key={idx}
             className={cn(
-              `flex flex-col overflow-hidden ${classNameCard}`,
+              `flex flex-col overflow-hidden rounded-2xl transition-colors duration-300 ease-in-out hover:bg-white/5 hover:shadow-md hover:shadow-white/10`,
+              classNameCard,
               customBorderClass ?? "card-border-gradient"
             )}
           >
@@ -161,31 +162,6 @@ export function GridItems({
                   </button>
                 )}
               </div>
-              {url && (
-                <div className="flex flex-row justify-between gap-4 space-x-4">
-                  {/* Star Button */}
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full text-hyperjump-blue font-semibold items-center gap-2 rounded-md border border-[#D1D5DB] px-auto py-3 justify-center text-sm shadow-sm transition hover:bg-gray-50"
-                  >
-                    <Star className="h-4 w-4 " />
-                    <span>Star</span>
-                  </a>
-
-                  {/* Fork Button */}
-                  <a
-                    href={`${url}/fork`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full text-hyperjump-blue font-semibold items-center gap-2 rounded-md border border-[#D1D5DB] px-auto py-3 justify-center text-sm shadow-sm transition hover:bg-gray-50"
-                  >
-                    <GitFork className="h-4 w-4 text-[#0056D2]" />
-                    <span>Fork</span>
-                  </a>
-                </div>
-              )}
             </CardContent>
           </CardWrapper>
         );
@@ -252,9 +228,18 @@ export const GridItemsSection = ({
           : undefined
       }
     >
-      <div className="mx-auto flex py-5 md:py-8 px-4 md:px-20 flex-wrap justify-center items-center">
+      <motion.div
+        className="mx-auto flex py-5 md:py-8 px-4 md:px-20 flex-wrap justify-center items-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {description ? (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
             className={cn(
               "w-full",
               isHorizontal
@@ -280,16 +265,27 @@ export const GridItemsSection = ({
             >
               {description}
             </p>
-          </div>
+          </motion.div>
         ) : (
-          <h1 className="w-full text-4xl md:text-[40px] font-medium leading-tight text-center text-white">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="w-full text-4xl md:text-[40px] font-medium leading-tight text-center text-white"
+          >
             {title}
-          </h1>
+          </motion.h1>
         )}
 
-        {/* Content */}
-        <div className="w-full">{children}</div>
-      </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="w-full"
+        >
+          {children}
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
