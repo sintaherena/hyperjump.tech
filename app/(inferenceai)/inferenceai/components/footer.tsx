@@ -3,7 +3,7 @@ import data from "../inferenceai-data.json";
 import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
-  const { logo, text, socials, copyright } = data.footer;
+  const { text, socials, copyright } = data.footer;
 
   return (
     <footer className="relative overflow-hidden border border-[#29223E] px-4 py-10 text-[#AFB0C3] md:px-20 md:py-14">
@@ -11,8 +11,8 @@ export default function Footer() {
         <div className="flex items-center">
           <a href="/">
             <Image
-              src={logo}
-              alt="Hyperjump Logo"
+              src={data.logoWhite}
+              alt="Inference AI Logo"
               width={187}
               height={32}
               className="h-8 w-auto"

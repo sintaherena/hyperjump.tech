@@ -1,8 +1,10 @@
 {
+  "logoWhite": "/images/inferenceai/inference-ai-white.svg",
+  "logoBlack": "/images/inferenceai/inference-ai-black.svg",
   "hero": {
     "header": "Build Custom AI Agents That Actually Get Work Done",
     "subheader": "We help businesses design, develop, and deploy purpose-built AI agents that save time, cut costs, and scale operations—without the technical overwhelm.",
-    "image": "/images/Swatch.svg",
+    "image": "/images/inferenceai/swatch.svg",
     "banner": "/images/inferenceai/banner.png"
   },
   "cta": {
@@ -16,11 +18,10 @@
     { "label": "How It Works", "href": "#how-it-works" },
     { "label": "What You Get", "href": "#what-you-get" },
     { "label": "Case Studies", "href": "#case-studies" },
-    { "label": "About", "href": "#about" },
+    { "label": "About", "href": "#about-us" },
     { "label": "FAQ", "href": "#faqs" }
   ],
   "footer": {
-    "logo": "/images/hyperjump-white.png",
     "text": "Driving Innovation and Growth with Intelligent AI Solutions",
     "copyright": "Copyright © 2025. Company. All rights reserved.",
     "socials": [
@@ -72,12 +73,6 @@
         "icon": "/images/inferenceai/why-work-with-us/ongoing-support-n-optimization.svg"
       }
     ]
-  },
-  "testimonial": {
-    "quote": "Hyperjump transformed our IT strategy, helping us streamline operations and scale efficiently. Highly recommend for any enterprise looking to innovate.",
-    "author": "Alex Carter",
-    "role": "Head of Customer Experience – Catalog",
-    "avatar": "/images/inferenceai/"
   },
   "howItWorks": {
     "header": "How It Works",

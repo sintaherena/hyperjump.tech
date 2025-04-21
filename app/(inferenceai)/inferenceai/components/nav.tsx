@@ -4,19 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/app/utils/tailwind";
 import { ReactNode, useEffect, useState } from "react";
-import WhiteLogo from "@/public/images/hyperjump-white.png";
-import BlackLogo from "@/public/images/hyperjump-black.png";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList
 } from "@/components/ui/navigation-menu";
 import StickyNavigation from "./sticky-nav";
-import IconOnlyLogo from "@/public/images/hyperjump-icon-only.png";
-import SVGLogo from "@/public/images/hyperjump-svg.svg";
-import ColoredLogo from "@/public/images/hyperjump-colored.png";
-import ClientOnly from "@/app/components/client-only";
-import LogoWithContextMenu from "@/app/components/logo-with-context-menu";
 import data from "../inferenceai-data.json";
 import { ScheduleConsultationButton } from "./grid-items";
 
@@ -30,7 +23,7 @@ export default function Nav() {
         <>
           <NavContainer>
             <Link href="/" className="flex items-center">
-              <HyperjumpLogoMain isOpen={isOpen} />
+              <InferenceAI isOpen={isOpen} />
             </Link>
 
             <CenterNavItems>
@@ -42,7 +35,7 @@ export default function Nav() {
                         href={item.href}
                         className={cn(
                           shouldBeWhite
-                            ? "text-hyperjump-black hover:text-hyperjump-blue"
+                            ? "text-inferenceai-ai-indigo hover:text-hyperjump-blue"
                             : "text-white hover:text-hyperjump-blue",
                           "text-xl font-medium transition-colors"
                         )}>
@@ -96,7 +89,7 @@ export default function Nav() {
                   <Link
                     key={idx}
                     href={item.href}
-                    className="text-2xl text-hyperjump-black hover:text-hyperjump-blue"
+                    className="text-2xl text-inferenceai-ai-indigo hover:text-hyperjump-blue"
                     onClick={() => setIsOpen(false)}>
                     {item.label}
                   </Link>
@@ -121,7 +114,7 @@ export function NavContainer({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const showBorder = isScrolled ? "" : "boder-none";
+  const showBorder = isScrolled ? "" : "border-none";
 
   return (
     <div className="w-full px-4 py-5 md:px-8">
@@ -152,7 +145,7 @@ export function RightNavItems({ children }: { children: React.ReactNode }) {
   );
 }
 
-function HyperjumpLogoMain({ isOpen }: { isOpen: boolean }) {
+function InferenceAI({ isOpen }: { isOpen: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -164,70 +157,15 @@ function HyperjumpLogoMain({ isOpen }: { isOpen: boolean }) {
 
   const showBlack = isOpen || isScrolled;
 
-  const logoSrc = showBlack ? BlackLogo : WhiteLogo;
+  const logoSrc = showBlack ? data.logoBlack : data.logoWhite;
 
   return (
     <Image
       src={logoSrc}
-      alt="Hyperjump Logo"
+      alt="Inference AI Logo"
       width={187}
       height={32}
       className="h-8"
     />
-  );
-}
-
-export function HyperjumpLogo() {
-  return (
-    <div className="flex items-center pl-4">
-      <Link
-        className="toggleColour text-2xl font-bold no-underline hover:no-underline lg:text-4xl"
-        href={"/"}>
-        <ClientOnly>
-          <LogoWithContextMenu
-            downloadables={[
-              {
-                text: "Download colored logo",
-                url: ColoredLogo.src,
-                fileName: "hyperjump-logo-colored.png"
-              },
-              {
-                text: "Download Black and White logo",
-                url: BlackLogo.src,
-                fileName: "hyperjump-logo-bw.png"
-              },
-              {
-                text: "Download icon",
-                url: IconOnlyLogo.src,
-                fileName: "hyperjump-icon-only.png"
-              },
-              {
-                text: "Download SVG logo",
-                url: SVGLogo.src,
-                fileName: "hyperjump-svg.svg"
-              }
-            ]}>
-            {[WhiteLogo, ColoredLogo].map((image, i) => {
-              return (
-                <Image
-                  key={i}
-                  id="brandlogo"
-                  className={cn(
-                    "w-32",
-                    image.src.includes("hyperjump-white")
-                      ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
-                      : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
-                  )}
-                  src={image}
-                  alt="Hyperjump Logo"
-                  width={128}
-                  height={32}
-                />
-              );
-            })}
-          </LogoWithContextMenu>
-        </ClientOnly>
-      </Link>
-    </div>
   );
 }
