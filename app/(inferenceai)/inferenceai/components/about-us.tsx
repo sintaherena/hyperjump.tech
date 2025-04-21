@@ -1,9 +1,9 @@
 import Image from "next/image";
-import intefaceAIData from "../interfaceai-data.json";
+import data from "../inferenceai-data.json";
 import { GridItemsSection } from "./grid-items";
 
 export default function AboutUs() {
-  const { header, subheader, image } = intefaceAIData.aboutUs;
+  const { header, subheader, image } = data.aboutUs;
 
   return (
     <GridItemsSection id="about-us" title={header} description={subheader}>

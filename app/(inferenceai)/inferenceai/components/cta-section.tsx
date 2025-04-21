@@ -1,13 +1,13 @@
 import Image from "next/image";
-import intefaceAIData from "../interfaceai-data.json";
+import data from "../inferenceai-data.json";
 import { ScheduleConsultationButton } from "./grid-items";
 
 export default function CTASection() {
-  const { header, subheader, background } = intefaceAIData.cta;
+  const { header, subheader, background } = data.cta;
   
   return (
     <section className="w-full px-4 py-5 md:py-8">
-      <div className="custom-glow-border relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-interface-ai-indogo p-6 text-center md:p-10">
+      <div className="custom-glow-border relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-inferenceai-ai-indogo p-6 text-center md:p-10">
         <div className="absolute inset-0 z-0">
           <Image
             src={background}

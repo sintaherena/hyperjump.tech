@@ -17,12 +17,12 @@ import SVGLogo from "@/public/images/hyperjump-svg.svg";
 import ColoredLogo from "@/public/images/hyperjump-colored.png";
 import ClientOnly from "@/app/components/client-only";
 import LogoWithContextMenu from "@/app/components/logo-with-context-menu";
-import intefaceAIData from "../interfaceai-data.json";
+import data from "../inferenceai-data.json";
 import { ScheduleConsultationButton } from "./grid-items";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const { navLinks } = intefaceAIData;
+  const { navLinks } = data;
 
   return (
     <StickyNavigation isMenuOpen={isOpen}>

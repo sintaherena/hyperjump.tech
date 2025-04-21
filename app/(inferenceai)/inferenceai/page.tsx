@@ -6,7 +6,7 @@ import AboutUs from "./components/about-us";
 import Faqs from "./components/faqs";
 import CTASection from "./components/cta-section";
 
-export default function InterfaceAI() {
+export default function InferenceAI() {
   return (
     <>
       <WhyWorkWithUs />

@@ -1,21 +1,21 @@
-import intefaceAIData from "../interfaceai-data.json";
+import data from "../inferenceai-data.json";
 import {
   GridItems,
   GridItemsSection,
-  ScheduleConsultationButton,
+  ScheduleConsultationButton
 } from "./grid-items";
 
 export default function CaseStudies() {
-  const { header, subheader, data } = intefaceAIData.caseStudies;
+  const { header, subheader, content } = data.caseStudies;
 
   return (
     <GridItemsSection id="case-studies" title={header} description={subheader}>
       <GridItems
-        items={data}
+        items={content}
         columns={{ base: 1, md: 2, lg: 2 }}
         classNameCard="rounded-2xl mt-8"
       />
-      <div className="w-full flex justify-center mt-8">
+      <div className="mt-8 flex w-full justify-center">
         <ScheduleConsultationButton />
       </div>
     </GridItemsSection>

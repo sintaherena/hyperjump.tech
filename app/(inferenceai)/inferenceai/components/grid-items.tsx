@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import data from "../interfaceai-data.json";
+import data from "../inferenceai-data.json";
 import { motion } from "framer-motion";
 
 type Item = {

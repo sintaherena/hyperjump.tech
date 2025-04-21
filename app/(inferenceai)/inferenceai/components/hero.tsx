@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import data from "../interfaceai-data.json";
+import data from "../inferenceai-data.json";
 import { ScheduleConsultationButton } from "./grid-items";
 
 export default function Hero() {

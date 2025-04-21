@@ -1,9 +1,9 @@
 import Image from "next/image";
-import intefaceAIData from "../interfaceai-data.json";
+import data from "../inferenceai-data.json";
 import { GridItemsSection } from "./grid-items";
 
 export default function WhatYouGet() {
-  const { header, subheader, data } = intefaceAIData.whatYouGet;
+  const { header, subheader, content } = data.whatYouGet;
 
   return (
     <GridItemsSection
@@ -13,7 +13,7 @@ export default function WhatYouGet() {
       layout="vertical"
     >
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 text-white bg-[#0A0713] pt-8">
-        {data.map((item, idx) => (
+        {content.map((item, idx) => (
           <div
             key={idx}
             className="flex flex-col items-start justify-start gap-4 relative pl-6"
