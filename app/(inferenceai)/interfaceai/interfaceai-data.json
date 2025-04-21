@@ -27,22 +27,17 @@
       {
         "platform": "GitHub",
         "url": "https://github.com/hyperjumptech",
-        "icon": "fa fa-github"
+        "icon": "/images/interfaceai/socials/github.svg"
       },
       {
         "platform": "LinkedIn",
         "url": "https://www.linkedin.com/company/hyperjump",
-        "icon": "fa fa-linkedin"
+        "icon": "/images/interfaceai/socials/linkedin.svg"
       },
       {
         "platform": "Medium",
         "url": "https://medium.com/hyperjump-tech",
-        "icon": "fab fa-medium-m"
-      },
-      {
-        "platform": "Substack",
-        "url": "https://hyperjump.substack.com",
-        "icon": "fa fa-newspaper"
+        "icon": "/images/interfaceai/socials/medium.svg"
       }
     ]
   },

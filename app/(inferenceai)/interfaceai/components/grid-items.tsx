@@ -7,7 +7,7 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -30,11 +30,11 @@ export function GridItems({
   columns = {
     base: 1,
     md: 2,
-    xl: 3,
+    xl: 3
   },
   withCard = true,
   classNameCard,
-  customBorderClass,
+  customBorderClass
 }: {
   items: Item[];
   classNameCard?: string;
@@ -72,7 +72,7 @@ export function GridItems({
     columnClassMap("sm:", columns.sm),
     columnClassMap("md:", columns.md),
     columnClassMap("lg:", columns.lg),
-    columnClassMap("xl:", columns.xl),
+    columnClassMap("xl:", columns.xl)
   ]
     .filter(Boolean)
     .join(" ");
@@ -95,10 +95,9 @@ export function GridItems({
               `flex flex-col overflow-hidden rounded-2xl transition-colors duration-300 ease-in-out hover:bg-white/5 hover:shadow-md hover:shadow-white/10`,
               classNameCard,
               customBorderClass ?? "card-border-gradient"
-            )}
-          >
+            )}>
             {image ? (
-              <div className="relative w-full aspect-[16/9]">
+              <div className="relative aspect-[16/9] w-full">
                 <Image
                   src={image}
                   alt={title}
@@ -110,12 +109,12 @@ export function GridItems({
 
             <CardHeader>
               {icon ? (
-                <Avatar className="mb-6 w-14 h-14">
-                  <AvatarImage className="w-14 h-14" src={icon} alt={title} />
+                <Avatar className="mb-6 h-14 w-14">
+                  <AvatarImage className="h-14 w-14" src={icon} alt={title} />
                 </Avatar>
               ) : null}
               {category && (
-                <p className="text-white font-medium mb-2 w-28 rounded-3xl text-center bg-white/10 px-2 py-1.5 text-sm">
+                <p className="mb-2 w-28 rounded-3xl bg-white/10 px-2 py-1.5 text-center text-sm font-medium text-white">
                   {category}
                 </p>
               )}
@@ -124,30 +123,28 @@ export function GridItems({
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  <CardTitle className="md:text-[22px] text-xl font-semibold text-white">
+                  className="hover:underline">
+                  <CardTitle className="text-xl font-semibold text-white md:text-[22px]">
                     {title}
                   </CardTitle>
                 </Link>
               ) : (
-                <CardTitle className="md:text-[22px] text-xl font-semibold text-white">
+                <CardTitle className="text-xl font-semibold text-white md:text-[22px]">
                   {title}
                 </CardTitle>
               )}
             </CardHeader>
 
-            <CardContent className="flex flex-col justify-between flex-1 gap-4 -mt-3">
+            <CardContent className="-mt-3 flex flex-1 flex-col justify-between gap-4">
               <div>
                 <CardDescription
                   ref={(el) => {
                     textRefs.current[idx] = el;
                   }}
                   className={cn(
-                    "transition-all duration-300 text-[#CDCED8]",
+                    "text-[#CDCED8] transition-all duration-300",
                     expandedIndex !== idx ? "line-clamp-4" : ""
-                  )}
-                >
+                  )}>
                   {description}
                 </CardDescription>
 
@@ -156,8 +153,7 @@ export function GridItems({
                     onClick={() =>
                       setExpandedIndex((prev) => (prev === idx ? null : idx))
                     }
-                    className="mt-1 text-gray-600 hover:underline"
-                  >
+                    className="mt-1 text-gray-600 hover:underline">
                     {expandedIndex === idx ? "See Less" : "See More"}
                   </button>
                 )}
@@ -178,13 +174,12 @@ export const ScheduleConsultationButton = () => {
       asChild
       variant="default"
       size="lg"
-      className="transition-all rounded-full duration-200 ease-in-out transform hover:shadow-md hover:scale-[1.02] text-white"
+      className="transform rounded-full text-white transition-all duration-200 ease-in-out hover:scale-[1.02] hover:shadow-md"
       style={{
         border: "#6D5697",
-        background: `radial-gradient(50% 50% at 50% 50%, #413AA3 0%, #332C95 100%), linear-gradient(177.61deg, rgba(255, 255, 255, 0) 2%, rgba(255, 255, 255, 0.12) 98.17%)`,
-      }}
-    >
-      <Link href={cta.link} className="py-4 px-7 text-lg font-semibold">
+        background: `radial-gradient(50% 50% at 50% 50%, #413AA3 0%, #332C95 100%), linear-gradient(177.61deg, rgba(255, 255, 255, 0) 2%, rgba(255, 255, 255, 0.12) 98.17%)`
+      }}>
+      <Link href={cta.link} className="px-7 py-4 text-lg font-semibold">
         {cta.label}
       </Link>
     </Button>
@@ -208,7 +203,7 @@ export const GridItemsSection = ({
   description,
   layout = "horizontal",
   descriptionStyle,
-  children,
+  children
 }: GridItemsSectionProps) => {
   const isHorizontal = layout === "horizontal";
   const hasBgClass = /\bbg-/.test(className);
@@ -223,18 +218,16 @@ export const GridItemsSection = ({
         !hasBgClass
           ? {
               background:
-                "linear-gradient(0deg, #050013, #050013), linear-gradient(180deg, #1513374D 0%, #15133700 23.58%)",
+                "linear-gradient(0deg, #050013, #050013), linear-gradient(180deg, #1513374D 0%, #15133700 23.58%)"
             }
           : undefined
-      }
-    >
+      }>
       <motion.div
-        className="mx-auto flex py-5 md:py-8 px-4 md:px-20 flex-wrap justify-center items-center"
+        className="mx-auto flex max-w-5xl flex-wrap items-center justify-center px-4 py-5 md:px-6 md:py-8"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
+        viewport={{ once: true, amount: 0.3 }}>
         {description ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -243,26 +236,23 @@ export const GridItemsSection = ({
             className={cn(
               "w-full",
               isHorizontal
-                ? "flex flex-col md:flex-row flex-wrap justify-between gap-4"
+                ? "flex flex-col flex-wrap justify-between gap-4 md:flex-row"
                 : "flex flex-col md:items-center"
-            )}
-          >
+            )}>
             <h2
               className={cn(
-                "text-4xl md:text-[40px] font-medium leading-tight flex-1 text-white",
-                isHorizontal ? "text-left" : "mb-4 md:text-center text-left"
-              )}
-            >
+                "flex-1 text-4xl font-medium leading-tight text-white md:text-[40px]",
+                isHorizontal ? "text-left" : "mb-4 text-left md:text-center"
+              )}>
               {title}
             </h2>
             <p
               className={cn(
-                "text-[#AFB0C3] text-base md:text-lg flex-1",
+                "flex-1 text-base text-[#AFB0C3] md:text-lg",
                 isHorizontal
-                  ? "text-left max-w-lg"
-                  : `w-full md:w-2/3 xl:w-3/4 text-left md:text-center ${descriptionStyle}`
-              )}
-            >
+                  ? "max-w-lg text-left"
+                  : `w-full text-left md:w-2/3 md:text-center xl:w-3/4 ${descriptionStyle}`
+              )}>
               {description}
             </p>
           </motion.div>
@@ -271,8 +261,7 @@ export const GridItemsSection = ({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="w-full text-4xl md:text-[40px] font-medium leading-tight text-center text-white"
-          >
+            className="w-full text-center text-4xl font-medium leading-tight text-white md:text-[40px]">
             {title}
           </motion.h1>
         )}
@@ -280,9 +269,8 @@ export const GridItemsSection = ({
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="w-full"
-        >
+          transition={{ duration: 0.6 }}
+          className="w-full">
           {children}
         </motion.div>
       </motion.div>

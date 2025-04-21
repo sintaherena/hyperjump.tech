@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-export default function StickyNavigationMain({
+export default function StickyNavigation({
   children,
-  isMenuOpen = false,
+  isMenuOpen = false
 }: {
   children: (params: {
     isScrolled: boolean;
@@ -27,12 +27,11 @@ export default function StickyNavigationMain({
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+      className={`fixed left-0 right-0 top-0 z-[100] transition-all duration-500 ${
         shouldBeWhite
-          ? "bg-white backdrop-blur-[3px] shadow-sm"
+          ? "bg-white shadow-sm backdrop-blur-[3px]"
           : "bg-transparent"
-      }`}
-    >
+      }`}>
       {children({ isScrolled, shouldBeWhite })}
     </nav>
   );

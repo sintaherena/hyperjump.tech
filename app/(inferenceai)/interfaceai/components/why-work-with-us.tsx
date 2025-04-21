@@ -9,12 +9,11 @@ export default function WhyWorkWithUs() {
       id="why-work-with-us"
       title={header}
       description={subheader}
-      layout="vertical"
-    >
+      layout="vertical">
       <div className="mb-8" />
       <GridItems
         items={data}
-        columns={{ base: 1, sm: 2, lg: 3 }}
+        columns={{ base: 1, sm: 1, md: 3, lg: 3 }}
         classNameCard="rounded-[20px]"
       />
     </GridItemsSection>

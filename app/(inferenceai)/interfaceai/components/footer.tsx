@@ -6,8 +6,8 @@ export default function Footer() {
   const { logo, text, socials, copyright } = data.footer;
 
   return (
-    <footer className="relative text-[#AFB0C3] border border-[#29223E] px-4 py-10 md:py-14 md:px-20 overflow-hidden">
-      <div className="flex flex-col md:items-center space-y-6">
+    <footer className="relative overflow-hidden border border-[#29223E] px-4 py-10 text-[#AFB0C3] md:px-20 md:py-14">
+      <div className="flex flex-col space-y-6 md:items-center">
         <div className="flex items-center">
           <a href="/">
             <Image
@@ -21,7 +21,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="md:max-w-60 md:text-center text-sm">{text}</p>
+        <p className="text-sm md:max-w-60 md:text-center">{text}</p>
 
         <div className="flex space-x-6">
           {socials.map((s, i) => (
@@ -30,17 +30,22 @@ export default function Footer() {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-gray-300 text-xl"
               aria-label={s.platform}
-            >
-              <i className={s.icon} aria-hidden="true"></i>
+              className="flex items-center justify-center rounded-full bg-transparent transition-colors duration-200 hover:bg-white/20">
+              <Image
+                src={s.icon}
+                alt={s.platform}
+                width={20}
+                height={20}
+                className="h-12 w-12"
+              />
             </a>
           ))}
         </div>
 
-        <Separator className="bg-[#29223E] w-full" />
+        <Separator className="w-full bg-[#29223E]" />
 
-        <p className="text-sm text-center">{copyright}</p>
+        <p className="text-center text-sm">{copyright}</p>
       </div>
     </footer>
   );
