@@ -15,6 +15,10 @@ The repository for Hyperjump Technology's landing page. [https://hyperjump.tech]
 - [simple-i18n-next](https://github.com/nicnocquee/simple-i18n-next#readme).
 - [TypeScript](https://www.typescriptlang.org).
 
+# Pull Request Preview
+
+When a pull request is opened or updated, a preview of the changes will be generated and uploaded as an artifact. This allows you to review the changes before merging.
+
 # Deployment
 
 The website is deployed to GitHub Pages using the [export output](https://nextjs.org/docs/app/building-your-application/deploying/static-exports#configuration) of Next.js.
