@@ -3,6 +3,7 @@ name: PR
 on:
   workflow_dispatch: null
   pull_request:
+    types: [opened, synchronize, reopened]
     branches:
       - main
 
@@ -11,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -23,8 +26,9 @@ jobs:
         run: bun run check-format
   build:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -33,5 +37,64 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Install Puppeteer and serve
+        run: bun install puppeteer serve
+
       - name: Build and export
         run: bun run build
+
+      - name: Start static server and take screenshots
+        id: screenshots
+        run: |
+          # Start the server in the background
+          npx serve out -p 3000 &
+          # Wait longer for server to start
+          sleep 10
+          # Take screenshots
+          node .github/scripts/take-screenshots.js
+          # Kill the server
+          kill $(lsof -t -i:3000)
+          echo "screenshot_path=screenshots" >> $GITHUB_OUTPUT
+
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-screenshots
+          path: screenshots/
+      - name: Comment on PR
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const screenshotDir = 'screenshots';
+            const files = fs.readdirSync(screenshotDir);
+
+            const runId = context.runId;
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+
+            // Create a link to the artifacts
+            const artifactUrl = `https://github.com/${repoOwner}/${repoName}/actions/runs/${runId}`;
+
+            let body = `## 🔍 PR Preview Screenshots\n\n`;
+            body += `Preview screenshots for this PR have been generated and are available as artifacts.\n\n`;
+            body += `[Download Screenshots](${artifactUrl})\n\n`;
+            body += `### Available Screenshots:\n\n`;
+
+            // List all screenshots that were generated
+            for (const file of files) {
+              if (file.endsWith('.png')) {
+                const pageName = path.basename(file, '.png');
+                body += `- ${pageName}\n`;
+              }
+            }
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
