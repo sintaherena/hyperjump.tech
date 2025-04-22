@@ -81,6 +81,7 @@ type Item = {
   category?: string;
   icon?: string;
   button?: boolean;
+  repo?: string;
 };
 
 export function GridItems({
@@ -109,6 +110,9 @@ export function GridItems({
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [overflowMap, setOverflowMap] = useState<Record<number, boolean>>({});
+  const [repoStats, setRepoStats] = useState<
+    Record<number, { stars: number; forks: number }>
+  >({});
 
   useEffect(() => {
     const newOverflowMap: Record<number, boolean> = {};
@@ -116,6 +120,27 @@ export function GridItems({
       if (el) newOverflowMap[index] = el.scrollHeight > el.clientHeight;
     });
     setOverflowMap(newOverflowMap);
+  }, [items]);
+
+  useEffect(() => {
+    items.forEach(async (item, index) => {
+      if (!item.repo) return;
+      try {
+        const res = await fetch(
+          `https://api.github.com/repos/hyperjumptech/${item.repo}`
+        );
+        const data = await res.json();
+        setRepoStats((prev) => ({
+          ...prev,
+          [index]: {
+            stars: data.stargazers_count || 0,
+            forks: data.forks_count || 0
+          }
+        }));
+      } catch (error) {
+        console.error(`Failed fetching stats for ${item.repo}`, error);
+      }
+    });
   }, [items]);
 
   const getColumnClass = (prefix: string, count?: number) =>
@@ -138,6 +163,7 @@ export function GridItems({
     <div className={columnClasses}>
       {items.map((item, idx) => {
         const { image, title, description, url, category, icon, button } = item;
+        const stats = repoStats[idx] || { stars: 0, forks: 0 };
 
         return (
           <CardWrapper
@@ -224,28 +250,30 @@ export function GridItems({
 
               {url && button ? (
                 <div className="flex flex-row justify-between gap-4">
-                  {[
-                    { label: "Star", icon: Star, href: url },
-                    { label: "Fork", icon: GitFork, href: `${url}/fork` }
-                  ].map((btn, index) => (
-                    <Button
-                      asChild
-                      key={index}
-                      variant="outline"
-                      className="w-full border-hyperjump-blue text-hyperjump-blue hover:bg-hyperjump-blue hover:text-white">
-                      <Link
-                        href={btn.href}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <btn.icon className="h-4 w-4" />
-                        <span>{btn.label}</span>
-                      </Link>
-                    </Button>
-                  ))}
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-hyperjump-blue text-hyperjump-blue hover:bg-hyperjump-blue hover:text-white">
+                    <Link href={url} target="_blank" rel="noopener noreferrer">
+                      <Star className="h-4 w-4" />
+                      <span>Star ({stats.stars})</span>
+                    </Link>
+                  </Button>
+
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full border-hyperjump-blue text-hyperjump-blue hover:bg-hyperjump-blue hover:text-white">
+                    <Link
+                      href={`${url}/fork`}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <GitFork className="h-4 w-4" />
+                      <span>Fork ({stats.forks})</span>
+                    </Link>
+                  </Button>
                 </div>
-              ) : (
-                <></>
-              )}
+              ) : null}
             </CardContent>
           </CardWrapper>
         );

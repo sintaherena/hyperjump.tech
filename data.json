@@ -275,21 +275,24 @@
       "description": "Monika is a command line application to monitor every part of your web app using a simple JSON configuration file. Get alert not only when your site is down but also when it's slow.",
       "image": "/images/open-source/monika.svg",
       "url": "https://github.com/hyperjumptech/monika",
-      "button": true
+      "button": true,
+      "repo": "monika"
     },
     {
       "title": "Firebase Cronjob",
       "description": "The Scheduled functions feature runs autoIncrementJobCounter automatically every minute, incrementing jobConfigCounter in the Firestore database.",
       "image": "/images/open-source/firebase-cronjob.svg",
       "url": "https://github.com/hyperjumptech/firebase-cronjob",
-      "button": true
+      "button": true,
+      "repo": "firebase-cronjob"
     },
     {
       "title": "WhatsApp Chatbot Connector",
       "description": "WhatsApp Chatbot Connector backend built using Express.js. It is designed to integrate with the WhatsApp Business API and supports various AI platforms such as Dify and Rasa.",
       "image": "/images/open-source/whatsapp-chatbot-connector.svg",
       "url": "https://github.com/hyperjumptech/whatsapp-chatbot-connector",
-      "button": true
+      "button": true,
+      "repo": "whatsapp-chatbot-connector"
     }
   ],
   "faqs": [
