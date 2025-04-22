@@ -102,10 +102,18 @@ async function forceImagesLoad(page) {
 
   // Launch with no-sandbox flag for GitHub Actions
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-animations", // Disable CSS animations
+      "--disable-extensions" // Disable extensions that might interfere
+    ],
     defaultViewport: { width: 1280, height: 800 }
   });
   const page = await browser.newPage();
+  await page.emulateMediaFeatures([
+    { name: "prefers-reduced-motion", value: "reduce" }
+  ]);
 
   // Find all pages in the export directory
   console.log(`Looking for pages in ${SITE_DIR}...`);
