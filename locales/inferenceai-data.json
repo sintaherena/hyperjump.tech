@@ -2,14 +2,14 @@
   "logoWhite": "/images/inferenceai/inference-ai-white.svg",
   "logoBlack": "/images/inferenceai/inference-ai-black.svg",
   "hero": {
-    "header": "Build Custom AI Agents That Actually Get Work Done",
-    "subheader": "We help businesses design, develop, and deploy purpose-built AI agents that save time, cut costs, and scale operations—without the technical overwhelm.",
+    "heading": "Build Custom AI Agents That Actually Get Work Done",
+    "subheading": "We help businesses design, develop, and deploy purpose-built AI agents that save time, cut costs, and scale operations—without the technical overwhelm.",
     "image": "/images/inferenceai/swatch.svg",
     "banner": "/images/inferenceai/banner.png"
   },
   "cta": {
-    "header": "Ready to Transform Your Workflow?",
-    "subheader": "Chat with our team to discover how AI can streamline your business.",
+    "heading": "Ready to Transform Your Workflow?",
+    "subheading": "Chat with our team to discover how AI can streamline your business.",
     "link": "https://forms.office.com/Pages/ResponsePage.aspx?id=YB_vnVvdsku6UOy9eolc4lSE-1zhiHZGuckpAFLZgMNUQ0pPVFE0UFczTU5GNDYxN1FPTUVZRTIwOS4u",
     "label": "Schedule Consultation",
     "gaEventName": "cta_click",
@@ -44,7 +44,7 @@
     ]
   },
   "partners": {
-    "header": "Chosen by Industry Leaders",
+    "heading": "Chosen by Industry Leaders",
     "logos": [
       "/images/inferenceai/client/amman.svg",
       "/images/inferenceai/client/bank-tabungan-negara.svg",
@@ -55,8 +55,8 @@
     ]
   },
   "whyWorkWithUs": {
-    "header": "Why Work with Us",
-    "subheader": "Get custom Al that actually works for your business-built fast, built smart, and built to grow with you.",
+    "heading": "Why Work with Us",
+    "subheading": "Get custom Al that actually works for your business-built fast, built smart, and built to grow with you.",
     "content": [
       {
         "title": "Tailored to Your Workflow",
@@ -76,8 +76,8 @@
     ]
   },
   "howItWorks": {
-    "header": "How It Works",
-    "subheader": "A clear, proven process-from idea to launch—in weeks, not months.",
+    "heading": "How It Works",
+    "subheading": "A clear, proven process-from idea to launch—in weeks, not months.",
     "content": [
       {
         "title": "Discovery & Strategy",
@@ -102,8 +102,8 @@
     ]
   },
   "whatYouGet": {
-    "header": "What You Get",
-    "subheader": "A clear, proven process-from idea to launch—in weeks, not months.",
+    "heading": "What You Get",
+    "subheading": "A clear, proven process-from idea to launch—in weeks, not months.",
     "content": [
       {
         "title": "End-to-end strategy session",
@@ -132,8 +132,8 @@
     ]
   },
   "caseStudies": {
-    "header": "Case Studies",
-    "subheader": "Explore how we turn challenges into growth opportunities with practical solutions that create lasting change and drive business success.",
+    "heading": "Case Studies",
+    "subheading": "Explore how we turn challenges into growth opportunities with practical solutions that create lasting change and drive business success.",
     "content": [
       {
         "title": "AI Knowledge Assistant with RAG",
@@ -148,13 +148,13 @@
     ]
   },
   "aboutUs": {
-    "header": "About Us",
-    "subheader": "We’re a team of AI engineers, product strategists, and automation nerds passionate about building agents that actually work. We've helped startups, agencies, and enterprise teams harness AI in ways that are simple, strategic, and impactful.",
+    "heading": "About Us",
+    "subheading": "We’re a team of AI engineers, product strategists, and automation nerds passionate about building agents that actually work. We've helped startups, agencies, and enterprise teams harness AI in ways that are simple, strategic, and impactful.",
     "image": "/images/inferenceai/about-us.webp"
   },
   "faq": {
-    "header": "Frequently asked questions",
-    "subheader": "Everything you need to go from concept to fully deployed Al agent-done for you, end to end.",
+    "heading": "Frequently asked questions",
+    "subheading": "Everything you need to go from concept to fully deployed Al agent-done for you, end to end.",
     "content": [
       {
         "question": "What kinds of problems can a custom AI agent solve?",

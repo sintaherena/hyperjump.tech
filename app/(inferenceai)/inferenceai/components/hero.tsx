@@ -6,7 +6,7 @@ import data from "@/locales/inferenceai-data.json";
 import { HeroCTAButton } from "./hero-cta-button";
 
 export default function Hero() {
-  const { header, subheader, image, banner } = data.hero;
+  const { heading, subheading, image, banner } = data.hero;
 
   return (
     <section className="relative overflow-hidden bg-[#04040B] text-white">
@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex w-full flex-col items-center justify-center">
           <h1 className="font-figtree mb-4 mt-28 bg-gradient-to-b from-white to-[#0C1711] bg-clip-text text-center text-5xl font-semibold leading-[120%] tracking-[-0.02em] text-transparent md:mb-6 md:max-w-4xl md:text-6xl">
-            {header}
+            {heading}
           </h1>
 
           <motion.p
@@ -41,7 +41,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
             className="my-6 text-base font-medium text-[#AFB0C3] md:my-10 md:max-w-3xl md:text-xl">
-            {subheader}
+            {subheading}
           </motion.p>
 
           <motion.div

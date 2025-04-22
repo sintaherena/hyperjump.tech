@@ -33,13 +33,13 @@ export default function InferenceAI() {
 }
 
 function WhyWorkWithUs() {
-  const { header, subheader, content } = data.whyWorkWithUs;
+  const { heading, subheading, content } = data.whyWorkWithUs;
 
   return (
     <GridItemsSection
       id="why-work-with-us"
-      title={header}
-      description={subheader}
+      title={heading}
+      description={subheading}
       layout="vertical">
       <div className="mb-8" />
       <GridItems
@@ -54,15 +54,15 @@ function WhyWorkWithUs() {
 }
 
 function HowItWorks() {
-  const { header, subheader, content } = data.howItWorks;
+  const { heading, subheading, content } = data.howItWorks;
   const [activeIndex, setActiveIndex] = useState(0);
   const isMobile = useIsMobile();
 
   return (
     <GridItemsSection
       id="how-it-works"
-      title={header}
-      description={subheader}
+      title={heading}
+      description={subheading}
       layout="vertical">
       {isMobile ? (
         <Accordion type="single" collapsible className="w-full">
@@ -135,13 +135,13 @@ function HowItWorks() {
 }
 
 function WhatYouGet() {
-  const { header, subheader, content } = data.whatYouGet;
+  const { heading, subheading, content } = data.whatYouGet;
 
   return (
     <GridItemsSection
       id="what-you-get"
-      title={header}
-      description={subheader}
+      title={heading}
+      description={subheading}
       layout="vertical">
       <div className="grid grid-cols-2 gap-10 bg-[#0A0713] pt-8 text-white lg:grid-cols-3">
         {content.map((item, idx) => (
@@ -159,11 +159,14 @@ function WhatYouGet() {
 }
 
 function CaseStudies() {
-  const { header, subheader, content } = data.caseStudies;
+  const { heading, subheading, content } = data.caseStudies;
   const { label, link, gaEventName } = data.cta;
 
   return (
-    <GridItemsSection id="case-studies" title={header} description={subheader}>
+    <GridItemsSection
+      id="case-studies"
+      title={heading}
+      description={subheading}>
       <GridItems
         items={content}
         columns={{ base: 1, md: 2, lg: 2 }}
@@ -189,10 +192,10 @@ function CaseStudies() {
 }
 
 function AboutUs() {
-  const { header, subheader, image } = data.aboutUs;
+  const { heading, subheading, image } = data.aboutUs;
 
   return (
-    <GridItemsSection id="about-us" title={header} description={subheader}>
+    <GridItemsSection id="about-us" title={heading} description={subheading}>
       <div className="relative mt-9 flex w-full justify-center">
         <div className="relative aspect-[1280/603.7735595703125] w-full max-w-[1280px] overflow-hidden rounded-[24.15px]">
           <Image src={image} alt="image" fill className="object-cover" />
@@ -203,13 +206,13 @@ function AboutUs() {
 }
 
 function Faqs() {
-  const { header, subheader, content } = data.faq;
+  const { heading, subheading, content } = data.faq;
 
   return (
     <GridItemsSection
       id="faqs"
-      title={header}
-      description={subheader}
+      title={heading}
+      description={subheading}
       layout="vertical"
       className="bg-grid-faqs">
       <Accordion
@@ -238,7 +241,8 @@ function Faqs() {
 }
 
 function CTASection() {
-  const { header, subheader, background, label, link, gaEventName } = data.cta;
+  const { heading, subheading, background, label, link, gaEventName } =
+    data.cta;
 
   return (
     <section className="w-full px-4 py-5 md:py-8">
@@ -254,10 +258,10 @@ function CTASection() {
         </div>
         <div className="relative z-20 space-y-4 text-white md:space-y-6">
           <h2 className="bg-gradient-to-b from-white to-[#0C1711] bg-clip-text text-center text-2xl font-semibold leading-[120%] tracking-[-0.02em] text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] md:text-[48px]">
-            {header}
+            {heading}
           </h2>
           <p className="mx-auto max-w-xl text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-            {subheader}
+            {subheading}
           </p>
           <GridItemsMoreButton
             type="inferenceai"
