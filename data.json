@@ -2,7 +2,8 @@
   "cta": {
     "link": "https://forms.office.com/Pages/ResponsePage.aspx?id=YB_vnVvdsku6UOy9eolc4lSE-1zhiHZGuckpAFLZgMNUNzFXVlZCQjA0UFJRR1IyUk9aSjBZVENENS4u",
     "label": "Schedule Consultation",
-    "gaEventName": "cta_click"
+    "gaEventName": "cta_click",
+    "linkAI": "https://forms.office.com/Pages/ResponsePage.aspx?id=YB_vnVvdsku6UOy9eolc4lSE-1zhiHZGuckpAFLZgMNUQ0pPVFE0UFczTU5GNDYxN1FPTUVZRTIwOS4u"
   },
   "GTM_ID": "G-L825T5QT2S",
   "hero": {
@@ -311,6 +312,30 @@
     {
       "question": "Why should we choose your consulting services over hiring an in-house team?",
       "answer": "We offer specialized expertise, flexibility, and cost-effective solutions without the overhead of full-time employees. Our team brings years of experience in enterprise IT, ensuring faster implementation and better ROI."
+    }
+  ],
+  "aiNavigationItems": [
+    { "label": "How It Works", "href": "#how-it-works" },
+    { "label": "What You Get", "href": "#what-you-get" },
+    { "label": "Case Studies", "href": "#case-studies" },
+    { "label": "About", "href": "#about-us" },
+    { "label": "FAQ", "href": "#faqs" }
+  ],
+  "aiSocials": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/hyperjumptech",
+      "icon": "/images/inferenceai/socials/github.svg"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/company/hyperjump",
+      "icon": "/images/inferenceai/socials/linkedin.svg"
+    },
+    {
+      "platform": "Medium",
+      "url": "https://medium.com/hyperjump-tech",
+      "icon": "/images/inferenceai/socials/medium.svg"
     }
   ]
 }

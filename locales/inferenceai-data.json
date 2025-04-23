@@ -13,7 +13,7 @@
     "link": "https://forms.office.com/Pages/ResponsePage.aspx?id=YB_vnVvdsku6UOy9eolc4lSE-1zhiHZGuckpAFLZgMNUQ0pPVFE0UFczTU5GNDYxN1FPTUVZRTIwOS4u",
     "label": "Schedule Consultation",
     "gaEventName": "cta_click",
-    "background": "/images/inferenceai/cta-background.svg"
+    "background": "/images/inferenceai/cta-background.png"
   },
   "navLinks": [
     { "label": "How It Works", "href": "#how-it-works" },
@@ -24,7 +24,7 @@
   ],
   "footer": {
     "text": "Driving Innovation and Growth with Intelligent AI Solutions",
-    "copyright": "Copyright © 2025. Company. All rights reserved.",
+    "copyright": "Copyright © 2025. Hyperjump. All rights reserved.",
     "socials": [
       {
         "platform": "GitHub",

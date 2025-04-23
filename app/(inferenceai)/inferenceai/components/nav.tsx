@@ -9,13 +9,15 @@ import {
   NavigationMenuItem,
   NavigationMenuList
 } from "@/components/ui/navigation-menu";
-import data from "@/locales/inferenceai-data.json";
+import data from "@/data.json";
 import StickyNavigationMain from "@/app/components/sticky-nav-main";
-import { HeroCTAButton } from "./hero-cta-button";
+import { HeroCTAButton } from "../[lang]/hero-cta-button";
+import { SupportedLanguage } from "@/locales/.generated/types";
+import LanguagePicker from "../[lang]/language-picker";
 
-export default function Nav() {
+export default function Nav({ lang }: { lang: SupportedLanguage }) {
   const [isOpen, setIsOpen] = useState(false);
-  const { navLinks } = data;
+  const { aiNavigationItems } = data;
 
   return (
     <StickyNavigationMain isMenuOpen={isOpen}>
@@ -27,17 +29,17 @@ export default function Nav() {
             </Link>
 
             <CenterNavItems>
-              <NavigationMenu>
+              <NavigationMenu className="mx-8 xl:mx-0">
                 <NavigationMenuList className="flex gap-5">
-                  {navLinks.map((item, idx) => (
-                    <NavigationMenuItem key={idx}>
+                  {aiNavigationItems.map((item, idx) => (
+                    <NavigationMenuItem key={idx} className="text-center">
                       <Link
                         href={item.href}
                         className={cn(
                           shouldBeWhite
                             ? "text-inferenceai-indigo hover:text-hyperjump-blue"
                             : "text-white hover:text-hyperjump-blue",
-                          "text-xl font-medium transition-colors"
+                          "text-lg font-medium transition-colors xl:text-xl"
                         )}>
                         {item.label}
                       </Link>
@@ -48,44 +50,48 @@ export default function Nav() {
             </CenterNavItems>
 
             <RightNavItems>
-              <HeroCTAButton />
+              <LanguagePicker lang={lang} />
+              <HeroCTAButton lang={lang} />
             </RightNavItems>
 
             {/* Mobile Toggle */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 lg:hidden"
-              aria-label="Toggle menu">
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke={shouldBeWhite ? "black" : "white"}
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
+            <div className="flex items-center lg:hidden">
+              <LanguagePicker lang={lang} />
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="ml-3 p-2"
+                aria-label="Toggle menu">
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke={shouldBeWhite ? "black" : "white"}
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  {isOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
           </NavContainer>
 
           {/* Mobile Menu */}
           {isOpen && (
             <div className="bg-white shadow-md lg:hidden">
               <div className="mx-auto flex w-full flex-col space-y-4 px-4 py-5 md:px-8">
-                {navLinks.map((item, idx) => (
+                {aiNavigationItems.map((item, idx) => (
                   <Link
                     key={idx}
                     href={item.href}
@@ -94,7 +100,7 @@ export default function Nav() {
                     {item.label}
                   </Link>
                 ))}
-                <HeroCTAButton />
+                <HeroCTAButton lang={lang} />
               </div>
             </div>
           )}
@@ -157,7 +163,9 @@ function InferenceAI({ isOpen }: { isOpen: boolean }) {
 
   const showBlack = isOpen || isScrolled;
 
-  const logoSrc = showBlack ? data.logoBlack : data.logoWhite;
+  const logoSrc = showBlack
+    ? "/images/inferenceai/inference-ai-black.svg"
+    : "/images/inferenceai/inference-ai-white.svg";
 
   return (
     <Image

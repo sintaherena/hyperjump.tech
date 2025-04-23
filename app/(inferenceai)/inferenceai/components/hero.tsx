@@ -2,12 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import data from "@/locales/inferenceai-data.json";
-import { HeroCTAButton } from "./hero-cta-button";
+import { HeroCTAButton } from "../[lang]/hero-cta-button";
+import { SupportedLanguage } from "@/locales/.generated/types";
+import { heroSubtitle, heroTitle } from "@/locales/.generated/server";
 
-export default function Hero() {
-  const { heading, subheading, image, banner } = data.hero;
-
+export default function Hero({ lang }: { lang: SupportedLanguage }) {
   return (
     <section className="relative overflow-hidden bg-[#04040B] text-white">
       {/* Background Image with Zoom-in Effect */}
@@ -17,7 +16,7 @@ export default function Hero() {
         transition={{ duration: 6, ease: "easeOut" }}
         className="absolute inset-0 z-0">
         <Image
-          src={image}
+          src="/images/inferenceai/swatch.svg"
           alt="Hero Background"
           fill
           className="object-cover object-top"
@@ -33,22 +32,22 @@ export default function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex w-full flex-col items-center justify-center">
           <h1 className="font-figtree mb-4 mt-28 bg-gradient-to-b from-white to-[#0C1711] bg-clip-text text-center text-5xl font-semibold leading-[120%] tracking-[-0.02em] text-transparent md:mb-6 md:max-w-4xl md:text-6xl">
-            {heading}
+            {heroTitle(lang)}
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
-            className="my-6 text-base font-medium text-[#AFB0C3] md:my-10 md:max-w-3xl md:text-xl">
-            {subheading}
+            className="my-6 text-center text-base font-medium text-[#AFB0C3] md:my-10 md:max-w-3xl md:text-xl">
+            {heroSubtitle(lang)}
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}>
-            <HeroCTAButton />
+            <HeroCTAButton lang={lang} />
           </motion.div>
         </motion.div>
       </article>
@@ -60,7 +59,7 @@ export default function Hero() {
         transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
         className="relative z-10 h-56 w-full md:h-[400px]">
         <Image
-          src={banner}
+          src="/images/inferenceai/banner.png"
           alt="Banner Bottom"
           fill
           className="object-cover object-center md:object-top"

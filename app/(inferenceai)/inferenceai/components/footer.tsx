@@ -1,9 +1,11 @@
 import Image from "next/image";
-import data from "@/locales/inferenceai-data.json";
+import data from "@/data.json";
 import { Separator } from "@/components/ui/separator";
+import { SupportedLanguage } from "@/locales/.generated/types";
+import { footerText } from "@/locales/.generated/server";
 
-export default function Footer() {
-  const { text, socials, copyright } = data.footer;
+export default function Footer({ lang }: { lang: SupportedLanguage }) {
+  const { aiSocials, copyright } = data;
 
   return (
     <footer className="relative overflow-hidden border border-[#29223E] px-4 py-10 text-[#AFB0C3] md:px-20 md:py-14">
@@ -11,7 +13,7 @@ export default function Footer() {
         <div className="flex items-center">
           <a href="/">
             <Image
-              src={data.logoWhite}
+              src="/images/inferenceai/inference-ai-white.svg"
               alt="Inference AI Logo"
               width={187}
               height={32}
@@ -21,10 +23,10 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="text-sm md:max-w-60 md:text-center">{text}</p>
+        <p className="text-sm md:max-w-60 md:text-center">{footerText(lang)}</p>
 
         <div className="flex space-x-6">
-          {socials.map((s, i) => (
+          {aiSocials.map((s, i) => (
             <a
               key={i}
               href={s.url}
