@@ -75,13 +75,13 @@
   "how_subtitle": "Proses yang jelas dan terbukti dari ide hingga peluncuran dalam hitungan minggu, bukan bulan.",
 
   "how_tailored_title": "Discovery & Strategy",
-  "how_0_desc": "Memahami tujuan bisnis Anda, alur kerja yang ada, dan peluang otomatisasi.",
+  "how_0_desc": "Kami menggali secara mendalam tujuan bisnis Anda, alur kerja yang sudah ada, serta peluang otomatisasi yang dapat dimanfaatkan.",
   "how_speed_title": "Agent Design & Prototype",
-  "how_1_desc": "Kami merancang pengalaman agen yang disesuaikan dan dengan cepat membangun prototipe yang dapat diuji oleh para pemangku kepentingan.",
+  "how_1_desc": "Kami merancang arsitektur agen AI dan membangun prototipe fungsional yang disesuaikan dengan kebutuhan spesifik Anda secara cepat.",
   "how_support_title": "Integration & Deployment",
-  "how_2_desc": "Agen diintegrasikan dengan alat Anda (Slack, CRM, kalender, API) untuk meningkatkan sistem yang ada.",
+  "how_2_desc": "Kami mengintegrasikan agen dengan berbagai alat kerja Anda (alat kolaborasi, CRM, basis data, API), sekaligus menangani seluruh proses penerapannya.",
   "how_train_title": "Training & Iteration",
-  "how_3_desc": "Kami membantu Anda melatih ulang data Anda dan menyempurnakannya berdasarkan sinyal penggunaan nyata.",
+  "how_3_desc": "Agen Anda dilatih menggunakan data internal perusahaan dan disempurnakan berdasarkan penggunaan nyata di lapangan.",
 
   "get_title": "Apa yang Anda Dapatkan",
   "get_subtitle": "Proses yang jelas dan terbukti dari ide hingga peluncuran dalam hitungan minggu, bukan bulan.",
@@ -98,18 +98,18 @@
 
   "case_tailored_title": "AI Knowledge Assistant with RAG",
   "case_rag_category": "Studi Kasus",
-  "case_rag_desc": "Kami membangun agen AI kustom yang memperkaya pengetahuan internal dengan Retrieval-Augmented Generation (RAG) menggunakan dokumen internal.",
+  "case_rag_desc": "Kami membangun agen AI khusus yang dapat menjawab pertanyaan karyawan menggunakan dokumentasi internal melalui pendekatan Retrieval-Augmented Generation—menghemat waktu dukungan hingga 60%.",
   "case_speed_title": "AI-Powered Meeting Notes Agent",
   "case_meeting_category": "Studi Kasus",
-  "case_meeting_desc": "Kami menerapkan agen Slack yang meringkas rapat, mencatat poin penting, dan menyinkronkannya secara otomatis ke dalam alat proyek menghemat waktu berjam-jam setiap minggu.",
+  "case_meeting_desc": "Agen ini bergabung dalam rapat, melakukan transkripsi secara real-time, merangkum poin-poin penting, dan secara otomatis memperbarui alat manajemen proyek—menghemat waktu tim setiap minggunya.",
 
   "about_title": "Tentang Kami",
   "about_subtitle": "Kami adalah tim insinyur AI, ahli strategi produk, dan penggemar otomasi yang bersemangat membangun agen yang benar-benar berfungsi. Kami telah membantu startup, agensi, dan tim perusahaan memanfaatkan AI dengan cara yang sederhana, strategis, dan berdampak.",
 
   "faq_title": "Pertanyaan yang Sering Diajukan",
-  "faq_subtitle": "Semua yang Anda butuhkan untuk beralih dari konsep ke agen AI yang sepenuhnya diterapkan dikerjakan untuk Anda, dari awal hingga akhir.",
+  "faq_subtitle": "Semua yang Anda butuhkan untuk mewujudkan konsep agen AI hingga peluncuran penuh—dikerjakan secara menyeluruh untuk Anda.",
   "faq_q_agent_problems": "Masalah seperti apa yang dapat diselesaikan oleh agen AI kustom?",
-  "faq_a_agent_problems": "Agen AI dapat menangani segalanya mulai dari menjawab pertanyaan pelanggan, mengelola alur kerja internal, mengekstraksi wawasan dari dokumen, hingga mengotomatiskan tugas-tugas di aplikasi seperti Slack, CRM, dan basis data. Jika itu repetitif, memakan waktu, atau berbasis data agen kemungkinan besar bisa membantu.",
+  "faq_a_agent_problems": "Agen AI dapat menangani berbagai hal, mulai dari menjawab pertanyaan pelanggan, mengelola alur kerja internal, mengekstraksi wawasan dari dokumen, hingga mengotomatisasi tugas di aplikasi seperti Slack, CRM, dan basis data. Jika tugas tersebut repetitif, memakan waktu, atau berbasis data—agen AI kemungkinan besar bisa membantu.",
   "faq_q_duration": "Berapa lama prosesnya?",
   "faq_a_duration": "Sebagian besar klien beralih dari strategi ke peluncuran dalam 10–14 hari kerja.",
   "faq_q_ai_knowledge": "Apakah saya perlu tahu tentang AI?",
@@ -117,5 +117,5 @@
   "faq_q_tools": "Alat apa saja yang bisa diintegrasikan?",
   "faq_a_tools": "Slack, Notion, Google Workspace, CRM, Zapier, API, basis data internal apa pun bisa.",
   "faq_q_internal_data": "Apakah AI dapat menggunakan data internal kami?",
-  "faq_a_internal_data": "Ya. Kami menggunakan Retrieval-Augmented Generation (RAG) agar agen Anda dapat mengakses dan menganalisis dokumen, basis pengetahuan, dan sistem internal Anda dengan aman dan konteks terbaru."
+  "faq_a_internal_data": "Ya. Kami menggunakan Retrieval-Augmented Generation (RAG) agar agen Anda dapat mengakses dan menganalisis dokumen internal, basis pengetahuan, dan sistem perusahaan secara aman dan dengan konteks yang selalu diperbarui."
 }

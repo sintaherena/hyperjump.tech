@@ -24,7 +24,7 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
       {({ shouldBeWhite }) => (
         <>
           <NavContainer>
-            <Link href="/" className="flex items-center">
+            <Link href="/inferenceai" className="flex items-center">
               <InferenceAI isOpen={isOpen} />
             </Link>
 

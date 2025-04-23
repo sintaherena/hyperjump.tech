@@ -88,13 +88,13 @@
   "how_subtitle": "A clear, proven process-from idea to launch—in weeks, not months.",
 
   "how_tailored_title": "Discovery & Strategy",
-  "how_0_desc": "Understand your business goals, existing workflows, and opportunities for automation.",
+  "how_0_desc": "We dive deep into your business goals, existing workflows, and opportunities for automation",
   "how_speed_title": "Agent Design & Prototype",
-  "how_1_desc": "We design a tailored agent experience and quickly build a functional prototype for stakeholder buy-in.",
+  "how_1_desc": "We design your AI agent architecture and quickly build a functional prototype tailored to your needs",
   "how_support_title": "Integration & Deployment",
-  "how_2_desc": "Agents are deployed with your tools (Slack, CRM, calendars, APIs) to enhance existing systems.",
+  "how_2_desc": "We integrate the agent with your tools (Collaboration tools, CRM, databases, APls) and handle all deployment",
   "how_train_title": "Training & Iteration",
-  "how_3_desc": "We help you retrain your data and refine based on real-world usage signals.",
+  "how_3_desc": "Your agent is trained on your data and refined based on real-world use cases",
 
   "get_title": "What You Get",
   "get_subtitle": "A clear, proven process-from idea to launch—in weeks, not months.",
@@ -111,10 +111,10 @@
 
   "case_tailored_title": "AI Knowledge Assistant with RAG",
   "case_rag_category": "Case Studies",
-  "case_rag_desc": "We built a custom AI agent that augments internal knowledge with Retrieval-Augmented Generation (RAG) using internal docs.",
+  "case_rag_desc": "We built a custom AI agent that answers employee questions using internal documentation via Retrieval-Augmented Generation—cutting support time by 60%.",
   "case_speed_title": "AI-Powered Meeting Notes Agent",
   "case_meeting_category": "Case Studies",
-  "case_meeting_desc": "We deployed a Slack agent that summarizes meetings, takes key points, and auto-syncs into project tools—saving hours every week.",
+  "case_meeting_desc": "This agent joins meetings, transcribes in real time, summarizes key points, and auto-updates project tools—saving teams hours every week.",
 
   "about_title": "About Us",
   "about_subtitle": "We’re a team of AI engineers, product strategists, and automation nerds passionate about building agents that actually work. We've helped startups, agencies, and enterprise teams harness AI in ways that are simple, strategic, and impactful.",
@@ -123,7 +123,7 @@
   "faq_subtitle": "Everything you need to go from concept to fully deployed Al agent-done for you, end to end.",
 
   "faq_q_agent_problems": "What kinds of problems can a custom AI agent solve?",
-  "faq_a_agent_problems": "AI agents can handle everything from answering customer inquiries, managing internal workflows, extracting insights from documents, to automating tasks across apps like Slack, CRMs, and databases. If it’s repetitive, time-consuming, or data-driven—an agent can likely help.",
+  "faq_a_agent_problems": "AI agents can handle everything from answering customer inquiries, managing internal workflows, extracting insights from documents, to automating tasks across apps like Slack, CRMs, and databases. If it's repetitive, time-consuming, or data-driven—an agent can likely help.",
   "faq_q_duration": "How long does the process take?",
   "faq_a_duration": "Most clients go from strategy to launch in 10–14 business days.",
   "faq_q_ai_knowledge": "Do I need to know anything about AI?",
