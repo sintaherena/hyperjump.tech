@@ -314,13 +314,6 @@
       "answer": "We offer specialized expertise, flexibility, and cost-effective solutions without the overhead of full-time employees. Our team brings years of experience in enterprise IT, ensuring faster implementation and better ROI."
     }
   ],
-  "aiNavigationItems": [
-    { "label": "How It Works", "href": "#how-it-works" },
-    { "label": "What You Get", "href": "#what-you-get" },
-    { "label": "Case Studies", "href": "#case-studies" },
-    { "label": "About", "href": "#about-us" },
-    { "label": "FAQ", "href": "#faqs" }
-  ],
   "aiSocials": [
     {
       "platform": "GitHub",

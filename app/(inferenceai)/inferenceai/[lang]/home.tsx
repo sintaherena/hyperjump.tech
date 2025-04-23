@@ -19,28 +19,28 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import {
-  aboutSubtitle,
-  aboutTitle,
-  caseSubtitle,
-  caseTitle,
-  ctaBtn,
-  ctaSubtitle,
-  ctaTitle,
-  faqSubtitle,
-  faqTitle,
-  getSubtitle,
-  getTitle,
-  howSubtitle,
-  howTitle,
-  whySubtitle,
-  whyTitle
+  inferenceaiWhyWorkWithUsHeading,
+  inferenceaiWhyWorkWithUsDesc,
+  inferenceaiHowItWorksHeading,
+  inferenceaiHowItWorksDesc,
+  inferenceaiWhatYouGetHeading,
+  inferenceaiWhatYouGetDesc,
+  inferenceaiCaseStudiesHeading,
+  inferenceaiCaseStudiesDesc,
+  inferenceaiAboutUsHeading,
+  inferenceaiAboutUsDesc,
+  inferenceaiFaqHeading,
+  inferenceaiFaqDesc,
+  inferenceaiCtaHeading,
+  inferenceaiCtaDesc,
+  inferenceaiCtaLabel
 } from "@/locales/.generated/server";
 import {
-  getCaseStudies,
-  getFaqs,
+  getWhyWorkWithUs,
   getHowItWorks,
   getWhatYouGet,
-  getWhyWorkWithUs
+  getCaseStudies,
+  getFaqs
 } from "./data";
 
 export default function Home({ lang }: { lang: SupportedLanguage }) {
@@ -61,8 +61,8 @@ function WhyWorkWithUs({ lang }: { lang: SupportedLanguage }) {
   return (
     <GridItemsSection
       id="why-work-with-us"
-      title={whyTitle(lang)}
-      description={whySubtitle(lang)}
+      title={inferenceaiWhyWorkWithUsHeading(lang)}
+      description={inferenceaiWhyWorkWithUsDesc(lang)}
       layout="vertical">
       <div className="mb-8" />
       <GridItems
@@ -83,8 +83,8 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
   return (
     <GridItemsSection
       id="how-it-works"
-      title={howTitle(lang)}
-      description={howSubtitle(lang)}
+      title={inferenceaiHowItWorksHeading(lang)}
+      description={inferenceaiHowItWorksDesc(lang)}
       layout="vertical">
       {isMobile ? (
         <Accordion type="single" collapsible className="w-full">
@@ -160,8 +160,8 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
   return (
     <GridItemsSection
       id="what-you-get"
-      title={getTitle(lang)}
-      description={getSubtitle(lang)}
+      title={inferenceaiWhatYouGetHeading(lang)}
+      description={inferenceaiWhatYouGetDesc(lang)}
       layout="vertical">
       <div className="grid grid-cols-2 gap-10 bg-[#0A0713] pt-8 text-white lg:grid-cols-3">
         {getWhatYouGet(lang).map((item, idx) => (
@@ -184,8 +184,8 @@ function CaseStudies({ lang }: { lang: SupportedLanguage }) {
   return (
     <GridItemsSection
       id="case-studies"
-      title={caseTitle(lang)}
-      description={caseSubtitle(lang)}>
+      title={inferenceaiCaseStudiesHeading(lang)}
+      description={inferenceaiCaseStudiesDesc(lang)}>
       <GridItems
         items={getCaseStudies(lang)}
         columns={{ base: 1, md: 2, lg: 2 }}
@@ -197,7 +197,7 @@ function CaseStudies({ lang }: { lang: SupportedLanguage }) {
       <div className="mt-8 flex w-full justify-center">
         <GridItemsMoreButton
           type="inferenceai"
-          text={ctaBtn(lang)}
+          text={inferenceaiCtaLabel(lang)}
           href={linkAI}
           gaEvent={{
             event: gaEventName,
@@ -214,8 +214,8 @@ function AboutUs({ lang }: { lang: SupportedLanguage }) {
   return (
     <GridItemsSection
       id="about-us"
-      title={aboutTitle(lang)}
-      description={aboutSubtitle(lang)}>
+      title={inferenceaiAboutUsHeading(lang)}
+      description={inferenceaiAboutUsDesc(lang)}>
       <div className="relative mt-9 flex w-full justify-center">
         <div className="relative aspect-[1280/603.7735595703125] w-full max-w-[1280px] overflow-hidden rounded-[24.15px]">
           <Image
@@ -234,8 +234,8 @@ function Faqs({ lang }: { lang: SupportedLanguage }) {
   return (
     <GridItemsSection
       id="faqs"
-      title={faqTitle(lang)}
-      description={faqSubtitle(lang)}
+      title={inferenceaiFaqHeading(lang)}
+      description={inferenceaiFaqDesc(lang)}
       layout="vertical"
       className="bg-grid-faqs">
       <Accordion
@@ -280,14 +280,14 @@ function CTASection({ lang }: { lang: SupportedLanguage }) {
         </div>
         <div className="relative z-20 space-y-4 text-white md:space-y-6">
           <h2 className="bg-gradient-to-b from-white to-[#0C1711] bg-clip-text text-center text-2xl font-semibold leading-[120%] tracking-[-0.02em] text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] md:text-[48px]">
-            {ctaTitle(lang)}
+            {inferenceaiCtaHeading(lang)}
           </h2>
           <p className="mx-auto max-w-xl text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-            {ctaSubtitle(lang)}
+            {inferenceaiCtaDesc(lang)}
           </p>
           <GridItemsMoreButton
             type="inferenceai"
-            text={ctaBtn(lang)}
+            text={inferenceaiCtaLabel(lang)}
             href={linkAI}
             gaEvent={{
               event: gaEventName,

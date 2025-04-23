@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import data from "@/data.json";
 import { SupportedLanguage } from "@/locales/.generated/types";
-import { ctaBtn } from "@/locales/.generated/server";
+import { inferenceaiCtaLabel } from "@/locales/.generated/server";
 
 export function HeroCTAButton({ lang }: { lang: SupportedLanguage }) {
   const { gaEventName, linkAI } = data.cta;
@@ -21,11 +21,11 @@ export function HeroCTAButton({ lang }: { lang: SupportedLanguage }) {
         sendGAEvent({
           event: gaEventName,
           category: "engagement",
-          label: "Hero Banner Inference AI"
+          label: "Inference AI CTA Button"
         });
       }}>
       <Link href={linkAI} target="_blank" rel="noreferrer noopener">
-        {ctaBtn(lang)}
+        {inferenceaiCtaLabel(lang)}
       </Link>
     </Button>
   );

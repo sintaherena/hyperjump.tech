@@ -11,13 +11,13 @@ import {
 } from "@/components/ui/navigation-menu";
 import data from "@/data.json";
 import StickyNavigationMain from "@/app/components/sticky-nav-main";
-import { HeroCTAButton } from "../[lang]/hero-cta-button";
+import { HeroCTAButton } from "./hero-cta-button";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import LanguagePicker from "../[lang]/language-picker";
+import { nav } from "../[lang]/data";
 
 export default function Nav({ lang }: { lang: SupportedLanguage }) {
   const [isOpen, setIsOpen] = useState(false);
-  const { aiNavigationItems } = data;
 
   return (
     <StickyNavigationMain isMenuOpen={isOpen}>
@@ -31,7 +31,7 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
             <CenterNavItems>
               <NavigationMenu className="mx-8 xl:mx-0">
                 <NavigationMenuList className="flex gap-5">
-                  {aiNavigationItems.map((item, idx) => (
+                  {nav(lang).map((item, idx) => (
                     <NavigationMenuItem key={idx} className="text-center">
                       <Link
                         href={item.href}
@@ -91,7 +91,7 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
           {isOpen && (
             <div className="bg-white shadow-md lg:hidden">
               <div className="mx-auto flex w-full flex-col space-y-4 px-4 py-5 md:px-8">
-                {aiNavigationItems.map((item, idx) => (
+                {nav(lang).map((item, idx) => (
                   <Link
                     key={idx}
                     href={item.href}

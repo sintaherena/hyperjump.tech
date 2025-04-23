@@ -2,7 +2,7 @@ import Image from "next/image";
 import data from "@/data.json";
 import { Separator } from "@/components/ui/separator";
 import { SupportedLanguage } from "@/locales/.generated/types";
-import { footerText } from "@/locales/.generated/server";
+import { inferenceaiFooter } from "@/locales/.generated/server";
 
 export default function Footer({ lang }: { lang: SupportedLanguage }) {
   const { aiSocials, copyright } = data;
@@ -23,7 +23,9 @@ export default function Footer({ lang }: { lang: SupportedLanguage }) {
           </a>
         </div>
 
-        <p className="text-sm md:max-w-60 md:text-center">{footerText(lang)}</p>
+        <p className="text-sm md:max-w-60 md:text-center">
+          {inferenceaiFooter(lang)}
+        </p>
 
         <div className="flex space-x-6">
           {aiSocials.map((s, i) => (

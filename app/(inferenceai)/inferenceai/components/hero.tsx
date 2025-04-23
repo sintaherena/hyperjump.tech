@@ -2,9 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { HeroCTAButton } from "../[lang]/hero-cta-button";
+import { HeroCTAButton } from "./hero-cta-button";
 import { SupportedLanguage } from "@/locales/.generated/types";
-import { heroSubtitle, heroTitle } from "@/locales/.generated/server";
+import {
+  inferenceaiHeroHeading,
+  inferenceaiHeroDesc
+} from "@/locales/.generated/server";
 
 export default function Hero({ lang }: { lang: SupportedLanguage }) {
   return (
@@ -32,7 +35,7 @@ export default function Hero({ lang }: { lang: SupportedLanguage }) {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex w-full flex-col items-center justify-center">
           <h1 className="font-figtree mb-4 mt-28 bg-gradient-to-b from-white to-[#0C1711] bg-clip-text text-center text-5xl font-semibold leading-[120%] tracking-[-0.02em] text-transparent md:mb-6 md:max-w-4xl md:text-6xl">
-            {heroTitle(lang)}
+            {inferenceaiHeroHeading(lang)}
           </h1>
 
           <motion.p
@@ -40,7 +43,7 @@ export default function Hero({ lang }: { lang: SupportedLanguage }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
             className="my-6 text-center text-base font-medium text-[#AFB0C3] md:my-10 md:max-w-3xl md:text-xl">
-            {heroSubtitle(lang)}
+            {inferenceaiHeroDesc(lang)}
           </motion.p>
 
           <motion.div
