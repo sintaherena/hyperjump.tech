@@ -8,7 +8,7 @@
     "desc": "Chat with our team to discover how AI can streamline your business.",
     "label": "Schedule Consultation"
   },
-  "navItems": {
+  "nav_items": {
     "0_label": "How It Works",
     "1_label": "What You Get",
     "2_label": "Case Studies",
@@ -16,7 +16,7 @@
     "4_label": "FAQ"
   },
   "footer": "Driving Innovation and Growth with Intelligent AI Solutions",
-  "whyWorkWithUs": {
+  "why_work_with_us": {
     "heading": "Why Work with Us",
     "desc": "Get custom Al that actually works for your business-built fast, built smart, and built to grow with you.",
 
@@ -27,7 +27,7 @@
     "2_title": "Ongoing Support & Optimization",
     "2_text": "We don’t just build and bounce. We iterate, improve, and ensure your AI delivers long-term value."
   },
-  "howItWorks": {
+  "how_it_works": {
     "heading": "How It Works",
     "desc": "A clear, proven process-from idea to launch—in weeks, not months.",
 
@@ -40,7 +40,7 @@
     "3_title": "Training & Iteration",
     "3_text": "Your agent is trained on your data and refined based on real-world use cases"
   },
-  "whatYouGet": {
+  "what_you_get": {
     "heading": "What You Get",
     "desc": "A clear, proven process-from idea to launch—in weeks, not months.",
 
@@ -51,7 +51,7 @@
     "4_title": "Deployment & hosting setup",
     "5_title": "Training documentation & walkthrough"
   },
-  "caseStudies": {
+  "case_studies": {
     "heading": "Case Studies",
     "desc": "Explore how we turn challenges into growth opportunities with practical solutions that create lasting change and drive business success.",
 
@@ -62,7 +62,7 @@
     "1_category": "Case Studies",
     "1_text": "This agent joins meetings, transcribes in real time, summarizes key points, and auto-updates project tools—saving teams hours every week."
   },
-  "aboutUs": {
+  "about_us": {
     "heading": "About Us",
     "desc": "We’re a team of AI engineers, product strategists, and automation nerds passionate about building agents that actually work. We've helped startups, agencies, and enterprise teams harness AI in ways that are simple, strategic, and impactful."
   },

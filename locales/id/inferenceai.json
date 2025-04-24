@@ -8,7 +8,7 @@
     "desc": "Diskusikan bersama tim kami untuk mengetahui bagaimana AI dapat menyederhanakan bisnis Anda.",
     "label": "Jadwalkan Konsultasi"
   },
-  "navItems": {
+  "nav_items": {
     "0_label": "Cara Kerja",
     "1_label": "Yang Anda Dapatkan",
     "2_label": "Studi Kasus",
@@ -16,7 +16,7 @@
     "4_label": "FAQ"
   },
   "footer": "Mendorong Inovasi dan Pertumbuhan dengan Solusi AI Cerdas",
-  "whyWorkWithUs": {
+  "why_work_with_us": {
     "heading": "Mengapa Bekerja dengan Kami",
     "desc": "Dapatkan agen AI kustom yang benar-benar berfungsi untuk bisnis Anda dibuat cepat, cerdas, dan siap berkembang bersama Anda.",
 
@@ -27,7 +27,7 @@
     "2_title": "Dukungan & Optimasi Berkelanjutan",
     "2_text": "Kami tidak hanya membangun lalu pergi. Kami terus menyempurnakan dan memastikan agen AI Anda memberikan nilai jangka panjang."
   },
-  "howItWorks": {
+  "how_it_works": {
     "heading": "Cara Kerja",
     "desc": "Proses yang jelas dan terbukti dari ide hingga peluncuran dalam hitungan minggu, bukan bulan.",
 
@@ -40,7 +40,7 @@
     "3_title": "Pelatihan & Iterasi",
     "3_text": "Agen Anda dilatih dengan data internal dan disempurnakan berdasarkan penggunaan nyata."
   },
-  "whatYouGet": {
+  "what_you_get": {
     "heading": "Yang Anda Dapatkan",
     "desc": "Proses yang jelas dan terbukti dari ide hingga peluncuran dalam hitungan minggu, bukan bulan.",
 
@@ -51,7 +51,7 @@
     "4_title": "Pengaturan hosting & implementasi",
     "5_title": "Dokumentasi pelatihan & panduan penggunaan"
   },
-  "caseStudies": {
+  "case_studies": {
     "heading": "Studi Kasus",
     "desc": "Temukan bagaimana kami mengubah tantangan menjadi peluang pertumbuhan dengan solusi praktis yang menciptakan dampak nyata dan mendorong kesuksesan bisnis.",
 
@@ -62,7 +62,7 @@
     "1_category": "Studi Kasus",
     "1_text": "Agen ini ikut serta dalam rapat, mentranskripsi secara real-time, merangkum poin penting, dan memperbarui alat proyek secara otomatis menghemat waktu tim setiap minggunya."
   },
-  "aboutUs": {
+  "about_us": {
     "heading": "Tentang Kami",
     "desc": "Kami adalah tim insinyur AI, ahli strategi produk, dan penggemar otomasi yang bersemangat membangun agen yang benar-benar berfungsi. Kami telah membantu startup, agensi, dan tim perusahaan memanfaatkan AI dengan cara yang sederhana, strategis, dan berdampak."
   },
