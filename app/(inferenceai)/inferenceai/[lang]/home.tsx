@@ -118,7 +118,7 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
           ))}
         </Accordion>
       </div>
-      <div className="mx-auto mt-8 grid w-full grid-cols-1 items-stretch gap-8 sm:hidden lg:grid-cols-2">
+      <div className="mx-auto mt-8 hidden w-full grid-cols-1 items-stretch gap-8 md:grid lg:grid-cols-2">
         <div className="h-full space-y-4">
           {getHowItWorks(lang).map((item, i) => (
             <Card

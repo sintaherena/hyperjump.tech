@@ -30,11 +30,13 @@ export default function Nav() {
       {({ shouldBeWhite }) => (
         <>
           <NavContainer>
-            <HyperjumpLogo
-              type="hyperjump"
-              isOpen={isOpen}
-              onClose={() => setIsOpen(!isOpen)}
-            />
+            <div className="-ml-3 xl:ml-0">
+              <HyperjumpLogo
+                type="hyperjump"
+                isOpen={isOpen}
+                onClose={() => setIsOpen(!isOpen)}
+              />
+            </div>
 
             <CenterNavItems>
               <NavigationMenu>
@@ -155,7 +157,7 @@ export function NavContainer({
     <div
       className={cn(
         className,
-        "mx-auto mt-0 flex w-full flex-wrap items-center justify-between px-4 py-5 md:px-20 xl:px-0",
+        "mx-auto mt-0 flex w-full flex-wrap items-center justify-between px-2 py-3 sm:px-6 md:py-5 xl:px-0",
         "border border-transparent transition-colors duration-300",
         "group-data-[scroll='true']:border-white/10"
       )}>
