@@ -18,37 +18,31 @@ import { Children, isValidElement, useEffect, useRef, useState } from "react";
 import { GitFork, Star } from "lucide-react";
 
 type GridItemsTitleProps = {
+  id?: string;
   className?: string;
   title: string;
   description?: string;
   layout?: "horizontal" | "vertical";
-  descriptionStyle?: React.HTMLAttributes<HTMLDivElement>["className"];
+  descriptionClassname?: string;
+  children?: React.ReactNode;
 };
 
 export function GridItemsTitle({
   title,
   description,
-  className = "",
   layout = "horizontal",
-  descriptionStyle
+  descriptionClassname
 }: GridItemsTitleProps) {
   const isHorizontal = layout === "horizontal";
-  const hasBgClass = /\bbg-/.test(className);
-  const finalClass = cn("scroll-mt-20", !hasBgClass && "bg-white", className);
 
-  if (!description) {
-    return (
-      <h1 className="font-menium my-2 w-full text-center text-4xl leading-tight text-hyperjump-black">
-        {title}
-      </h1>
-    );
-  }
-
-  return (
+  return !description ? (
+    <h1 className="font-menium my-2 w-full text-center text-4xl leading-tight text-hyperjump-black">
+      {title}
+    </h1>
+  ) : (
     <div
       className={cn(
-        finalClass,
-        "w-full pb-7 pt-4",
+        "w-full scroll-mt-20 bg-white pb-7 pt-4",
         isHorizontal
           ? "flex flex-wrap justify-between gap-4"
           : "flex flex-col md:items-center md:text-center"
@@ -65,7 +59,7 @@ export function GridItemsTitle({
           "text-base text-hyperjump-gray md:text-lg",
           isHorizontal
             ? "max-w-lg text-left"
-            : `w-full text-left md:w-2/3 md:text-center xl:w-3/4 ${descriptionStyle}`
+            : `w-full text-left md:w-2/3 md:text-center xl:w-3/4 ${descriptionClassname}`
         )}>
         {description}
       </p>
@@ -123,24 +117,44 @@ export function GridItems({
   }, [items]);
 
   useEffect(() => {
-    items.forEach(async (item, index) => {
-      if (!item.repo) return;
-      try {
-        const res = await fetch(
-          `https://api.github.com/repos/hyperjumptech/${item.repo}`
-        );
-        const data = await res.json();
-        setRepoStats((prev) => ({
-          ...prev,
-          [index]: {
+    const fetchRepoStats = async () => {
+      const fetches = items.map(async (item, index) => {
+        if (!item.repo) return null;
+        try {
+          const res = await fetch(
+            `https://api.github.com/repos/hyperjumptech/${item.repo}`
+          );
+          const data = await res.json();
+          return {
+            index,
             stars: data.stargazers_count || 0,
             forks: data.forks_count || 0
+          };
+        } catch (error) {
+          console.error("Failed fetching stats:", error);
+          return null;
+        }
+      });
+
+      const results = await Promise.all(fetches);
+
+      const newStats = results.reduce(
+        (acc, stat) => {
+          if (stat) {
+            acc[stat.index] = {
+              stars: stat.stars,
+              forks: stat.forks
+            };
           }
-        }));
-      } catch (error) {
-        console.error(`Failed fetching stats for ${item.repo}`, error);
-      }
-    });
+          return acc;
+        },
+        {} as Record<number, { stars: number; forks: number }>
+      );
+
+      setRepoStats(newStats);
+    };
+
+    fetchRepoStats();
   }, [items]);
 
   const getColumnClass = (prefix: string, count?: number) =>
@@ -310,7 +324,7 @@ export const GridItemsMoreButton = ({
   });
 
   const inferenceai = cn(
-    "btn-gradient-purple transform rounded-full text-white transition-all duration-200 ease-in-out hover:scale-[1.02] hover:shadow-md"
+    "color-gradient-purple transform rounded-full text-white transition-all duration-200 ease-in-out hover:scale-[1.02] hover:shadow-md"
   );
 
   return (
@@ -362,11 +376,8 @@ export default function GridItemsContainer({
     (child) => child !== title && child !== body && child !== more
   );
 
-  const hasBgClass = /\bbg-/.test(className);
-  const finalClass = cn("scroll-mt-20", !hasBgClass && "bg-white", className);
-
   return (
-    <section id={id} className={finalClass}>
+    <section id={id} className={cn("scroll-mt-20 bg-white", className)}>
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center px-4 py-5 md:px-20 md:py-14 xl:px-0">
         {title}
         <div>{body || others}</div>
@@ -376,42 +387,21 @@ export default function GridItemsContainer({
   );
 }
 
-type GridItemsSectionProps = {
-  id?: string;
-  className?: string;
-  title: string;
-  description?: string;
-  layout?: "horizontal" | "vertical";
-  descriptionStyle?: string;
-  children?: React.ReactNode;
-};
-
 export const GridItemsSection = ({
   id,
   className = "",
   title,
   description,
   layout = "horizontal",
-  descriptionStyle,
+  descriptionClassname,
   children
-}: GridItemsSectionProps) => {
+}: GridItemsTitleProps) => {
   const isHorizontal = layout === "horizontal";
-  const hasBgClass = /\bbg-/.test(className);
-
-  const finalClass = cn("scroll-mt-20", className);
 
   return (
     <section
       id={id}
-      className={finalClass}
-      style={
-        !hasBgClass
-          ? {
-              background:
-                "linear-gradient(0deg, #050013, #050013), linear-gradient(180deg, #1513374D 0%, #15133700 23.58%)"
-            }
-          : undefined
-      }>
+      className={cn("scroll-mt-20 bg-section-gradient", className)}>
       <motion.div
         className="mx-auto flex max-w-5xl flex-wrap items-center justify-center px-4 py-5 md:px-6 md:py-8"
         initial={{ opacity: 0, y: 40 }}
@@ -442,7 +432,7 @@ export const GridItemsSection = ({
                 "flex-1 text-base text-[#AFB0C3] md:text-lg",
                 isHorizontal
                   ? "max-w-lg text-left"
-                  : `w-full text-left md:w-2/3 md:text-center xl:w-3/4 ${descriptionStyle}`
+                  : `w-full text-left md:w-2/3 md:text-center xl:w-3/4 ${descriptionClassname}`
               )}>
               {description}
             </p>

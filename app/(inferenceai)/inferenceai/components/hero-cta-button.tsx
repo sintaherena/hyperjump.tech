@@ -16,7 +16,7 @@ export function HeroCTAButton({ lang }: { lang: SupportedLanguage }) {
       asChild
       variant="default"
       size="lg"
-      className="btn-gradient-purple transform rounded-full text-white transition-all duration-200 ease-in-out hover:scale-[1.05] hover:shadow-md"
+      className="color-gradient-purple transform rounded-full text-white transition-all duration-200 ease-in-out hover:scale-[1.05] hover:shadow-md"
       onClick={() => {
         sendGAEvent({
           event: gaEventName,

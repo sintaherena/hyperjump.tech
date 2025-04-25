@@ -30,9 +30,11 @@ export default function Nav() {
       {({ shouldBeWhite }) => (
         <>
           <NavContainer>
-            <Link href="/" className="flex items-center">
-              <HyperjumpLogoMain isOpen={isOpen} />
-            </Link>
+            <HyperjumpLogo
+              type="hyperjump"
+              isOpen={isOpen}
+              onClose={() => setIsOpen(!isOpen)}
+            />
 
             <CenterNavItems>
               <NavigationMenu>
@@ -149,23 +151,13 @@ export function NavContainer({
   children: ReactNode;
   className?: string;
 }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const showBorder = isScrolled ? "" : "border-none";
-
   return (
     <div
       className={cn(
-        showBorder,
         className,
-        "mx-auto mt-0 flex w-full flex-wrap items-center justify-between px-4 py-5 md:px-20 xl:px-0"
+        "mx-auto mt-0 flex w-full flex-wrap items-center justify-between px-4 py-5 md:px-20 xl:px-0",
+        "border border-transparent transition-colors duration-300",
+        "group-data-[scroll='true']:border-white/10"
       )}>
       {children}
     </div>
@@ -188,37 +180,21 @@ export function RightNavItems({ children }: { children: React.ReactNode }) {
   );
 }
 
-function HyperjumpLogoMain({ isOpen }: { isOpen: boolean }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const showBlack = isOpen || isScrolled;
-
-  const logoSrc = showBlack ? BlackLogo : WhiteLogo;
-
-  return (
-    <Image
-      src={logoSrc}
-      alt="Hyperjump Logo"
-      width={187}
-      height={32}
-      className="h-8"
-    />
-  );
-}
-
-export function HyperjumpLogo() {
+export function HyperjumpLogo({
+  isOpen,
+  type,
+  onClose
+}: {
+  isOpen?: boolean;
+  type?: "hyperjump" | "smdd2024";
+  onClose?: () => void;
+}) {
   return (
     <div className="flex items-center pl-4">
       <Link
         className="toggleColour text-2xl font-bold no-underline transition hover:no-underline lg:text-4xl"
-        href={"/"}>
+        href={"/"}
+        {...(isOpen ? { onClick: onClose } : {})}>
         <ClientOnly>
           <LogoWithContextMenu
             downloadables={[
@@ -243,24 +219,36 @@ export function HyperjumpLogo() {
                 fileName: "hyperjump-svg.svg"
               }
             ]}>
-            {[WhiteLogo, ColoredLogo].map((image, i) => {
-              return (
-                <Image
-                  key={i}
-                  id="brandlogo"
-                  className={cn(
-                    "w-32",
-                    image.src.includes("hyperjump-white")
-                      ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
-                      : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
-                  )}
-                  src={image}
-                  alt="Hyperjump Logo"
-                  width={128}
-                  height={32}
-                />
-              );
-            })}
+            {[WhiteLogo, type === "hyperjump" ? BlackLogo : ColoredLogo].map(
+              (image, i) => {
+                const isWhite = image.src.includes("hyperjump-white");
+
+                return (
+                  <Image
+                    key={i}
+                    id="brandlogo"
+                    className={cn(
+                      "h-8",
+                      isWhite
+                        ? [
+                            "group-[[data-scroll='false']]:block",
+                            "group-[[data-scroll='true']]:hidden",
+                            isOpen && "group-[[data-scroll='false']]:hidden"
+                          ]
+                        : [
+                            "group-[[data-scroll='true']]:block",
+                            "group-[[data-scroll='false']]:hidden",
+                            isOpen && "group-[[data-scroll='false']]:block"
+                          ]
+                    )}
+                    src={image}
+                    alt="Hyperjump Logo"
+                    width={187}
+                    height={32}
+                  />
+                );
+              }
+            )}
           </LogoWithContextMenu>
         </ClientOnly>
       </Link>

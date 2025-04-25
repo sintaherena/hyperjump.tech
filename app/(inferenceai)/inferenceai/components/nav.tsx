@@ -3,13 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/app/utils/tailwind";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList
 } from "@/components/ui/navigation-menu";
-import data from "@/data.json";
 import StickyNavigationMain from "@/app/components/sticky-nav-main";
 import { HeroCTAButton } from "./hero-cta-button";
 import { SupportedLanguage } from "@/locales/.generated/types";
@@ -56,7 +55,7 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
 
             {/* Mobile Toggle */}
             <div className="flex items-center lg:hidden">
-              <LanguagePicker lang={lang} />
+              <LanguagePicker isOpen={isOpen} lang={lang} />
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="ml-3 p-2"
@@ -111,23 +110,11 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
 }
 
 export function NavContainer({ children }: { children: ReactNode }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const showBorder = isScrolled ? "" : "border-none";
-
   return (
     <div className="w-full px-4 py-5 md:px-8">
       <div
         className={cn(
-          showBorder,
-          "mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between"
+          "mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between transition-all duration-300 group-data-[scroll='false']:border-none"
         )}>
         {children}
       </div>
@@ -152,28 +139,30 @@ export function RightNavItems({ children }: { children: React.ReactNode }) {
 }
 
 function InferenceAI({ isOpen }: { isOpen: boolean }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const showBlack = isOpen || isScrolled;
-
-  const logoSrc = showBlack
-    ? "/images/inferenceai/inference-ai-black.svg"
-    : "/images/inferenceai/inference-ai-white.svg";
-
   return (
-    <Image
-      src={logoSrc}
-      alt="Inference AI Logo"
-      width={187}
-      height={32}
-      className="h-8"
-    />
+    <>
+      <Image
+        src="/images/inferenceai/inference-ai-white.svg"
+        alt="Inference AI Logo"
+        width={187}
+        height={32}
+        className={cn(
+          "h-8",
+          isOpen && "hidden",
+          "group-data-[scroll='true']:hidden"
+        )}
+      />
+      <Image
+        src="/images/inferenceai/inference-ai-black.svg"
+        alt="Inference AI Logo"
+        width={187}
+        height={32}
+        className={cn(
+          "hidden h-8",
+          isOpen && "block",
+          "group-data-[scroll='true']:block"
+        )}
+      />
+    </>
   );
 }

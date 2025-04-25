@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useIsMobile } from "@/hooks/use-is-mobile";
 import Image from "next/image";
 import data from "@/data.json";
 import {
@@ -78,7 +77,6 @@ function WhyWorkWithUs({ lang }: { lang: SupportedLanguage }) {
 
 function HowItWorks({ lang }: { lang: SupportedLanguage }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const isMobile = useIsMobile();
 
   return (
     <GridItemsSection
@@ -86,7 +84,7 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
       title={inferenceaiHowItWorksHeading(lang)}
       description={inferenceaiHowItWorksDesc(lang)}
       layout="vertical">
-      {isMobile ? (
+      <div className="md:hidden">
         <Accordion type="single" collapsible className="w-full">
           {getHowItWorks(lang).map((item, i) => (
             <AccordionItem key={i} value={`faq-${i}`} asChild>
@@ -119,39 +117,38 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
             </AccordionItem>
           ))}
         </Accordion>
-      ) : (
-        <div className="mx-auto mt-8 grid w-full grid-cols-1 items-stretch gap-8 lg:grid-cols-2">
-          <div className="h-full space-y-4">
-            {getHowItWorks(lang).map((item, i) => (
-              <Card
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                className={cn(
-                  "cursor-pointer rounded-2xl border bg-[#1B1728] p-4 transition-all duration-300 ease-in-out",
-                  i === activeIndex
-                    ? "border-white/20 bg-[#2E2843] shadow-lg shadow-white/10 ring-1 ring-white/10"
-                    : "border-white/10"
-                )}>
-                <h3 className="mb-1 font-semibold text-white">{item.title}</h3>
-                <p className="text-sm text-[#AFB0C3] text-muted-foreground">
-                  {item.description}
-                </p>
-              </Card>
-            ))}
-          </div>
+      </div>
+      <div className="mx-auto mt-8 grid w-full grid-cols-1 items-stretch gap-8 sm:hidden lg:grid-cols-2">
+        <div className="h-full space-y-4">
+          {getHowItWorks(lang).map((item, i) => (
+            <Card
+              key={i}
+              onClick={() => setActiveIndex(i)}
+              className={cn(
+                "cursor-pointer rounded-2xl border bg-[#1B1728] p-4 transition-all duration-300 ease-in-out",
+                i === activeIndex
+                  ? "border-white/20 bg-[#2E2843] shadow-lg shadow-white/10 ring-1 ring-white/10"
+                  : "border-white/10"
+              )}>
+              <h3 className="mb-1 font-semibold text-white">{item.title}</h3>
+              <p className="text-sm text-[#AFB0C3] text-muted-foreground">
+                {item.description}
+              </p>
+            </Card>
+          ))}
+        </div>
 
-          <div className="flex min-h-[100%] items-center justify-center rounded-2xl bg-gradient-to-br from-[#2B2543] to-[#1A152E] p-8">
-            <div className="relative aspect-[4/3] w-full max-w-md">
-              <Image
-                src={getHowItWorks(lang)[activeIndex].image}
-                alt={getHowItWorks(lang)[activeIndex].title}
-                fill
-                className="rounded-xl object-contain transition duration-300"
-              />
-            </div>
+        <div className="flex min-h-[100%] items-center justify-center rounded-2xl bg-gradient-to-br from-[#2B2543] to-[#1A152E] p-8">
+          <div className="relative aspect-[4/3] w-full max-w-md">
+            <Image
+              src={getHowItWorks(lang)[activeIndex].image}
+              alt={getHowItWorks(lang)[activeIndex].title}
+              fill
+              className="rounded-xl object-contain transition duration-300"
+            />
           </div>
         </div>
-      )}
+      </div>
     </GridItemsSection>
   );
 }

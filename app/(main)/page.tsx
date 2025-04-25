@@ -142,7 +142,7 @@ function Faqs() {
             title="Frequently asked questions"
             description="Find answers to commonly asked questions. If you need further assistance, feel free to reach out to us."
             layout="vertical"
-            descriptionStyle="w-full md:max-w-2xl"
+            descriptionClassname="w-full md:max-w-2xl"
             className="bg-[#F6F8F9]"
           />
           <Accordion
