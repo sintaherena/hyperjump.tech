@@ -188,7 +188,7 @@ export function GridItems({
               borderClassName
             )}>
             {image && (
-              <div className="relative aspect-[16/9] w-full">
+              <div className="relative aspect-[22/9] w-full md:aspect-[16/9]">
                 <Image
                   src={image}
                   alt={title}

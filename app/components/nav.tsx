@@ -29,14 +29,12 @@ export default function Nav() {
     <StickyNavigationMain isMenuOpen={isOpen}>
       {({ shouldBeWhite }) => (
         <>
-          <NavContainer>
-            <div className="-ml-3 xl:ml-0">
-              <HyperjumpLogo
-                type="hyperjump"
-                isOpen={isOpen}
-                onClose={() => setIsOpen(!isOpen)}
-              />
-            </div>
+          <NavContainer className="max-w-5xl px-4 md:px-20 xl:px-0">
+            <HyperjumpLogo
+              type="hyperjump"
+              isOpen={isOpen}
+              onClose={() => setIsOpen(!isOpen)}
+            />
 
             <CenterNavItems>
               <NavigationMenu>
@@ -85,7 +83,7 @@ export default function Nav() {
             {/* Mobile Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 lg:hidden"
+              className="p-0 lg:hidden"
               aria-label="Toggle menu">
               <svg
                 className="h-6 w-6"
@@ -148,7 +146,7 @@ export default function Nav() {
 
 export function NavContainer({
   children,
-  className = "max-w-5xl"
+  className
 }: {
   children: ReactNode;
   className?: string;
@@ -157,7 +155,7 @@ export function NavContainer({
     <div
       className={cn(
         className,
-        "mx-auto mt-0 flex w-full flex-wrap items-center justify-between px-2 py-3 sm:px-6 md:py-5 xl:px-0",
+        "mx-auto mt-0 flex w-full flex-wrap items-center justify-between py-3 md:py-5",
         "border border-transparent transition-colors duration-300",
         "group-data-[scroll='true']:border-white/10"
       )}>
@@ -192,7 +190,7 @@ export function HyperjumpLogo({
   onClose?: () => void;
 }) {
   return (
-    <div className="flex items-center pl-4">
+    <div className="flex items-center">
       <Link
         className="toggleColour text-2xl font-bold no-underline transition hover:no-underline lg:text-4xl"
         href={"/"}

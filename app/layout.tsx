@@ -47,6 +47,10 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1C1F2E" />
         <link rel="icon" href="/icons/icon-192x192.png" />
+        <meta
+          name="format-detection"
+          content="telephone=no, date=no, email=no, address=no"
+        />
         <GoogleAnalytics gaId={data.GTM_ID} />
       </head>
       <body

@@ -11,7 +11,7 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
   return (
     <StickyNavigation>
       <NavContainer className="container">
-        <div className="-mx-3 md:-mx-10 lg:-mx-5">
+        <div className="px-2 xl:px-0">
           <HyperjumpLogo />
         </div>
 

@@ -54,7 +54,7 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
             </RightNavItems>
 
             {/* Mobile Toggle */}
-            <div className="flex items-center lg:hidden">
+            <div className="flex items-center xl:hidden">
               <LanguagePicker isOpen={isOpen} lang={lang} />
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -88,7 +88,7 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="bg-white shadow-md lg:hidden">
+            <div className="bg-white shadow-md xl:hidden">
               <div className="mx-auto flex w-full flex-col space-y-4 px-4 py-5 md:px-8">
                 {nav(lang).map((item, idx) => (
                   <Link
@@ -124,7 +124,7 @@ export function NavContainer({ children }: { children: ReactNode }) {
 
 function CenterNavItems({ children }: { children: React.ReactNode }) {
   return (
-    <div className="hidden flex-1 items-center justify-center space-x-8 lg:flex">
+    <div className="hidden flex-1 items-center justify-center space-x-8 xl:flex">
       {children}
     </div>
   );
@@ -132,7 +132,7 @@ function CenterNavItems({ children }: { children: React.ReactNode }) {
 
 export function RightNavItems({ children }: { children: React.ReactNode }) {
   return (
-    <div className="hidden items-center justify-end space-x-4 lg:flex">
+    <div className="hidden items-center justify-end space-x-4 xl:flex">
       {children}
     </div>
   );

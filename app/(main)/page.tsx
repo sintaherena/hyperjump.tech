@@ -121,7 +121,7 @@ function OpenSourceProducts() {
       />
       <GridItems
         items={data.openSourceProducts}
-        columns={{ base: 1, lg: 3 }}
+        columns={{ base: 1, sm: 2, lg: 3 }}
         cardClassName="rounded"
       />
       <GridItemsMoreButton
