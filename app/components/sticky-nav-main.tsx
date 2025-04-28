@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useScrolled } from "@/hooks/use-scrolled";
 
 export default function StickyNavigationMain({
   children,
@@ -12,17 +12,7 @@ export default function StickyNavigationMain({
   }) => React.ReactNode;
   isMenuOpen?: boolean;
 }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    setIsScrolled(window.scrollY > 0);
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const isScrolled = useScrolled();
 
   const shouldBeWhite = isScrolled || isMenuOpen;
 

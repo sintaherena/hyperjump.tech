@@ -29,10 +29,12 @@ export default function Nav() {
     <StickyNavigationMain isMenuOpen={isOpen}>
       {({ shouldBeWhite }) => (
         <>
-          <NavContainer>
-            <Link href="/" className="flex items-center">
-              <HyperjumpLogoMain isOpen={isOpen} />
-            </Link>
+          <NavContainer className="max-w-5xl px-4 md:px-20 xl:px-0">
+            <HyperjumpLogo
+              type="hyperjump"
+              isOpen={isOpen}
+              onClose={() => setIsOpen(!isOpen)}
+            />
 
             <CenterNavItems>
               <NavigationMenu>
@@ -81,7 +83,7 @@ export default function Nav() {
             {/* Mobile Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 lg:hidden"
+              className="p-0 lg:hidden"
               aria-label="Toggle menu">
               <svg
                 className="h-6 w-6"
@@ -142,23 +144,20 @@ export default function Nav() {
   );
 }
 
-export function NavContainer({ children }: { children: ReactNode }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const showBorder = isScrolled ? "border border-b-2" : "border-none";
-
+export function NavContainer({
+  children,
+  className
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
     <div
       className={cn(
-        showBorder,
-        "mx-auto mt-0 flex w-full max-w-5xl flex-wrap items-center justify-between px-4 py-5 md:px-20 xl:px-0"
+        className,
+        "mx-auto mt-0 flex w-full flex-wrap items-center justify-between py-3 md:py-5",
+        "border border-transparent transition-colors duration-300",
+        "group-data-[scroll='true']:border-white/10"
       )}>
       {children}
     </div>
@@ -181,37 +180,21 @@ export function RightNavItems({ children }: { children: React.ReactNode }) {
   );
 }
 
-function HyperjumpLogoMain({ isOpen }: { isOpen: boolean }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const showBlack = isOpen || isScrolled;
-
-  const logoSrc = showBlack ? BlackLogo : WhiteLogo;
-
+export function HyperjumpLogo({
+  isOpen,
+  type,
+  onClose
+}: {
+  isOpen?: boolean;
+  type?: "hyperjump" | "smdd2024";
+  onClose?: () => void;
+}) {
   return (
-    <Image
-      src={logoSrc}
-      alt="Hyperjump Logo"
-      width={187}
-      height={32}
-      className="h-8"
-    />
-  );
-}
-
-export function HyperjumpLogo() {
-  return (
-    <div className="flex items-center pl-4">
+    <div className="flex items-center">
       <Link
         className="toggleColour text-2xl font-bold no-underline transition hover:no-underline lg:text-4xl"
-        href={"/"}>
+        href={"/"}
+        {...(isOpen ? { onClick: onClose } : {})}>
         <ClientOnly>
           <LogoWithContextMenu
             downloadables={[
@@ -236,24 +219,36 @@ export function HyperjumpLogo() {
                 fileName: "hyperjump-svg.svg"
               }
             ]}>
-            {[WhiteLogo, ColoredLogo].map((image, i) => {
-              return (
-                <Image
-                  key={i}
-                  id="brandlogo"
-                  className={cn(
-                    "w-32",
-                    image.src.includes("hyperjump-white")
-                      ? `group-[[data-scroll='false']]:block group-[[data-scroll='true']]:hidden`
-                      : `group-[[data-scroll='true']]:block group-[[data-scroll='false']]:hidden`
-                  )}
-                  src={image}
-                  alt="Hyperjump Logo"
-                  width={128}
-                  height={32}
-                />
-              );
-            })}
+            {[WhiteLogo, type === "hyperjump" ? BlackLogo : ColoredLogo].map(
+              (image, i) => {
+                const isWhite = image.src.includes("hyperjump-white");
+
+                return (
+                  <Image
+                    key={i}
+                    id="brandlogo"
+                    className={cn(
+                      "h-8",
+                      isWhite
+                        ? [
+                            "group-[[data-scroll='false']]:block",
+                            "group-[[data-scroll='true']]:hidden",
+                            isOpen && "group-[[data-scroll='false']]:hidden"
+                          ]
+                        : [
+                            "group-[[data-scroll='true']]:block",
+                            "group-[[data-scroll='false']]:hidden",
+                            isOpen && "group-[[data-scroll='false']]:block"
+                          ]
+                    )}
+                    src={image}
+                    alt="Hyperjump Logo"
+                    width={187}
+                    height={32}
+                  />
+                );
+              }
+            )}
           </LogoWithContextMenu>
         </ClientOnly>
       </Link>

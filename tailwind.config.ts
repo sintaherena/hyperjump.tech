@@ -35,6 +35,7 @@ const config: Config = {
         "hyperjump-blue": "#3276F5",
         "hyperjump-black": "#020F15",
         "hyperjump-gray": "#73767E",
+        "inferenceai-indigo": "#050013",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
@@ -100,6 +101,10 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out"
+      },
+      backgroundImage: {
+        "section-gradient":
+          "linear-gradient(0deg, #050013, #050013), linear-gradient(180deg, #1513374D 0%, #15133700 23.58%)"
       }
     }
   },

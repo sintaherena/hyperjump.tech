@@ -75,7 +75,7 @@ function Services() {
       <GridItems
         items={data.services}
         columns={{ base: 1, sm: 2, lg: 4 }}
-        classNameCard="rounded"
+        cardClassName="rounded"
       />
       <GridItemsMoreButton
         text={label}
@@ -103,7 +103,7 @@ function CaseStudies() {
       <GridItems
         items={data.caseStudies}
         columns={{ base: 1, md: 2, lg: 2 }}
-        classNameCard="rounded"
+        cardClassName="rounded"
       />
       <CaseStudiesCTA />
     </GridItemsContainer>
@@ -121,8 +121,8 @@ function OpenSourceProducts() {
       />
       <GridItems
         items={data.openSourceProducts}
-        columns={{ base: 1, lg: 3 }}
-        classNameCard="rounded"
+        columns={{ base: 1, sm: 2, lg: 3 }}
+        cardClassName="rounded"
       />
       <GridItemsMoreButton
         text="View More"
@@ -142,7 +142,7 @@ function Faqs() {
             title="Frequently asked questions"
             description="Find answers to commonly asked questions. If you need further assistance, feel free to reach out to us."
             layout="vertical"
-            descriptionStyle="w-full md:max-w-2xl"
+            descriptionClassname="w-full md:max-w-2xl"
             className="bg-[#F6F8F9]"
           />
           <Accordion

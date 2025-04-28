@@ -13,41 +13,36 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Children, isValidElement, useEffect, useRef, useState } from "react";
 import { GitFork, Star } from "lucide-react";
 
 type GridItemsTitleProps = {
+  id?: string;
   className?: string;
   title: string;
   description?: string;
   layout?: "horizontal" | "vertical";
-  descriptionStyle?: React.HTMLAttributes<HTMLDivElement>["className"];
+  descriptionClassname?: string;
+  children?: React.ReactNode;
 };
 
 export function GridItemsTitle({
   title,
   description,
-  className = "",
   layout = "horizontal",
-  descriptionStyle
+  descriptionClassname
 }: GridItemsTitleProps) {
   const isHorizontal = layout === "horizontal";
-  const hasBgClass = /\bbg-/.test(className);
-  const finalClass = cn("scroll-mt-20", !hasBgClass && "bg-white", className);
 
-  if (!description) {
-    return (
-      <h1 className="font-menium my-2 w-full text-center text-4xl leading-tight text-hyperjump-black">
-        {title}
-      </h1>
-    );
-  }
-
-  return (
+  return !description ? (
+    <h1 className="font-menium my-2 w-full text-center text-4xl leading-tight text-hyperjump-black">
+      {title}
+    </h1>
+  ) : (
     <div
       className={cn(
-        finalClass,
-        "w-full pb-7 pt-4",
+        "w-full scroll-mt-20 bg-white pb-7 pt-4",
         isHorizontal
           ? "flex flex-wrap justify-between gap-4"
           : "flex flex-col md:items-center md:text-center"
@@ -64,7 +59,7 @@ export function GridItemsTitle({
           "text-base text-hyperjump-gray md:text-lg",
           isHorizontal
             ? "max-w-lg text-left"
-            : `w-full text-left md:w-2/3 md:text-center xl:w-3/4 ${descriptionStyle}`
+            : `w-full text-left md:w-2/3 md:text-center xl:w-3/4 ${descriptionClassname}`
         )}>
         {description}
       </p>
@@ -79,20 +74,21 @@ type Item = {
   url?: string;
   category?: string;
   icon?: string;
+  button?: boolean;
+  repo?: string;
 };
 
 export function GridItems({
   items,
-  columns = {
-    base: 1,
-    md: 2,
-    xl: 3
-  },
+  columns = { base: 1, md: 2, xl: 3 },
   withCard = true,
-  classNameCard
+  cardClassName = "border-[#D9D9D9] bg-white",
+  borderClassName = "",
+  categoryClassName = "bg-hyperjump-black/10 text-hyperjump-black",
+  titleClassName = "text-hyperjump-black"
 }: {
   items: Item[];
-  classNameCard?: string;
+  cardClassName?: string;
   columns?: {
     base?: number;
     sm?: number;
@@ -101,60 +97,98 @@ export function GridItems({
     xl?: number;
   };
   withCard?: boolean;
+  borderClassName?: string;
+  categoryClassName?: string;
+  titleClassName?: string;
 }) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [overflowMap, setOverflowMap] = useState<Record<number, boolean>>({});
+  const [repoStats, setRepoStats] = useState<
+    Record<number, { stars: number; forks: number }>
+  >({});
 
   useEffect(() => {
     const newOverflowMap: Record<number, boolean> = {};
     textRefs.current.forEach((el, index) => {
-      if (el) {
-        newOverflowMap[index] = el.scrollHeight > el.clientHeight;
-      }
+      if (el) newOverflowMap[index] = el.scrollHeight > el.clientHeight;
     });
     setOverflowMap(newOverflowMap);
   }, [items]);
 
-  const columnClassMap = (prefix: string, count?: number) => {
-    if (!count) return "";
-    return `${prefix}grid-cols-${count}`;
-  };
+  useEffect(() => {
+    const fetchRepoStats = async () => {
+      const fetches = items.map(async (item, index) => {
+        if (!item.repo) return null;
+        try {
+          const res = await fetch(
+            `https://api.github.com/repos/hyperjumptech/${item.repo}`
+          );
+          const data = await res.json();
+          return {
+            index,
+            stars: data.stargazers_count || 0,
+            forks: data.forks_count || 0
+          };
+        } catch (error) {
+          console.error("Failed fetching stats:", error);
+          return null;
+        }
+      });
 
-  const columnClasses = [
-    columnClassMap("", columns.base ?? 1),
-    columnClassMap("sm:", columns.sm),
-    columnClassMap("md:", columns.md),
-    columnClassMap("lg:", columns.lg),
-    columnClassMap("xl:", columns.xl)
-  ]
-    .filter(Boolean)
-    .join(" ");
+      const results = await Promise.all(fetches);
+
+      const newStats = results.reduce(
+        (acc, stat) => {
+          if (stat) {
+            acc[stat.index] = {
+              stars: stat.stars,
+              forks: stat.forks
+            };
+          }
+          return acc;
+        },
+        {} as Record<number, { stars: number; forks: number }>
+      );
+
+      setRepoStats(newStats);
+    };
+
+    fetchRepoStats();
+  }, [items]);
+
+  const getColumnClass = (prefix: string, count?: number) =>
+    count ? `${prefix}grid-cols-${count}` : "";
+
+  const columnClasses = cn(
+    "grid gap-6",
+    getColumnClass("", columns.base),
+    getColumnClass("sm:", columns.sm),
+    getColumnClass("md:", columns.md),
+    getColumnClass("lg:", columns.lg),
+    getColumnClass("xl:", columns.xl)
+  );
+
+  const CardWrapper = withCard
+    ? Card
+    : ({ children }: { children: React.ReactNode }) => <div>{children}</div>;
 
   return (
-    <div className={`grid gap-6 ${columnClasses}`}>
+    <div className={columnClasses}>
       {items.map((item, idx) => {
-        const { image, title, description, url, category, icon } = item;
-
-        const CardWrapper = withCard
-          ? Card
-          : ({ children }: { children: React.ReactNode }) => (
-              <div>{children}</div>
-            );
+        const { image, title, description, url, category, icon, button } = item;
+        const stats = repoStats[idx] || { stars: 0, forks: 0 };
 
         return (
           <CardWrapper
             key={idx}
-            className={
-              withCard
-                ? cn(
-                    classNameCard,
-                    "flex flex-col overflow-hidden border-[#D9D9D9] bg-white"
-                  )
-                : undefined
-            }>
-            {image ? (
-              <div className="relative aspect-[16/9] w-full">
+            className={cn(
+              "flex flex-col overflow-hidden rounded-2xl transition-colors duration-300 ease-in-out hover:bg-white/5 hover:shadow-md hover:shadow-white/10",
+              cardClassName,
+              borderClassName
+            )}>
+            {image && (
+              <div className="relative aspect-[22/9] w-full md:aspect-[16/9]">
                 <Image
                   src={image}
                   alt={title}
@@ -162,16 +196,20 @@ export function GridItems({
                   className="rounded-lg object-cover"
                 />
               </div>
-            ) : null}
+            )}
 
             <CardHeader>
-              {icon ? (
+              {icon && (
                 <Avatar className="mb-6 h-14 w-14">
-                  <AvatarImage className="h-14 w-14" src={icon} alt={title} />
+                  <AvatarImage src={icon} alt={title} />
                 </Avatar>
-              ) : null}
+              )}
               {category && (
-                <p className="mb-2 w-28 rounded-3xl bg-hyperjump-black/10 px-2 py-1.5 text-center text-sm font-medium text-hyperjump-black">
+                <p
+                  className={cn(
+                    "mb-2 w-28 rounded-3xl px-2 py-1.5 text-center text-sm font-medium",
+                    categoryClassName
+                  )}>
                   {category}
                 </p>
               )}
@@ -181,12 +219,20 @@ export function GridItems({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition hover:underline">
-                  <CardTitle className="text-xl font-semibold text-hyperjump-black md:text-[22px]">
+                  <CardTitle
+                    className={cn(
+                      "text-xl font-semibold md:text-[22px]",
+                      titleClassName
+                    )}>
                     {title}
                   </CardTitle>
                 </Link>
               ) : (
-                <CardTitle className="text-xl font-semibold text-hyperjump-black md:text-[22px]">
+                <CardTitle
+                  className={cn(
+                    "text-xl font-semibold md:text-[22px]",
+                    titleClassName
+                  )}>
                   {title}
                 </CardTitle>
               )}
@@ -200,7 +246,7 @@ export function GridItems({
                   }}
                   className={cn(
                     "transition-all duration-300",
-                    expandedIndex !== idx ? "line-clamp-4" : ""
+                    expandedIndex !== idx && "line-clamp-4"
                   )}>
                   {description}
                 </CardDescription>
@@ -215,20 +261,19 @@ export function GridItems({
                   </button>
                 )}
               </div>
-              {url && (
-                <div className="flex flex-row justify-between gap-4 space-x-4">
-                  {/* Star Button */}
+
+              {url && button ? (
+                <div className="flex flex-row justify-between gap-4">
                   <Button
                     asChild
                     variant="outline"
                     className="w-full border-hyperjump-blue text-hyperjump-blue hover:bg-hyperjump-blue hover:text-white">
                     <Link href={url} target="_blank" rel="noopener noreferrer">
                       <Star className="h-4 w-4" />
-                      <span>Star</span>
+                      <span>Star ({stats.stars})</span>
                     </Link>
                   </Button>
 
-                  {/* Fork Button */}
                   <Button
                     asChild
                     variant="outline"
@@ -238,11 +283,11 @@ export function GridItems({
                       target="_blank"
                       rel="noopener noreferrer">
                       <GitFork className="h-4 w-4" />
-                      <span>Fork</span>
+                      <span>Fork ({stats.forks})</span>
                     </Link>
                   </Button>
                 </div>
-              )}
+              ) : null}
             </CardContent>
           </CardWrapper>
         );
@@ -262,23 +307,32 @@ export type GridItemsMoreButtonProps = {
   text?: string;
   variant?: "default" | "outline";
   gaEvent?: GAEvent;
+  type?: "hyperjump" | "inferenceai";
 };
 
 export const GridItemsMoreButton = ({
   href,
   text,
   variant = "default",
-  gaEvent
+  gaEvent,
+  type = "hyperjump"
 }: GridItemsMoreButtonProps) => {
-  const customClass = cn("font-semibold", {
+  const hyperjump = cn("font-semibold", {
     "bg-hyperjump-blue hover:bg-hyperjump-blue/90": variant === "default",
     "text-hyperjump-blue border-hyperjump-blue hover:bg-hyperjump-blue hover:text-white":
       variant === "outline"
   });
 
+  const inferenceai = cn(
+    "color-gradient-purple transform rounded-full text-white transition-all duration-200 ease-in-out hover:scale-[1.02] hover:shadow-md"
+  );
+
   return (
     <div className="mt-10 flex w-full items-center justify-center">
-      <Button asChild className={customClass} variant={variant}>
+      <Button
+        asChild
+        className={type === "hyperjump" ? hyperjump : inferenceai}
+        variant={variant}>
         <Link
           href={href}
           target="_blank"
@@ -322,11 +376,8 @@ export default function GridItemsContainer({
     (child) => child !== title && child !== body && child !== more
   );
 
-  const hasBgClass = /\bbg-/.test(className);
-  const finalClass = cn("scroll-mt-20", !hasBgClass && "bg-white", className);
-
   return (
-    <section id={id} className={finalClass}>
+    <section id={id} className={cn("scroll-mt-20 bg-white", className)}>
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center px-4 py-5 md:px-20 md:py-14 xl:px-0">
         {title}
         <div>{body || others}</div>
@@ -335,3 +386,77 @@ export default function GridItemsContainer({
     </section>
   );
 }
+
+export const GridItemsSection = ({
+  id,
+  className = "",
+  title,
+  description,
+  layout = "horizontal",
+  descriptionClassname,
+  children
+}: GridItemsTitleProps) => {
+  const isHorizontal = layout === "horizontal";
+
+  return (
+    <section
+      id={id}
+      className={cn("scroll-mt-20 bg-section-gradient", className)}>
+      <motion.div
+        className="mx-auto flex max-w-5xl flex-wrap items-center justify-center px-4 py-5 md:px-6 md:py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}>
+        {description ? (
+          <motion.div
+            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className={cn(
+              "w-full",
+              isHorizontal
+                ? "flex flex-col flex-wrap justify-between gap-4 md:flex-row"
+                : "flex flex-col md:items-center"
+            )}>
+            <h2
+              className={cn(
+                "flex-1 text-4xl font-medium leading-tight text-white md:text-[40px]",
+                isHorizontal ? "text-left" : "mb-4 text-left md:text-center"
+              )}>
+              {title}
+            </h2>
+            <p
+              className={cn(
+                "flex-1 text-base text-[#AFB0C3] md:text-lg",
+                isHorizontal
+                  ? "max-w-lg text-left"
+                  : `w-full text-left md:w-2/3 md:text-center xl:w-3/4 ${descriptionClassname}`
+              )}>
+              {description}
+            </p>
+          </motion.div>
+        ) : (
+          <motion.h1
+            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="w-full text-center text-4xl font-medium leading-tight text-white md:text-[40px]">
+            {title}
+          </motion.h1>
+        )}
+
+        <motion.div
+          viewport={{ once: true, amount: 0.3 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="w-full">
+          {children}
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};

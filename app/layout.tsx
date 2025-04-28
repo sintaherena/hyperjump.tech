@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import data from "@/data.json";
 import { cn } from "@/app/utils/tailwind";
-import Footer from "@/app/components/footer";
 import Console from "@/app/components/console";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
@@ -48,6 +47,10 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1C1F2E" />
         <link rel="icon" href="/icons/icon-192x192.png" />
+        <meta
+          name="format-detection"
+          content="telephone=no, date=no, email=no, address=no"
+        />
         <GoogleAnalytics gaId={data.GTM_ID} />
       </head>
       <body
@@ -59,7 +62,6 @@ export default function RootLayout({
         )}>
         {children}
         <Console />
-        <Footer />
         <Toaster />
         <Script src="https://kit.fontawesome.com/f6999a3218.js" />
       </body>
