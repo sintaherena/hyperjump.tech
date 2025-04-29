@@ -271,7 +271,7 @@ export function GridItems({
               </div>
 
               {url && button ? (
-                <div className="flex flex-row justify-between gap-4">
+                <div className="mx-auto flex w-full flex-row gap-2 md:flex-col md:gap-4 xl:flex-row xl:justify-between">
                   <Button
                     asChild
                     variant="outline"
