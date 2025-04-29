@@ -16,9 +16,7 @@ export default function Nav({ lang }: { lang: SupportedLanguage }) {
         </div>
 
         <RightNavItems>
-          <li className="mr-3">
-            <LanguagePicker lang={lang} />
-          </li>
+          <LanguagePicker lang={lang} />
         </RightNavItems>
       </NavContainer>
 
