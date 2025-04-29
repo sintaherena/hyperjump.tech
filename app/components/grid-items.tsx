@@ -29,6 +29,7 @@ type GridItemsTitleProps = {
 
 export function GridItemsTitle({
   title,
+  className = "bg-white",
   description,
   layout = "horizontal",
   descriptionClassname
@@ -43,6 +44,7 @@ export function GridItemsTitle({
     <div
       className={cn(
         "w-full scroll-mt-20 bg-white pb-7 pt-4",
+        className,
         isHorizontal
           ? "flex flex-wrap justify-between gap-4"
           : "flex flex-col md:items-center md:text-center"
