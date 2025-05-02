@@ -110,7 +110,9 @@ const config: Config = {
       },
       backgroundImage: {
         "section-gradient":
-          "linear-gradient(0deg, #050013, #050013), linear-gradient(180deg, #1513374D 0%, #15133700 23.58%)"
+          "linear-gradient(0deg, #050013, #050013), linear-gradient(180deg, #1513374D 0%, #15133700 23.58%)",
+        "services-hero":
+          " linear-gradient(180deg, rgba(50, 118, 245, 0.3) 0%, rgba(50, 118, 245, 0) 65.67%)"
       }
     }
   },

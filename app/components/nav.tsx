@@ -194,7 +194,7 @@ export function HyperjumpLogo({
   onClose
 }: {
   isOpen?: boolean;
-  type?: "hyperjump" | "smdd2024";
+  type?: "hyperjump" | "smdd2024" | "services";
   onClose?: () => void;
 }) {
   return (
@@ -227,35 +227,46 @@ export function HyperjumpLogo({
                 fileName: "hyperjump-svg.svg"
               }
             ]}>
-            {[WhiteLogo, type === "hyperjump" ? BlackLogo : ColoredLogo].map(
-              (image, i) => {
-                const isWhite = image.src.includes("hyperjump-white");
+            {type === "services" ? (
+              <Image
+                id="brandlogo"
+                className="h-8"
+                src={BlackLogo}
+                alt="Hyperjump Logo"
+                width={187}
+                height={32}
+              />
+            ) : (
+              [WhiteLogo, type === "hyperjump" ? BlackLogo : ColoredLogo].map(
+                (image, i) => {
+                  const isWhite = image.src.includes("hyperjump-white");
 
-                return (
-                  <Image
-                    key={i}
-                    id="brandlogo"
-                    className={cn(
-                      "h-8",
-                      isWhite
-                        ? [
-                            "group-[[data-scroll='false']]:block",
-                            "group-[[data-scroll='true']]:hidden",
-                            isOpen && "group-[[data-scroll='false']]:hidden"
-                          ]
-                        : [
-                            "group-[[data-scroll='true']]:block",
-                            "group-[[data-scroll='false']]:hidden",
-                            isOpen && "group-[[data-scroll='false']]:block"
-                          ]
-                    )}
-                    src={image}
-                    alt="Hyperjump Logo"
-                    width={187}
-                    height={32}
-                  />
-                );
-              }
+                  return (
+                    <Image
+                      key={i}
+                      id="brandlogo"
+                      className={cn(
+                        "h-8",
+                        isWhite
+                          ? [
+                              "group-[[data-scroll='false']]:block",
+                              "group-[[data-scroll='true']]:hidden",
+                              isOpen && "group-[[data-scroll='false']]:hidden"
+                            ]
+                          : [
+                              "group-[[data-scroll='true']]:block",
+                              "group-[[data-scroll='false']]:hidden",
+                              isOpen && "group-[[data-scroll='false']]:block"
+                            ]
+                      )}
+                      src={image}
+                      alt="Hyperjump Logo"
+                      width={187}
+                      height={32}
+                    />
+                  );
+                }
+              )
             )}
           </LogoWithContextMenu>
         </ClientOnly>
