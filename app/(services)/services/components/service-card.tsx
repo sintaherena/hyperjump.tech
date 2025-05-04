@@ -77,9 +77,7 @@ export function ServiceCard(
             asChild
             size="lg"
             className="w-full bg-hyperjump-blue text-base font-semibold text-white hover:bg-hyperjump-blue/90 md:w-44">
-            <Link href={url} target="_blank" rel="noreferrer noopener">
-              {servicesSeeMore(lang)}
-            </Link>
+            <Link href={url}>{servicesSeeMore(lang)}</Link>
           </Button>
         </div>
       </div>

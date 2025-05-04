@@ -92,15 +92,7 @@ function Services({ lang }: { lang: SupportedLanguage }) {
         cardClassName="rounded"
         lang={lang}
       />
-      <GridItemsMoreButton
-        text={mainCtaLabel(lang)}
-        href={link}
-        gaEvent={{
-          event: gaEventName,
-          category: "engagement",
-          label: "Service CTA"
-        }}
-      />
+      <GridItemsMoreButton text="View More" href="/services" />
     </GridItemsContainer>
   );
 }

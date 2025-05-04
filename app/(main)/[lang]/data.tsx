@@ -36,10 +36,10 @@ import {
 
 export const mainNav = (lang: SupportedLanguage) => {
   const data = [
-    { label: mainNavItems0Label(lang), href: "#services" },
-    { label: mainNavItems1Label(lang), href: "#case-studies" },
-    { label: mainNavItems2Label(lang), href: "#open-source" },
-    { label: mainNavItems3Label(lang), href: "#faqs" }
+    { label: mainNavItems0Label(lang), href: "/services" },
+    { label: mainNavItems1Label(lang), href: "/#case-studies" },
+    { label: mainNavItems2Label(lang), href: "/#open-source" },
+    { label: mainNavItems3Label(lang), href: "/#faqs" }
   ];
   return data;
 };

@@ -14,10 +14,14 @@ export default function ServicesLangLayout({
   return (
     <div className="bg-white">
       <ScrollObserver />
-      <Nav type="services" className="max-w-7xl" />
+      <Nav
+        type="services"
+        className="xxl:max-w-7xl max-w-6xl"
+        lang={params.lang as SupportedLanguage}
+      />
       <Hero lang={params.lang as SupportedLanguage} />
       {children}
-      <Footer />
+      <Footer lang={params.lang as SupportedLanguage} />
     </div>
   );
 }

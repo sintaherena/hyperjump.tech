@@ -40,7 +40,7 @@ import Image from "next/image";
 
 export default function Home({ lang }: { lang: SupportedLanguage }) {
   return (
-    <main className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-center px-4 py-12 text-center md:px-20 xl:px-0">
+    <main className="xxl:max-w-7xl mx-auto flex w-full max-w-6xl flex-wrap items-center justify-center px-4 py-12 text-center md:px-20 xl:px-0">
       <h3 className="mb-14 text-[34px] font-medium text-hyperjump-black md:text-[40px]">
         {servicesHeading(lang)}
       </h3>

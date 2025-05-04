@@ -23,131 +23,176 @@ import { Button } from "@/components/ui/button";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import { mainNav } from "../(main)/[lang]/data";
 import { mainCtaLabel } from "@/locales/.generated/server";
-import LanguagePicker from "../(main)/[lang]/language-picker";
+import {
+  LanguagePicker,
+  LanguagePickerServices
+} from "../(main)/[lang]/language-picker";
 
-export default function Nav({ lang }: { lang: SupportedLanguage }) {
+type NavProps = {
+  type?: "default" | "services";
+  className?: string;
+  lang: SupportedLanguage;
+};
+
+export default function Nav({
+  lang,
+  type = "default",
+  className = "max-w-5xl"
+}: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const forceWhite = type === "services";
   const { gaEventName, link } = data.cta;
 
   return (
     <StickyNavigationMain isMenuOpen={isOpen}>
-      {({ shouldBeWhite }) => (
-        <>
-          <NavContainer className="w-full px-3 md:px-4 lg:max-w-5xl xl:px-0">
-            <HyperjumpLogo
-              type="hyperjump"
-              isOpen={isOpen}
-              onClose={() => setIsOpen(!isOpen)}
-            />
-
-            <CenterNavItems>
-              <NavigationMenu className="mx-8 xl:mx-0">
-                <NavigationMenuList className="flex gap-5">
-                  {mainNav(lang).map((item, idx) => (
-                    <NavigationMenuItem key={idx} className="text-center">
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          shouldBeWhite
-                            ? "text-hyperjump-black hover:text-hyperjump-blue"
-                            : "text-white hover:border-b-2",
-                          "text-xl font-medium transition-colors"
-                        )}>
-                        {item.label}
-                      </Link>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </CenterNavItems>
-
-            <RightNavItems>
-              <LanguagePicker lang={lang} />
-              <Button
-                asChild
-                variant="outline"
+      {({ shouldBeWhite }) => {
+        const isWhite = forceWhite || shouldBeWhite;
+        return (
+          <>
+            <NavContainer
+              className={cn(
+                "w-full transition-colors",
+                isWhite ? "bg-white" : "bg-transparent"
+              )}>
+              <div
                 className={cn(
-                  shouldBeWhite
-                    ? "bg-hyperjump-blue hover:bg-hyperjump-blue/90 hover:text-white"
-                    : "bg-transparent",
-                  "font-semibold"
+                  className,
+                  "mx-auto flex w-full items-center justify-between px-4 md:px-20 xl:px-0"
+                )}>
+                {type === "default" && (
+                  <HyperjumpLogo
+                    type="hyperjump"
+                    isOpen={isOpen}
+                    onClose={() => setIsOpen(!isOpen)}
+                  />
                 )}
-                onClick={() => {
-                  sendGAEvent({
-                    event: gaEventName,
-                    category: "engagement",
-                    label: "Navigation CTA"
-                  });
-                }}>
-                <Link href={link} target="_blank" rel="noreferrer noopener">
-                  {mainCtaLabel(lang)}
-                </Link>
-              </Button>
-            </RightNavItems>
+                {type === "services" && (
+                  <HyperjumpLogo
+                    type="services"
+                    isOpen={isOpen}
+                    onClose={() => setIsOpen(!isOpen)}
+                  />
+                )}
 
-            {/* Mobile Toggle */}
-            <div className="flex items-center lg:hidden">
-              <LanguagePicker isOpen={isOpen} lang={lang} />
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="-mr-2 ml-1.5 p-2 md:ml-3 md:mr-0"
-                aria-label="Toggle menu">
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke={shouldBeWhite ? "black" : "white"}
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  {isOpen ? (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
+                <CenterNavItems>
+                  <NavigationMenu className="mx-8 xl:mx-0">
+                    <NavigationMenuList className="flex gap-5">
+                      {mainNav(lang).map((item, idx) => (
+                        <NavigationMenuItem key={idx} className="text-center">
+                          <Link
+                            href={item.href}
+                            className={cn(
+                              isWhite
+                                ? "text-hyperjump-black hover:text-hyperjump-blue"
+                                : "text-white hover:border-b-2",
+                              "text-xl font-medium transition-colors"
+                            )}>
+                            {item.label}
+                          </Link>
+                        </NavigationMenuItem>
+                      ))}
+                    </NavigationMenuList>
+                  </NavigationMenu>
+                </CenterNavItems>
+
+                <RightNavItems>
+                  {type === "services" ? (
+                    <LanguagePickerServices isOpen={isOpen} lang={lang} />
                   ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
+                    <LanguagePicker isOpen={isOpen} lang={lang} />
                   )}
-                </svg>
-              </button>
-            </div>
-          </NavContainer>
 
-          {/* Mobile Menu */}
-          {isOpen && (
-            <div className="bg-white shadow-md lg:hidden">
-              <div className="mx-auto flex w-full flex-col space-y-4 px-4 py-5 md:px-8">
-                {mainNav(lang).map((item, idx) => (
-                  <Link
-                    key={idx}
-                    href={item.href}
-                    className="text-2xl text-hyperjump-black transition hover:text-gray-400"
-                    onClick={() => setIsOpen(false)}>
-                    {item.label}
-                  </Link>
-                ))}
-                <Link
-                  href={link}
-                  className="mt-2 rounded border border-hyperjump-black py-3 text-center text-base text-hyperjump-black transition hover:border-gray-400 hover:text-gray-400"
-                  onClick={() => {
-                    sendGAEvent({
-                      event: gaEventName,
-                      category: "engagement",
-                      label: "Navigation CTA"
-                    });
-                  }}>
-                  {mainCtaLabel(lang)}
-                </Link>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className={cn(
+                      isWhite
+                        ? "bg-hyperjump-blue text-white hover:bg-hyperjump-blue/90"
+                        : "bg-transparent text-white",
+                      "font-semibold"
+                    )}
+                    onClick={() => {
+                      sendGAEvent({
+                        event: gaEventName,
+                        category: "engagement",
+                        label: "Navigation CTA"
+                      });
+                    }}>
+                    <Link href={link} target="_blank" rel="noreferrer noopener">
+                      {mainCtaLabel(lang)}
+                    </Link>
+                  </Button>
+                </RightNavItems>
+
+                {/* Mobile Toggle */}
+                <div className="flex items-center lg:hidden">
+                  {type === "services" ? (
+                    <LanguagePickerServices isOpen={isOpen} lang={lang} />
+                  ) : (
+                    <LanguagePicker isOpen={isOpen} lang={lang} />
+                  )}
+
+                  <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="ml-2 p-0 lg:hidden"
+                    aria-label="Toggle menu">
+                    <svg
+                      className="h-6 w-6"
+                      fill="none"
+                      stroke={isWhite ? "black" : "white"}
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      {isOpen ? (
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      ) : (
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 6h16M4 12h16M4 18h16"
+                        />
+                      )}
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
-        </>
-      )}
+            </NavContainer>
+            {/* Mobile Menu */}
+            {isOpen && (
+              <div className="bg-white shadow-md lg:hidden">
+                <div className="mx-auto flex w-full flex-col space-y-4 px-4 py-5 md:px-20 xl:px-0">
+                  {mainNav(lang).map((item, idx) => (
+                    <Link
+                      key={idx}
+                      href={item.href}
+                      className="text-2xl text-hyperjump-black transition hover:text-gray-400"
+                      onClick={() => setIsOpen(false)}>
+                      {item.label}
+                    </Link>
+                  ))}
+                  <Link
+                    href={link}
+                    className="mt-2 rounded border border-hyperjump-black py-3 text-center text-base text-hyperjump-black transition hover:border-gray-400 hover:text-gray-400"
+                    onClick={() => {
+                      sendGAEvent({
+                        event: gaEventName,
+                        category: "engagement",
+                        label: "Navigation CTA"
+                      });
+                    }}>
+                    {mainCtaLabel(lang)}
+                  </Link>
+                </div>
+              </div>
+            )}
+          </>
+        );
+      }}
     </StickyNavigationMain>
   );
 }
