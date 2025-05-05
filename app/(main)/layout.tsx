@@ -3,5 +3,5 @@ export default function MainLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <div className="font-switzer">{children}</div>;
 }

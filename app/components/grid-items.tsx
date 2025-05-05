@@ -251,7 +251,7 @@ export function GridItems({
                     textRefs.current[idx] = el;
                   }}
                   className={cn(
-                    "transition-all duration-300",
+                    "text-base font-medium transition-all duration-300",
                     expandedIndex !== idx && "line-clamp-4"
                   )}>
                   {description}

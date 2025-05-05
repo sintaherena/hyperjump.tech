@@ -8,17 +8,7 @@ import Console from "@/app/components/console";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 import { AIAgent } from "@/app/components/ai-agent";
-
-const geistSans = localFont({
-  src: "../public/fonts/Switzer-Regular.woff2",
-  variable: "--font-geist-sans",
-  weight: "400 500"
-});
-const geistMono = localFont({
-  src: "/../public/fonts/Switzer-Semibold.woff2",
-  variable: "--font-geist-mono",
-  weight: "600 700"
-});
+import { figtree, geistMono, geistSans, switzer } from "./fonts";
 
 export const metadata: Metadata = {
   title: data.title,
@@ -58,7 +48,7 @@ export default function RootLayout({
         data-scroll="false"
         className={cn(
           "group",
-          `${geistSans.variable} ${geistMono.variable} antialiased`,
+          `${geistSans.variable} ${geistMono.variable} ${switzer.variable} ${figtree.variable} antialiased`,
           "bg-black leading-normal tracking-normal text-white"
         )}>
         {children}
