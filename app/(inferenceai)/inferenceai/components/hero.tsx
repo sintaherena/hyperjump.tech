@@ -34,7 +34,7 @@ export default function Hero({ lang }: { lang: SupportedLanguage }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex w-full flex-col items-center justify-center">
-          <h1 className="font-figtree mb-4 mt-28 bg-gradient-to-b from-white to-[#0C1711] bg-clip-text text-center text-5xl font-semibold leading-[120%] tracking-[-0.02em] text-transparent md:mb-6 md:max-w-4xl md:text-6xl">
+          <h1 className="mb-4 mt-28 text-center text-5xl font-semibold md:mb-6 md:max-w-4xl md:text-6xl">
             {inferenceaiHeroHeading(lang)}
           </h1>
 
@@ -42,7 +42,7 @@ export default function Hero({ lang }: { lang: SupportedLanguage }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
-            className="my-6 text-center text-base font-medium text-[#AFB0C3] md:my-10 md:max-w-3xl md:text-xl">
+            className="my-6 text-center text-base font-medium text-[#AFB0C3] md:my-10 md:max-w-3xl md:text-[22px]">
             {inferenceaiHeroDesc(lang)}
           </motion.p>
 
@@ -67,6 +67,8 @@ export default function Hero({ lang }: { lang: SupportedLanguage }) {
           fill
           className="object-cover object-center md:object-top"
         />
+
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#020F15] to-transparent md:h-32" />
       </motion.div>
     </section>
   );

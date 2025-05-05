@@ -28,6 +28,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        figtree: ["var(--font-figtree)", "sans-serif"],
+        switzer: ["var(--font-switzer)", "sans-serif"],
+        geist: ["var(--font-geist-sans)", "sans-serif"],
+        "geist-mono": ["var(--font-geist-mono)", "sans-serif"]
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

@@ -3,5 +3,5 @@ export default function InferenceAILayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <div className="font-figtree">{children}</div>;
 }

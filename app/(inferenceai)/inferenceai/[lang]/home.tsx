@@ -69,7 +69,7 @@ function WhyWorkWithUs({ lang }: { lang: SupportedLanguage }) {
         columns={{ base: 1, sm: 1, md: 3, lg: 3 }}
         cardClassName="rounded-[20px]"
         borderClassName="card-border-gradient"
-        titleClassName="text-white"
+        titleClassName="text-white md:text-lg"
         lang={lang}
       />
     </GridItemsSection>
@@ -131,8 +131,10 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
                   ? "border-white/20 bg-[#2E2843] shadow-lg shadow-white/10 ring-1 ring-white/10"
                   : "border-white/10"
               )}>
-              <h3 className="mb-1 font-semibold text-white">{item.title}</h3>
-              <p className="text-sm text-[#AFB0C3] text-muted-foreground">
+              <h3 className="mb-1 text-xl font-semibold text-white">
+                {item.title}
+              </h3>
+              <p className="text-base text-[#AFB0C3] text-muted-foreground">
                 {item.description}
               </p>
             </Card>
@@ -168,7 +170,9 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
             className="relative flex flex-col items-start justify-start gap-4 pl-6">
             <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-white/20 to-transparent" />
             <Image src={item.icon} alt={item.title} width={32} height={32} />
-            <p className="text-sm text-white/90 md:text-base">{item.title}</p>
+            <p className="text-base font-semibold text-white/90 md:text-xl">
+              {item.title}
+            </p>
           </div>
         ))}
       </div>
@@ -191,7 +195,7 @@ function CaseStudies({ lang }: { lang: SupportedLanguage }) {
         cardClassName="rounded-2xl mt-8"
         borderClassName="card-border-gradient"
         categoryClassName="bg-white/10 text-white"
-        titleClassName="text-white"
+        titleClassName="text-white text=[22px] font-semibold"
       />
       <div className="mt-8 flex w-full justify-center">
         <GridItemsMoreButton
@@ -245,7 +249,7 @@ function Faqs({ lang }: { lang: SupportedLanguage }) {
           <AccordionItem key={i} value={`faq-${i}`} asChild>
             <Card className="w-full border-none bg-[#1B1728] shadow-sm transition-all duration-300">
               <CardHeader className="px-4 py-2">
-                <AccordionTrigger className="flex w-full items-center justify-between gap-2 text-left text-xl font-medium text-white no-underline hover:no-underline focus:no-underline">
+                <AccordionTrigger className="flex w-full items-center justify-between gap-2 text-left text-lg font-medium text-white no-underline hover:no-underline focus:no-underline md:text-[22px]">
                   {item.question}
                 </AccordionTrigger>
               </CardHeader>
@@ -278,10 +282,10 @@ function CTASection({ lang }: { lang: SupportedLanguage }) {
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="relative z-20 space-y-4 text-white md:space-y-6">
-          <h2 className="bg-gradient-to-b from-white to-[#0C1711] bg-clip-text text-center text-2xl font-semibold leading-[120%] tracking-[-0.02em] text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] md:text-[48px]">
+          <h2 className="text-center text-2xl font-semibold md:text-[48px]">
             {inferenceaiCtaHeading(lang)}
           </h2>
-          <p className="mx-auto max-w-xl text-white/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+          <p className="mx-auto max-w-xl text-lg md:text-[22px]">
             {inferenceaiCtaDesc(lang)}
           </p>
           <GridItemsMoreButton
