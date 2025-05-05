@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "heading": "Software sebagai Layanan (SaaS)",
+    "desc": "Anda pegang visi produknya. Kami yang membangun mesinnya."
+  },
+  "what_is_saas": {
+    "heading": "Apa itu Software sebagai Layanan (SaaS)?",
+    "desc": "Anda punya ide produk—atau MVP yang butuh dikembangkan. Tapi mengelola tim internal memakan waktu, mahal, dan bisa mengganggu fokus.",
+    "highlight": "Dengan layanan SaaS dari Hyperjump, Anda mendapatkan tim engineering khusus yang tidak hanya membangun, tapi juga terus mengembangkan software Anda. Kami memegang kendali atas roadmap Anda dan memberikan peningkatan setiap bulan, selaras dengan tujuan bisnis Anda."
+  },
+  "who_is_it": {
+    "heading": "Untuk siapa layanan ini?",
+    "desc": "Layanan ini cocok untuk organisasi yang ingin tumbuh dengan cepat, berinovasi, dan melakukan modernisasi tanpa harus mengelola tim setiap hari.",
+    "target": {
+      "0": "<b>Startup</b> yang sedang membangun produk pertama atau keduanya",
+      "1": "<b>Perusahaan</b> yang ingin meluncurkan lini bisnis baru tanpa menambah tim teknis penuh waktu",
+      "2": "<b>Organisasi</b> yang ingin memodernisasi sistem lama menjadi platform web/mobile yang skalabel",
+      "3": "<b>Product Manager & Founder</b> yang ingin bergerak cepat tanpa harus mengelola tim developer harian"
+    }
+  },
+  "what_we_deliver": {
+    "heading": "Apa yang Kami Tawarkan",
+    "desc": "Kami memberikan solusi yang disesuaikan untuk membantu Anda melakukan modernisasi, berinovasi, dan mengoptimalkan proses bisnis dengan presisi.",
+    "card_0": {
+      "title": "Modernisasi Aplikasi",
+      "text": "Kami bantu Anda memperbarui sistem lama:",
+      "items": {
+        "0": "Membangun ulang platform lama dengan teknologi terbaru",
+        "1": "Peningkatan UI/UX dan performa",
+        "2": "Penyederhanaan logika bisnis dan integrasi"
+      }
+    },
+    "card_1": {
+      "title": "Pengembangan Produk Baru",
+      "text": "Kami wujudkan ide produk Anda:",
+      "items": {
+        "0": "Perencanaan MVP dan roadmap",
+        "1": "Pengembangan agile, QA, CI/CD, dan rilis produk",
+        "2": "Desain + backend + frontend = lengkap"
+      }
+    },
+    "card_2": {
+      "title": "Implementasi Alat Pendukung",
+      "text": "Kami integrasikan best practices ke dalam produk Anda:",
+      "items": {
+        "0": "Analytics, monitoring error, dan observabilitas",
+        "1": "Autentikasi, sistem pembayaran, dan notifikasi",
+        "2": "Dashboard admin dan panel kontrol"
+      }
+    }
+  },
+  "how_it_works": {
+    "heading": "Bagaimana Cara Kerjanya",
+    "desc": "Kami bekerja dalam model langganan bulanan dengan komitmen tahunan, artinya:",
+    "step": {
+      "0": {
+        "title": "Biaya tetap tanpa biaya tersembunyi",
+        "text": "Harga yang jelas dan transparan. Anda tahu apa yang Anda bayar—tanpa kejutan."
+      },
+      "1": {
+        "title": "Komunikasi dan iterasi yang berkelanjutan",
+        "text": "Pembaruan rutin dan sesi feedback agar hasil terus meningkat seiring waktu."
+      },
+      "2": {
+        "title": "Laporan bulanan tentang roadmap, progres teknis, dan KPI",
+        "text": "Laporan rutin yang memastikan Anda tetap on track dalam roadmap dan pencapaian teknis."
+      },
+      "3": {
+        "title": "Tim andal yang tidak perlu Anda kelola setiap hari",
+        "text": "Tim berkinerja tinggi yang memberikan hasil tanpa harus diawasi terus-menerus."
+      }
+    }
+  },
+  "what_you_get": {
+    "heading": "Apa yang Anda Dapatkan",
+    "desc": "Bersama kami, Anda tidak hanya mendapatkan jasa pengembangan—tapi juga kemitraan strategis yang menjamin kualitas, skalabilitas, dan peningkatan berkelanjutan.",
+    "items": {
+      "0": "Roadmap produk agile dan pembaruan berkala",
+      "1": "Arsitektur dan kode yang siap untuk skalabilitas",
+      "2": "QA dan CI/CD sejak hari pertama",
+      "3": "Pendekatan strategis—bukan sekadar eksekusi tugas"
+    }
+  },
+  "why_us": {
+    "heading": "Mengapa Hyperjump?",
+    "desc": "Pilih Hyperjump untuk tim yang menggabungkan pengalaman nyata, pemikiran produk yang tajam, dan efisiensi operasional demi mendorong kemajuan teknologi Anda.",
+    "reasons": {
+      "0": "Kami telah membangun dan mengelola produk SaaS langsung untuk berbagai jenis bisnis",
+      "1": "Kami bukan sekadar coder—kami hadir dengan <b>pemikiran produk</b> dan <b>disiplin rekayasa</b>",
+      "2": "Kami bantu software Anda berjalan seperti startup yang gesit—tanpa beban perekrutan"
+    }
+  },
+  "cta": {
+    "heading": "Siap meluncurkan atau mengembangkan produk Anda?",
+    "desc": "Mari bangun software hebat bersama—cepat, efisien, dan andal.",
+    "label": "Hubungi Kami"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "heading": "CTO-as-a-Service",
+    "desc": "Bangun seperti perusahaan terbaik—tanpa harus merekrut CTO."
+  },
+  "what_is_ctoaas": {
+    "heading": "Apa itu CTO-as-a-Service?",
+    "desc": "Tidak semua perusahaan membutuhkan CTO penuh waktu—tapi setiap tim teknologi butuh kepemimpinan yang kuat.",
+    "highlight": "CTO-as-a-Service dari Hyperjump memberikan Anda akses ke kepemimpinan engineering tingkat senior dan tim produk berpengalaman. Kami membantu Anda <b>membangun budaya engineering yang kuat, menghasilkan perangkat lunak yang lebih baik,</b> dan <b>menskalakan organisasi produk Anda</b>—tanpa harus membangunnya sendiri dari nol."
+  },
+
+  "who_is_it": {
+    "heading": "Untuk siapa layanan ini?",
+    "desc": "Solusi kami ideal untuk bisnis yang ingin berkembang secara efisien dan mengoptimalkan operasional.",
+    "targets": {
+      "0": "<b>Founder atau CEO</b> tanpa co-founder teknis",
+      "1": "<b>Tim produk</b> yang membutuhkan proses, struktur, atau kecepatan yang lebih baik",
+      "2": "<b>Organisasi</b> yang sedang menjalani transformasi digital",
+      "3": "<b>Perusahaan yang sedang berkembang</b> dan bersiap untuk ekspansi, audit, atau penggalangan dana"
+    }
+  },
+
+  "what_we_deliver": {
+    "heading": "Apa yang Kami Tawarkan",
+    "desc": "Kami menyediakan solusi yang disesuaikan untuk memastikan teknologi dan operasional Anda berada di jalur pertumbuhan berkelanjutan.",
+    "card_0": {
+      "title": "Strategi & Peta Jalan Teknis",
+      "text": "Kami menerjemahkan tujuan bisnis ke dalam eksekusi teknis:",
+      "items": {
+        "0": "Arsitektur platform & produk",
+        "1": "Pengambilan keputusan teknologi",
+        "2": "Perencanaan skalabilitas & keandalan",
+        "3": "Penganggaran untuk infrastruktur & sumber daya"
+      }
+    },
+    "card_1": {
+      "title": "Struktur Tim & Pembinaan",
+      "text": "Kami membantu Anda membangun tim internal yang solid:",
+      "items": {
+        "0": "Rekrutmen & evaluasi talenta",
+        "1": "Membangun struktur skuad",
+        "2": "Menetapkan peran, ritual, dan alur kerja",
+        "3": "Membina engineer, product manager, dan tech lead"
+      }
+    },
+    "card_2": {
+      "title": "Proses Delivery & Keunggulan Operasional",
+      "text": "Kami menerapkan sistem yang mampu menskalakan engineering:",
+      "items": {
+        "0": "Ritual Agile (Scrum, Kanban, dll)",
+        "1": "CI/CD dan praktik terbaik DevOps",
+        "2": "QA, manajemen rilis, dan observabilitas",
+        "3": "Grooming, estimasi, dan metrik sprint"
+      }
+    }
+  },
+  "how_it_works": {
+    "heading": "Bagaimana Cara Kerjanya",
+    "desc": "Kami menempatkan pemimpin teknologi setingkat mitra dari Hyperjump ke dalam organisasi Anda, didukung oleh tim engineering berpengalaman.",
+    "step": {
+      "0": {
+        "title": "Kepemimpinan langsung & pembangunan sistem",
+        "text": "Kami tidak hanya memberi saran—kami memimpin, membangun sistem, dan bekerja erat dengan tim Anda untuk mendorong pertumbuhan yang berkelanjutan."
+      },
+      "1": {
+        "title": "Pengaturan tim, review kode, pelatihan sprint",
+        "text": "Kami membantu menyusun tim Anda, meningkatkan kualitas kode, dan mempercepat eksekusi sprint untuk hasil yang lebih baik dan lebih cepat."
+      },
+      "2": {
+        "title": "Check-in mingguan & pelacakan progres",
+        "text": "Selalu selaras dengan pembaruan rutin, pelacakan isu, dan visibilitas yang jelas terhadap progres roadmap setiap minggu."
+      },
+      "3": {
+        "title": "Tujuan: mandiri dalam 6–12 bulan",
+        "text": "Misi kami adalah memberdayakan tim Anda agar bisa beroperasi secara mandiri—dengan proses yang kuat, disiplin, dan penuh kepercayaan diri."
+      }
+    }
+  },
+
+  "what_you_get": {
+    "heading": "Apa yang Anda Dapatkan",
+    "desc": "Dengan keahlian kami, Anda akan mendapatkan panduan dan alat yang dibutuhkan untuk kesuksesan jangka panjang dalam teknologi dan operasional.",
+    "items": {
+      "0": "Arah teknologi yang jelas",
+      "1": "Fondasi engineering yang kuat",
+      "2": "Peningkatan kecepatan delivery dan kualitas produk",
+      "3": "Tim teknologi yang siap tumbuh—bukan sekadar bertahan"
+    }
+  },
+
+  "why_us": {
+    "heading": "Mengapa Memilih Hyperjump?",
+    "desc": "Di Hyperjump, kami menggabungkan pengalaman nyata, kepemimpinan yang kuat, dan eksekusi langsung untuk mendorong kesuksesan bisnis Anda.",
+    "reasons": {
+      "0": "Terbukti di startup tahap awal hingga pasca-Series A",
+      "1": "Kami membawa kepemimpinan, struktur, dan sistem—bukan sekadar saran",
+      "2": "Tujuan kami adalah membuat diri kami tidak dibutuhkan lagi dengan memberdayakan tim internal Anda",
+      "3": "Klien kami termasuk"
+    }
+  },
+
+  "cta": {
+    "heading": "Bangun tim teknologi Anda dengan cara yang tepat",
+    "desc": "Mari bersama-sama membentuk tim rekayasa produk kelas dunia.",
+    "label": "Hubungi kami"
+  }
+}

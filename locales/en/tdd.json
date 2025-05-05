@@ -1,0 +1,108 @@
+{
+  "hero": {
+    "heading": "Tech Due Diligence",
+    "desc": "Structured evaluation of tech landscape—uncover risks, assess readiness, enable informed decisions."
+  },
+
+  "what_is_tdd": {
+    "heading": "What is Tech Due Diligence?",
+    "desc": "Tech Due Diligence is a structured evaluation of an organization's technology landscape—designed to uncover hidden risks, assess readiness, and provide clarity for informed decisions.",
+    "highlight": "Whether you're investing in a startup, preparing for a merger, or auditing internal capabilities, our TDD service delivers actionable insights to de-risk your tech journey."
+  },
+
+  "who_is_it": {
+    "heading": "Who is it for?",
+    "desc": "For those who need clarity, confidence, and insights—before scaling, investing, or making big tech moves.",
+    "target": {
+      "0": "<b>Investors</b> evaluating product/platform health",
+      "1": "<b>Founders/CTOs</b> preparing for funding/acquisition",
+      "2": "<b>Enterprises</b> reviewing internal or third-party vendors",
+      "3": "<b>PE/VC Firms</b> conducting pre/post-investment audit"
+    }
+  },
+
+  "what_we_deliver": {
+    "heading": "What We Deliver",
+    "desc": "From deep-dive audits to scalable systems, we deliver clarity, speed, and results—tailored to your growth stage.",
+    "card_0": {
+      "title": "Software Delivery Performance",
+      "text": "We evaluate how efficiently your team ships software:",
+      "items": {
+        "0": "Deployment frequency",
+        "1": "Cycle time",
+        "2": "Incident response & recovery",
+        "3": "QA & release readiness"
+      }
+    },
+    "card_1": {
+      "title": "Application Architecture & Maintainability",
+      "text": "We analyze the current codebase and infrastructure:",
+      "items": {
+        "0": "Scalability & fault tolerance",
+        "1": "Modularization & tech debt",
+        "2": "DevOps best practices",
+        "3": "Testing discipline"
+      }
+    },
+    "card_2": {
+      "title": "IT Infrastructure Cost & Optimization",
+      "text": "We help you answer: Are you overpaying for underused systems?",
+      "items": {
+        "0": "Cloud usage audit",
+        "1": "Cost per deployment/service",
+        "2": "Reliability & disaster recovery",
+        "3": "CI/CD efficiency"
+      }
+    }
+  },
+
+  "how_it_works": {
+    "heading": "How It Works",
+    "desc": "Discover how we turn ideas into impact. Our process is built to be simple, transparent, and focused on results—every step of the way.",
+    "step": {
+      "0": {
+        "title": "Discovery & Interviews",
+        "text": "Talk to engineering, product, and business teams to understand goals and context."
+      },
+      "1": {
+        "title": "Hands-On Audit",
+        "text": "Review repos, CI/CD, cloud infra, documentation."
+      },
+      "2": {
+        "title": "Report & Recommendations",
+        "text": "Comprehensive report: strengths, risks, steps, severity levels, roadmap."
+      },
+      "3": {
+        "title": "Post-Audit Support (Optional)",
+        "text": "Need help fixing issues? We can assist with implementation."
+      }
+    }
+  },
+
+  "what_you_get": {
+    "heading": "What You Get",
+    "desc": "Everything you need to evaluate, improve, and scale—delivered in a format that speaks to both business and technical decision-makers.",
+    "items": {
+      "0": "Executive summary for C-Level & investors",
+      "1": "Technical audit report",
+      "2": "KPI benchmarking & recommendations",
+      "3": "Action plan (quick wins & long-term strategy)"
+    }
+  },
+
+  "why_us": {
+    "heading": "Why Hyperjump?",
+    "desc": "We bring deep technical expertise, cross-industry experience, and a hands-on approach to every audit. Our team doesn’t just review code—we understand the people, processes, and pressure behind it.",
+    "reasons": {
+      "0": "We’ve audited engineering teams in <b>tech startups, fintech, media, and public sector.</b>",
+      "1": "We’re engineers ourselves—we don’t just point at problems, we solve them.",
+      "2": "Trusted by clients like"
+    }
+  },
+
+  "cta": {
+    "heading": "Ready to audit your tech?",
+    "desc": "Let’s uncover your blind spots and turn them into strengths.",
+    "label": "Talk to us"
+  }
+}
