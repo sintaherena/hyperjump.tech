@@ -43,7 +43,7 @@ export function ServiceCard(
           width={660}
           height={400}
         />
-        <div className="absolute -bottom-3 left-1 rounded-md">
+        <div className="absolute -bottom-1 left-1 rounded-md">
           <Image src={icon} alt={`${title} icon`} width={80} height={80} />
         </div>
       </div>
@@ -72,14 +72,6 @@ export function ServiceCard(
             </li>
           ))}
         </ul>
-        <div className="md:text-left">
-          <Button
-            asChild
-            size="lg"
-            className="w-full bg-hyperjump-blue text-base font-semibold text-white hover:bg-hyperjump-blue/90 md:w-44">
-            <Link href={url}>{servicesSeeMore(lang)}</Link>
-          </Button>
-        </div>
       </div>
     </div>
   );
