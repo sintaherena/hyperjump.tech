@@ -33,7 +33,7 @@ export function ServiceCard(
   return (
     <div
       className={`mb-14 flex flex-col gap-6 ${
-        withBorder ? "border-b border-gray-200 pb-14" : ""
+        withBorder ? "border-b border-gray-200 pb-7 md:pb-14" : ""
       } md:flex-row ${reverse ? "md:flex-row-reverse" : ""} items-center`}>
       <div className="relative w-full md:w-1/2">
         <Image
@@ -59,7 +59,7 @@ export function ServiceCard(
           </p>
         </div>
 
-        <ul className="mb-8 list-none text-base text-gray-700 md:text-lg">
+        <ul className="list-none text-base text-gray-700 md:text-lg">
           {items.map((point, i) => (
             <li key={i} className="mb-4 flex items-start gap-2">
               <Image
