@@ -47,7 +47,6 @@ export default function Footer({ lang }: { lang: SupportedLanguage }) {
             </a>
           ))}
         </div>
-
         <LanguagePicker lang={lang} />
 
         <Separator className="w-full bg-[#29223E]" />

@@ -20,7 +20,7 @@ export default function LanguagePicker({ lang }: { lang: SupportedLanguage }) {
     <select
       value={lang}
       onChange={handleChange}
-      className="rounded-full border bg-transparent px-3 py-2 text-sm font-medium text-white">
+      className="max-w-32 rounded-full border bg-transparent px-3 py-2 text-sm font-medium text-white">
       {supportedLanguages.map((l) => (
         <option key={l} value={l}>
           {labelByLang[l]}
