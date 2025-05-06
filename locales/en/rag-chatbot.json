@@ -18,7 +18,7 @@
       },
       "1": {
         "title": "Real-Time Information Retrieval",
-        "text": "Pulls the latest data from your selected sources, ensuring responses stay relevant."
+        "text": "Pulls the latest data from your selected sources, ensuring responses stay relevant Customizable Knowledge Base: Connects with your cloud storage, collaboration tools, databases, APIs, and internal wikis for tailored insights"
       },
       "2": {
         "title": "Customizable Knowledge Base",
@@ -43,7 +43,7 @@
       },
       "1": {
         "title": "Fine-Tune Your Bot",
-        "text": "Set retrieval rules, add instructions, and tailor responses to your needs."
+        "text": "Set retrieval rules, add custom instructions, and refine responses."
       },
       "2": {
         "title": "Deploy & Test",

@@ -3,6 +3,7 @@ import data from "@/data.json";
 import { Separator } from "@/components/ui/separator";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import { inferenceaiFooter } from "@/locales/.generated/server";
+import LanguagePicker from "../[lang]/language-picker";
 
 export default function Footer({ lang }: { lang: SupportedLanguage }) {
   const { aiSocials, copyright } = data;
@@ -46,6 +47,8 @@ export default function Footer({ lang }: { lang: SupportedLanguage }) {
             </a>
           ))}
         </div>
+
+        <LanguagePicker lang={lang} />
 
         <Separator className="w-full bg-[#29223E]" />
 

@@ -57,80 +57,25 @@ function KeyFeatures({ lang }: { lang: SupportedLanguage }) {
 }
 
 function HowItWorks({ lang }: { lang: SupportedLanguage }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <GridItemsSection
       id="how-it-works"
       title={ragChatbotHowItWorksHeading(lang)}
       className="my-10 max-w-7xl">
       <div className="my-10" />
-      <div className="md:hidden">
-        <Accordion type="single" collapsible className="w-full">
-          {getHowItWorks(lang).map((item, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} asChild>
-              <Card className="my-4 w-full border-none bg-[#1B1728] shadow-sm transition-all duration-300">
-                <CardHeader className="px-4 py-2">
-                  <AccordionTrigger className="flex items-center justify-between no-underline hover:no-underline focus:no-underline">
-                    <div className="flex flex-col">
-                      <div className="text-left text-xl font-medium text-white">
-                        {item.title}
-                      </div>
-                      <div className="text-left font-medium text-[#AFB0C3]">
-                        {item.description}
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                </CardHeader>
-                <AccordionContent asChild>
-                  <CardContent className="px-4 pb-4 pt-0 text-base text-[#CDCED8] lg:text-lg">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </CardContent>
-                </AccordionContent>
-              </Card>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
-      <div className="mx-auto mt-8 hidden w-full grid-cols-1 items-stretch gap-8 md:grid lg:grid-cols-2">
-        <div className="h-full space-y-4">
-          {getHowItWorks(lang).map((item, i) => (
-            <Card
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={cn(
-                "cursor-pointer rounded-2xl border bg-[#1B1728] p-4 transition-all duration-300 ease-in-out",
-                i === activeIndex
-                  ? "border-white/20 bg-[#2E2843] shadow-lg shadow-white/10 ring-1 ring-white/10"
-                  : "border-white/10"
-              )}>
-              <h3 className="mb-1 text-xl font-semibold text-white">
-                {item.title}
-              </h3>
-              <p className="text-base text-[#AFB0C3] text-muted-foreground">
-                {item.description}
-              </p>
-            </Card>
-          ))}
-        </div>
-
-        <div className="flex min-h-[100%] items-center justify-center rounded-2xl bg-gradient-to-br from-[#2B2543] to-[#1A152E] p-8">
-          <div className="relative aspect-[4/3] w-full max-w-md">
-            <Image
-              src={getHowItWorks(lang)[activeIndex].image}
-              alt={getHowItWorks(lang)[activeIndex].title}
-              fill
-              className="rounded-xl object-contain transition duration-300"
-            />
-          </div>
-        </div>
+      <div className="mt-8 w-full grid-cols-1 gap-8 space-y-6 md:grid md:space-y-0 lg:grid-cols-1">
+        {getHowItWorks(lang).map((item, i) => (
+          <Card
+            key={i}
+            className="group cursor-pointer rounded-2xl border border-white/10 bg-[#1B1728] p-6 transition-all duration-300 ease-in-out hover:border-white/20 hover:bg-gradient-to-br hover:from-[#2E2843] hover:to-[#1B1728] hover:shadow-lg hover:ring-1 hover:ring-white/10">
+            <h3 className="mb-1 text-xl font-semibold text-white group-hover:text-white">
+              {item.title}
+            </h3>
+            <p className="text-base text-[#AFB0C3] group-hover:text-[#CDCED8]">
+              {item.description}
+            </p>
+          </Card>
+        ))}
       </div>
     </GridItemsSection>
   );
@@ -148,7 +93,7 @@ function WhatIsIncluded({ lang }: { lang: SupportedLanguage }) {
             key={idx}
             className="relative flex flex-col items-start justify-start gap-4 pl-6">
             <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-            <Image src={item.icon} alt={item.title} width={32} height={32} />
+            {item.icon}
             <p className="text-base font-semibold text-white/90 md:text-xl">
               {item.title}
             </p>

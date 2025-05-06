@@ -11,7 +11,9 @@ import {
 
 export default function Hero({ lang }: { lang: SupportedLanguage }) {
   return (
-    <section className="relative overflow-hidden bg-[#04040B] text-white">
+    <section
+      id="hero"
+      className="relative overflow-hidden bg-[#04040B] text-white">
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}

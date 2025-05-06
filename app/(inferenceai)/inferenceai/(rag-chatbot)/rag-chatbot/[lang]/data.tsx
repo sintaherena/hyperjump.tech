@@ -35,6 +35,16 @@ import {
   ragChatbotFaq2Answer,
   ragChatbotFaq3Answer
 } from "@/locales/.generated/server";
+import {
+  ChatBubbleIcon,
+  LockClosedIcon,
+  ClockIcon,
+  FileTextIcon,
+  LayersIcon,
+  Link2Icon,
+  DashboardIcon,
+  ReloadIcon
+} from "@radix-ui/react-icons";
 
 export const nav = (lang: SupportedLanguage) => {
   const data = [
@@ -51,27 +61,27 @@ export const getKeyFeatures = (lang: SupportedLanguage) => {
     {
       title: ragChatbotKeyFeaturesFeatures0Title(lang),
       description: ragChatbotKeyFeaturesFeatures0Text(lang),
-      icon: "/images/inferenceai/why-work-with-us/tailored-to-your-workflow.svg"
+      icon: <FileTextIcon className="h-7 w-7 text-white" />
     },
     {
       title: ragChatbotKeyFeaturesFeatures1Title(lang),
       description: ragChatbotKeyFeaturesFeatures1Text(lang),
-      icon: "/images/inferenceai/why-work-with-us/speed-to-launch.svg"
+      icon: <ClockIcon className="h-7 w-7 text-white" />
     },
     {
       title: ragChatbotKeyFeaturesFeatures2Title(lang),
       description: ragChatbotKeyFeaturesFeatures2Text(lang),
-      icon: "/images/inferenceai/why-work-with-us/ongoing-support-n-optimization.svg"
+      icon: <LayersIcon className="h-7 w-7 text-white" />
     },
     {
       title: ragChatbotKeyFeaturesFeatures3Title(lang),
       description: ragChatbotKeyFeaturesFeatures3Text(lang),
-      icon: "/images/inferenceai/why-work-with-us/speed-to-launch.svg"
+      icon: <ChatBubbleIcon className="h-7 w-7 text-white" />
     },
     {
       title: ragChatbotKeyFeaturesFeatures4Title(lang),
       description: ragChatbotKeyFeaturesFeatures4Text(lang),
-      icon: "/images/inferenceai/why-work-with-us/ongoing-support-n-optimization.svg"
+      icon: <LockClosedIcon className="h-7 w-7 text-white" />
     }
   ];
 
@@ -82,23 +92,19 @@ export const getHowItWorks = (lang: SupportedLanguage) => {
   const data = [
     {
       title: ragChatbotHowItWorksSteps0Title(lang),
-      description: ragChatbotHowItWorksSteps0Text(lang),
-      image: "/images/inferenceai/how-it-works/discovery-n-strategy.png"
+      description: ragChatbotHowItWorksSteps0Text(lang)
     },
     {
       title: ragChatbotHowItWorksSteps1Title(lang),
-      description: ragChatbotHowItWorksSteps1Text(lang),
-      image: "/images/inferenceai/how-it-works/agent-design-n-prototype.png"
+      description: ragChatbotHowItWorksSteps1Text(lang)
     },
     {
       title: ragChatbotHowItWorksSteps2Title(lang),
-      description: ragChatbotHowItWorksSteps2Text(lang),
-      image: "/images/inferenceai/how-it-works/integration-n-deployment.png"
+      description: ragChatbotHowItWorksSteps2Text(lang)
     },
     {
       title: ragChatbotHowItWorksSteps3Title(lang),
-      description: ragChatbotHowItWorksSteps3Text(lang),
-      image: "/images/inferenceai/how-it-works/training-n-iteration.png"
+      description: ragChatbotHowItWorksSteps3Text(lang)
     }
   ];
 
@@ -109,19 +115,19 @@ export const getWhatIsIncluded = (lang: SupportedLanguage) => {
   const data = [
     {
       title: ragChatbotWhatIsIncludedItems0(lang),
-      icon: "/images/inferenceai/what-you-get/end-to-end-strategy-session.svg"
+      icon: <ChatBubbleIcon className="h-7 w-7 text-white" />
     },
     {
       title: ragChatbotWhatIsIncludedItems1(lang),
-      icon: "/images/inferenceai/what-you-get/custom-ai-agent-architecture-n-design.svg"
+      icon: <Link2Icon className="h-7 w-7 text-white" />
     },
     {
       title: ragChatbotWhatIsIncludedItems2(lang),
-      icon: "/images/inferenceai/what-you-get/pompt-engineering-n-llm-integration.svg"
+      icon: <DashboardIcon className="h-7 w-7 text-white" />
     },
     {
       title: ragChatbotWhatIsIncludedItems3(lang),
-      icon: "/images/inferenceai/what-you-get/api-n-tool-integrations.svg"
+      icon: <ReloadIcon className="h-7 w-7 text-white" />
     }
   ];
 
