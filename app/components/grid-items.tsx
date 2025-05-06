@@ -397,7 +397,7 @@ export default function GridItemsContainer({
 
 export const GridItemsSection = ({
   id,
-  className = "",
+  className = "max-w-5xl",
   title,
   description,
   layout = "horizontal",
@@ -409,9 +409,11 @@ export const GridItemsSection = ({
   return (
     <section
       id={id}
-      className={cn("scroll-mt-20 bg-section-gradient", className)}>
+      className={cn(
+        "mx-auto flex scroll-mt-20 flex-wrap items-center justify-center bg-section-gradient px-4 py-5 md:px-6 md:py-8",
+        className
+      )}>
       <motion.div
-        className="mx-auto flex max-w-5xl flex-wrap items-center justify-center px-4 py-5 md:px-6 md:py-8"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}

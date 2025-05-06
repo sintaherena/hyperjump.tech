@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "heading": "Dapatkan Jawaban Instan dan Akurat dari Data Anda Sendiri",
+    "desc": "Manfaatkan Retrieval-Augmented Generation (RAG) untuk menciptakan chatbot AI yang memahami dokumen, database, dan API Anda. Memberikan jawaban yang tepat dan real-time setiap saat."
+  },
+  "nav_items": {
+    "0_label": "Fitur Utama",
+    "1_label": "Cara Kerja",
+    "2_label": "Apa Saja yang Termasuk",
+    "3_label": "FAQ"
+  },
+  "key_features": {
+    "heading": "Chatbot AI yang Didukung oleh Pengetahuan Anda",
+    "features": {
+      "0": {
+        "title": "Jawaban yang Ditingkatkan dengan Pengetahuan",
+        "text": "Menggabungkan AI generatif dengan dokumen, database, dan sumber eksternal Anda untuk memberikan jawaban paling akurat."
+      },
+      "1": {
+        "title": "Pengambilan Informasi Real-Time",
+        "text": "Menarik data terbaru dari sumber pilihan Anda agar jawaban tetap relevan dan up-to-date."
+      },
+      "2": {
+        "title": "Basis Pengetahuan yang Dapat Disesuaikan",
+        "text": "Terhubung dengan penyimpanan cloud, alat kolaborasi, database, API, dan wiki internal Anda untuk wawasan yang disesuaikan."
+      },
+      "3": {
+        "title": "Memahami Konteks & Ingatan",
+        "text": "Menjaga riwayat percakapan untuk interaksi yang lebih lancar dan alami."
+      },
+      "4": {
+        "title": "Aman & Dapat Diskalakan",
+        "text": "Keamanan tingkat enterprise dengan kemudahan implementasi untuk tim, pelanggan, atau aplikasi Anda."
+      }
+    }
+  },
+  "how_it_works": {
+    "heading": "Cara Kerja Chatbot RAG",
+    "steps": {
+      "0": {
+        "title": "Unggah Data Anda",
+        "text": "Terhubung dengan Microsoft Teams, OneDrive, Google Drive, database SQL, API, dan halaman web."
+      },
+      "1": {
+        "title": "Sesuaikan Bot Anda",
+        "text": "Atur aturan pengambilan data, tambahkan instruksi, dan sesuaikan respons sesuai kebutuhan."
+      },
+      "2": {
+        "title": "Implementasi & Uji Coba",
+        "text": "Sematkan di situs web, hubungkan ke WhatsApp atau alat internal Anda."
+      },
+      "3": {
+        "title": "Pantau & Tingkatkan",
+        "text": "Lacak performa bot dan lakukan perbaikan secara berkala."
+      }
+    }
+  },
+  "what_is_included": {
+    "heading": "Apa Saja yang Termasuk?",
+    "items": {
+      "0": "Pengaturan chatbot RAG khusus",
+      "1": "Akses API & integrasi",
+      "2": "Dashboard admin untuk wawasan",
+      "3": "Pembaruan & peningkatan berkelanjutan"
+    }
+  },
+  "faq": {
+    "heading": "Pertanyaan yang Sering Diajukan",
+    "desc": "Segala hal yang Anda butuhkan mulai dari ide hingga agen AI yang siap digunakan—semua ditangani untuk Anda, dari awal hingga akhir.",
+    "0_question": "Apa bedanya dengan ChatGPT?",
+    "0_answer": "Berbeda dengan ChatGPT yang mengandalkan data pelatihan statis, chatbot kami mengambil informasi terkini dan relevan secara real-time.",
+    "1_question": "Dari mana saja data dapat diambil?",
+    "1_answer": "Chatbot ini dapat terintegrasi dengan penyimpanan cloud, alat kolaborasi, database, API, dan halaman web.",
+    "2_question": "Apakah respons dapat disesuaikan?",
+    "2_answer": "Tentu! Anda dapat mengatur aturan pengambilan data, mengontrol nada bahasa, dan menambahkan instruksi khusus.",
+    "3_question": "Apakah data saya aman?",
+    "3_answer": "Pastinya. Kami menggunakan enkripsi dan kontrol akses untuk menjaga privasi dan keamanan informasi Anda."
+  }
+}
