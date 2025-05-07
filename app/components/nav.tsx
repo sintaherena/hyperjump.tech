@@ -81,12 +81,6 @@ export default function Nav({
           </CenterNavItems>
 
           <RightNavItems>
-            {!isTransparent ? (
-              <LanguagePickerServices isOpen={isOpen} lang={lang} />
-            ) : (
-              <LanguagePicker isOpen={isOpen} lang={lang} />
-            )}
-
             <Button
               asChild
               variant={isTransparent ? "outline" : "default"}
