@@ -29,7 +29,13 @@ export default function Nav({
       {({ shouldBeWhite }) => (
         <>
           <NavContainer>
-            <Link href="/inferenceai" className="flex items-center">
+            <Link
+              href={
+                type === "inferenceai"
+                  ? "/inferenceai"
+                  : "/inferenceai/rag-chatbot"
+              }
+              className="flex items-center">
               <InferenceAI isOpen={isOpen} />
             </Link>
 
