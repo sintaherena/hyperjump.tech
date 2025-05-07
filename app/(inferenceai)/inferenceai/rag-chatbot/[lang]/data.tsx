@@ -46,7 +46,7 @@ import {
   ReloadIcon
 } from "@radix-ui/react-icons";
 
-export const nav = (lang: SupportedLanguage) => {
+export const navRagChatbot = (lang: SupportedLanguage) => {
   const data = [
     { label: ragChatbotNavItems0Label(lang), href: "#key-features" },
     { label: ragChatbotNavItems1Label(lang), href: "#how-it-works" },

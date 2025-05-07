@@ -3,8 +3,15 @@ import data from "@/data.json";
 import { Separator } from "@/components/ui/separator";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import { inferenceaiFooter } from "@/locales/.generated/server";
+import LanguagePicker from "./language-picker";
 
-export default function Footer({ lang }: { lang: SupportedLanguage }) {
+export default function Footer({
+  lang,
+  type = "inferenceai"
+}: {
+  lang: SupportedLanguage;
+  type?: "inferenceai" | "rag-chatbot";
+}) {
   const { aiSocials, copyright } = data;
 
   return (
@@ -46,6 +53,8 @@ export default function Footer({ lang }: { lang: SupportedLanguage }) {
             </a>
           ))}
         </div>
+
+        <LanguagePicker lang={lang} type={type} />
 
         <Separator className="w-full bg-[#29223E]" />
 

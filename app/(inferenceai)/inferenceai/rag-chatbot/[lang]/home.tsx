@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { GridItems, GridItemsSection } from "@/app/components/grid-items";
 import {
   Accordion,
@@ -10,7 +8,6 @@ import {
   AccordionTrigger
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import {
   ragChatbotKeyFeaturesHeading,
