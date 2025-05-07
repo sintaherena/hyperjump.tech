@@ -20,7 +20,7 @@ export default function ServicesLangLayout({
       />
       <Hero lang={params.lang as SupportedLanguage} />
       {children}
-      <Footer lang={params.lang as SupportedLanguage} />
+      <Footer lang={params.lang as SupportedLanguage} type="services" />
     </div>
   );
 }
