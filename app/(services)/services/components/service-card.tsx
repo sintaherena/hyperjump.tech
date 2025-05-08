@@ -2,9 +2,9 @@ import Image from "next/image";
 
 interface ServiceCardProps {
   title: string;
-  text: string;
-  desc: string;
-  items: string[];
+  text?: string;
+  desc?: string;
+  items?: string[];
   image: string;
   icon: string;
   reverse?: boolean;
@@ -22,7 +22,7 @@ export function ServiceCard({
   withBorder = true
 }: ServiceCardProps) {
   return (
-    <div
+    <section
       className={`mb-14 flex flex-col gap-6 ${
         withBorder ? "border-b border-gray-200 pb-7 md:pb-14" : ""
       } md:flex-row ${reverse ? "md:flex-row-reverse" : ""} items-center`}>
@@ -50,8 +50,8 @@ export function ServiceCard({
           </p>
         </div>
 
-        <ul className="list-none text-base text-gray-700 md:text-lg">
-          {items.map((point, i) => (
+        <ul className="list-none text-left text-base text-gray-700 md:text-lg">
+          {items?.map((point, i) => (
             <li key={i} className="mb-4 flex items-start gap-2">
               <Image
                 src="/images/checklist.svg"
@@ -64,6 +64,6 @@ export function ServiceCard({
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 }

@@ -12,7 +12,7 @@ export default function Footer({
   type = "hyperjump"
 }: {
   lang: SupportedLanguage;
-  type?: "hyperjump" | "services";
+  type?: "hyperjump" | "services" | "tech-due-dilligence";
 }) {
   return (
     <footer className="relative overflow-hidden px-4 py-10 text-white md:px-20 md:py-14">

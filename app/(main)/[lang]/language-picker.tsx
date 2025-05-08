@@ -18,11 +18,24 @@ const labelByLang: Record<SupportedLanguage, string> = {
 export function LanguagePicker({
   lang,
   type = "hyperjump"
-}: LanguagePickerProps) {
+}: {
+  lang: SupportedLanguage;
+  type?: "hyperjump" | "services" | "tech-due-dilligence";
+}) {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLang = e.target.value as SupportedLanguage;
-    window.location.href =
-      type === "hyperjump" ? `/${newLang}#hero` : `/services/${newLang}#hero`;
+
+    const urlHyperjump = `/${newLang}#hero`;
+    const urlServices = `/services/${newLang}#hero`;
+    const urlTdd = `/services/tech-due-dilligence/${newLang}#hero`;
+
+    if (type === "services") {
+      window.location.href = urlServices;
+    } else if (type === "tech-due-dilligence") {
+      window.location.href = urlTdd;
+    } else {
+      window.location.href = urlHyperjump;
+    }
   };
 
   return (
