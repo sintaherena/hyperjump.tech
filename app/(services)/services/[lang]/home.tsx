@@ -1,6 +1,6 @@
 "use client";
 
-import { SupportedLanguage } from "@/locales/.generated/types";
+import type { SupportedLanguage } from "@/locales/.generated/types";
 import {
   servicesCtoaasTitle,
   servicesHeading,
@@ -31,7 +31,8 @@ import {
   servicesCtaHeading,
   servicesCtaDesc,
   servicesPartnersHeading,
-  servicesPartnersDesc
+  servicesPartnersDesc,
+  servicesSeeMore
 } from "@/locales/.generated/server";
 import { ServiceCard } from "../components/service-card";
 import { Button } from "@/components/ui/button";
@@ -60,6 +61,7 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           ]}
           image="/images/services/ctoaas.webp"
           icon="/images/services/ctoaas-icon.svg"
+          seeMoreText={servicesSeeMore(lang)}
         />
 
         <ServiceCard
@@ -74,6 +76,7 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           image="/images/services/saas.webp"
           icon="/images/services/saas-icon.svg"
           reverse
+          seeMoreText={servicesSeeMore(lang)}
         />
 
         <ServiceCard
@@ -87,6 +90,7 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           ]}
           image="/images/services/tech-due-diligence.webp"
           icon="/images/services/tech-due-diligence-icon.svg"
+          seeMoreText={servicesSeeMore(lang)}
         />
 
         <ServiceCard
@@ -102,10 +106,11 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           icon="/images/services/erp-icon.svg"
           withBorder={false}
           reverse
+          seeMoreText={servicesSeeMore(lang)}
         />
       </section>
 
-      <section className="relative mb-10  mt-20 w-full">
+      <section className="relative mb-10 mt-20 w-full">
         <h3 className="mb-4 text-[28px] font-medium text-hyperjump-black md:text-4xl">
           {servicesPartnersHeading(lang)}
         </h3>

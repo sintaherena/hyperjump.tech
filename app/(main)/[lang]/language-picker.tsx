@@ -1,9 +1,14 @@
 "use client";
 
 import {
-  SupportedLanguage,
+  type SupportedLanguage,
   supportedLanguages
 } from "@/locales/.generated/types";
+
+type LanguagePickerProps = {
+  lang: SupportedLanguage;
+  type?: "hyperjump" | "services";
+};
 
 const labelByLang: Record<SupportedLanguage, string> = {
   en: "🇬🇧 English",
@@ -13,10 +18,7 @@ const labelByLang: Record<SupportedLanguage, string> = {
 export function LanguagePicker({
   lang,
   type = "hyperjump"
-}: {
-  lang: SupportedLanguage;
-  type?: "hyperjump" | "services";
-}) {
+}: LanguagePickerProps) {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLang = e.target.value as SupportedLanguage;
     window.location.href =

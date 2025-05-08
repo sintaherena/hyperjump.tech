@@ -34,8 +34,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function NoLangInferenceAI() {
   return (
-    <InferenceAILangLayout params={{ lang: "en" }}>
-      <InferenceAIPage params={{ lang: "en" }} />
+    <InferenceAILangLayout params={Promise.resolve({ lang: "en" })}>
+      <InferenceAIPage params={Promise.resolve({ lang: "en" })} />
     </InferenceAILangLayout>
   );
 }

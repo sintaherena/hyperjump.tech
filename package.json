@@ -8,7 +8,8 @@
     "build": "npm run generate-locales && next build",
     "start": "next start",
     "lint": "next lint",
-    "check-format": "prettier --check ."
+    "check-format": "prettier --check .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@n8n/chat": "^0.27.1",
