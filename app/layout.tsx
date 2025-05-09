@@ -54,8 +54,6 @@ export default function RootLayout({
           property="og:description"
           content="Open source first. Cloud native. DevOps excellence."
         />
-        <meta property="og:image" content="https://hyperjump.tech" />
-
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="hyperjump.tech" />
         <meta property="twitter:url" content="https://hyperjump.tech" />
@@ -64,8 +62,6 @@ export default function RootLayout({
           name="twitter:description"
           content="Open source first. Cloud native. DevOps excellence."
         />
-        <meta name="twitter:image" content="" />
-
         <GoogleAnalytics gaId={data.GTM_ID} />
       </head>
       <body
