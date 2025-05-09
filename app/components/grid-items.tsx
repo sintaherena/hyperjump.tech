@@ -483,7 +483,6 @@ export const GridItemsTitleBlack = ({
   ) : (
     <motion.h1
       {...sharedMotionProps}
-      transition={{ delay: 0.1, duration: 0.6 }}
       className="w-full text-center text-4xl font-medium leading-tight text-white md:text-[40px]">
       {title}
     </motion.h1>
