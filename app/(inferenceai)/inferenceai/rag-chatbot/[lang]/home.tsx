@@ -105,7 +105,7 @@ function WhatIsIncluded({ lang }: { lang: SupportedLanguage }) {
             transition={{ duration: 0.6 }}
             key={idx}
             className="relative flex flex-col items-start justify-start gap-4 pl-6">
-            <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+            <div className="absolute top-0 left-0 h-full w-[2px] bg-linear-to-b from-transparent via-white/20 to-transparent" />
             {item.icon}
             <p className="text-base font-semibold text-white/90 md:text-xl">
               {item.title}

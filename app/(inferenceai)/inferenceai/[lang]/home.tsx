@@ -119,7 +119,7 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
                       <div className="mb-4 text-left font-medium text-[#AFB0C3]">
                         {item.description}
                       </div>
-                      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+                      <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl">
                         <Image
                           src={item.image}
                           alt={item.title}
@@ -149,13 +149,13 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
                 className={cn(
                   "transform cursor-pointer bg-transparent p-6 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl",
                   i === activeIndex
-                    ? "border-white/20 bg-[#1B1728] shadow-md shadow-white/10 ring-1 ring-white/10"
+                    ? "border-white/20 bg-[#1B1728] shadow-md ring-1 shadow-white/10 ring-white/10"
                     : "border-[#4E4566] hover:border-white/20 hover:bg-[#1f1a2f]/40 hover:ring-1 hover:ring-white/10"
                 )}>
                 <h3 className="mb-1 text-xl font-semibold text-white">
                   {item.title}
                 </h3>
-                <p className="text-base text-[#AFB0C3] text-muted-foreground">
+                <p className="text-muted-foreground text-base text-[#AFB0C3]">
                   {item.description}
                 </p>
               </Card>
@@ -164,7 +164,7 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
         </div>
 
         <div className="flex min-h-[100%] items-center justify-center rounded-2xl bg-[#302A43] p-3">
-          <div className="relative aspect-[3/3] w-full max-w-md md:aspect-[4/3]">
+          <div className="relative aspect-3/3 w-full max-w-md md:aspect-4/3">
             <Image
               src={getHowItWorks(lang)[activeIndex].image}
               alt={getHowItWorks(lang)[activeIndex].title}
@@ -196,7 +196,7 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
             transition={{ duration: 0.6 }}
             key={idx}
             className="relative flex flex-col items-start justify-start gap-4 pl-6">
-            <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+            <div className="absolute top-0 left-0 h-full w-[2px] bg-linear-to-b from-transparent via-white/20 to-transparent" />
             <Image src={item.icon} alt={item.title} width={32} height={32} />
             <p className="text-base font-semibold text-white/90 md:text-xl">
               {item.title}
@@ -330,7 +330,7 @@ function CTASection({ lang }: { lang: SupportedLanguage }) {
 
   return (
     <section className="w-full px-4 py-5 md:py-8">
-      <div className="custom-glow-border relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-inferenceai-indigo p-6 text-center md:p-10">
+      <div className="custom-glow-border bg-inferenceai-indigo relative mx-auto max-w-5xl overflow-hidden rounded-3xl p-6 text-center md:p-10">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/inferenceai/cta-background.png"
@@ -341,7 +341,7 @@ function CTASection({ lang }: { lang: SupportedLanguage }) {
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="relative z-20 space-y-4 text-white md:space-y-6">
-          <h2 className="text-center text-2xl font-semibold leading-8 md:text-4xl xl:text-[48px]">
+          <h2 className="text-center text-2xl leading-8 font-semibold md:text-4xl xl:text-[48px]">
             {inferenceaiCtaHeading(lang)}
           </h2>
           <p className="mx-auto max-w-xl text-lg md:text-[22px]">
