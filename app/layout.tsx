@@ -23,6 +23,22 @@ export const metadata: Metadata = {
     icon: "/icons/icon-192x192.png",
     apple: "/icons/apple-touch-icon.png",
     shortcut: "/icons/icon-192x192.png"
+  },
+  openGraph: {
+    title: data.title,
+    description: data.description,
+    type: "website",
+    url: data.url,
+    siteName: data.title,
+    images: [
+      {
+        url: "https://hyperjump.tech/images/hyperjump-og.png",
+        width: 1200,
+        height: 630,
+        alt: `${data.title} Logo`,
+        type: "image/png"
+      }
+    ]
   }
 };
 
@@ -40,27 +56,6 @@ export default function RootLayout({
         <meta
           name="format-detection"
           content="telephone=no, date=no, email=no, address=no"
-        />
-        <title>Hyperjump Technology</title>
-        <meta
-          name="description"
-          content="Open source first. Cloud native. DevOps excellence."
-        />
-
-        <meta property="og:url" content="https://hyperjump.tech" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Hyperjump Technology" />
-        <meta
-          property="og:description"
-          content="Open source first. Cloud native. DevOps excellence."
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="hyperjump.tech" />
-        <meta property="twitter:url" content="https://hyperjump.tech" />
-        <meta name="twitter:title" content="Hyperjump Technology" />
-        <meta
-          name="twitter:description"
-          content="Open source first. Cloud native. DevOps excellence."
         />
         <GoogleAnalytics gaId={data.GTM_ID} />
       </head>

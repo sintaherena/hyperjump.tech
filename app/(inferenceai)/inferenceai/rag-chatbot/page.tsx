@@ -4,7 +4,7 @@ import {
 } from "@/locales/.generated/server";
 import RagChatbotLangLayout from "./[lang]/layout";
 import RagChatbotPage from "./[lang]/page";
-import { data } from "../data";
+import { data } from "./[lang]/data";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
