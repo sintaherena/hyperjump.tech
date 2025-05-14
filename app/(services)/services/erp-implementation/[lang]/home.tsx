@@ -173,7 +173,6 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
             erpWhatYouGetItems2(lang)
           ]}
           image="/images/services/tdd/what-you-get.svg"
-          reverse
         />
       </div>
     </section>

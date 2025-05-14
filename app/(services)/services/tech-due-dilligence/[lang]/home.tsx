@@ -173,7 +173,6 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
             tddWhatYouGetItems2(lang)
           ]}
           image="/images/services/tdd/what-you-get.svg"
-          reverse
         />
       </div>
     </section>

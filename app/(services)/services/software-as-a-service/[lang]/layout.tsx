@@ -22,7 +22,7 @@ export default async function SaasLangLayout({
       <Nav className="xxl:max-w-7xl max-w-6xl" isTransparent lang={lang} />
       <Hero heading={saasHeroHeading(lang)} subheading={saasHeroDesc(lang)} />
       {children}
-      <Footer lang={lang} type="tech-due-dilligence" />
+      <Footer lang={lang} type="software-as-a-service" />
     </>
   );
 }

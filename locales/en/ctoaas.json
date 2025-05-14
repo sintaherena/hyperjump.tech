@@ -6,17 +6,17 @@
   "what_is_ctoaas": {
     "heading": "What is CTO-as-a-Service?",
     "desc": "Not every company needs a full-time CTO—but every tech team needs strong leadership.",
-    "highlight": "CTO-as-a-Service by Hyperjump gives you access to senior-level engineering leadership and a battle-tested product team. We help you <b>build a strong engineering culture, ship better software,</b> and <b>scale your product organization<b/>—without the overhead of building it alone."
+    "highlight": "CTO-as-a-Service by Hyperjump gives you access to senior-level engineering leadership and a battle-tested product team. We help you <span class=\"font-bold\">build a strong engineering culture, ship better software,</span> and <span class=\"font-bold\">scale your product organization<b/>—without the overhead of building it alone."
   },
 
   "who_is_it": {
     "heading": "Who is it for?",
     "desc": "Our solutions are ideal for businesses seeking to scale efficiently and optimize operations.",
     "target": {
-      "0": "<b>Founders or CEOs</b> without a technical co-founder",
-      "1": "<b>Product teams</b> that need better process, structure, or velocity",
-      "2": "<b>Organizations</b> undergoing digital transformation",
-      "3": "<b>Scale-ups</b> preparing for growth, audits, or fundraising"
+      "0": "<span class=\"font-bold\">Founders or CEOs</span> without a technical co-founder",
+      "1": "<span class=\"font-bold\">Product teams</span> that need better process, structure, or velocity",
+      "2": "<span class=\"font-bold\">Organizations</span> undergoing digital transformation",
+      "3": "<span class=\"font-bold\">Scale-ups</span> preparing for growth, audits, or fundraising"
     }
   },
 
@@ -56,7 +56,7 @@
   },
   "how_it_works": {
     "heading": "How It Works",
-    "desc": "We embed a Hyperjump partner-level tech leader into your organization, supported by an experienced engineering team.",
+    "desc": "We embed a <span style=\"font-weight: bold;\">Hyperjump partner-level tech leader</span> into your organization, supported by an experienced engineering team.",
     "step": {
       "0": {
         "title": "Hands-on leadership + system building",
@@ -92,9 +92,9 @@
     "heading": "Why Hyperjump?",
     "desc": "At Hyperjump, we combine proven experience, strong leadership, and hands-on execution to drive success for your business.",
     "reasons": {
-      "0": "Proven across early stage to post-Series A startups",
-      "1": "We bring leadership, structure, and systems—not just advice",
-      "2": "Our goal is to make ourselves obsolete by empowering your internal team",
+      "0": "Proven across <span class=\"font-bold\">early stage to post-Series A startups</span>",
+      "1": "We bring <span class=\"font-bold\">leadership, structure, and systems</span>—not just advice",
+      "2": "Our goal is to <span class=\"font-bold\">make ourselves obsolete</span> by empowering your internal team",
       "3": "Clients include"
     }
   },

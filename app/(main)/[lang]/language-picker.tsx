@@ -20,7 +20,13 @@ export function LanguagePicker({
   type = "hyperjump"
 }: {
   lang: SupportedLanguage;
-  type?: "hyperjump" | "services" | "tech-due-dilligence";
+  type?:
+    | "hyperjump"
+    | "services"
+    | "tech-due-dilligence"
+    | "software-as-a-service"
+    | "erp-implementation"
+    | "cto-as-a-service";
 }) {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLang = e.target.value as SupportedLanguage;
@@ -28,11 +34,20 @@ export function LanguagePicker({
     const urlHyperjump = `/${newLang}#hero`;
     const urlServices = `/services/${newLang}#hero`;
     const urlTdd = `/services/tech-due-dilligence/${newLang}#hero`;
+    const urlSaas = `/services/software-as-a-service/${newLang}#hero`;
+    const urlErp = `/services/erp-implementation/${newLang}#hero`;
+    const urlCtoAAS = `/services/cto-as-a-service/${newLang}#hero`;
 
     if (type === "services") {
       window.location.href = urlServices;
     } else if (type === "tech-due-dilligence") {
       window.location.href = urlTdd;
+    } else if (type === "cto-as-a-service") {
+      window.location.href = urlCtoAAS;
+    } else if (type === "software-as-a-service") {
+      window.location.href = urlSaas;
+    } else if (type === "erp-implementation") {
+      window.location.href = urlErp;
     } else {
       window.location.href = urlHyperjump;
     }

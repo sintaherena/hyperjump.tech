@@ -25,7 +25,7 @@ export default async function CTOAsAServiceLangLayout({
         subheading={ctoaasHeroDesc(lang)}
       />
       {children}
-      <Footer lang={lang} type="tech-due-dilligence" />
+      <Footer lang={lang} type="cto-as-a-service" />
     </>
   );
 }

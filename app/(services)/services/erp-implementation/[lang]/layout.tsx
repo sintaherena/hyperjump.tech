@@ -22,7 +22,7 @@ export default async function ERPImplementationLangLayout({
       <Nav className="xxl:max-w-7xl max-w-6xl" isTransparent lang={lang} />
       <Hero heading={erpHeroHeading(lang)} subheading={erpHeroDesc(lang)} />
       {children}
-      <Footer lang={lang} type="tech-due-dilligence" />
+      <Footer lang={lang} type="erp-implementation" />
     </>
   );
 }
