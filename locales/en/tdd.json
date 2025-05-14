@@ -1,7 +1,7 @@
 {
   "hero": {
     "heading": "Tech Due Diligence",
-    "desc": "Structured evaluation of tech landscape—uncover risks, assess readiness, enable informed decisions."
+    "desc": "Identify Risks. Unlock Opportunities. Build with Confidence."
   },
 
   "what_is_tdd": {
@@ -14,10 +14,10 @@
     "heading": "Who is it for?",
     "desc": "For those who need clarity, confidence, and insights—before scaling, investing, or making big tech moves.",
     "target": {
-      "0": "<b>Investors</b> evaluating product/platform health",
-      "1": "<b>Founders/CTOs</b> preparing for funding/acquisition",
-      "2": "<b>Enterprises</b> reviewing internal or third-party vendors",
-      "3": "<b>PE/VC Firms</b> conducting pre/post-investment audit"
+      "0": "<span class=\"font-bold\">Investors</span> evaluating the health and scalability of a product or platform",
+      "1": "<span class=\"font-bold\">Founders/CTOs</span> preparing for funding rounds or acquisitions",
+      "2": "<span class=\"font-bold\">Enterprises</span> assessing internal capabilities or third-party vendors",
+      "3": "<span class=\"font-bold\">PE/VC Firms</span> seeking deep-dive audits pre/post-investment"
     }
   },
 
@@ -41,7 +41,7 @@
         "0": "Scalability & fault tolerance",
         "1": "Modularization & tech debt",
         "2": "DevOps best practices",
-        "3": "Testing discipline"
+        "3": "Code coverage and testing discipline"
       }
     },
     "card_2": {
@@ -50,8 +50,8 @@
       "items": {
         "0": "Cloud usage audit",
         "1": "Cost per deployment/service",
-        "2": "Reliability & disaster recovery",
-        "3": "CI/CD efficiency"
+        "2": "Redundancy and disaster recovery",
+        "3": "CI/CD pipeline efficiency"
       }
     }
   },
@@ -62,19 +62,19 @@
     "step": {
       "0": {
         "title": "Discovery & Interviews",
-        "text": "Talk to engineering, product, and business teams to understand goals and context."
+        "text": "We talk to engineering, product, and business teams to understand goals and context."
       },
       "1": {
         "title": "Hands-On Audit",
-        "text": "Review repos, CI/CD, cloud infra, documentation."
+        "text": "We dive into your repositories, CI/CD pipelines, cloud infra, and documentation."
       },
       "2": {
         "title": "Report & Recommendations",
-        "text": "Comprehensive report: strengths, risks, steps, severity levels, roadmap."
+        "text": "You’ll receive a comprehensive report detailing strengths, risks, and actionable next steps—with severity levels and roadmap suggestions."
       },
       "3": {
-        "title": "Post-Audit Support (Optional)",
-        "text": "Need help fixing issues? We can assist with implementation."
+        "title": "Post-Audit Implementation Support (Optional)",
+        "text": "Need help fixing what we found? Our engineering teams can jump in and help you close the gaps."
       }
     }
   },
@@ -84,9 +84,9 @@
     "desc": "Everything you need to evaluate, improve, and scale—delivered in a format that speaks to both business and technical decision-makers.",
     "items": {
       "0": "Executive summary for C-Level & investors",
-      "1": "Technical audit report",
-      "2": "KPI benchmarking & recommendations",
-      "3": "Action plan (quick wins & long-term strategy)"
+      "1": "Technical Audit Report (code quality, architecture, infra)",
+      "2": "KPI Benchmarking & Recommendations",
+      "3": "Action Plan (Quick Wins + Long-Term Strategy"
     }
   },
 
@@ -94,7 +94,7 @@
     "heading": "Why Hyperjump?",
     "desc": "We bring deep technical expertise, cross-industry experience, and a hands-on approach to every audit. Our team doesn’t just review code—we understand the people, processes, and pressure behind it.",
     "reasons": {
-      "0": "We’ve audited engineering teams in <b>tech startups, fintech, media, and public sector.</b>",
+      "0": "We’ve audited engineering teams in <span class=\"font-bold\">tech startups, fintech, media, and public sector.</span>",
       "1": "We’re engineers ourselves—we don’t just point at problems, we solve them.",
       "2": "Trusted by clients like"
     }

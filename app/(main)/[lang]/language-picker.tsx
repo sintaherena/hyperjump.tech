@@ -23,7 +23,7 @@ export function LanguagePicker({
   type?:
     | "hyperjump"
     | "services"
-    | "tech-due-dilligence"
+    | "tech-due-diligence"
     | "software-as-a-service"
     | "erp-implementation"
     | "cto-as-a-service";
@@ -33,14 +33,14 @@ export function LanguagePicker({
 
     const urlHyperjump = `/${newLang}#hero`;
     const urlServices = `/services/${newLang}#hero`;
-    const urlTdd = `/services/tech-due-dilligence/${newLang}#hero`;
+    const urlTdd = `/services/tech-due-diligence/${newLang}#hero`;
     const urlSaas = `/services/software-as-a-service/${newLang}#hero`;
     const urlErp = `/services/erp-implementation/${newLang}#hero`;
     const urlCtoAAS = `/services/cto-as-a-service/${newLang}#hero`;
 
     if (type === "services") {
       window.location.href = urlServices;
-    } else if (type === "tech-due-dilligence") {
+    } else if (type === "tech-due-diligence") {
       window.location.href = urlTdd;
     } else if (type === "cto-as-a-service") {
       window.location.href = urlCtoAAS;

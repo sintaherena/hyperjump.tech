@@ -15,7 +15,7 @@ export default function Footer({
   type?:
     | "hyperjump"
     | "services"
-    | "tech-due-dilligence"
+    | "tech-due-diligence"
     | "software-as-a-service"
     | "erp-implementation"
     | "cto-as-a-service";

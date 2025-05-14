@@ -43,7 +43,12 @@ export function ServicesCTA({
       </div>
       <div className="relative flex flex-col items-center justify-center px-6 py-11 text-center">
         <h3 className="text-3xl font-medium">{heading}</h3>
-        <p className="mt-3 max-w-xl">{desc}</p>
+        <div
+          className="mt-3 max-w-xl"
+          dangerouslySetInnerHTML={{
+            __html: desc
+          }}
+        />
         <Button
           asChild
           variant="default"

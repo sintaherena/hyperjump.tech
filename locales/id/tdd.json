@@ -1,107 +1,107 @@
 {
   "hero": {
     "heading": "Tech Due Diligence",
-    "desc": "Evaluasi terstruktur terhadap lanskap teknologi—ungkap risiko, nilai kesiapan, dan ambil keputusan dengan percaya diri."
+    "desc": "Identifikasi Risiko. Temukan Peluang. Bangun dengan Keyakinan."
   },
 
   "what_is_tdd": {
     "heading": "Apa itu Tech Due Diligence?",
-    "desc": "Tech Due Diligence adalah evaluasi menyeluruh terhadap lanskap teknologi suatu organisasi—dirancang untuk mengungkap risiko tersembunyi, menilai kesiapan, dan memberikan kejelasan bagi pengambilan keputusan yang tepat.",
-    "highlight": "Apakah Anda sedang berinvestasi di startup, mempersiapkan merger, atau mengaudit kapabilitas internal—layanan TDD kami memberikan wawasan yang bisa ditindaklanjuti untuk meminimalkan risiko perjalanan teknologi Anda."
+    "desc": "Tech Due Diligence adalah evaluasi terstruktur terhadap lanskap teknologi suatu organisasi—dirancang untuk mengungkap risiko tersembunyi, menilai kesiapan, dan memberikan kejelasan untuk pengambilan keputusan yang tepat.",
+    "highlight": "Baik Anda berinvestasi di startup, bersiap untuk merger, atau mengaudit kapabilitas internal, layanan TDD kami memberikan wawasan yang dapat ditindaklanjuti untuk meminimalkan risiko dalam perjalanan teknologi Anda."
   },
 
   "who_is_it": {
-    "heading": "Untuk siapa layanan ini?",
-    "desc": "Untuk pihak yang membutuhkan kejelasan, keyakinan, dan wawasan—sebelum melakukan ekspansi, investasi, atau keputusan besar di bidang teknologi.",
+    "heading": "Untuk Siapa Layanan Ini?",
+    "desc": "Bagi mereka yang membutuhkan kejelasan, keyakinan, dan wawasan—sebelum melakukan ekspansi, investasi, atau langkah besar di bidang teknologi.",
     "target": {
-      "0": "<b>Investor</b> yang menilai kesehatan produk atau platform",
-      "1": "<b>Pendiri/CTO</b> yang bersiap menghadapi pendanaan atau akuisisi",
-      "2": "<b>Perusahaan</b> yang meninjau vendor internal atau pihak ketiga",
-      "3": "<b>Firma PE/VC</b> yang melakukan audit sebelum atau sesudah investasi"
+      "0": "<span class=\"font-bold\">Investor</span> yang mengevaluasi kesehatan dan skalabilitas sebuah produk atau platform",
+      "1": "<span class=\"font-bold\">Founder/CTO</span> yang bersiap menghadapi pendanaan atau akuisisi",
+      "2": "<span class=\"font-bold\">Perusahaan</span> yang menilai kapabilitas internal atau vendor pihak ketiga",
+      "3": "<span class=\"font-bold\">Firma PE/VC</span> yang melakukan audit mendalam sebelum/sesudah investasi"
     }
   },
 
   "what_we_deliver": {
     "heading": "Apa yang Kami Tawarkan",
-    "desc": "Dari audit mendalam hingga sistem yang dapat diskalakan—kami memberikan kejelasan, kecepatan, dan hasil nyata—disesuaikan dengan tahap pertumbuhan Anda.",
+    "desc": "Mulai dari audit mendalam hingga sistem yang dapat diskalakan, kami memberikan kejelasan, kecepatan, dan hasil—disesuaikan dengan tahap pertumbuhan Anda.",
     "card_0": {
-      "title": "Kinerja Pengiriman Perangkat Lunak",
-      "text": "Kami menilai seberapa efisien tim Anda merilis perangkat lunak:",
+      "title": "Performa Pengiriman Perangkat Lunak",
+      "text": "Kami menilai seberapa efisien tim Anda dalam merilis perangkat lunak:",
       "items": {
         "0": "Frekuensi deployment",
         "1": "Waktu siklus (cycle time)",
         "2": "Respons & pemulihan insiden",
-        "3": "Kesiapan QA dan rilis"
+        "3": "QA & kesiapan rilis"
       }
     },
     "card_1": {
       "title": "Arsitektur Aplikasi & Kemudahan Pemeliharaan",
-      "text": "Kami menganalisis basis kode dan infrastruktur saat ini:",
+      "text": "Kami menganalisis kode dan infrastruktur Anda saat ini:",
       "items": {
-        "0": "Skalabilitas & toleransi kesalahan",
+        "0": "Skalabilitas & toleransi terhadap kegagalan",
         "1": "Modularisasi & utang teknis",
         "2": "Praktik terbaik DevOps",
-        "3": "Kedisiplinan dalam pengujian"
+        "3": "Cakupan kode dan disiplin pengujian"
       }
     },
     "card_2": {
-      "title": "Biaya & Optimasi Infrastruktur TI",
-      "text": "Kami bantu menjawab: Apakah Anda membayar lebih untuk sistem yang jarang digunakan?",
+      "title": "Biaya Infrastruktur TI & Optimalisasi",
+      "text": "Kami bantu Anda menjawab: Apakah Anda membayar mahal untuk sistem yang jarang digunakan?",
       "items": {
         "0": "Audit penggunaan cloud",
         "1": "Biaya per deployment/layanan",
-        "2": "Keandalan & pemulihan bencana",
-        "3": "Efisiensi CI/CD"
+        "2": "Redundansi dan pemulihan bencana",
+        "3": "Efisiensi pipeline CI/CD"
       }
     }
   },
 
   "how_it_works": {
-    "heading": "Bagaimana Prosesnya",
-    "desc": "Temukan bagaimana kami mengubah ide menjadi dampak nyata. Proses kami dirancang sederhana, transparan, dan berorientasi pada hasil—di setiap langkah.",
+    "heading": "Bagaimana Cara Kerjanya",
+    "desc": "Lihat bagaimana kami mengubah wawasan menjadi dampak. Proses kami dirancang agar sederhana, transparan, dan fokus pada hasil—di setiap langkahnya.",
     "step": {
       "0": {
         "title": "Discovery & Wawancara",
-        "text": "Diskusi dengan tim engineering, produk, dan bisnis untuk memahami tujuan serta konteks."
+        "text": "Kami berdiskusi dengan tim engineering, produk, dan bisnis untuk memahami tujuan dan konteks."
       },
       "1": {
-        "title": "Audit Langsung",
-        "text": "Meninjau repositori, CI/CD, infrastruktur cloud, dan dokumentasi."
+        "title": "Audit Mendalam",
+        "text": "Kami meninjau repositori, pipeline CI/CD, infrastruktur cloud, dan dokumentasi Anda secara langsung."
       },
       "2": {
         "title": "Laporan & Rekomendasi",
-        "text": "Laporan lengkap berisi kekuatan, risiko, langkah-langkah, tingkat keparahan, dan roadmap."
+        "text": "Anda akan menerima laporan komprehensif yang merinci kekuatan, risiko, dan langkah-langkah yang dapat diambil—lengkap dengan tingkat keparahan dan saran roadmap."
       },
       "3": {
-        "title": "Dukungan Pasca-Audit (Opsional)",
-        "text": "Butuh bantuan mengatasi masalah? Kami siap membantu dalam implementasinya."
+        "title": "Dukungan Implementasi Pasca Audit (Opsional)",
+        "text": "Butuh bantuan menindaklanjuti hasil audit? Tim engineer kami siap membantu menutup celah yang ditemukan."
       }
     }
   },
 
   "what_you_get": {
     "heading": "Apa yang Anda Dapatkan",
-    "desc": "Segala hal yang Anda butuhkan untuk mengevaluasi, meningkatkan, dan menskalakan—disajikan dalam format yang mudah dipahami baik oleh pemangku kepentingan teknis maupun bisnis.",
+    "desc": "Semua yang Anda butuhkan untuk mengevaluasi, meningkatkan, dan menskalakan—disajikan dalam format yang mudah dipahami baik oleh pengambil keputusan teknis maupun bisnis.",
     "items": {
-      "0": "Ringkasan eksekutif untuk level C dan investor",
-      "1": "Laporan audit teknis",
-      "2": "Benchmark KPI & rekomendasi",
-      "3": "Rencana aksi (langkah cepat & strategi jangka panjang)"
+      "0": "Ringkasan eksekutif untuk C-Level & investor",
+      "1": "Laporan Audit Teknis (kualitas kode, arsitektur, infrastruktur)",
+      "2": "Benchmark KPI & Rekomendasi",
+      "3": "Rencana Aksi (Quick Wins + Strategi Jangka Panjang)"
     }
   },
 
   "why_us": {
     "heading": "Mengapa Hyperjump?",
-    "desc": "Kami membawa keahlian teknis mendalam, pengalaman lintas industri, dan pendekatan langsung ke setiap audit. Tim kami tidak hanya meninjau kode—kami memahami orang, proses, dan tekanan di baliknya.",
+    "desc": "Kami membawa keahlian teknis mendalam, pengalaman lintas industri, dan pendekatan langsung ke setiap audit. Tim kami tak sekadar meninjau kode—kami memahami orang, proses, dan tekanan di baliknya.",
     "reasons": {
-      "0": "Kami telah mengaudit tim engineering di <b>startup teknologi, fintech, media, hingga sektor publik.</b>",
-      "1": "Kami adalah engineer—bukan hanya menunjukkan masalah, tapi juga menyelesaikannya.",
+      "0": "Kami telah mengaudit tim engineering di <span class=\"font-bold\">startup teknologi, fintech, media, dan sektor publik.</span>",
+      "1": "Kami adalah engineer—kami tidak hanya menunjukkan masalah, kami juga menyelesaikannya.",
       "2": "Dipercaya oleh klien seperti"
     }
   },
 
   "cta": {
-    "heading": "Siap melakukan audit teknologi Anda?",
+    "heading": "Siap mengaudit teknologi Anda?",
     "desc": "Mari ungkap titik buta Anda dan ubah menjadi kekuatan.",
     "label": "Hubungi Kami"
   }

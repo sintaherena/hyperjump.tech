@@ -1,54 +1,52 @@
 {
   "hero": {
     "heading": "CTO-as-a-Service",
-    "desc": "Bangun seperti perusahaan terbaik—tanpa harus merekrut CTO."
+    "desc": "Bangun Seperti Perusahaan Terbaik. Tanpa Perlu Merekrut CTO."
   },
   "what_is_ctoaas": {
     "heading": "Apa itu CTO-as-a-Service?",
-    "desc": "Tidak semua perusahaan membutuhkan CTO penuh waktu—tapi setiap tim teknologi butuh kepemimpinan yang kuat.",
-    "highlight": "CTO-as-a-Service dari Hyperjump memberikan Anda akses ke kepemimpinan engineering tingkat senior dan tim produk berpengalaman. Kami membantu Anda <b>membangun budaya engineering yang kuat, menghasilkan perangkat lunak yang lebih baik,</b> dan <b>menskalakan organisasi produk Anda</b>—tanpa harus membangunnya sendiri dari nol."
+    "desc": "Tidak semua perusahaan membutuhkan CTO penuh waktu—tetapi setiap tim teknologi membutuhkan kepemimpinan yang kuat.",
+    "highlight": "CTO-as-a-Service dari Hyperjump memberi Anda akses ke kepemimpinan teknis tingkat senior dan tim produk yang telah teruji. Kami membantu Anda <span class=\"font-bold\">membangun budaya rekayasa yang kuat, menghasilkan perangkat lunak yang lebih baik,</span> dan <span class=\"font-bold\">menskalakan organisasi produk Anda</span>—tanpa harus membangunnya sendirian."
   },
-
   "who_is_it": {
-    "heading": "Untuk siapa layanan ini?",
-    "desc": "Solusi kami ideal untuk bisnis yang ingin berkembang secara efisien dan mengoptimalkan operasional.",
+    "heading": "Siapa yang Cocok Menggunakannya?",
+    "desc": "Solusi kami ideal bagi bisnis yang ingin bertumbuh secara efisien dan mengoptimalkan operasional.",
     "target": {
-      "0": "<b>Founder atau CEO</b> tanpa co-founder teknis",
-      "1": "<b>Tim produk</b> yang membutuhkan proses, struktur, atau kecepatan yang lebih baik",
-      "2": "<b>Organisasi</b> yang sedang menjalani transformasi digital",
-      "3": "<b>Perusahaan yang sedang berkembang</b> dan bersiap untuk ekspansi, audit, atau penggalangan dana"
+      "0": "<span class=\"font-bold\">Founder atau CEO</span> tanpa rekan teknis",
+      "1": "<span class=\"font-bold\">Tim produk</span> yang membutuhkan proses, struktur, atau kecepatan yang lebih baik",
+      "2": "<span class=\"font-bold\">Organisasi</span> yang sedang menjalani transformasi digital",
+      "3": "<span class=\"font-bold\">Scale-up</span> yang bersiap untuk pertumbuhan, audit, atau pendanaan"
     }
   },
-
   "what_we_deliver": {
     "heading": "Apa yang Kami Tawarkan",
-    "desc": "Kami menyediakan solusi yang disesuaikan untuk memastikan teknologi dan operasional Anda berada di jalur pertumbuhan berkelanjutan.",
+    "desc": "Kami menyediakan solusi yang disesuaikan untuk memastikan teknologi dan operasional Anda berada di jalur yang tepat menuju pertumbuhan berkelanjutan.",
     "card_0": {
       "title": "Strategi & Peta Jalan Teknis",
-      "text": "Kami menerjemahkan tujuan bisnis ke dalam eksekusi teknis:",
+      "text": "Kami menerjemahkan tujuan bisnis menjadi eksekusi teknis:",
       "items": {
         "0": "Arsitektur platform & produk",
-        "1": "Pengambilan keputusan teknologi",
+        "1": "Pemilihan teknologi yang tepat",
         "2": "Perencanaan skalabilitas & keandalan",
         "3": "Penganggaran untuk infrastruktur & sumber daya"
       }
     },
     "card_1": {
-      "title": "Struktur Tim & Pembinaan",
-      "text": "Kami membantu Anda membangun tim internal yang solid:",
+      "title": "Struktur Tim & Pelatihan",
+      "text": "Kami membantu Anda membangun tim internal yang kuat:",
       "items": {
         "0": "Rekrutmen & evaluasi talenta",
-        "1": "Membangun struktur skuad",
-        "2": "Menetapkan peran, ritual, dan alur kerja",
-        "3": "Membina engineer, product manager, dan tech lead"
+        "1": "Membangun struktur tim (squad)",
+        "2": "Menetapkan peran, ritus, dan alur kerja",
+        "3": "Membimbing engineer, PM, dan tech lead"
       }
     },
     "card_2": {
-      "title": "Proses Delivery & Keunggulan Operasional",
-      "text": "Kami menerapkan sistem yang mampu menskalakan engineering:",
+      "title": "Proses Pengiriman & Keunggulan Operasional",
+      "text": "Kami menerapkan sistem yang memungkinkan tim engineering tumbuh:",
       "items": {
-        "0": "Ritual Agile (Scrum, Kanban, dll)",
-        "1": "CI/CD dan praktik terbaik DevOps",
+        "0": "Ritual Agile (Scrum, Kanban, dll.)",
+        "1": "Pipeline CI/CD dan praktik terbaik DevOps",
         "2": "QA, manajemen rilis, dan observabilitas",
         "3": "Grooming, estimasi, dan metrik sprint"
       }
@@ -56,52 +54,49 @@
   },
   "how_it_works": {
     "heading": "Bagaimana Cara Kerjanya",
-    "desc": "Kami menempatkan pemimpin teknologi setingkat mitra dari Hyperjump ke dalam organisasi Anda, didukung oleh tim engineering berpengalaman.",
+    "desc": "Kami menyisipkan <span style=\"font-weight: bold;\">pemimpin teknologi setingkat mitra Hyperjump</span> ke dalam organisasi Anda, didukung oleh tim engineering yang berpengalaman.",
     "step": {
       "0": {
-        "title": "Kepemimpinan langsung & pembangunan sistem",
-        "text": "Kami tidak hanya memberi saran—kami memimpin, membangun sistem, dan bekerja erat dengan tim Anda untuk mendorong pertumbuhan yang berkelanjutan."
+        "title": "Kepemimpinan langsung + pembangunan sistem",
+        "text": "Kami tidak hanya memberi saran—kami memimpin, membangun sistem, dan bekerja sama dengan tim Anda untuk mendorong pertumbuhan yang berkelanjutan."
       },
       "1": {
-        "title": "Pengaturan tim, review kode, pelatihan sprint",
-        "text": "Kami membantu menyusun tim Anda, meningkatkan kualitas kode, dan mempercepat eksekusi sprint untuk hasil yang lebih baik dan lebih cepat."
+        "title": "Pembentukan tim, tinjauan kode, pelatihan sprint",
+        "text": "Kami membantu menyusun tim Anda, meningkatkan kualitas kode, dan mengoptimalkan pelaksanaan sprint untuk pengiriman yang lebih baik dan cepat."
       },
       "2": {
-        "title": "Check-in mingguan & pelacakan progres",
-        "text": "Selalu selaras dengan pembaruan rutin, pelacakan isu, dan visibilitas yang jelas terhadap progres roadmap setiap minggu."
+        "title": "Pertemuan mingguan dan pelacakan progres",
+        "text": "Tetap sinkron dengan pembaruan rutin, pelacakan isu, dan visibilitas yang jelas terhadap progres peta jalan setiap minggunya."
       },
       "3": {
         "title": "Tujuan: mandiri dalam 6–12 bulan",
-        "text": "Misi kami adalah memberdayakan tim Anda agar bisa beroperasi secara mandiri—dengan proses yang kuat, disiplin, dan penuh kepercayaan diri."
+        "text": "Misi kami adalah memberdayakan tim Anda agar bisa beroperasi secara mandiri—dengan proses yang kuat, disiplin, dan kepercayaan diri."
       }
     }
   },
-
   "what_you_get": {
     "heading": "Apa yang Anda Dapatkan",
-    "desc": "Dengan keahlian kami, Anda akan mendapatkan panduan dan alat yang dibutuhkan untuk kesuksesan jangka panjang dalam teknologi dan operasional.",
+    "desc": "Dengan keahlian kami, Anda akan menerima alat dan panduan yang dibutuhkan untuk kesuksesan jangka panjang di bidang teknologi dan operasional.",
     "items": {
       "0": "Arah teknologi yang jelas",
       "1": "Fondasi engineering yang kuat",
-      "2": "Peningkatan kecepatan delivery dan kualitas produk",
-      "3": "Tim teknologi yang siap tumbuh—bukan sekadar bertahan"
+      "2": "Kecepatan pengiriman dan kualitas produk yang meningkat",
+      "3": "Tim teknologi yang siap untuk skala—bukan hanya bertahan"
     }
   },
-
   "why_us": {
-    "heading": "Mengapa Memilih Hyperjump?",
-    "desc": "Di Hyperjump, kami menggabungkan pengalaman nyata, kepemimpinan yang kuat, dan eksekusi langsung untuk mendorong kesuksesan bisnis Anda.",
+    "heading": "Mengapa Hyperjump?",
+    "desc": "Di Hyperjump, kami menggabungkan pengalaman terbukti, kepemimpinan yang kuat, dan eksekusi langsung untuk mendorong kesuksesan bisnis Anda.",
     "reasons": {
-      "0": "Terbukti di startup tahap awal hingga pasca-Series A",
-      "1": "Kami membawa kepemimpinan, struktur, dan sistem—bukan sekadar saran",
-      "2": "Tujuan kami adalah membuat diri kami tidak dibutuhkan lagi dengan memberdayakan tim internal Anda",
-      "3": "Klien kami termasuk"
+      "0": "Terbukti dalam <span class=\"font-bold\">startup tahap awal hingga pasca-Series A</span>",
+      "1": "Kami menghadirkan <span class=\"font-bold\">kepemimpinan, struktur, dan sistem</span>—bukan sekadar saran",
+      "2": "Tujuan kami adalah <span class=\"font-bold\">membuat diri kami tidak lagi dibutuhkan</span> dengan memberdayakan tim internal Anda",
+      "3": "Klien kami mencakup"
     }
   },
-
   "cta": {
-    "heading": "Bangun tim teknologi Anda dengan cara yang tepat",
-    "desc": "Mari bersama-sama membentuk tim rekayasa produk kelas dunia.",
-    "label": "Hubungi kami"
+    "heading": "Bangun Tim Teknologi Anda dengan Cara yang Tepat",
+    "desc": "Mari kita bentuk tim rekayasa produk kelas dunia—bersama-sama.",
+    "label": "Hubungi Kami"
   }
 }

@@ -2,32 +2,32 @@
 
 import { SupportedLanguage } from "@/locales/.generated/types";
 import {
-  saasWhatIsSaasHeading,
-  saasWhatIsSaasDesc,
-  saasWhatIsSaasHighlight,
-  saasWhoIsItHeading,
-  saasWhoIsItDesc,
-  saasWhoIsItTarget0,
-  saasWhoIsItTarget1,
-  saasWhoIsItTarget2,
-  saasWhatWeDeliverHeading,
-  saasWhatWeDeliverDesc,
-  saasHowItWorksHeading,
-  saasHowItWorksDesc,
-  saasWhatYouGetHeading,
-  saasWhatYouGetDesc,
-  saasWhatYouGetItems0,
-  saasWhatYouGetItems1,
-  saasWhatYouGetItems2,
-  saasWhyUsHeading,
-  saasWhyUsDesc,
-  saasWhyUsReasons0,
-  saasWhyUsReasons1,
-  saasWhyUsReasons2,
-  saasCtaHeading,
-  saasCtaDesc,
-  saasWhoIsItTarget3,
-  saasWhatYouGetItems3
+  tddWhatIsTddHeading,
+  tddWhatIsTddDesc,
+  tddWhatIsTddHighlight,
+  tddWhoIsItHeading,
+  tddWhoIsItDesc,
+  tddWhoIsItTarget0,
+  tddWhoIsItTarget1,
+  tddWhoIsItTarget2,
+  tddWhatWeDeliverHeading,
+  tddWhatWeDeliverDesc,
+  tddHowItWorksHeading,
+  tddHowItWorksDesc,
+  tddWhatYouGetHeading,
+  tddWhatYouGetDesc,
+  tddWhatYouGetItems0,
+  tddWhatYouGetItems1,
+  tddWhatYouGetItems2,
+  tddWhyUsHeading,
+  tddWhyUsDesc,
+  tddWhyUsReasons0,
+  tddWhyUsReasons1,
+  tddWhyUsReasons2,
+  tddCtaHeading,
+  tddCtaDesc,
+  tddWhoIsItTarget3,
+  tddWhatYouGetItems3
 } from "@/locales/.generated/server";
 import { HowItsWorksData, whatWeDeliverData } from "./data";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
@@ -43,7 +43,7 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
       <HowItWorks lang={lang} />
       <WhatYouGet lang={lang} />
       <WhyUs lang={lang} />
-      <SaasCTA lang={lang} />
+      <TddCTA lang={lang} />
     </>
   );
 }
@@ -53,16 +53,16 @@ function About({ lang }: { lang: SupportedLanguage }) {
     <section className="bg-[#F6F8F9] py-8 md:py-16">
       <div className="text-hyperjump-black mx-auto flex w-full max-w-4xl flex-wrap items-center px-4 py-10 md:px-16 md:py-20 xl:px-0">
         <h2 className="mb-5 text-[34px] font-medium md:text-4xl">
-          {saasWhatIsSaasHeading(lang)}
+          {tddWhatIsTddHeading(lang)}
         </h2>
         <div
           dangerouslySetInnerHTML={{
             __html: `
                 <p class="mb-5 text-xl leading-relaxed">
-                  ${saasWhatIsSaasDesc(lang)}
+                  ${tddWhatIsTddDesc(lang)}
                 </p>
                 <p class="text-xl leading-relaxed">
-                  ${saasWhatIsSaasHighlight(lang)}
+                  ${tddWhatIsTddHighlight(lang)}
                 </p>
               `
           }}
@@ -79,16 +79,16 @@ function WhoIsIt({ lang }: { lang: SupportedLanguage }) {
         <div className="relative w-full xl:w-1/2">
           <Image
             src="/images/services/background.webp"
-            alt={saasWhoIsItHeading(lang)}
+            alt={tddWhoIsItHeading(lang)}
             className="h-auto w-full rounded-2xl"
             width={660}
             height={400}
           />
           <div className="absolute top-10 left-1/2 flex w-full -translate-x-1/2 items-center justify-center px-4">
             <Image
-              className="h-auto w-1/2 xl:w-6/12"
-              src="/images/services/saas/who-is-it.svg"
-              alt={`${saasWhoIsItHeading(lang)} icon`}
+              className="h-auto w-2/3 xl:w-8/12"
+              src="/images/services/tdd/who-is-it.png"
+              alt={`${tddWhoIsItHeading(lang)} icon`}
               width={500}
               height={380}
             />
@@ -97,22 +97,22 @@ function WhoIsIt({ lang }: { lang: SupportedLanguage }) {
 
         <div className="w-full xl:mt-0 xl:w-1/2">
           <h3 className="text-hyperjump-black text-left text-[28px] font-medium md:mb-4 md:text-4xl">
-            {saasWhoIsItHeading(lang)}
+            {tddWhoIsItHeading(lang)}
           </h3>
           <div
             className="mb-2 text-left text-lg text-gray-700"
             dangerouslySetInnerHTML={{
-              __html: saasWhoIsItDesc(lang)
+              __html: tddWhoIsItDesc(lang)
             }}
           />
           <ul
             className="list-none space-y-4 text-left text-base text-gray-700 md:text-lg [&_b]:mt-4 [&_b]:block"
             dangerouslySetInnerHTML={{
               __html: [
-                saasWhoIsItTarget0(lang),
-                saasWhoIsItTarget1(lang),
-                saasWhoIsItTarget2(lang),
-                saasWhoIsItTarget3(lang)
+                tddWhoIsItTarget0(lang),
+                tddWhoIsItTarget1(lang),
+                tddWhoIsItTarget2(lang),
+                tddWhoIsItTarget3(lang)
               ]
                 .map(
                   (point) =>
@@ -132,12 +132,12 @@ function WhatWeDeliver({ lang }: { lang: SupportedLanguage }) {
     <section className="bg-white py-16">
       <div className="text-hyperjump-black xxl:max-w-7xl mx-auto flex w-full max-w-6xl flex-col items-center justify-center px-4 py-8 text-center md:px-20 md:py-16 xl:px-0">
         <h2 className="mb-5 text-[34px] font-medium md:text-4xl">
-          {saasWhatWeDeliverHeading(lang)}
+          {tddWhatWeDeliverHeading(lang)}
         </h2>
         <div
           className="text-hyperjump-gray mt-2 max-w-lg"
           dangerouslySetInnerHTML={{
-            __html: saasWhatWeDeliverDesc(lang)
+            __html: tddWhatWeDeliverDesc(lang)
           }}
         />
         <div className="mt-6 grid w-full grid-cols-1 gap-6 md:mt-12 md:grid-cols-3 xl:grid-cols-3">
@@ -179,11 +179,11 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
     <section className="bg-[#F6F8F9] py-16">
       <div className="text-hyperjump-black xxl:max-w-7xl mx-auto flex w-full max-w-6xl flex-col items-center px-4 text-center">
         <h2 className="mb-5 text-[34px] font-medium md:text-4xl">
-          {saasHowItWorksHeading(lang)}
+          {tddHowItWorksHeading(lang)}
         </h2>
         <div
           className="text-hyperjump-gray mt-2 mb-10 md:max-w-xl"
-          dangerouslySetInnerHTML={{ __html: saasHowItWorksDesc(lang) }}
+          dangerouslySetInnerHTML={{ __html: tddHowItWorksDesc(lang) }}
         />
         <div className="relative space-y-10 xl:max-w-lg">
           <div className="bg-dashed absolute top-6 bottom-6 left-5 z-0 w-px bg-gray-300" />
@@ -220,8 +220,8 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
       <div className="xxl:max-w-7xl mx-auto flex w-full max-w-6xl flex-col items-center gap-6 md:flex-row-reverse">
         <div className="relative w-full xl:w-1/2">
           <Image
-            src="/images/services/saas/what-you-get.svg"
-            alt={saasWhatYouGetHeading(lang)}
+            src="/images/services/tdd/what-you-get.svg"
+            alt={tddWhatYouGetHeading(lang)}
             className="h-auto w-full rounded-2xl"
             width={660}
             height={400}
@@ -229,12 +229,12 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
         </div>
         <div className="w-full xl:mt-0 xl:w-1/2">
           <h3 className="text-hyperjump-black text-left text-[28px] font-medium md:mb-4 md:text-4xl">
-            {saasWhatYouGetHeading(lang)}
+            {tddWhatYouGetHeading(lang)}
           </h3>
           <div
             className="mb-2 text-left text-lg text-gray-700"
             dangerouslySetInnerHTML={{
-              __html: saasWhatYouGetDesc(lang)
+              __html: tddWhatYouGetDesc(lang)
             }}
           />
 
@@ -242,10 +242,10 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
             className="list-none space-y-4 text-left text-base text-gray-700 md:text-lg [&_b]:mt-4 [&_b]:block"
             dangerouslySetInnerHTML={{
               __html: [
-                saasWhatYouGetItems0(lang),
-                saasWhatYouGetItems1(lang),
-                saasWhatYouGetItems2(lang),
-                saasWhatYouGetItems3(lang)
+                tddWhatYouGetItems0(lang),
+                tddWhatYouGetItems1(lang),
+                tddWhatYouGetItems2(lang),
+                tddWhatYouGetItems3(lang)
               ]
                 .map(
                   (point) =>
@@ -266,8 +266,8 @@ function WhyUs({ lang }: { lang: SupportedLanguage }) {
       <div className="xxl:max-w-7xl mx-auto flex w-full max-w-6xl flex-col items-center gap-6 md:flex-row">
         <div className="relative w-full xl:w-1/2">
           <Image
-            src="/images/services/saas/why-us-bg.png"
-            alt={saasWhoIsItHeading(lang)}
+            src="/images/services/tdd/why-us-bg.png"
+            alt={tddWhoIsItHeading(lang)}
             className="h-auto w-full rounded-2xl"
             width={660}
             height={400}
@@ -275,8 +275,8 @@ function WhyUs({ lang }: { lang: SupportedLanguage }) {
           <div className="absolute top-5 left-1/2 flex w-full -translate-x-1/2 items-center justify-center px-4">
             <Image
               className="h-auto w-2/3 xl:w-8/12"
-              src="/images/services/saas/why-us.svg"
-              alt={`${saasWhoIsItHeading(lang)} icon`}
+              src="/images/services/tdd/why-us.svg"
+              alt={`${tddWhoIsItHeading(lang)} icon`}
               width={500}
               height={380}
             />
@@ -284,20 +284,28 @@ function WhyUs({ lang }: { lang: SupportedLanguage }) {
         </div>
         <div className="w-full xl:mt-0 xl:w-1/2">
           <h3 className="text-hyperjump-black text-left text-[28px] font-medium md:mb-4 md:text-4xl">
-            {saasWhyUsHeading(lang)}
+            {tddWhyUsHeading(lang)}
           </h3>
           <div
             className="mb-2 text-left text-lg text-gray-700"
-            dangerouslySetInnerHTML={{ __html: saasWhyUsDesc(lang) }}
+            dangerouslySetInnerHTML={{ __html: tddWhyUsDesc(lang) }}
           />
 
           <ul
             className="list-none space-y-4 text-left text-base text-gray-700 md:text-lg [&_b]:mt-4 [&_b]:block"
             dangerouslySetInnerHTML={{
               __html: [
-                saasWhyUsReasons0(lang),
-                saasWhyUsReasons1(lang),
-                saasWhyUsReasons2(lang)
+                tddWhyUsReasons0(lang),
+                tddWhyUsReasons1(lang),
+                `${tddWhyUsReasons2(lang)} 
+               <div class="mt-2 flex flex-wrap flex-row gap-5">
+                <img src="/images/services/tdd/clients/btn.svg" alt="btn" class="h-6 w-auto inline pr-2 border-r border-gray-300 object-contain" />
+                <img src="/images/services/tdd/clients/my-republic.svg" alt="my-republic" class="h-6 w-auto inline pr-2 border-r border-gray-300 object-contain" />
+                <img src="/images/services/tdd/clients/smdv.svg" alt="smdv" class="h-6 w-auto inline pr-2 border-r border-gray-300 object-contain" />
+                <img src="/images/services/tdd/clients/trimegah.svg" alt="trimegah" class="h-6 w-auto inline pr-2 border-r border-gray-300 object-contain" />
+                <img src="/images/services/tdd/clients/bali-united.svg" alt="bali-united" class="h-6 w-auto inline pr-2 border-r border-gray-300 object-contain" />
+              </div>
+              `
               ]
                 .map(
                   (point) =>
@@ -312,13 +320,13 @@ function WhyUs({ lang }: { lang: SupportedLanguage }) {
   );
 }
 
-function SaasCTA({ lang }: { lang: SupportedLanguage }) {
+function TddCTA({ lang }: { lang: SupportedLanguage }) {
   return (
     <section className="flex w-full flex-wrap items-center justify-center bg-white px-4 text-center md:px-20 xl:px-0">
       <ServicesCTA
         lang={lang}
-        heading={saasCtaHeading(lang)}
-        desc={saasCtaDesc(lang)}
+        heading={tddCtaHeading(lang)}
+        desc={tddCtaDesc(lang)}
         className="xxl:max-w-7xl mx-auto w-full max-w-6xl"
       />
     </section>

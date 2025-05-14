@@ -1,106 +1,105 @@
 {
   "hero": {
     "heading": "Implementasi ERP",
-    "desc": "Optimalkan Operasional. Tingkatkan Visibilitas. Siap untuk Skalabilitas."
+    "desc": "Sederhanakan Operasi. Tingkatkan Visibilitas. Siap untuk Skalabilitas."
   },
   "what_is_erp": {
-    "heading": "Apa itu Implementasi ERP?",
-    "desc": "Sistem Enterprise Resource Planning (ERP) menghubungkan proses bisnis Anda—keuangan, rantai pasok, inventaris, penjualan—dalam satu sumber data terintegrasi. Namun, ERP yang efektif bukan hanya soal perangkat lunak, tetapi juga bagaimana implementasinya disesuaikan dengan operasional Anda.",
-    "highlight": "Kami membantu organisasi mengimplementasikan <b>Odoo</b> dan <b>ERPNext</b>, disesuaikan dengan alur kerja, kebutuhan industri, dan tujuan pertumbuhan Anda."
+    "heading": "Apa Itu Implementasi ERP?",
+    "desc": "Sistem Enterprise Resource Planning (ERP) menghubungkan proses bisnis Anda—keuangan, rantai pasok, inventaris, penjualan—ke dalam satu sumber kebenaran. Namun, ERP yang hebat bukan hanya soal perangkat lunak—ini tentang implementasi yang memahami operasi bisnis Anda.",
+    "highlight": "Kami membantu organisasi mengimplementasikan <span class=\"font-bold\">Odoo</span> dan <span class=\"font-bold\">ERPNext</span>, disesuaikan dengan alur kerja, kebutuhan industri, dan ambisi pertumbuhan mereka."
   },
-
   "who_is_it": {
-    "heading": "Siapa yang Cocok Menggunakannya?",
-    "desc": "Didesain untuk tim dan bisnis yang serius dalam menjalankan operasional secara efisien. Baik Anda sedang berkembang pesat, menangani kompleksitas, atau ingin merapikan proses—kami siap membantu Anda mendapatkan kejelasan dan kendali.",
+    "heading": "Untuk Siapa?",
+    "desc": "Dibuat untuk tim dan bisnis yang serius tentang keunggulan operasional. Baik Anda sedang tumbuh cepat, menghadapi kompleksitas, atau ingin menyederhanakan kekacauan—kami hadir untuk membantu Anda mendapatkan kejelasan dan kendali.",
     "target": {
-      "0": "Startup yang <b>sedang berkembang</b> dan butuh kendali lebih baik atas operasional",
-      "1": "<b>UMKM & Perusahaan</b> yang ingin mengganti alat yang terfragmentasi atau spreadsheet",
-      "2": "<b>Organisasi di sektor perikanan, F&B, logistik, manufaktur</b>, dan lainnya",
-      "3": "<b>Pendiri & Pemimpin Operasional</b> yang ingin standarisasi proses"
+      "0": "<span class=\"font-bold\">Startup yang sedang berkembang</span> dan butuh kendali lebih atas operasional",
+      "1": "<span class=\"font-bold\">UKM & Perusahaan</span> yang ingin mengganti alat terfragmentasi atau spreadsheet",
+      "2": "<span class=\"font-bold\">Organisasi di sektor perikanan, F&B, logistik, manufaktur</span>, dan lainnya",
+      "3": "<span class=\"font-bold\">Pendiri & Pemimpin Operasional</span> yang ingin standarisasi proses"
     }
   },
   "what_we_deliver": {
     "heading": "Apa yang Kami Tawarkan",
-    "desc": "Kami bermitra dengan tim Anda untuk merapikan operasional dan membangun sistem yang tumbuh seiring bisnis Anda. Dari perencanaan hingga pasca-implementasi, kami hadir mendampingi setiap langkahnya.",
+    "desc": "Kami bermitra dengan tim Anda untuk menyederhanakan operasi dan membangun sistem yang dapat berkembang seiring bisnis Anda. Dari perencanaan hingga pasca-implementasi, kami memberikan dukungan langsung di setiap tahap.",
     "card_0": {
       "title": "Pemetaan & Desain Proses",
-      "text": "Kami menyelaraskan fitur ERP dengan kenyataan bisnis Anda:",
+      "text": "Kami menyelaraskan fitur ERP dengan realitas bisnis Anda:",
       "items": {
-        "0": "Alur kerja tiap departemen (Keuangan, Operasional, HR, dll.)",
+        "0": "Alur kerja antar departemen (Keuangan, Operasional, SDM, dll.)",
         "1": "Dasbor khusus sesuai peran",
-        "2": "Transisi dari proses manual ke digital",
-        "3": "Penyesuaian lokal & kepatuhan terhadap regulasi"
+        "2": "Transisi dari manual ke digital",
+        "3": "Lokalisasi & kepatuhan terhadap regulasi"
       }
     },
     "card_1": {
       "title": "Implementasi Sistem ERP",
-      "text": "Kami konfigurasikan, sesuaikan, dan jalankan ERP Anda:",
+      "text": "Kami mengatur, menyesuaikan, dan menjalankan ERP Anda:",
       "items": {
         "0": "Setup Odoo atau ERPNext",
-        "1": "Pengembangan modul kustom (jika dibutuhkan)",
+        "1": "Pengembangan modul kustom (jika diperlukan)",
         "2": "Migrasi data & integrasi sistem",
-        "3": "Uji coba pengguna (UAT) dan dukungan go-live"
+        "3": "UAT dan dukungan saat go-live"
       }
     },
     "card_2": {
       "title": "Dukungan Pasca Go-Live",
-      "text": "Kami memastikan ERP Anda memberikan nilai nyata:",
+      "text": "Kami memastikan ERP Anda memberikan nilai:",
       "items": {
-        "0": "Dukungan stabilisasi sistem",
+        "0": "Dukungan stabilisasi",
         "1": "Panduan manajemen perubahan",
-        "2": "Pelatihan untuk pengguna",
-        "3": "Opsional: paket pemeliharaan & SLA"
+        "2": "Pelatihan pengguna",
+        "3": "Paket pemeliharaan & SLA opsional"
       }
     }
   },
   "how_it_works": {
-    "heading": "Bagaimana Cara Kerjanya",
-    "desc": "Lihat bagaimana kami mengubah ide menjadi dampak nyata. Proses kami dirancang agar sederhana, transparan, dan berfokus pada hasil di setiap tahapnya.",
+    "heading": "Bagaimana Prosesnya",
+    "desc": "Pelajari bagaimana kami mengubah ide menjadi dampak nyata. Proses kami dibuat sederhana, transparan, dan fokus pada hasil—di setiap tahapnya.",
     "step": {
       "0": {
         "title": "Discovery & Audit Proses Bisnis",
-        "text": "Kami menelusuri operasional Anda untuk memetakan alur kerja dan tantangan utama."
+        "text": "Eksplorasi mendalam terhadap operasi Anda untuk memetakan alur kerja utama dan titik masalah."
       },
       "1": {
-        "title": "Desain Solusi",
-        "text": "Modul dan konfigurasi ERP disesuaikan dengan alur kerja bisnis Anda."
+        "title": "Perancangan Solusi",
+        "text": "Modul dan konfigurasi ERP disesuaikan dengan alur bisnis Anda."
       },
       "2": {
         "title": "Pengembangan & Kustomisasi",
-        "text": "Membangun fitur, integrasi, atau penyesuaian lokal sesuai kebutuhan."
+        "text": "Membangun fitur, integrasi, atau dukungan lokalisasi yang diperlukan."
       },
       "3": {
         "title": "Pengujian & Peluncuran",
-        "text": "Kami lakukan uji coba, melatih tim Anda, dan mendampingi peluncuran sistem."
+        "text": "Kami menjalankan uji coba, melatih tim Anda, dan mendampingi peluncuran sistem."
       },
       "4": {
         "title": "Dukungan Berkelanjutan",
-        "text": "Kami tetap mendampingi selama masa stabilisasi untuk memastikan adopsi dan efektivitas ERP."
+        "text": "Kami tetap tersedia selama masa stabilisasi untuk memastikan adopsi dan efektivitas."
       }
     }
   },
   "what_you_get": {
     "heading": "Apa yang Anda Dapatkan",
-    "desc": "Dari modul ERP yang disesuaikan hingga alat pelaporan yang kuat, kami hadirkan sistem yang menyesuaikan dengan alur kerja Anda dan tumbuh bersama bisnis Anda.",
+    "desc": "Dari modul ERP yang disesuaikan hingga alat pelaporan yang kuat, kami menghadirkan sistem yang beradaptasi dengan alur kerja Anda dan tumbuh bersama bisnis Anda.",
     "items": {
       "0": "Implementasi ERP End-to-End",
       "1": "Modul Kustom Sesuai Kebutuhan Anda",
       "2": "Pelaporan & Visibilitas Data Real-Time",
-      "3": "Fondasi Teknologi yang Siap untuk Pertumbuhan Bisnis"
+      "3": "Fondasi Skalabel untuk Pertumbuhan Bisnis"
     }
   },
   "why_us": {
     "heading": "Mengapa Hyperjump?",
-    "desc": "Kami tidak hanya mengimplementasikan ERP—kami memastikan sistem tersebut benar-benar bekerja untuk bisnis Anda. Dari operasional kompleks hingga teknis mendalam, kami membawa pengalaman dan eksekusi nyata untuk menjadikan ERP sebagai pendorong pertumbuhan dan efisiensi.",
+    "desc": "Kami tidak hanya mengimplementasikan ERP—kami memastikan ERP benar-benar bekerja untuk bisnis Anda. Dari operasi kompleks hingga rekayasa teknis yang mendalam, kami membawa pengalaman dan eksekusi nyata untuk menjadikan ERP pendorong pertumbuhan dan efisiensi.",
     "reasons": {
-      "0": "Implementasi ERP terbukti untuk klien seperti <b>Aruna</b> dan <b>1Engage</b>, dalam operasional yang kompleks.",
-      "1": "Keahlian produk dan rekayasa teknis yang mendalam—kami hadir bukan hanya untuk setup, tapi sebagai penggerak bisnis Anda.",
-      "2": "Kami menggabungkan <b>eksekusi teknis</b> dan <b>wawasan operasional</b> agar tim Anda benar-benar memanfaatkan ERP secara optimal."
+      "0": "Pengalaman implementasi ERP terbukti untuk klien seperti <span class=\"font-bold\">Aruna</span> dan <span class=\"font-bold\">1Engage</span>, dalam operasi yang kompleks.",
+      "1": "Keahlian produk dan rekayasa mendalam—lebih dari sekadar setup, kami menjadikan ERP sebagai alat pendukung bisnis.",
+      "2": "Kami menggabungkan <span class=\"font-bold\">eksekusi teknis</span> dengan <span class=\"font-bold\">wawasan operasional</span> untuk memastikan tim Anda benar-benar menggunakan dan merasakan manfaat dari ERP."
     }
   },
   "cta": {
-    "heading": "Siap beralih dari kekacauan menuju kejelasan?",
-    "desc": "Mari implementasikan ERP yang benar-benar mendukung tim Anda, bukan malah menyulitkan.",
-    "label": "Hubungi Kami"
+    "heading": "Siap beralih dari kekacauan ke kejelasan?",
+    "desc": "Mari implementasikan ERP yang bekerja <span class=\"font-bold\">bersama</span> tim Anda, bukan melawan mereka.",
+    "label": "Hubungi kami"
   }
 }

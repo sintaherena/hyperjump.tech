@@ -24,7 +24,9 @@ import {
   erpHowItWorksStep0Text,
   erpHowItWorksStep1Text,
   erpHowItWorksStep2Text,
-  erpHowItWorksStep3Text
+  erpHowItWorksStep3Text,
+  erpHowItWorksStep4Title,
+  erpHowItWorksStep4Text
 } from "@/locales/.generated/server";
 import { SupportedLanguage } from "@/locales/.generated/types";
 
@@ -33,7 +35,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: erpWhatWeDeliverCard0Title(lang),
       description: erpWhatWeDeliverCard0Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-1.svg",
+      icon: "/images/services/erp/what-we-deliver-icon-1.svg",
       items: [
         erpWhatWeDeliverCard0Items0(lang),
         erpWhatWeDeliverCard0Items1(lang),
@@ -44,7 +46,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: erpWhatWeDeliverCard1Title(lang),
       description: erpWhatWeDeliverCard1Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-2.svg",
+      icon: "/images/services/erp/what-we-deliver-icon-2.svg",
       items: [
         erpWhatWeDeliverCard1Items0(lang),
         erpWhatWeDeliverCard1Items1(lang),
@@ -55,7 +57,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: erpWhatWeDeliverCard2Title(lang),
       description: erpWhatWeDeliverCard2Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-3.svg",
+      icon: "/images/services/erp/what-we-deliver-icon-3.svg",
       items: [
         erpWhatWeDeliverCard2Items0(lang),
         erpWhatWeDeliverCard2Items1(lang),
@@ -73,22 +75,27 @@ export const HowItsWorksData = (lang: SupportedLanguage) => {
     {
       title: erpHowItWorksStep0Title(lang),
       description: erpHowItWorksStep0Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-1.svg"
+      icon: "/images/services/erp/how-it-works-icon-1.svg"
     },
     {
       title: erpHowItWorksStep1Title(lang),
       description: erpHowItWorksStep1Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-2.svg"
+      icon: "/images/services/erp/how-it-works-icon-2.svg"
     },
     {
       title: erpHowItWorksStep2Title(lang),
       description: erpHowItWorksStep2Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-3.svg"
+      icon: "/images/services/erp/how-it-works-icon-3.svg"
     },
     {
       title: erpHowItWorksStep3Title(lang),
       description: erpHowItWorksStep3Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-4.svg"
+      icon: "/images/services/erp/how-it-works-icon-4.svg"
+    },
+    {
+      title: erpHowItWorksStep4Title(lang),
+      description: erpHowItWorksStep4Text(lang),
+      icon: "/images/services/erp/how-it-works-icon-5.svg"
     }
   ];
 

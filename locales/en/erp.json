@@ -13,7 +13,7 @@
     "heading": "Who is it for?",
     "desc": "Built for teams and businesses that are serious about operational excellence. Whether you're scaling fast, managing complexity, or streamlining chaos—we’re here to help you gain clarity and control.",
     "target": {
-      "0": "<span class=\"font-bold\">Scaling</span> startups that need better control over operations",
+      "0": "<span class=\"font-bold\">Scaling startups</span> that need better control over operations",
       "1": "<span class=\"font-bold\">SMEs & Enterprises</span>  looking to replace fragmented tools or spreadsheets",
       "2": "<span class=\"font-bold\">Organizations in fisheries, F&B, logistics, manufacturing</span> , and more",
       "3": "<span class=\"font-bold\">Founders & Ops Leaders</span>  aiming for process standardization"
@@ -100,7 +100,7 @@
   },
   "cta": {
     "heading": "Ready to go from chaos to clarity?",
-    "desc": "Let’s implement an ERP that works with your team, not against them.",
+    "desc": "Let’s implement an ERP that works <span class=\"font-bold\">with</span> your team, not against them.",
     "label": "Talk to us"
   }
 }

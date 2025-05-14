@@ -30,7 +30,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: saasWhatWeDeliverCard0Title(lang),
       description: saasWhatWeDeliverCard0Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-1.svg",
+      icon: "/images/services/saas/what-we-deliver-icon-1.svg",
       items: [
         saasWhatWeDeliverCard0Items0(lang),
         saasWhatWeDeliverCard0Items1(lang),
@@ -40,7 +40,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: saasWhatWeDeliverCard1Title(lang),
       description: saasWhatWeDeliverCard1Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-2.svg",
+      icon: "/images/services/saas/what-we-deliver-icon-2.svg",
       items: [
         saasWhatWeDeliverCard1Items0(lang),
         saasWhatWeDeliverCard1Items1(lang),
@@ -50,7 +50,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: saasWhatWeDeliverCard2Title(lang),
       description: saasWhatWeDeliverCard2Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-3.svg",
+      icon: "/images/services/saas/what-we-deliver-icon-3.svg",
       items: [
         saasWhatWeDeliverCard2Items0(lang),
         saasWhatWeDeliverCard2Items1(lang),
@@ -67,22 +67,22 @@ export const HowItsWorksData = (lang: SupportedLanguage) => {
     {
       title: saasHowItWorksStep0Title(lang),
       description: saasHowItWorksStep0Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-1.svg"
+      icon: "/images/services/saas/how-it-works-icon-1.svg"
     },
     {
       title: saasHowItWorksStep1Title(lang),
       description: saasHowItWorksStep1Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-2.svg"
+      icon: "/images/services/saas/how-it-works-icon-2.svg"
     },
     {
       title: saasHowItWorksStep2Title(lang),
       description: saasHowItWorksStep2Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-3.svg"
+      icon: "/images/services/saas/how-it-works-icon-3.svg"
     },
     {
       title: saasHowItWorksStep3Title(lang),
       description: saasHowItWorksStep3Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-4.svg"
+      icon: "/images/services/saas/how-it-works-icon-4.svg"
     }
   ];
 
