@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "heading": "Dari Kekacauan Menuju Kejelasan: Kisah Nyata <span class=\"text-[#3276F5]\">Transformasi Tim Engineering</span>",
+    "desc": "Di Hyperjump, kami tidak hanya meningkatkan kinerja tim engineering—kami membantu mengubah cara organisasi teknologi berpikir, beroperasi, dan berkembang. Telusuri bagaimana kami bermitra dengan perusahaan yang sedang tumbuh pesat untuk membuka potensi penuh mereka melalui kepemimpinan langsung, sistem yang skalabel, dan pelatihan teknis yang mendalam."
+  },
+  "cta": {
+    "heading": "Bingung harus mulai dari mana?",
+    "desc": "Mari diskusikan tujuan teknologi Anda dan kami akan arahkan ke langkah yang tepat.",
+    "label": "Hubungi Kami"
+  },
+  "heading": "Jelajahi Studi Kasus Kami",
+  "button": "Baca Studi Kasus",
+  "case_studies": "Studi Kasus",
+  "case_study_1": {
+    "title": "Mengubah Tim Teknologi Perikanan Menjadi Mesin Produk yang Skalabel",
+    "text": "Memberdayakan startup berbasis misi untuk mendigitalkan rantai pasok perikanan Indonesia—dari pesisir hingga konsumen.",
+    "desc": "Tim teknologi yang masih junior namun penuh semangat. Belum ada produk yang berjalan di produksi. Dampak besar yang dipertaruhkan. Kami terlibat secara mendalam dengan tim mereka untuk membangun struktur, meningkatkan kepercayaan diri, dan meluncurkan MVP yang fungsional dalam waktu 3 bulan. Melalui praktik agile yang disiplin dan penerapan sistem menyeluruh, kami membantu mengembangkan organisasi teknologi yang rapuh menjadi mesin produk yang andal."
+  },
+  "case_study_2": {
+    "title": "Meningkatkan Tim Engineering Media-Tech dari Pabrik Fitur Menjadi Kekuatan Inovasi",
+    "text": "Mendampingi platform media digital terkemuka beralih dari pengiriman reaktif menuju inovasi strategis.",
+    "desc": "Saat pertumbuhan cepat melampaui kematangan engineering, tim ini membutuhkan lebih dari sekadar fitur—mereka membutuhkan transformasi. Kami merestrukturisasi praktik agile mereka, mengotomatiskan proses DevOps, menetapkan KPI yang terukur, dan membantu mereka beralih dari eksekusi tugas menjadi kepemilikan produk yang sesungguhnya serta eksperimen yang berkelanjutan."
+  }
+}

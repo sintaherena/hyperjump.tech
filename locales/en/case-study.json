@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "heading": "From Chaos to Clarity: Real Stories of <span class=\"text-[#3276F5]\">Engineering Transformation</span>",
+    "desc": "At Hyperjump, we don’t just improve engineering teams—we help reshape how tech orgs think, operate, and grow. Explore how we’ve partnered with fast-growing companies to unlock their full potential through hands-on leadership, scalable systems, and deep technical coaching."
+  },
+  "cta": {
+    "heading": "Not sure where to start?",
+    "desc": "Let’s talk about your tech goals and point you in the right direction.",
+    "label": "Talk to us"
+  },
+  "heading": "Explore Our Case Studies",
+  "button": "Read Case Study",
+  "case_studies": "Case Studies",
+  "case_study_1": {
+    "title": "Transforming a Fisheries Tech Team into a Scalable Product Engine",
+    "text": "Empowering a mission-driven startup to digitize Indonesia’s fisheries supply chain—coast to customer.",
+    "desc": "A junior but passionate tech team. Zero products in production. High impact at stake. We embedded deeply with their team to introduce structure, build confidence, and ship a functional MVP within 3 months. Through rigorous agile practices and full-system rollouts, we helped evolve a fragile tech org into a reliable product engine."
+  },
+  "case_study_2": {
+    "title": "Elevating a Media-Tech Engineering Team from Feature Factory to Innovation Powerhouse",
+    "text": "Helping a leading digital media platform shift from reactive delivery to strategic innovation.",
+    "desc": "When rapid growth outpaced engineering maturity, this team needed more than features—they needed transformation. We restructured their agile practices, automated DevOps, established measurable KPIs, and helped them move from task execution to true product ownership and experimentation."
+  }
+}

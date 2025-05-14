@@ -41,7 +41,7 @@
   "case_studies": {
     "heading": "Case Studies",
     "desc": "Discover how we successfully transform challenges into opportunities with real-world solutions that drive lasting impact and business growth.",
-
+    "button": "Read Case Study",
     "0_title": "Uncovering Hidden System Failures with Deep Technical Review",
     "0_text": "A leading media company was struggling with slow systems and unreliable data. Our technical due diligence exposed critical infrastructure flaws and architectural gaps. With our recommendations, the company rebuilt its backend for faster performance and dependable data access.",
     "0_category": "Case Studies",
