@@ -13,7 +13,7 @@ interface ServiceCardProps {
   image: string;
   icon?: string;
   url?: string;
-  reverse?: boolean;
+  isReverse?: boolean;
   seeMoreText?: string;
   isBorderBottom?: boolean;
   lang?: SupportedLanguage;
@@ -27,7 +27,7 @@ export function ServiceCard({
   items,
   image,
   icon,
-  reverse,
+  isReverse = false,
   url,
   isBorderBottom = false,
   lang,
@@ -37,7 +37,7 @@ export function ServiceCard({
     <section
       className={`flex flex-col gap-6 ${
         isBorderBottom ? "border-b border-gray-200 pb-7 md:pb-14" : ""
-      } xl:flex-row ${reverse ? "md:flex-row-reverse" : ""} items-center`}>
+      } xl:flex-row ${isReverse ? "md:flex-row-reverse" : ""} items-center`}>
       <div className="relative w-full xl:w-1/2">
         <Image
           src={image}

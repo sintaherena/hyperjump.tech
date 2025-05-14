@@ -191,7 +191,7 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
             ctoaasWhatYouGetItems3(lang)
           ]}
           image="/images/services/ctoaas/what-you-get.svg"
-          reverse
+          isReverse
         />
       </div>
     </section>
@@ -220,14 +220,13 @@ function WhyUs({ lang }: { lang: SupportedLanguage }) {
 
 function CtoaasCTA({ lang }: { lang: SupportedLanguage }) {
   return (
-    <section className="flex w-full flex-wrap items-center justify-center bg-white px-4 pb-20 text-center md:px-20 xl:px-0">
-      <div className="xxl:max-w-7xl mx-auto w-full max-w-6xl">
-        <ServicesCTA
-          lang={lang}
-          heading={ctoaasCtaHeading(lang)}
-          desc={ctoaasCtaDesc(lang)}
-        />
-      </div>
+    <section className="flex w-full flex-wrap items-center justify-center bg-white px-4 text-center md:px-20 xl:px-0">
+      <ServicesCTA
+        lang={lang}
+        heading={ctoaasCtaHeading(lang)}
+        desc={ctoaasCtaDesc(lang)}
+        className="xxl:max-w-7xl mx-auto w-full max-w-6xl"
+      />
     </section>
   );
 }

@@ -7,20 +7,27 @@ import data from "@/data.json";
 import Image from "next/image";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import { servicesCtaLabel } from "@/locales/.generated/server";
+import { cn } from "@/lib/utils";
 
 export function ServicesCTA({
   lang,
   heading,
-  desc
+  desc,
+  className = "max-w-5xl"
 }: {
   lang: SupportedLanguage;
   heading: string;
   desc: string;
+  className?: string;
 }) {
   const { gaEventName, link } = data.cta;
 
   return (
-    <div className="relative mt-10 w-full max-w-5xl overflow-hidden rounded-xl">
+    <div
+      className={cn(
+        className,
+        "relative my-10 w-full overflow-hidden rounded-xl"
+      )}>
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/swatch.svg"
