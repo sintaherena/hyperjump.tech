@@ -31,7 +31,8 @@ import {
   servicesCtaHeading,
   servicesCtaDesc,
   servicesPartnersHeading,
-  servicesPartnersDesc
+  servicesPartnersDesc,
+  servicesSeeMore
 } from "@/locales/.generated/server";
 import { ServiceCard } from "../components/service-card";
 import { Button } from "@/components/ui/button";
@@ -74,6 +75,10 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           image="/images/services/saas.webp"
           icon="/images/services/saas-icon.svg"
           reverse
+          lang={lang}
+          seeMoreText={servicesSeeMore(lang)}
+          url="/services/software-as-a-service"
+          isBorderBottom
         />
 
         <ServiceCard
@@ -87,6 +92,9 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           ]}
           image="/images/services/tech-due-diligence.webp"
           icon="/images/services/tech-due-diligence-icon.svg"
+          url="/services/tech-due-dilligence"
+          seeMoreText={servicesSeeMore(lang)}
+          isBorderBottom
         />
 
         <ServiceCard
@@ -100,12 +108,15 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           ]}
           image="/images/services/erp.webp"
           icon="/images/services/erp-icon.svg"
-          withBorder={false}
           reverse
+          seeMoreText={servicesSeeMore(lang)}
+          url="/services/erp-implementation"
+          lang={lang}
+          isBorderBottom
         />
       </section>
 
-      <section className="relative mt-20 mb-10 w-full">
+      <section className="relative mb-10 w-full">
         <h3 className="text-hyperjump-black mb-4 text-[28px] font-medium md:text-4xl">
           {servicesPartnersHeading(lang)}
         </h3>

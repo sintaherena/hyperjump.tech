@@ -56,7 +56,7 @@
   "how_it_works": {
     "heading": "Bagaimana Cara Kerjanya",
     "desc": "Lihat bagaimana kami mengubah ide menjadi dampak nyata. Proses kami dirancang agar sederhana, transparan, dan berfokus pada hasil di setiap tahapnya.",
-    "steps": {
+    "step": {
       "0": {
         "title": "Discovery & Audit Proses Bisnis",
         "text": "Kami menelusuri operasional Anda untuk memetakan alur kerja dan tantangan utama."
@@ -80,7 +80,7 @@
     }
   },
   "what_you_get": {
-    "title": "Apa yang Anda Dapatkan",
+    "heading": "Apa yang Anda Dapatkan",
     "desc": "Dari modul ERP yang disesuaikan hingga alat pelaporan yang kuat, kami hadirkan sistem yang menyesuaikan dengan alur kerja Anda dan tumbuh bersama bisnis Anda.",
     "items": {
       "0": "Implementasi ERP End-to-End",
@@ -90,7 +90,7 @@
     }
   },
   "why_us": {
-    "title": "Mengapa Hyperjump?",
+    "heading": "Mengapa Hyperjump?",
     "desc": "Kami tidak hanya mengimplementasikan ERP—kami memastikan sistem tersebut benar-benar bekerja untuk bisnis Anda. Dari operasional kompleks hingga teknis mendalam, kami membawa pengalaman dan eksekusi nyata untuk menjadikan ERP sebagai pendorong pertumbuhan dan efisiensi.",
     "reasons": {
       "0": "Implementasi ERP terbukti untuk klien seperti <b>Aruna</b> dan <b>1Engage</b>, dalam operasional yang kompleks.",

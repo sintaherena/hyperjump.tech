@@ -33,7 +33,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: tddWhatWeDeliverCard0Title(lang),
       description: tddWhatWeDeliverCard0Text(lang),
-      icon: "/images/services/software-as-a-service.svg",
+      icon: "/images/services/tdd/what-we-deliver-icon-1.svg",
       items: [
         tddWhatWeDeliverCard0Items0(lang),
         tddWhatWeDeliverCard0Items1(lang),
@@ -44,7 +44,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: tddWhatWeDeliverCard1Title(lang),
       description: tddWhatWeDeliverCard1Text(lang),
-      icon: "/images/services/software-as-a-service.svg",
+      icon: "/images/services/tdd/what-we-deliver-icon-2.svg",
       items: [
         tddWhatWeDeliverCard1Items0(lang),
         tddWhatWeDeliverCard1Items1(lang),
@@ -55,7 +55,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: tddWhatWeDeliverCard2Title(lang),
       description: tddWhatWeDeliverCard2Text(lang),
-      icon: "/images/services/software-as-a-service.svg",
+      icon: "/images/services/tdd/what-we-deliver-icon-3.svg",
       items: [
         tddWhatWeDeliverCard2Items0(lang),
         tddWhatWeDeliverCard2Items1(lang),
@@ -73,22 +73,22 @@ export const HowItsWorksData = (lang: SupportedLanguage) => {
     {
       title: tddHowItWorksStep0Title(lang),
       description: tddHowItWorksStep0Text(lang),
-      icon: "/images/services/software-as-a-service.svg"
+      icon: "/images/services/tdd/how-it-works-icon-1.svg"
     },
     {
       title: tddHowItWorksStep1Title(lang),
       description: tddHowItWorksStep1Text(lang),
-      icon: "/images/services/software-as-a-service.svg"
+      icon: "/images/services/tdd/how-it-works-icon-2.svg"
     },
     {
       title: tddHowItWorksStep2Title(lang),
       description: tddHowItWorksStep2Text(lang),
-      icon: "/images/services/software-as-a-service.svg"
+      icon: "/images/services/tdd/how-it-works-icon-3.svg"
     },
     {
       title: tddHowItWorksStep3Title(lang),
       description: tddHowItWorksStep3Text(lang),
-      icon: "/images/services/software-as-a-service.svg"
+      icon: "/images/services/tdd/how-it-works-icon-4.svg"
     }
   ];
 

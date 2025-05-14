@@ -12,7 +12,7 @@
   "who_is_it": {
     "heading": "Who is it for?",
     "desc": "Our solutions are ideal for businesses seeking to scale efficiently and optimize operations.",
-    "targets": {
+    "target": {
       "0": "<b>Founders or CEOs</b> without a technical co-founder",
       "1": "<b>FProduct teams</b> that need better process, structure, or velocity",
       "2": "<b>FOrganizations</b> undergoing digital transformation",

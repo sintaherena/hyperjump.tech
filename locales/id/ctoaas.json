@@ -12,7 +12,7 @@
   "who_is_it": {
     "heading": "Untuk siapa layanan ini?",
     "desc": "Solusi kami ideal untuk bisnis yang ingin berkembang secara efisien dan mengoptimalkan operasional.",
-    "targets": {
+    "target": {
       "0": "<b>Founder atau CEO</b> tanpa co-founder teknis",
       "1": "<b>Tim produk</b> yang membutuhkan proses, struktur, atau kecepatan yang lebih baik",
       "2": "<b>Organisasi</b> yang sedang menjalani transformasi digital",

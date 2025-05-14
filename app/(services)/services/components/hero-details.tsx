@@ -10,7 +10,7 @@ export function Hero({
   return (
     <section
       id="hero"
-      className="relative h-[351px] overflow-hidden bg-hyperjump-black px-4 text-white md:px-20">
+      className="bg-hyperjump-black relative h-[351px] overflow-hidden px-4 text-white md:px-20">
       <div className="absolute inset-0 z-0">
         <Image
           alt="Hero background"
@@ -24,8 +24,8 @@ export function Hero({
       </div>
 
       <div className="relative z-10 flex h-[351px] flex-col items-center justify-around">
-        <div className="max-w-5xl text-center text-white ">
-          <h1 className="mb-4 mt-28 text-3xl font-medium md:text-[40px]">
+        <div className="max-w-5xl text-center text-white">
+          <h1 className="mt-28 mb-4 text-3xl font-medium md:text-[40px]">
             {heading}
           </h1>
           <p className="text-lg">{subheading}</p>

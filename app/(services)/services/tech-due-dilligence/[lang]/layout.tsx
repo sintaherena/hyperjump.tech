@@ -5,30 +5,24 @@ import { SupportedLanguage } from "@/locales/.generated/types";
 import { Hero } from "../../components/hero-details";
 import { tddHeroDesc, tddHeroHeading } from "@/locales/.generated/server";
 
-export default function TechDueDilligenceLangLayout({
+type TechDueDilligenceLangProps = {
+  children: React.ReactNode;
+  params: Promise<{ lang: SupportedLanguage }>;
+};
+
+export default async function TechDueDilligenceLangLayout({
   children,
   params
-}: {
-  children: React.ReactNode;
-  params: { lang: string };
-}) {
+}: TechDueDilligenceLangProps) {
+  const { lang } = await params;
+
   return (
     <>
       <ScrollObserver />
-      <Nav
-        className="xxl:max-w-7xl max-w-6xl"
-        isTransparent
-        lang={params.lang as SupportedLanguage}
-      />
-      <Hero
-        heading={tddHeroHeading(params.lang as SupportedLanguage)}
-        subheading={tddHeroDesc(params.lang as SupportedLanguage)}
-      />
+      <Nav className="xxl:max-w-7xl max-w-6xl" isTransparent lang={lang} />
+      <Hero heading={tddHeroHeading(lang)} subheading={tddHeroDesc(lang)} />
       {children}
-      <Footer
-        lang={params.lang as SupportedLanguage}
-        type="tech-due-dilligence"
-      />
+      <Footer lang={lang} type="tech-due-dilligence" />
     </>
   );
 }

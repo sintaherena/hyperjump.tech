@@ -31,7 +31,7 @@ import { ServiceCard } from "../../components/service-card";
 import { HowItsWorksData, whatWeDeliverData } from "./data";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { ServicesCTA } from "../../components/services-cta";
-import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 export default function Home({ lang }: { lang: SupportedLanguage }) {
   return (
@@ -50,7 +50,7 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
 function About({ lang }: { lang: SupportedLanguage }) {
   return (
     <section className="bg-[#F6F8F9] py-16">
-      <div className="mx-auto flex w-full max-w-4xl flex-wrap items-center px-4 py-10 text-hyperjump-black md:px-16 md:py-20 xl:px-0">
+      <div className="text-hyperjump-black mx-auto flex w-full max-w-4xl flex-wrap items-center px-4 py-10 md:px-16 md:py-20 xl:px-0">
         <h2 className="mb-5 text-[34px] font-medium md:text-4xl">
           {tddWhatIsTddHeading(lang)}
         </h2>
@@ -63,7 +63,7 @@ function About({ lang }: { lang: SupportedLanguage }) {
 
 function WhoIsIt({ lang }: { lang: SupportedLanguage }) {
   return (
-    <section className=" flex w-full flex-wrap items-center justify-center bg-white px-4 py-20 text-center md:px-20 xl:px-0">
+    <section className="flex w-full flex-wrap items-center justify-center bg-white px-4 py-20 text-center md:px-20 xl:px-0">
       <div className="xxl:max-w-7xl mx-auto w-full max-w-6xl">
         <ServiceCard
           title={tddWhoIsItHeading(lang)}
@@ -75,7 +75,6 @@ function WhoIsIt({ lang }: { lang: SupportedLanguage }) {
           ]}
           image="/images/services/erp.webp"
           icon="/images/services/erp-icon.svg"
-          withBorder={false}
         />
       </div>
     </section>
@@ -85,11 +84,13 @@ function WhoIsIt({ lang }: { lang: SupportedLanguage }) {
 function WhatWeDeliver({ lang }: { lang: SupportedLanguage }) {
   return (
     <section className="bg-white py-16">
-      <div className="mx-auto max-w-6xl px-4 text-center text-hyperjump-black">
+      <div className="text-hyperjump-black mx-auto flex max-w-6xl flex-col items-center justify-center px-4 text-center">
         <h2 className="mb-5 text-[34px] font-medium md:text-4xl">
           {tddWhatWeDeliverHeading(lang)}
         </h2>
-        <p className="mt-2 text-gray-600">{tddWhatWeDeliverDesc(lang)}</p>
+        <p className="text-hyperjump-gray mt-2 max-w-3xl">
+          {tddWhatWeDeliverDesc(lang)}
+        </p>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {whatWeDeliverData(lang).map((service, idx) => (
             <div
@@ -98,15 +99,20 @@ function WhatWeDeliver({ lang }: { lang: SupportedLanguage }) {
               <Avatar className="mb-6 h-14 w-14">
                 <AvatarImage src={service.icon as string} alt={service.title} />
               </Avatar>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
+              <h3 className="text-hyperjump-black mb-2 text-lg font-medium md:text-xl">
                 {service.title}
               </h3>
-              <p className="mb-4 text-gray-600">{service.description}</p>
-              <ul className="list-inside list-disc space-y-1 text-gray-700">
-                {service.items.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
+              <p className="text-hyperjump-gray mb-4 md:text-lg">
+                {service.description}
+              </p>
+              <ul
+                className="text-hyperjump-gray list-inside list-disc space-y-1 [&_b]:mt-4 [&_b]:block"
+                dangerouslySetInnerHTML={{
+                  __html: service.items
+                    .map((item) => `<li>${item}</li>`)
+                    .join("")
+                }}
+              />
             </div>
           ))}
         </div>
@@ -117,26 +123,35 @@ function WhatWeDeliver({ lang }: { lang: SupportedLanguage }) {
 
 function HowItWorks({ lang }: { lang: SupportedLanguage }) {
   return (
-    <section className="bg-white py-16">
-      <div className="mx-auto max-w-6xl px-4 text-center text-hyperjump-black">
+    <section className="bg-[#F6F8F9] py-16">
+      <div className="text-hyperjump-black mx-auto flex max-w-6xl flex-col items-center px-4 text-center">
         <h2 className="mb-5 text-[34px] font-medium md:text-4xl">
           {tddHowItWorksHeading(lang)}
         </h2>
-        <p className="mb-10 mt-2 text-gray-600">{tddHowItWorksDesc(lang)}</p>
-        <div className="relative space-y-8 border-l border-gray-200 pl-6">
-          {HowItsWorksData(lang).map((step, idx) => (
-            <div key={idx} className="relative flex gap-4">
-              <Avatar className="absolute -left-[13px] mb-6 h-14 w-14 rounded-full border border-gray-200 bg-white p-1">
-                <AvatarImage src={step.icon as string} alt={step.title} />
-              </Avatar>
-              <Card className="w-full">
-                <CardContent className="py-4">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {step.title}
-                  </h3>
-                  <p className="mt-1 text-gray-600">{step.description}</p>
-                </CardContent>
-              </Card>
+        <p className="text-hyperjump-gray mt-2 mb-10">
+          {tddHowItWorksDesc(lang)}
+        </p>
+        <div className="relative space-y-10">
+          <div className="bg-dashed absolute top-6 bottom-6 left-5 z-0 w-px bg-gray-300" />
+          {HowItsWorksData(lang).map((step, index) => (
+            <div key={index} className="relative z-10 flex items-start">
+              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded border border-gray-200 bg-white shadow">
+                <Image
+                  width={40}
+                  height={40}
+                  src={step.icon}
+                  alt=""
+                  className="h-10 w-10"
+                />
+              </div>
+              <div className="ml-4 text-left">
+                <h4 className="font-meidum text-hyperjump-black text-xl">
+                  {step.title}
+                </h4>
+                <p className="text-hyperjump-gray mt-1 text-sm md:text-base">
+                  {step.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -147,7 +162,7 @@ function HowItWorks({ lang }: { lang: SupportedLanguage }) {
 
 function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
   return (
-    <section className=" flex w-full flex-wrap items-center justify-center bg-white px-4 py-20 text-center md:px-20 xl:px-0">
+    <section className="flex w-full flex-wrap items-center justify-center bg-white px-4 py-20 text-center md:px-20 xl:px-0">
       <div className="xxl:max-w-7xl mx-auto w-full max-w-6xl">
         <ServiceCard
           title={tddWhatYouGetHeading(lang)}
@@ -157,9 +172,7 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
             tddWhatYouGetItems1(lang),
             tddWhatYouGetItems2(lang)
           ]}
-          image="/images/services/erp.webp"
-          icon="/images/services/erp-icon.svg"
-          withBorder={false}
+          image="/images/services/tdd/what-you-get.svg"
           reverse
         />
       </div>
@@ -169,7 +182,7 @@ function WhatYouGet({ lang }: { lang: SupportedLanguage }) {
 
 function WhyUs({ lang }: { lang: SupportedLanguage }) {
   return (
-    <section className=" flex w-full flex-wrap items-center justify-center bg-white px-4 py-20 text-center md:px-20 xl:px-0">
+    <section className="flex w-full flex-wrap items-center justify-center bg-white px-4 py-20 text-center md:px-20 xl:px-0">
       <div className="xxl:max-w-7xl mx-auto w-full max-w-6xl">
         <ServiceCard
           title={tddWhyUsHeading(lang)}
@@ -179,9 +192,7 @@ function WhyUs({ lang }: { lang: SupportedLanguage }) {
             tddWhyUsReasons1(lang),
             tddWhyUsReasons2(lang)
           ]}
-          image="/images/services/erp.webp"
-          icon="/images/services/erp-icon.svg"
-          withBorder={false}
+          image="/images/services/tdd/why-us.svg"
         />
       </div>
     </section>
@@ -190,7 +201,7 @@ function WhyUs({ lang }: { lang: SupportedLanguage }) {
 
 function TddCTA({ lang }: { lang: SupportedLanguage }) {
   return (
-    <section className=" flex w-full flex-wrap items-center justify-center bg-white px-4 pb-20 text-center md:px-20 xl:px-0">
+    <section className="flex w-full flex-wrap items-center justify-center bg-white px-4 pb-20 text-center md:px-20 xl:px-0">
       <div className="xxl:max-w-7xl mx-auto w-full max-w-6xl">
         <ServicesCTA
           lang={lang}

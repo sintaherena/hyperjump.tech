@@ -1,4 +1,8 @@
+import { Button } from "@/components/ui/button";
+import { servicesSeeMore } from "@/locales/.generated/server";
+import { SupportedLanguage } from "@/locales/.generated/types";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ServiceCardProps {
   title: string;
@@ -6,9 +10,12 @@ interface ServiceCardProps {
   desc?: string;
   items?: string[];
   image: string;
-  icon: string;
+  icon?: string;
+  url?: string;
   reverse?: boolean;
-  withBorder?: boolean;
+  seeMoreText?: string;
+  isBorderBottom?: boolean;
+  lang?: SupportedLanguage;
 }
 
 export function ServiceCard({
@@ -19,12 +26,14 @@ export function ServiceCard({
   image,
   icon,
   reverse,
-  withBorder = true
+  url,
+  isBorderBottom = false,
+  lang
 }: ServiceCardProps) {
   return (
     <section
       className={`mb-14 flex flex-col gap-6 ${
-        withBorder ? "border-b border-gray-200 pb-7 md:pb-14" : ""
+        isBorderBottom ? "border-b border-gray-200 pb-7 md:pb-14" : ""
       } md:flex-row ${reverse ? "md:flex-row-reverse" : ""} items-center`}>
       <div className="relative w-full md:w-1/2">
         <Image
@@ -34,9 +43,11 @@ export function ServiceCard({
           width={660}
           height={400}
         />
-        <div className="absolute -bottom-1 left-1 rounded-md">
-          <Image src={icon} alt={`${title} icon`} width={80} height={80} />
-        </div>
+        {icon && (
+          <div className="absolute -bottom-1 left-1 rounded-md">
+            <Image src={icon} alt={`${title} icon`} width={80} height={80} />
+          </div>
+        )}
       </div>
 
       <div className="w-full md:w-1/2">
@@ -50,19 +61,28 @@ export function ServiceCard({
           </p>
         </div>
 
-        <ul className="list-none text-left text-base text-gray-700 md:text-lg">
-          {items?.map((point, i) => (
-            <li key={i} className="mb-4 flex items-start gap-2">
-              <Image
-                src="/images/checklist.svg"
-                alt="icon"
-                width={24}
-                height={24}
-              />
-              <span>{point}</span>
-            </li>
-          ))}
-        </ul>
+        <ul
+          className="list-none space-y-4 text-left text-base text-gray-700 md:text-lg [&_b]:mt-4 [&_b]:block"
+          dangerouslySetInnerHTML={{
+            __html:
+              items
+                ?.map(
+                  (point) =>
+                    `<li class="flex items-center gap-2"><img src="/images/checklist.svg" width="24" height="24" alt="icon" /><div>${point}</div></li>`
+                )
+                .join("") || ""
+          }}
+        />
+        <div className="mt-8 md:text-left">
+          {lang && url && (
+            <Button
+              asChild
+              size="lg"
+              className="bg-hyperjump-blue hover:bg-hyperjump-blue/90 w-full text-base font-semibold text-white md:w-44">
+              <Link href={url}>{servicesSeeMore(lang)}</Link>
+            </Button>
+          )}
+        </div>
       </div>
     </section>
   );

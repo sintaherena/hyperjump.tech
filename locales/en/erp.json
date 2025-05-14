@@ -56,7 +56,7 @@
   "how_it_works": {
     "heading": "How It Works",
     "desc": "Discover how we turn ideas into impact. Our process is built to be simple, transparent, and focused on results—every step of the way.",
-    "steps": {
+    "step": {
       "0": {
         "title": "Discovery & Business Process Audit",
         "text": "Deep-dive into your operations to map key workflows and pain points."
@@ -80,7 +80,7 @@
     }
   },
   "what_you_get": {
-    "title": "What You Get",
+    "heading": "What You Get",
     "desc": "From tailored ERP modules to powerful reporting tools, we deliver a system that adapts to your workflow and grows with your business.",
     "items": {
       "0": "End-to-End ERP Deployment",
@@ -90,7 +90,7 @@
     }
   },
   "why_us": {
-    "title": "Why Hyperjump?",
+    "heading": "Why Hyperjump?",
     "desc": "We don’t just implement ERP—we make it work for your business. From high-complexity operations to hands-on engineering, we bring the experience and execution needed to turn ERP into a real driver of growth and efficiency.",
     "reasons": {
       "0": "Proven ERP implementation for clients like <b>Aruna</b> and <b>1Engage</b>, across high-complexity operations.",
