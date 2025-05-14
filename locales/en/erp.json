@@ -6,17 +6,17 @@
   "what_is_erp": {
     "heading": "What is ERP Implementation?",
     "desc": "Enterprise Resource Planning (ERP) systems connect your business processes—finance, supply chain, inventory, sales—into a single source of truth. But a great ERP isn’t just software—it’s about implementation that understands your operations.",
-    "highlight": "We help organizations implement <b>Odoo</b> and <b>ERPNext</b>, tailored to their workflows, industry needs, and growth ambitions."
+    "highlight": "We help organizations implement <span class=\"font-bold\">Odoo</span> and <span class=\"font-bold\">ERPNext</span>, tailored to their workflows, industry needs, and growth ambitions."
   },
 
   "who_is_it": {
     "heading": "Who is it for?",
     "desc": "Built for teams and businesses that are serious about operational excellence. Whether you're scaling fast, managing complexity, or streamlining chaos—we’re here to help you gain clarity and control.",
     "target": {
-      "0": "<b>Scaling</b> startups that need better control over operations",
-      "1": "<b>SMEs & Enterprises</b>  looking to replace fragmented tools or spreadsheets",
-      "2": "<b>Organizations in fisheries, F&B, logistics, manufacturing</b> , and more",
-      "3": "<b>Founders & Ops Leaders</b>  aiming for process standardization"
+      "0": "<span class=\"font-bold\">Scaling</span> startups that need better control over operations",
+      "1": "<span class=\"font-bold\">SMEs & Enterprises</span>  looking to replace fragmented tools or spreadsheets",
+      "2": "<span class=\"font-bold\">Organizations in fisheries, F&B, logistics, manufacturing</span> , and more",
+      "3": "<span class=\"font-bold\">Founders & Ops Leaders</span>  aiming for process standardization"
     }
   },
   "what_we_deliver": {
@@ -93,9 +93,9 @@
     "heading": "Why Hyperjump?",
     "desc": "We don’t just implement ERP—we make it work for your business. From high-complexity operations to hands-on engineering, we bring the experience and execution needed to turn ERP into a real driver of growth and efficiency.",
     "reasons": {
-      "0": "Proven ERP implementation for clients like <b>Aruna</b> and <b>1Engage</b>, across high-complexity operations.",
+      "0": "Proven ERP implementation for clients like <span class=\"font-bold\">Aruna</span> and <span class=\"font-bold\">1Engage</span>, across high-complexity operations.",
       "1": "Deep product and engineering expertise to go beyond just setup—we deliver ERP as a business enabler.",
-      "2": "We combine <b>technical execution</b> with <b>operational insight</b> to make sure your team actually uses and benefits from the ERP."
+      "2": "We combine <span class=\"font-bold\">technical execution</span> with <span class=\"font-bold\">operational insight</span> to make sure your team actually uses and benefits from the ERP."
     }
   },
   "cta": {

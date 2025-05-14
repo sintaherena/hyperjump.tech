@@ -299,7 +299,6 @@ function WhyUs({ lang }: { lang: SupportedLanguage }) {
                 ctoaasWhyUsReasons0(lang),
                 ctoaasWhyUsReasons1(lang),
                 ctoaasWhyUsReasons2(lang),
-                // ctoaasWhyUsReasons3(lang)
                 `${ctoaasWhyUsReasons3(lang)} 
                <div class="mt-2 flex flex-wrap flex-row gap-5">
                 <img src="/images/services/ctoaas/clients/idn-media.png" alt="idn-media" class="h-6 w-auto inline pr-2 border-r border-gray-300 object-contain" />
