@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { servicesSeeMore } from "@/locales/.generated/server";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import Image from "next/image";
@@ -16,6 +17,7 @@ interface ServiceCardProps {
   seeMoreText?: string;
   isBorderBottom?: boolean;
   lang?: SupportedLanguage;
+  isUnderline?: boolean;
 }
 
 export function ServiceCard({
@@ -28,35 +30,47 @@ export function ServiceCard({
   reverse,
   url,
   isBorderBottom = false,
-  lang
+  lang,
+  isUnderline = false
 }: ServiceCardProps) {
   return (
     <section
-      className={`mb-14 flex flex-col gap-6 ${
+      className={`flex flex-col gap-6 ${
         isBorderBottom ? "border-b border-gray-200 pb-7 md:pb-14" : ""
-      } md:flex-row ${reverse ? "md:flex-row-reverse" : ""} items-center`}>
-      <div className="relative w-full md:w-1/2">
+      } xl:flex-row ${reverse ? "md:flex-row-reverse" : ""} items-center`}>
+      <div className="relative w-full xl:w-1/2">
         <Image
           src={image}
           alt={title}
-          className="h-auto w-full rounded-[20px]"
+          className="h-auto w-full rounded-2xl"
           width={660}
           height={400}
         />
         {icon && (
           <div className="absolute -bottom-1 left-1 rounded-md">
-            <Image src={icon} alt={`${title} icon`} width={80} height={80} />
+            <Image
+              className="h-10 w-10 md:h-20 md:w-20"
+              src={icon}
+              alt={`${title} icon`}
+              width={80}
+              height={80}
+            />
           </div>
         )}
       </div>
 
-      <div className="w-full md:w-1/2">
+      <div className="w-full xl:w-1/2">
         <div className="text-left">
           <h3 className="text-hyperjump-black mb-4 text-[28px] font-medium md:text-4xl">
             {title}
           </h3>
           <p className="mb-4 text-lg text-gray-700">{text}</p>
-          <p className="mb-6 inline-block border-b-2 border-gray-200 text-lg text-gray-700">
+          <p
+            className={cn(
+              isUnderline
+                ? "mb-6 text-lg text-gray-700 underline"
+                : "mb-6 text-lg text-gray-700"
+            )}>
             {desc}
           </p>
         </div>
@@ -73,16 +87,17 @@ export function ServiceCard({
                 .join("") || ""
           }}
         />
-        <div className="mt-8 md:text-left">
-          {lang && url && (
+
+        {lang && url && (
+          <div className="mt-8 md:text-left">
             <Button
               asChild
               size="lg"
               className="bg-hyperjump-blue hover:bg-hyperjump-blue/90 w-full text-base font-semibold text-white md:w-44">
               <Link href={url}>{servicesSeeMore(lang)}</Link>
             </Button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

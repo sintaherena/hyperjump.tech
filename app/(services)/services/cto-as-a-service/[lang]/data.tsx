@@ -33,7 +33,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: ctoaasWhatWeDeliverCard0Title(lang),
       description: ctoaasWhatWeDeliverCard0Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-1.svg",
+      icon: "/images/services/ctoaas/what-we-deliver-icon-1.svg",
       items: [
         ctoaasWhatWeDeliverCard0Items0(lang),
         ctoaasWhatWeDeliverCard0Items1(lang),
@@ -44,7 +44,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: ctoaasWhatWeDeliverCard1Title(lang),
       description: ctoaasWhatWeDeliverCard1Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-2.svg",
+      icon: "/images/services/ctoaas/what-we-deliver-icon-2.svg",
       items: [
         ctoaasWhatWeDeliverCard1Items0(lang),
         ctoaasWhatWeDeliverCard1Items1(lang),
@@ -55,7 +55,7 @@ export const whatWeDeliverData = (lang: SupportedLanguage) => {
     {
       title: ctoaasWhatWeDeliverCard2Title(lang),
       description: ctoaasWhatWeDeliverCard2Text(lang),
-      icon: "/images/services/tdd/what-we-deliver-icon-3.svg",
+      icon: "/images/services/ctoaas/what-we-deliver-icon-3.svg",
       items: [
         ctoaasWhatWeDeliverCard2Items0(lang),
         ctoaasWhatWeDeliverCard2Items1(lang),
@@ -73,22 +73,22 @@ export const HowItsWorksData = (lang: SupportedLanguage) => {
     {
       title: ctoaasHowItWorksStep0Title(lang),
       description: ctoaasHowItWorksStep0Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-1.svg"
+      icon: "/images/services/ctoaas/how-it-works-icon-1.svg"
     },
     {
       title: ctoaasHowItWorksStep1Title(lang),
       description: ctoaasHowItWorksStep1Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-2.svg"
+      icon: "/images/services/ctoaas/how-it-works-icon-2.svg"
     },
     {
       title: ctoaasHowItWorksStep2Title(lang),
       description: ctoaasHowItWorksStep2Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-3.svg"
+      icon: "/images/services/ctoaas/how-it-works-icon-3.svg"
     },
     {
       title: ctoaasHowItWorksStep3Title(lang),
       description: ctoaasHowItWorksStep3Text(lang),
-      icon: "/images/services/tdd/how-it-works-icon-4.svg"
+      icon: "/images/services/ctoaas/how-it-works-icon-4.svg"
     }
   ];
 

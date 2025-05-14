@@ -3,7 +3,7 @@ import Nav from "@/app/components/nav";
 import ScrollObserver from "@/app/components/scroll-observer";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import { Hero } from "../../components/hero-details";
-import { erpHeroDesc, erpHeroHeading } from "@/locales/.generated/server";
+import { ctoaasHeroDesc, ctoaasHeroHeading } from "@/locales/.generated/server";
 
 type CTOAsAServiceLangProps = {
   children: React.ReactNode;
@@ -20,7 +20,10 @@ export default async function CTOAsAServiceLangLayout({
     <>
       <ScrollObserver />
       <Nav className="xxl:max-w-7xl max-w-6xl" isTransparent lang={lang} />
-      <Hero heading={erpHeroHeading(lang)} subheading={erpHeroDesc(lang)} />
+      <Hero
+        heading={ctoaasHeroHeading(lang)}
+        subheading={ctoaasHeroDesc(lang)}
+      />
       {children}
       <Footer lang={lang} type="tech-due-dilligence" />
     </>

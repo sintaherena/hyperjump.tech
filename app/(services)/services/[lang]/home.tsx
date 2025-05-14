@@ -61,6 +61,11 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           ]}
           image="/images/services/ctoaas.webp"
           icon="/images/services/ctoaas-icon.svg"
+          seeMoreText={servicesSeeMore(lang)}
+          lang={lang}
+          url="/services/cto-as-a-service"
+          isBorderBottom
+          isUnderline
         />
 
         <ServiceCard
@@ -79,6 +84,7 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           seeMoreText={servicesSeeMore(lang)}
           url="/services/software-as-a-service"
           isBorderBottom
+          isUnderline
         />
 
         <ServiceCard
@@ -95,6 +101,7 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           url="/services/tech-due-dilligence"
           seeMoreText={servicesSeeMore(lang)}
           isBorderBottom
+          isUnderline
         />
 
         <ServiceCard
@@ -113,6 +120,7 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           url="/services/erp-implementation"
           lang={lang}
           isBorderBottom
+          isUnderline
         />
       </section>
 

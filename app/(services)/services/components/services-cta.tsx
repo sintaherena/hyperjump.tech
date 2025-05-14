@@ -20,7 +20,7 @@ export function ServicesCTA({
   const { gaEventName, link } = data.cta;
 
   return (
-    <div className="relative mt-10 w-full max-w-5xl overflow-hidden rounded">
+    <div className="relative mt-10 w-full max-w-5xl overflow-hidden rounded-xl">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/swatch.svg"
@@ -39,8 +39,8 @@ export function ServicesCTA({
         <p className="mt-3 max-w-xl">{desc}</p>
         <Button
           asChild
-          variant="outline"
-          className="mt-8 bg-transparent font-semibold text-white hover:bg-white">
+          variant="default"
+          className="bg-hyperjump-blue hover:bg-hyperjump-blue/90 mt-8 font-semibold text-white">
           <Link
             href={link}
             target="_blank"
