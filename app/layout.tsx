@@ -23,6 +23,22 @@ export const metadata: Metadata = {
     icon: "/icons/icon-192x192.png",
     apple: "/icons/apple-touch-icon.png",
     shortcut: "/icons/icon-192x192.png"
+  },
+  openGraph: {
+    title: data.title,
+    description: data.description,
+    type: "website",
+    url: data.url,
+    siteName: data.title,
+    images: [
+      {
+        url: "https://hyperjump.tech/images/hyperjump-og.png",
+        width: 1200,
+        height: 630,
+        alt: `${data.title} Logo`,
+        type: "image/png"
+      }
+    ]
   }
 };
 

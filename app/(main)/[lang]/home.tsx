@@ -33,32 +33,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const {
-  hero: { heading, subheading },
+  hero: { subheading },
   location,
   socials,
   title,
   url
 } = data;
-
-export const metadata: Metadata = {
-  description: subheading,
-  title: `${title} - ${heading}`,
-  openGraph: {
-    url,
-    type: "website",
-    title: `${title} - ${heading}`,
-    images: [
-      {
-        url: "https://hyperjump.tech/images/hyperjump-og.png",
-        width: 1200,
-        height: 630,
-        alt: "Hyperjump Logo",
-        type: "image/png"
-      }
-    ],
-    siteName: title
-  }
-};
 
 export default function Home({ lang }: { lang: SupportedLanguage }) {
   return (
