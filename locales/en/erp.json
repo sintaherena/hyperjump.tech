@@ -1,0 +1,106 @@
+{
+  "hero": {
+    "heading": "ERP Implementation",
+    "desc": "Streamline Operations. Boost Visibility. Enable Scale."
+  },
+  "what_is_erp": {
+    "heading": "What is ERP Implementation?",
+    "desc": "Enterprise Resource Planning (ERP) systems connect your business processes—finance, supply chain, inventory, sales—into a single source of truth. But a great ERP isn’t just software—it’s about implementation that understands your operations.",
+    "highlight": "We help organizations implement <span class=\"font-bold\">Odoo</span> and <span class=\"font-bold\">ERPNext</span>, tailored to their workflows, industry needs, and growth ambitions."
+  },
+
+  "who_is_it": {
+    "heading": "Who is it for?",
+    "desc": "Built for teams and businesses that are serious about operational excellence. Whether you're scaling fast, managing complexity, or streamlining chaos—we’re here to help you gain clarity and control.",
+    "target": {
+      "0": "<span class=\"font-bold\">Scaling startups</span> that need better control over operations",
+      "1": "<span class=\"font-bold\">SMEs & Enterprises</span>  looking to replace fragmented tools or spreadsheets",
+      "2": "<span class=\"font-bold\">Organizations in fisheries, F&B, logistics, manufacturing</span> , and more",
+      "3": "<span class=\"font-bold\">Founders & Ops Leaders</span>  aiming for process standardization"
+    }
+  },
+  "what_we_deliver": {
+    "heading": "What We Deliver",
+    "desc": "We partner with your team to streamline operations and build a system that scales with your business. From planning to post-implementation, we deliver hands-on support every step of the way.",
+    "card_0": {
+      "title": "Process Mapping & Design",
+      "text": "We align ERP features with your business reality:",
+      "items": {
+        "0": "Department workflows (Finance, Ops, HR, etc.)",
+        "1": "Role-specific dashboards",
+        "2": "Manual to digital transition",
+        "3": "Localization & regulatory compliance"
+      }
+    },
+    "card_1": {
+      "title": "ERP System Implementation",
+      "text": "We configure, customize, and deploy your ERP:",
+      "items": {
+        "0": "Odoo or ERPNext setup",
+        "1": "Custom modules development (when needed)",
+        "2": "Data migration & system integration",
+        "3": "UAT and go-live support"
+      }
+    },
+    "card_2": {
+      "title": "Post-Go-Live Support",
+      "text": "We make sure your ERP delivers value:",
+      "items": {
+        "0": "Stabilization support",
+        "1": "Change management guidance",
+        "2": "Training for users",
+        "3": "Optional maintenance & SLA packages"
+      }
+    }
+  },
+  "how_it_works": {
+    "heading": "How It Works",
+    "desc": "Discover how we turn ideas into impact. Our process is built to be simple, transparent, and focused on results—every step of the way.",
+    "step": {
+      "0": {
+        "title": "Discovery & Business Process Audit",
+        "text": "Deep-dive into your operations to map key workflows and pain points."
+      },
+      "1": {
+        "title": "Solution Design",
+        "text": "ERP modules and configurations mapped to your business flow."
+      },
+      "2": {
+        "title": "Development & Customization",
+        "text": "Build any required features, integrations, or localization support."
+      },
+      "3": {
+        "title": "Testing & Rollout",
+        "text": "We run test cycles, train your team, and support go-live execution."
+      },
+      "4": {
+        "title": "Ongoing Support",
+        "text": "We stay available during stabilization to ensure adoption and effectiveness."
+      }
+    }
+  },
+  "what_you_get": {
+    "heading": "What You Get",
+    "desc": "From tailored ERP modules to powerful reporting tools, we deliver a system that adapts to your workflow and grows with your business.",
+    "items": {
+      "0": "End-to-End ERP Deployment",
+      "1": "Custom Modules Tailored to Your Needs",
+      "2": "Reporting & Real-Time Data Visibility",
+      "3": "A Scalable Backbone for Business Growth"
+    }
+  },
+  "why_us": {
+    "heading": "Why Hyperjump?",
+    "desc": "We don’t just implement ERP—we make it work for your business. From high-complexity operations to hands-on engineering, we bring the experience and execution needed to turn ERP into a real driver of growth and efficiency.",
+    "reasons": {
+      "0": "Proven ERP implementation for clients like <span class=\"font-bold\">Aruna</span> and <span class=\"font-bold\">1Engage</span>, across high-complexity operations.",
+      "1": "Deep product and engineering expertise to go beyond just setup—we deliver ERP as a business enabler.",
+      "2": "We combine <span class=\"font-bold\">technical execution</span> with <span class=\"font-bold\">operational insight</span> to make sure your team actually uses and benefits from the ERP."
+    }
+  },
+  "cta": {
+    "heading": "Ready to go from chaos to clarity?",
+    "desc": "Let’s implement an ERP that works <span class=\"font-bold\">with</span> your team, not against them.",
+    "label": "Talk to us"
+  }
+}

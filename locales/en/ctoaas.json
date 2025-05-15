@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "heading": "CTO-as-a-Service",
+    "desc": "Build Like the Best. Without Hiring a CTO."
+  },
+  "what_is_ctoaas": {
+    "heading": "What is CTO-as-a-Service?",
+    "desc": "Not every company needs a full-time CTO—but every tech team needs strong leadership.",
+    "highlight": "CTO-as-a-Service by Hyperjump gives you access to senior-level engineering leadership and a battle-tested product team. We help you <span class=\"font-bold\">build a strong engineering culture, ship better software,</span> and <span class=\"font-bold\">scale your product organization</span>—without the overhead of building it alone."
+  },
+
+  "who_is_it": {
+    "heading": "Who is it for?",
+    "desc": "Our solutions are ideal for businesses seeking to scale efficiently and optimize operations.",
+    "target": {
+      "0": "<span class=\"font-bold\">Founders or CEOs</span> without a technical co-founder",
+      "1": "<span class=\"font-bold\">Product teams</span> that need better process, structure, or velocity",
+      "2": "<span class=\"font-bold\">Organizations</span> undergoing digital transformation",
+      "3": "<span class=\"font-bold\">Scale-ups</span> preparing for growth, audits, or fundraising"
+    }
+  },
+
+  "what_we_deliver": {
+    "heading": "What We Deliver",
+    "desc": "We provide tailored solutions to ensure your tech and operations are on the right track for sustainable growth.",
+    "card_0": {
+      "title": "Technical Strategy & Roadmap",
+      "text": "We translate business goals into technical execution:",
+      "items": {
+        "0": "Platform & product architecture",
+        "1": "Tech stack decision-making",
+        "2": "Scalability & reliability planning",
+        "3": "Budgeting for infra & resourcing"
+      }
+    },
+    "card_1": {
+      "title": "Team Structuring & Coaching",
+      "text": "We help you build a strong internal team:",
+      "items": {
+        "0": "Talent hiring & assessment",
+        "1": "Establishing squad structures",
+        "2": "Defining roles, rituals, and workflows",
+        "3": "Mentoring engineers, PMs, and tech leads"
+      }
+    },
+    "card_2": {
+      "title": "Delivery Process & Operational Excellence",
+      "text": "We implement systems that make engineering scale:",
+      "items": {
+        "0": "Agile Rituals (Scrum, Kanban, etc.)",
+        "1": "CI/CD pipelines and DevOps best practices",
+        "2": "QA, release management, and observability",
+        "3": "Grooming, estimation, sprint metrics"
+      }
+    }
+  },
+  "how_it_works": {
+    "heading": "How It Works",
+    "desc": "We embed a <span style=\"font-weight: bold;\">Hyperjump partner-level tech leader</span> into your organization, supported by an experienced engineering team.",
+    "step": {
+      "0": {
+        "title": "Hands-on leadership + system building",
+        "text": "We don’t just advise—we lead, build systems, and work closely with your team to drive sustainable growth."
+      },
+      "1": {
+        "title": "Team setup, code review, sprint coaching",
+        "text": "We help structure your team, strengthen code quality, and improve sprint execution for better, faster delivery."
+      },
+      "2": {
+        "title": "Weekly check-ins and progress tracking",
+        "text": "Stay aligned with regular updates, issue tracking, and clear visibility into roadmap progress every week."
+      },
+      "3": {
+        "title": "Goal: after 6–12 months, you’re self-sufficient",
+        "text": "Our mission is to empower your team to operate independently—with strong processes, discipline, and confidence."
+      }
+    }
+  },
+
+  "what_you_get": {
+    "heading": "What You Get",
+    "desc": "With our expertise, you will receive the tools and guidance needed for long-term success in technology and operations.",
+    "items": {
+      "0": "A clear technology direction",
+      "1": "Strong engineering foundation",
+      "2": "Improved delivery velocity and product quality",
+      "3": "Tech team that’s built for scale—not just survival"
+    }
+  },
+
+  "why_us": {
+    "heading": "Why Hyperjump?",
+    "desc": "At Hyperjump, we combine proven experience, strong leadership, and hands-on execution to drive success for your business.",
+    "reasons": {
+      "0": "Proven across <span class=\"font-bold\">early stage to post-Series A startups</span>",
+      "1": "We bring <span class=\"font-bold\">leadership, structure, and systems</span>—not just advice",
+      "2": "Our goal is to <span class=\"font-bold\">make ourselves obsolete</span> by empowering your internal team",
+      "3": "Clients include"
+    }
+  },
+
+  "cta": {
+    "heading": "Build your tech team the right way",
+    "desc": "Let’s shape a world-class product engineering team—together.",
+    "label": "Talk to us"
+  }
+}

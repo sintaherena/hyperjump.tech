@@ -25,7 +25,6 @@ import { mainNav } from "../(main)/[lang]/data";
 import { mainCtaLabel } from "@/locales/.generated/server";
 
 type NavProps = {
-  type?: "hyperjump" | "services";
   className?: string;
   isTransparent?: boolean;
   lang: SupportedLanguage;
@@ -34,7 +33,6 @@ type NavProps = {
 export default function Nav({
   lang,
   isTransparent = false,
-  type = "hyperjump",
   className = "max-w-5xl"
 }: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -138,6 +136,7 @@ export default function Nav({
           </div>
         </div>
       </NavContainer>
+
       {/* Mobile Menu */}
       {isOpen && (
         <div className="bg-white shadow-md lg:hidden">

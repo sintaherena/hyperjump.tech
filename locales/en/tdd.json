@@ -1,0 +1,108 @@
+{
+  "hero": {
+    "heading": "Tech Due Diligence",
+    "desc": "Identify Risks. Unlock Opportunities. Build with Confidence."
+  },
+
+  "what_is_tdd": {
+    "heading": "What is Tech Due Diligence?",
+    "desc": "Tech Due Diligence is a structured evaluation of an organization's technology landscape—designed to uncover hidden risks, assess readiness, and provide clarity for informed decisions.",
+    "highlight": "Whether you're investing in a startup, preparing for a merger, or auditing internal capabilities, our TDD service delivers actionable insights to de-risk your tech journey."
+  },
+
+  "who_is_it": {
+    "heading": "Who is it for?",
+    "desc": "For those who need clarity, confidence, and insights—before scaling, investing, or making big tech moves.",
+    "target": {
+      "0": "<span class=\"font-bold\">Investors</span> evaluating the health and scalability of a product or platform",
+      "1": "<span class=\"font-bold\">Founders/CTOs</span> preparing for funding rounds or acquisitions",
+      "2": "<span class=\"font-bold\">Enterprises</span> assessing internal capabilities or third-party vendors",
+      "3": "<span class=\"font-bold\">PE/VC Firms</span> seeking deep-dive audits pre/post-investment"
+    }
+  },
+
+  "what_we_deliver": {
+    "heading": "What We Deliver",
+    "desc": "From deep-dive audits to scalable systems, we deliver clarity, speed, and results—tailored to your growth stage.",
+    "card_0": {
+      "title": "Software Delivery Performance",
+      "text": "We evaluate how efficiently your team ships software:",
+      "items": {
+        "0": "Deployment frequency",
+        "1": "Cycle time",
+        "2": "Incident response & recovery",
+        "3": "QA & release readiness"
+      }
+    },
+    "card_1": {
+      "title": "Application Architecture & Maintainability",
+      "text": "We analyze the current codebase and infrastructure:",
+      "items": {
+        "0": "Scalability & fault tolerance",
+        "1": "Modularization & tech debt",
+        "2": "DevOps best practices",
+        "3": "Code coverage and testing discipline"
+      }
+    },
+    "card_2": {
+      "title": "IT Infrastructure Cost & Optimization",
+      "text": "We help you answer: Are you overpaying for underused systems?",
+      "items": {
+        "0": "Cloud usage audit",
+        "1": "Cost per deployment/service",
+        "2": "Redundancy and disaster recovery",
+        "3": "CI/CD pipeline efficiency"
+      }
+    }
+  },
+
+  "how_it_works": {
+    "heading": "How It Works",
+    "desc": "Discover how we turn ideas into impact. Our process is built to be simple, transparent, and focused on results—every step of the way.",
+    "step": {
+      "0": {
+        "title": "Discovery & Interviews",
+        "text": "We talk to engineering, product, and business teams to understand goals and context."
+      },
+      "1": {
+        "title": "Hands-On Audit",
+        "text": "We dive into your repositories, CI/CD pipelines, cloud infra, and documentation."
+      },
+      "2": {
+        "title": "Report & Recommendations",
+        "text": "You’ll receive a comprehensive report detailing strengths, risks, and actionable next steps—with severity levels and roadmap suggestions."
+      },
+      "3": {
+        "title": "Post-Audit Implementation Support (Optional)",
+        "text": "Need help fixing what we found? Our engineering teams can jump in and help you close the gaps."
+      }
+    }
+  },
+
+  "what_you_get": {
+    "heading": "What You Get",
+    "desc": "Everything you need to evaluate, improve, and scale—delivered in a format that speaks to both business and technical decision-makers.",
+    "items": {
+      "0": "Executive summary for C-Level & investors",
+      "1": "Technical Audit Report (code quality, architecture, infra)",
+      "2": "KPI Benchmarking & Recommendations",
+      "3": "Action Plan (Quick Wins + Long-Term Strategy"
+    }
+  },
+
+  "why_us": {
+    "heading": "Why Hyperjump?",
+    "desc": "We bring deep technical expertise, cross-industry experience, and a hands-on approach to every audit. Our team doesn’t just review code—we understand the people, processes, and pressure behind it.",
+    "reasons": {
+      "0": "We’ve audited engineering teams in <span class=\"font-bold\">tech startups, fintech, media, and public sector.</span>",
+      "1": "We’re engineers ourselves—we don’t just point at problems, we solve them.",
+      "2": "Trusted by clients like"
+    }
+  },
+
+  "cta": {
+    "heading": "Ready to audit your tech?",
+    "desc": "Let’s uncover your blind spots and turn them into strengths.",
+    "label": "Talk to us"
+  }
+}

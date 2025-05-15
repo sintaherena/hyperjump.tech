@@ -18,11 +18,39 @@ const labelByLang: Record<SupportedLanguage, string> = {
 export function LanguagePicker({
   lang,
   type = "hyperjump"
-}: LanguagePickerProps) {
+}: {
+  lang: SupportedLanguage;
+  type?:
+    | "hyperjump"
+    | "services"
+    | "tech-due-diligence"
+    | "software-as-a-service"
+    | "erp-implementation"
+    | "cto-as-a-service";
+}) {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLang = e.target.value as SupportedLanguage;
-    window.location.href =
-      type === "hyperjump" ? `/${newLang}#hero` : `/services/${newLang}#hero`;
+
+    const urlHyperjump = `/${newLang}#hero`;
+    const urlServices = `/services/${newLang}#hero`;
+    const urlTdd = `/services/tech-due-diligence/${newLang}#hero`;
+    const urlSaas = `/services/software-as-a-service/${newLang}#hero`;
+    const urlErp = `/services/erp-implementation/${newLang}#hero`;
+    const urlCtoAAS = `/services/cto-as-a-service/${newLang}#hero`;
+
+    if (type === "services") {
+      window.location.href = urlServices;
+    } else if (type === "tech-due-diligence") {
+      window.location.href = urlTdd;
+    } else if (type === "cto-as-a-service") {
+      window.location.href = urlCtoAAS;
+    } else if (type === "software-as-a-service") {
+      window.location.href = urlSaas;
+    } else if (type === "erp-implementation") {
+      window.location.href = urlErp;
+    } else {
+      window.location.href = urlHyperjump;
+    }
   };
 
   return (
