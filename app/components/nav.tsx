@@ -209,7 +209,7 @@ export function RightNavItems({ children }: { children: React.ReactNode }) {
 type HyperjumpLogoProps = {
   isOpen: boolean;
   isTransparent: boolean;
-  isBlack: boolean;
+  isBlack?: boolean;
   onClose?: () => void;
 };
 
@@ -264,7 +264,7 @@ export function HyperjumpLogo({
 type LogoProps = {
   isOpen: boolean;
   isTransparent: boolean;
-  isBlack: boolean;
+  isBlack?: boolean;
 };
 
 function Logo({ isOpen, isTransparent, isBlack }: LogoProps) {
