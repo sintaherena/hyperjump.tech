@@ -2,43 +2,25 @@
 
 import type { SupportedLanguage } from "@/locales/.generated/types";
 import {
-  caseStudyHeading,
   caseStudyButton,
-  caseStudyCaseStudy1Title,
-  caseStudyCaseStudy1Desc,
-  caseStudyCaseStudy2Title,
-  caseStudyCaseStudy2Desc,
-  caseStudyCaseStudies,
   servicesCtaHeading,
   servicesCtaDesc,
-  servicesCtaLabel
+  servicesCtaLabel,
+  caseStudyExplore,
+  caseStudyCategory
 } from "@/locales/.generated/server";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import data from "@/data.json";
 import Image from "next/image";
 import { sendGAEvent } from "@next/third-parties/google";
-
-const getCaseStudies = (lang: SupportedLanguage) => {
-  const data = [
-    {
-      title: caseStudyCaseStudy1Title(lang),
-      description: caseStudyCaseStudy1Desc(lang)
-    },
-    {
-      title: caseStudyCaseStudy2Title(lang),
-      description: caseStudyCaseStudy2Desc(lang)
-    }
-  ];
-
-  return data;
-};
+import { getCaseStudies } from "../components/data";
 
 export default function Home({ lang }: { lang: SupportedLanguage }) {
   return (
     <main className="xxl:max-w-7xl mx-auto flex w-full max-w-6xl flex-wrap items-center justify-center px-4 py-12 text-center md:px-20 xl:px-0">
       <h3 className="text-hyperjump-black text-[34px] font-medium md:text-[40px]">
-        {caseStudyHeading(lang)}
+        {caseStudyExplore(lang)}
       </h3>
       <CaseStudies lang={lang} />
       <CTACaseStudies lang={lang} />
@@ -57,7 +39,7 @@ export function CaseStudies({ lang }: { lang: SupportedLanguage }) {
               className="flex h-full flex-col justify-between rounded-xl border border-gray-200 p-6 text-left shadow-sm transition duration-300 hover:shadow-md">
               <div>
                 <span className="mb-4 inline-block rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-800">
-                  {caseStudyCaseStudies(lang)}
+                  {caseStudyCategory(lang)}
                 </span>
                 <h3 className="text-hyperjump-black mb-2 text-lg font-semibold md:text-[22px]">
                   {study.title}
@@ -71,7 +53,7 @@ export function CaseStudies({ lang }: { lang: SupportedLanguage }) {
                 asChild
                 variant="outline"
                 className="text-hyperjump-blue hover:bg-hyperjump-blue mt-4 w-full border-gray-300 hover:text-white">
-                <Link href="#" target="_blank" rel="noopener noreferrer">
+                <Link href="/case-studies/erp-fisheries">
                   {caseStudyButton(lang)}
                 </Link>
               </Button>

@@ -301,12 +301,7 @@ export function GridItems({
                   asChild
                   variant="outline"
                   className="text-hyperjump-blue hover:bg-hyperjump-blue w-full border-gray-300 hover:text-white">
-                  <Link
-                    href={urlCaseStudy}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    {mainCaseStudiesButton(lang)}
-                  </Link>
+                  <Link href={urlCaseStudy}>{mainCaseStudiesButton(lang)}</Link>
                 </Button>
               )}
 
