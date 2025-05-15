@@ -1,24 +1,87 @@
 {
   "hero": {
-    "heading": "Dari Kekacauan Menuju Kejelasan: Kisah Nyata <span class=\"text-[#3276F5]\">Transformasi Tim Engineering</span>",
-    "desc": "Di Hyperjump, kami tidak hanya meningkatkan kinerja tim engineering—kami membantu mengubah cara organisasi teknologi berpikir, beroperasi, dan berkembang. Telusuri bagaimana kami bermitra dengan perusahaan yang sedang tumbuh pesat untuk membuka potensi penuh mereka melalui kepemimpinan langsung, sistem yang skalabel, dan pelatihan teknis yang mendalam."
+    "heading": "Dari Kekacauan Menuju Kejelasan: Kisah Nyata <span class=\"text-[#3276F5]\">Transformasi Engineering</span>",
+    "desc": "Di Hyperjump, kami tidak hanya meningkatkan tim engineering—kami membantu mengubah cara organisasi teknologi berpikir, beroperasi, dan berkembang. Telusuri bagaimana kami bermitra dengan perusahaan yang sedang tumbuh pesat untuk membuka potensi penuh mereka melalui kepemimpinan langsung, sistem yang dapat diskalakan, dan pelatihan teknis yang mendalam."
   },
   "cta": {
     "heading": "Bingung harus mulai dari mana?",
-    "desc": "Mari diskusikan tujuan teknologi Anda dan kami akan arahkan ke langkah yang tepat.",
+    "desc": "Mari diskusikan tujuan teknologi Anda dan arahkan langkah awal Anda.",
     "label": "Hubungi Kami"
   },
-  "heading": "Jelajahi Studi Kasus Kami",
+  "explore": "Telusuri Studi Kasus Kami",
   "button": "Baca Studi Kasus",
-  "case_studies": "Studi Kasus",
-  "case_study_1": {
-    "title": "Mengubah Tim Teknologi Perikanan Menjadi Mesin Produk yang Skalabel",
-    "text": "Memberdayakan startup berbasis misi untuk mendigitalkan rantai pasok perikanan Indonesia—dari pesisir hingga konsumen.",
-    "desc": "Tim teknologi yang masih junior namun penuh semangat. Belum ada produk yang berjalan di produksi. Dampak besar yang dipertaruhkan. Kami terlibat secara mendalam dengan tim mereka untuk membangun struktur, meningkatkan kepercayaan diri, dan meluncurkan MVP yang fungsional dalam waktu 3 bulan. Melalui praktik agile yang disiplin dan penerapan sistem menyeluruh, kami membantu mengembangkan organisasi teknologi yang rapuh menjadi mesin produk yang andal."
+  "category": "Studi Kasus",
+  "transforming": {
+    "title": "Mengubah Tim Teknologi Perikanan Menjadi Mesin Produk yang Dapat Diskalakan",
+    "text": "Memberdayakan startup dengan misi sosial untuk mendigitalisasi rantai pasok perikanan Indonesia—dari pesisir hingga ke konsumen.",
+    "desc": "Tim teknologi yang masih junior tapi penuh semangat. Nol produk yang berjalan. Dampak besar yang dipertaruhkan. Kami terlibat secara mendalam untuk memperkenalkan struktur, membangun kepercayaan diri, dan merilis MVP yang fungsional dalam waktu 3 bulan. Melalui praktik agile yang ketat dan peluncuran sistem menyeluruh, kami membantu mengubah organisasi teknologi yang rapuh menjadi mesin produk yang andal.",
+    "overview": "Sebuah startup perikanan yang sedang berkembang menghadapi tantangan yang umum: tim teknologi yang antusias namun belum berpengalaman, kepemimpinan yang masih hijau, dan misi penting—mendigitalisasi rantai pasok perikanan Indonesia dari pesisir hingga konsumen. Dengan tidak adanya produk yang berjalan dan tim yang baru memulai, perusahaan ini bekerja sama dengan Hyperjump melalui model CTO-as-a-Service untuk membangun fondasi teknis, proses, dan budaya yang kuat.",
+    "challenge": {
+      "1": "Tim teknologi tidak memiliki perangkat lunak yang berjalan di produksi.",
+      "2": "Kepemilikan produk tersebar, dan seremonial sprint lebih bersifat formalitas daripada praktik nyata.",
+      "3": "Tidak ada roadmap yang jelas, infrastruktur yang dapat diskalakan, maupun kepemimpinan teknis senior.",
+      "4": "Kolaborasi lintas fungsi dan kontrol kualitas tidak konsisten."
+    },
+    "approach": "Selama 12 bulan, Hyperjump terlibat langsung dengan tim produk, engineering, dan operasional. Inilah yang kami capai:",
+    "agile_overhaul_1": "Menerapkan disiplin Scrum yang nyata—Definisi Selesai yang jelas, sesi grooming terstruktur, dan retrospektif yang bermakna.",
+    "agile_overhaul_2": "Memperkenalkan estimasi story point berbasis Fibonacci dan pelacakan velocity untuk perencanaan dan pengiriman yang lebih baik.",
+    "from_zero_to_launch_1": "Merilis MVP aplikasi mobile ‘Heroes’ dalam 3 bulan—mengungguli tim internal dalam tantangan membangun produk.",
+    "from_zero_to_launch_2": "Merilis fitur baru setiap 2–4 minggu dengan CI/CD, pelaporan crash menggunakan Firebase, dan pengujian otomatis.",
+    "engineering_maturity_1": "Mengimplementasikan unit testing, code coverage (70%+), dan pipeline CI melalui GitLab.",
+    "engineering_maturity_2": "Mengonsolidasikan kontrol versi menggunakan strategi Git trunk tunggal dengan proteksi cabang dan konvensi penamaan terstruktur.",
+    "engineering_maturity_3": "Memungkinkan deployment harian siap produksi untuk Web, Android, dan backend ERP.",
+    "full_system_rollouts_1": "Mendukung beberapa Go-Live ERP di berbagai wilayah, dengan sistem backend (Odoo) dan mobile terintegrasi untuk pelacakan penjualan, inventaris, dan pengeluaran.",
+    "full_system_rollouts_2": "Menerapkan sistem permintaan pencarian yang ditingkatkan untuk pembeli multibahasa, termasuk lokalitas dalam Bahasa Mandarin.",
+    "key_learnings": {
+      "1": "Proses yang kuat lebih penting daripada orang yang kuat—di awal. Dengan ritme yang tepat, tim junior pun bisa menghasilkan perangkat lunak yang tangguh.",
+      "2": "Utang teknis pasti terjadi—tapi harus dikelola. Dengan mengidentifikasi sejak dini, tim menghindari rework yang menumpuk.",
+      "3": "QA bukan sekadar departemen, tapi budaya. Komitmen bersama terhadap kualitas mengurangi cacat dan meningkatkan kepercayaan dalam setiap rilis.",
+      "4": "Dokumentasi adalah senjata rahasia Anda. Wiki internal yang terus berkembang dan praktik Jira yang konsisten mempermudah onboarding dan scaling."
+    },
+    "results": {
+      "text": "Kini tim stabil dan mandiri. Tantangan selanjutnya? Memperkuat kepemimpinan internal dan menyusun roadmap produk jangka panjang untuk terus memberikan nilai—dalam skala besar.",
+      "desc": "Kami bangga telah berkontribusi dalam membantu perusahaan perikanan ini membangun tidak hanya perangkat lunak, tetapi juga organisasi teknologi berkinerja tinggi yang siap mengubah industri."
+    }
   },
-  "case_study_2": {
-    "title": "Meningkatkan Tim Engineering Media-Tech dari Pabrik Fitur Menjadi Kekuatan Inovasi",
-    "text": "Mendampingi platform media digital terkemuka beralih dari pengiriman reaktif menuju inovasi strategis.",
-    "desc": "Saat pertumbuhan cepat melampaui kematangan engineering, tim ini membutuhkan lebih dari sekadar fitur—mereka membutuhkan transformasi. Kami merestrukturisasi praktik agile mereka, mengotomatiskan proses DevOps, menetapkan KPI yang terukur, dan membantu mereka beralih dari eksekusi tugas menjadi kepemilikan produk yang sesungguhnya serta eksperimen yang berkelanjutan."
+  "elevating": {
+    "title": "Mengangkat Tim Engineering Media-Tech dari Pabrik Fitur Menjadi Mesin Inovasi",
+    "text": "Mendampingi platform media digital terdepan untuk bertransformasi dari pengiriman reaktif menjadi inovasi strategis.",
+    "desc": "Saat pertumbuhan pesat melampaui kematangan engineering, tim ini membutuhkan lebih dari sekadar fitur—mereka butuh transformasi. Kami merestrukturisasi praktik agile mereka, mengotomatisasi DevOps, menetapkan KPI yang terukur, dan membantu mereka beralih dari sekadar mengeksekusi tugas menjadi pemilik produk sejati yang berani bereksperimen.",
+    "overview": "Sebuah platform media digital terkemuka untuk Milenial dan Gen Z mengalami pertumbuhan pesat—namun tim engineering-nya kesulitan mengikuti. Mereka handal mengeksekusi permintaan fitur, namun belum mampu berperan sebagai penggerak inovasi teknologi dan produk. Untuk beralih dari mode reaktif ke pengembangan proaktif, mereka bekerja sama dengan Hyperjump melalui pendekatan langsung dan terstruktur.",
+    "challenge": {
+      "1": "Meskipun memiliki etos kerja yang baik dan budaya perusahaan yang kolaboratif, tim engineering lebih mirip agen internal—mengerjakan permintaan fitur dari unit bisnis tanpa struktur atau pelacakan.",
+      "2": "Tidak ada sistem manajemen tugas atau ticketing",
+      "3": "Permintaan fitur langsung ditujukan ke developer secara individual",
+      "4": "Tidak ada metrik untuk mengukur performa atau kemajuan",
+      "5": "Tidak ada seremonial agile atau proses pengembangan yang distandardisasi",
+      "6": "Seiring meningkatnya permintaan produk, bisnis membutuhkan lebih dari sekadar eksekusi—mereka membutuhkan inovasi."
+    },
+    "approach": "Dengan model CTO-as-a-Service, Hyperjump memperkenalkan berbagai perbaikan fundamental untuk membantu tim bertumbuh secara berkelanjutan.",
+    "agile_implementation_1": "Memperkenalkan seremonial Scrum yang tepat, termasuk Sprint Planning, Grooming, Retrospektif, dan Standup Harian.",
+    "agile_implementation_2": "Menetapkan Definisi Selesai (DoD) yang jelas dan melatih tim dalam menulis user story yang lebih baik—menjembatani komunikasi antar tim produk, desain, dan engineering.",
+    "agile_implementation_3": "Melacak velocity tim untuk menciptakan siklus pengiriman yang dapat diprediksi dan terukur.",
+    "ci_cd_transformation_1": "Membangun pipeline CI/CD otomatis, menghilangkan pekerjaan deployment manual dari tugas engineer.",
+    "ci_cd_transformation_2": "Menerapkan unit test coverage, meningkatkan kualitas kode internal dan mendeteksi masalah sejak dini.",
+    "ci_cd_transformation_3": "Developer kini bisa fokus pada inovasi, bukan infrastruktur.",
+    "quality_assurance_1": "Mereorganisasi tim QA menjadi unit lintas fungsi yang terstruktur.",
+    "quality_assurance_2": "Pengujian menjadi tahap wajib sebelum rilis, dengan knowledge sharing dan perencanaan cakupan yang lebih baik.",
+    "kpi_growth_1": "Mengembangkan metrik kualitas internal (cacat yang ditemukan saat QA, cakupan unit test) untuk meningkatkan maintainability dan mengurangi utang teknis.",
+    "kpi_growth_2": "Melacak metrik kualitas eksternal (cacat di produksi) untuk mempercepat perbaikan dan menjaga keandalan layanan.",
+    "kpi_growth_3": "Tim mendapatkan visibilitas atas kekuatan dan area pengembangan mereka.",
+    "centralized_feedback_1": "Membangun sistem service desk yang tepat untuk mengumpulkan laporan bug dan feedback dari unit bisnis.",
+    "centralized_feedback_2": "Memastikan setiap isu dilacak, diklasifikasikan, dan diselesaikan dengan dokumentasi preventif yang jelas.",
+    "key_learning": {
+      "1": "Dari Pelaksana Menjadi Inovator: Mengubah tim engineering dari pengembangan reaktif menjadi inovatif membutuhkan perubahan struktural, budaya, dan proses—bukan sekadar tambahan sumber daya.",
+      "2": "Pondasi Agile Meningkatkan Prediktabilitas: Penerapan seremonial Scrum dan Definisi Selesai menciptakan kejelasan, akuntabilitas, dan ritme bersama yang meningkatkan konsistensi pengiriman dan komunikasi lintas tim.",
+      "3": "CI/CD Membebaskan Developer untuk Berinovasi: Deployment otomatis dan coverage testing memungkinkan engineer fokus pada pengembangan nilai bisnis, bukan pemeliharaan sistem.",
+      "4": "Kualitas Harus Terstruktur: Menanamkan QA dalam siklus pengembangan dan membentuk tim QA lintas fungsi meningkatkan cakupan pengujian, mengurangi cacat, dan mempercepat umpan balik.",
+      "5": "Tim Berbasis Data Tumbuh Lebih Cepat: Dengan pengenalan KPI dan pelacakan metrik kualitas, tim dapat mengidentifikasi celah performa dan membuat keputusan berbasis data untuk perbaikan berkelanjutan.",
+      "6": "Loop Umpan Balik yang Terstruktur Membangun Kepercayaan: Sentralisasi penerimaan dan penyelesaian isu memperkuat keterhubungan dengan unit bisnis dan memastikan tidak ada isu yang terlewat.",
+      "7": "Transformasi Budaya Harus Dijalankan Langsung: Coaching, kolaborasi real-time, dan dukungan berkelanjutan penting untuk membangun kedewasaan proses—dan pola pikir engineering excellence serta kepemilikan."
+    },
+    "results": {
+      "text": "Setelah 6 bulan kolaborasi dan pendampingan intensif:",
+      "desc": "Mereka telah membangun pondasi untuk engineering excellence. Kini, mereka siap membangun masa depan."
+    }
   }
 }
