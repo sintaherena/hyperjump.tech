@@ -8,12 +8,12 @@ export function Hero({ heading }: { heading: string }) {
       <div className="absolute inset-0 z-0">
         <Image
           alt="Hero background"
-          blurDataURL="/images/case-studies/banner.webp"
+          blurDataURL="/images/case-studies/banner.jpg"
           className="object-cover object-center"
           fill
           placeholder="blur"
           priority
-          src="/images/case-studies/banner.webp"
+          src="/images/case-studies/banner.jpg"
         />
       </div>
 
