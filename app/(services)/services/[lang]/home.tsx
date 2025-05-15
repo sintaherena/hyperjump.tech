@@ -39,6 +39,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { sendGAEvent } from "@next/third-parties/google";
 import data from "@/data.json";
+import { PartnersList } from "@/app/components/partner-list";
 
 export default function Home({ lang }: { lang: SupportedLanguage }) {
   return (
@@ -322,26 +323,7 @@ function Partners({ lang }: { lang: SupportedLanguage }) {
         {servicesPartnersDesc(lang)}
       </p>
 
-      <div className="flex flex-wrap items-center justify-center gap-8">
-        {[
-          {
-            imageUrl: "/images/clients/services/my-republic.svg",
-            name: "My Republic"
-          },
-          { imageUrl: "/images/clients/services/btn.svg", name: "BTN" },
-          { imageUrl: "/images/clients/services/aruna.svg", name: "Aruna" }
-        ].map(({ imageUrl, name }) => (
-          <Image
-            key={name}
-            src={imageUrl}
-            alt={name}
-            height={36}
-            width={120}
-            className="h-6 w-auto object-contain sm:h-7"
-            priority
-          />
-        ))}
-      </div>
+      <PartnersList />
     </section>
   );
 }
