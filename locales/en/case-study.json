@@ -74,8 +74,12 @@
     "title": "Elevating a Media-Tech Engineering Team from Feature Factory to Innovation Powerhouse",
     "text": "Helping a leading digital media platform shift from reactive delivery to strategic innovation.",
     "desc": "When rapid growth outpaced engineering maturity, this team needed more than features—they needed transformation. We restructured their agile practices, automated DevOps, established measurable KPIs, and helped them move from task execution to true product ownership and experimentation.",
-    "overview": "A prominent digital media platform catering to Millennials and Gen Z was growing rapidly—but its engineering team wasn’t keeping pace. The team was excellent at shipping features on <span class=\"underline\">request, but</span> struggled to evolve into strategic innovators capable of leading product and technology transformation. To shift gears from reactive to proactive development, they brought in Hyperjump to support the transformation with a structured, hands-on approach.",
+    "overview": {
+      "title": "overview",
+      "desc": "A prominent digital media platform catering to Millennials and Gen Z was growing rapidly—but its engineering team wasn’t keeping pace. The team was excellent at shipping features on <span class=\"underline\">request, but</span> struggled to evolve into strategic innovators capable of leading product and technology transformation. To shift gears from reactive to proactive development, they brought in Hyperjump to support the transformation with a structured, hands-on approach."
+    },
     "challenge": {
+      "title": "The Challenge",
       "1": "Despite having a solid work ethic and collaborative company culture, the engineering team functioned more like an internal agency—handling feature requests from business units with minimal structure or tracking.",
       "2": "No task management or ticketing systems",
       "3": "Feature requests often went directly to individual developers",
@@ -115,7 +119,7 @@
       "1": "Set up a proper <span class=\"font-bold\">service desk system</span> to collect bug reports and feedback from business units.",
       "2": "Ensured each issue was tracked, triaged, and resolved with clear preventive documentation."
     },
-    "key_learning": {
+    "key_learnings": {
       "title": "Key Learnings",
       "1": "From Order-Takers to Innovators: Shifting an engineering team from reactive development to proactive innovation requires structural, cultural, and process-level changes—not just more resources.",
       "2": "Agile Foundations Enable Predictability: Introducing Scrum ceremonies and a Definition of Done created clarity, accountability, and a shared rhythm that improved delivery consistency and cross-team communication.",

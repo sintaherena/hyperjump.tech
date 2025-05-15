@@ -74,8 +74,12 @@
     "title": "Meningkatkan Tim Engineering Media-Tech dari Feature Factory ke Pusat Inovasi",
     "text": "Membantu platform media digital terkemuka beralih dari sekadar eksekusi ke inovasi strategis.",
     "desc": "Ketika pertumbuhan cepat melampaui kematangan engineering, tim ini butuh lebih dari sekadar fitur—mereka butuh transformasi. Kami restrukturisasi praktik agile mereka, otomatisasi DevOps, tetapkan KPI terukur, dan bantu mereka beralih dari eksekutor tugas ke pemilik produk sejati yang inovatif.",
-    "overview": "Sebuah platform media digital yang populer di kalangan Milenial dan Gen Z berkembang pesat—namun tim engineering-nya kesulitan mengikuti laju tersebut. Mereka andal dalam mengeksekusi permintaan, namun belum mampu menjadi inovator strategis. Untuk mengubah pola kerja dari reaktif ke proaktif, mereka menggandeng Hyperjump untuk pendampingan transformasi secara menyeluruh.",
+    "overview": {
+      "title": "Gambaran Umum",
+      "desc": "Sebuah platform media digital yang populer di kalangan Milenial dan Gen Z berkembang pesat—namun tim engineering-nya kesulitan mengikuti laju tersebut. Mereka andal dalam mengeksekusi permintaan, namun belum mampu menjadi inovator strategis. Untuk mengubah pola kerja dari reaktif ke proaktif, mereka menggandeng Hyperjump untuk pendampingan transformasi secara menyeluruh."
+    },
     "challenge": {
+      "title": "Tantangan",
       "1": "Meski memiliki etos kerja dan budaya kolaboratif yang baik, tim engineering berfungsi seperti agensi internal—mengerjakan permintaan fitur dari unit bisnis tanpa struktur atau pelacakan yang jelas.",
       "2": "Tidak ada sistem manajemen tugas atau ticketing",
       "3": "Permintaan fitur langsung ke developer tanpa perantara",
@@ -115,7 +119,7 @@
       "1": "Membangun sistem <span class=\"font-bold\">service desk</span> untuk mengumpulkan laporan bug dan masukan dari unit bisnis.",
       "2": "Setiap isu dilacak, ditindaklanjuti, dan didokumentasikan pencegahannya secara jelas."
     },
-    "key_learning": {
+    "key_learnings": {
       "title": "Pembelajaran Utama",
       "1": "Dari Pelaksana ke Inovator: Transformasi tim engineering dari reaktif ke proaktif memerlukan perubahan struktur, budaya, dan proses—bukan hanya penambahan sumber daya.",
       "2": "Fondasi Agile Meningkatkan Prediktabilitas: Scrum dan Definition of Done menciptakan kejelasan, akuntabilitas, dan ritme kerja yang konsisten.",

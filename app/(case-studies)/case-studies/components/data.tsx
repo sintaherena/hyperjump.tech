@@ -16,7 +16,7 @@ export const getCaseStudies = (lang: SupportedLanguage) => {
     {
       title: caseStudyCtoaasMediaTitle(lang),
       description: caseStudyCtoaasMediaDesc(lang),
-      url: "/case-studies/erp-fisheries"
+      url: "/case-studies/ctoaas-media"
     }
   ];
 

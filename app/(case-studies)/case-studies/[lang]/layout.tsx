@@ -21,7 +21,7 @@ export default async function CaseStudiesLangLayout({
       <Nav className="xxl:max-w-7xl max-w-6xl" lang={lang} />
       <Hero lang={lang} />
       {children}
-      <Footer lang={lang} type="services" />
+      <Footer lang={lang} type="case-studies" />
     </div>
   );
 }

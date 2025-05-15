@@ -18,8 +18,8 @@ import { getCaseStudies } from "../components/data";
 
 export default function Home({ lang }: { lang: SupportedLanguage }) {
   return (
-    <main className="xxl:max-w-7xl mx-auto flex w-full max-w-6xl flex-wrap items-center justify-center px-4 py-12 text-center md:px-20 xl:px-0">
-      <h3 className="text-hyperjump-black text-[34px] font-medium md:text-[40px]">
+    <main className="xxl:max-w-7xl mx-auto flex w-full max-w-6xl flex-wrap items-center justify-center px-4 text-center md:px-20 md:py-12 xl:px-0">
+      <h3 className="text-hyperjump-black w-72 text-[34px] font-medium md:w-full md:text-[40px]">
         {caseStudyExplore(lang)}
       </h3>
       <CaseStudies lang={lang} />
@@ -69,7 +69,7 @@ export function CTACaseStudies({ lang }: { lang: SupportedLanguage }) {
   const { gaEventName, link } = data.cta;
 
   return (
-    <section className="relative my-10 w-full max-w-7xl overflow-hidden rounded-lg">
+    <section className="relative my-10 w-full max-w-6xl overflow-hidden rounded-lg">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/swatch.svg"

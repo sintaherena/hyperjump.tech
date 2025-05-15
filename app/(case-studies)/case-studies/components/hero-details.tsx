@@ -19,7 +19,7 @@ export function Hero({ heading }: { heading: string }) {
 
       <div className="relative z-10 mt-10 flex h-[351px] items-center justify-center">
         <div
-          className="mb-4 max-w-lg text-center text-2xl font-medium text-white sm:text-4xl md:text-[40px]"
+          className="mb-4 max-w-3xl text-center text-2xl font-medium text-white sm:text-4xl md:text-[40px]"
           dangerouslySetInnerHTML={{
             __html: heading
           }}

@@ -26,7 +26,10 @@ export function LanguagePicker({
     | "tech-due-diligence"
     | "software-as-a-service"
     | "erp-implementation"
-    | "cto-as-a-service";
+    | "cto-as-a-service"
+    | "case-studies"
+    | "erp-fisheries"
+    | "ctoaas-media";
 }) {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLang = e.target.value as SupportedLanguage;
@@ -37,6 +40,9 @@ export function LanguagePicker({
     const urlSaas = `/services/software-as-a-service/${newLang}#hero`;
     const urlErp = `/services/erp-implementation/${newLang}#hero`;
     const urlCtoAAS = `/services/cto-as-a-service/${newLang}#hero`;
+    const urlCaseStudy = `/case-studies/${newLang}#hero`;
+    const urlErpFisheries = `/case-studies/erp-fisheries/${newLang}#hero`;
+    const urlCtoaasMedia = `/case-studies/ctoaas-media/${newLang}#hero`;
 
     if (type === "services") {
       window.location.href = urlServices;
@@ -48,6 +54,12 @@ export function LanguagePicker({
       window.location.href = urlSaas;
     } else if (type === "erp-implementation") {
       window.location.href = urlErp;
+    } else if (type === "case-studies") {
+      window.location.href = urlCaseStudy;
+    } else if (type === "erp-fisheries") {
+      window.location.href = urlErpFisheries;
+    } else if (type === "ctoaas-media") {
+      window.location.href = urlCtoaasMedia;
     } else {
       window.location.href = urlHyperjump;
     }

@@ -4,40 +4,47 @@ import type { SupportedLanguage } from "@/locales/.generated/types";
 import {
   caseStudyButton,
   caseStudyCategory,
-  caseStudyErpFisheriesOverviewTitle,
-  caseStudyErpFisheriesOverviewText,
-  caseStudyErpFisheriesOverviewDesc,
-  caseStudyErpFisheriesChallengeTitle,
-  caseStudyErpFisheriesChallenge1,
-  caseStudyErpFisheriesChallenge2,
-  caseStudyErpFisheriesChallenge3,
-  caseStudyErpFisheriesChallenge4,
-  caseStudyErpFisheriesApproachTitle,
-  caseStudyErpFisheriesApproachDesc,
-  caseStudyErpFisheriesAgileTitle,
-  caseStudyErpFisheriesAgile1,
-  caseStudyErpFisheriesAgile2,
-  caseStudyErpFisheriesLaunchTitle,
-  caseStudyErpFisheriesLaunch1,
-  caseStudyErpFisheriesLaunch2,
-  caseStudyErpFisheriesEngineeringTitle,
-  caseStudyErpFisheriesEngineering1,
-  caseStudyErpFisheriesEngineering2,
-  caseStudyErpFisheriesEngineering3,
-  caseStudyErpFisheriesFullSystemRolloutsTitle,
-  caseStudyErpFisheriesFullSystemRollouts1,
-  caseStudyErpFisheriesFullSystemRollouts2,
-  caseStudyErpFisheriesKeyLearningsTitle,
-  caseStudyErpFisheriesKeyLearnings1,
-  caseStudyErpFisheriesKeyLearnings2,
-  caseStudyErpFisheriesKeyLearnings3,
-  caseStudyErpFisheriesKeyLearnings4,
-  caseStudyErpFisheriesResultsText,
-  caseStudyErpFisheriesResultsDesc,
-  caseStudyErpFisheriesResultsTitle,
+  caseStudyCtoaasMediaOverviewTitle,
+  caseStudyCtoaasMediaOverviewDesc,
+  caseStudyCtoaasMediaChallengeTitle,
+  caseStudyCtoaasMediaChallenge1,
+  caseStudyCtoaasMediaChallenge2,
+  caseStudyCtoaasMediaChallenge3,
+  caseStudyCtoaasMediaChallenge4,
+  caseStudyCtoaasMediaApproachTitle,
+  caseStudyCtoaasMediaApproachDesc,
+  caseStudyCtoaasMediaAgileTitle,
+  caseStudyCtoaasMediaAgile1,
+  caseStudyCtoaasMediaAgile2,
+  caseStudyCtoaasMediaCiCdTitle,
+  caseStudyCtoaasMediaCiCd1,
+  caseStudyCtoaasMediaCiCd2,
+  caseStudyCtoaasMediaQaTitle,
+  caseStudyCtoaasMediaQa1,
+  caseStudyCtoaasMediaQa2,
+  caseStudyCtoaasMediaKpiTitle,
+  caseStudyCtoaasMediaKpi1,
+  caseStudyCtoaasMediaKpi2,
+  caseStudyCtoaasMediaKeyLearningsTitle,
+  caseStudyCtoaasMediaKeyLearnings1,
+  caseStudyCtoaasMediaKeyLearnings2,
+  caseStudyCtoaasMediaKeyLearnings3,
+  caseStudyCtoaasMediaKeyLearnings4,
+  caseStudyCtoaasMediaResultsText,
+  caseStudyCtoaasMediaResultsDesc,
+  caseStudyCtoaasMediaResultsTitle,
   caseStudyErpFisheriesMore,
-  caseStudyErpFisheriesWhatIsNextTitle,
-  caseStudyErpFisheriesWhatIsNextDesc
+  caseStudyCtoaasMediaChallenge5,
+  caseStudyCtoaasMediaChallenge6,
+  caseStudyCtoaasMediaAgile3,
+  caseStudyCtoaasMediaCiCd3,
+  caseStudyCtoaasMediaKpi3,
+  caseStudyCtoaasMediaKeyLearnings5,
+  caseStudyCtoaasMediaKeyLearnings6,
+  caseStudyCtoaasMediaKeyLearnings7,
+  caseStudyCtoaasMediaCentralizedTitle,
+  caseStudyCtoaasMediaCentralized1,
+  caseStudyCtoaasMediaCentralized2
 } from "@/locales/.generated/server";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -52,18 +59,12 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
         {/* Overview */}
         <div className="text-hyperjump-black py-4 text-left">
           <h3 className="mb-2 text-2xl font-semibold capitalize md:text-[28px]">
-            {caseStudyErpFisheriesOverviewTitle(lang)}
+            {caseStudyCtoaasMediaOverviewTitle(lang)}
           </h3>
-          <div
-            className="mb-2 text-lg"
-            dangerouslySetInnerHTML={{
-              __html: caseStudyErpFisheriesOverviewText(lang)
-            }}
-          />
           <div
             className="text-lg"
             dangerouslySetInnerHTML={{
-              __html: caseStudyErpFisheriesOverviewDesc(lang)
+              __html: caseStudyCtoaasMediaOverviewDesc(lang)
             }}
           />
         </div>
@@ -71,16 +72,18 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
         {/* The Challenge */}
         <div className="text-hyperjump-black py-4 text-left">
           <h3 className="mb-2 text-2xl font-semibold capitalize md:text-[28px]">
-            {caseStudyErpFisheriesChallengeTitle(lang)}
+            {caseStudyCtoaasMediaChallengeTitle(lang)}
           </h3>
           <ul
             className="list-disc pl-5"
             dangerouslySetInnerHTML={{
               __html: [
-                caseStudyErpFisheriesChallenge1,
-                caseStudyErpFisheriesChallenge2,
-                caseStudyErpFisheriesChallenge3,
-                caseStudyErpFisheriesChallenge4
+                caseStudyCtoaasMediaChallenge1,
+                caseStudyCtoaasMediaChallenge2,
+                caseStudyCtoaasMediaChallenge3,
+                caseStudyCtoaasMediaChallenge4,
+                caseStudyCtoaasMediaChallenge5,
+                caseStudyCtoaasMediaChallenge6
               ]
                 .map(
                   (point, index) =>
@@ -94,45 +97,28 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
         {/* Our Approach */}
         <div className="text-hyperjump-black pt-4 text-left">
           <h3 className="mb-2 text-2xl font-semibold capitalize md:text-[28px]">
-            {caseStudyErpFisheriesApproachTitle(lang)}
+            {caseStudyCtoaasMediaApproachTitle(lang)}
           </h3>
           <div
             className="mb-2 text-lg"
             dangerouslySetInnerHTML={{
-              __html: caseStudyErpFisheriesApproachDesc(lang)
+              __html: caseStudyCtoaasMediaApproachDesc(lang)
             }}
           />
         </div>
 
-        {/* Agile Overhaul */}
+        {/*  Agile Implementation  */}
         <div className="text-hyperjump-black text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
-            {caseStudyErpFisheriesAgileTitle(lang)}
-          </h3>
-          <ul
-            className="list-disc pl-5"
-            dangerouslySetInnerHTML={{
-              __html: [caseStudyErpFisheriesAgile1, caseStudyErpFisheriesAgile2]
-                .map(
-                  (point, index) =>
-                    `<li key=${index} className="mb-2 text-lg">${point(lang)}</li>`
-                )
-                .join("")
-            }}
-          />
-        </div>
-
-        {/* From Zero to Launch */}
-        <div className="text-hyperjump-black text-left">
-          <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
-            {caseStudyErpFisheriesLaunchTitle(lang)}
+            {caseStudyCtoaasMediaAgileTitle(lang)}
           </h3>
           <ul
             className="list-disc pl-5"
             dangerouslySetInnerHTML={{
               __html: [
-                caseStudyErpFisheriesLaunch1,
-                caseStudyErpFisheriesLaunch2
+                caseStudyCtoaasMediaAgile1,
+                caseStudyCtoaasMediaAgile2,
+                caseStudyCtoaasMediaAgile3
               ]
                 .map(
                   (point, index) =>
@@ -143,18 +129,18 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           />
         </div>
 
-        {/* Engineering Maturity */}
+        {/* CI/CD Transformation  */}
         <div className="text-hyperjump-black text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
-            {caseStudyErpFisheriesEngineeringTitle(lang)}
+            {caseStudyCtoaasMediaCiCdTitle(lang)}
           </h3>
           <ul
             className="list-disc pl-5"
             dangerouslySetInnerHTML={{
               __html: [
-                caseStudyErpFisheriesEngineering1,
-                caseStudyErpFisheriesEngineering2,
-                caseStudyErpFisheriesEngineering3
+                caseStudyCtoaasMediaCiCd1,
+                caseStudyCtoaasMediaCiCd2,
+                caseStudyCtoaasMediaCiCd3
               ]
                 .map(
                   (point, index) =>
@@ -165,17 +151,57 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
           />
         </div>
 
-        {/* Full-System Rollouts */}
+        {/* Quality Assurance Reinforcement  */}
         <div className="text-hyperjump-black text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
-            {caseStudyErpFisheriesFullSystemRolloutsTitle(lang)}
+            {caseStudyCtoaasMediaQaTitle(lang)}
+          </h3>
+          <ul
+            className="list-disc pl-5"
+            dangerouslySetInnerHTML={{
+              __html: [caseStudyCtoaasMediaQa1, caseStudyCtoaasMediaQa2]
+                .map(
+                  (point, index) =>
+                    `<li key=${index} className="mb-2 text-lg">${point(lang)}</li>`
+                )
+                .join("")
+            }}
+          />
+        </div>
+
+        {/* KPI-Driven Growth  */}
+        <div className="text-hyperjump-black text-left">
+          <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
+            {caseStudyCtoaasMediaKpiTitle(lang)}
           </h3>
           <ul
             className="list-disc pl-5"
             dangerouslySetInnerHTML={{
               __html: [
-                caseStudyErpFisheriesFullSystemRollouts1,
-                caseStudyErpFisheriesFullSystemRollouts2
+                caseStudyCtoaasMediaKpi1,
+                caseStudyCtoaasMediaKpi2,
+                caseStudyCtoaasMediaKpi3
+              ]
+                .map(
+                  (point, index) =>
+                    `<li key=${index} className="mb-2 text-lg">${point(lang)}</li>`
+                )
+                .join("")
+            }}
+          />
+        </div>
+
+        {/* Centralized Feedback Handling  */}
+        <div className="text-hyperjump-black text-left">
+          <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
+            {caseStudyCtoaasMediaCentralizedTitle(lang)}
+          </h3>
+          <ul
+            className="list-disc pl-5"
+            dangerouslySetInnerHTML={{
+              __html: [
+                caseStudyCtoaasMediaCentralized1,
+                caseStudyCtoaasMediaCentralized2
               ]
                 .map(
                   (point, index) =>
@@ -189,16 +215,19 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
         {/* Key Learnings */}
         <div className="text-hyperjump-black py-4 text-left">
           <h3 className="mb-2 text-2xl font-semibold capitalize md:text-[28px]">
-            {caseStudyErpFisheriesKeyLearningsTitle(lang)}
+            {caseStudyCtoaasMediaKeyLearningsTitle(lang)}
           </h3>
           <ul
             className="list-disc pl-5"
             dangerouslySetInnerHTML={{
               __html: [
-                caseStudyErpFisheriesKeyLearnings1,
-                caseStudyErpFisheriesKeyLearnings2,
-                caseStudyErpFisheriesKeyLearnings3,
-                caseStudyErpFisheriesKeyLearnings4
+                caseStudyCtoaasMediaKeyLearnings1,
+                caseStudyCtoaasMediaKeyLearnings2,
+                caseStudyCtoaasMediaKeyLearnings3,
+                caseStudyCtoaasMediaKeyLearnings4,
+                caseStudyCtoaasMediaKeyLearnings5,
+                caseStudyCtoaasMediaKeyLearnings6,
+                caseStudyCtoaasMediaKeyLearnings7
               ]
                 .map(
                   (point, index) =>
@@ -212,38 +241,25 @@ export default function Home({ lang }: { lang: SupportedLanguage }) {
         {/* Results */}
         <div className="text-hyperjump-black py-4 text-left">
           <h3 className="mb-2 text-2xl font-semibold capitalize md:text-[28px]">
-            {caseStudyErpFisheriesResultsTitle(lang)}
+            {caseStudyCtoaasMediaResultsTitle(lang)}
           </h3>
           <div
             className="mb-2 text-lg"
             dangerouslySetInnerHTML={{
-              __html: caseStudyErpFisheriesResultsText(lang)
-            }}
-          />
-          <div
-            className="mb-4 text-lg"
-            dangerouslySetInnerHTML={{
-              __html: caseStudyErpFisheriesResultsDesc(lang)
+              __html: caseStudyCtoaasMediaResultsText(lang)
             }}
           />
           <Image
-            src="/images/case-studies/erp-fisheries.png"
-            alt={caseStudyErpFisheriesResultsText(lang)}
+            src="/images/case-studies/ctoaas-media.png"
+            alt={caseStudyCtoaasMediaResultsTitle(lang)}
             className="h-auto w-full rounded-2xl"
             width={660}
             height={400}
           />
-        </div>
-
-        {/* What’s Next */}
-        <div className="text-hyperjump-black pt-4 text-left">
-          <h3 className="mb-2 text-2xl font-semibold capitalize md:text-[28px]">
-            {caseStudyErpFisheriesWhatIsNextTitle(lang)}
-          </h3>
           <div
-            className="mb-2 text-lg"
+            className="mt-4 text-lg"
             dangerouslySetInnerHTML={{
-              __html: caseStudyErpFisheriesWhatIsNextDesc(lang)
+              __html: caseStudyCtoaasMediaResultsDesc(lang)
             }}
           />
         </div>

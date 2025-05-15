@@ -4,13 +4,13 @@ import type { SupportedLanguage } from "@/locales/.generated/types";
 import Nav from "@/app/components/nav";
 import Footer from "@/app/components/footer";
 import { Hero } from "../../components/hero-details";
-import { caseStudyErpFisheriesTitle } from "@/locales/.generated/server";
+import { caseStudyCtoaasMediaTitle } from "@/locales/.generated/server";
 type ServiceLangProps = {
   children: React.ReactNode;
   params: Promise<{ lang: SupportedLanguage }>;
 };
 
-export default async function ErpFisheriesLangLayout({
+export default async function CtoaasMediaLangLayout({
   children,
   params
 }: ServiceLangProps) {
@@ -20,9 +20,9 @@ export default async function ErpFisheriesLangLayout({
     <div className="bg-white">
       <ScrollObserver />
       <Nav isTransparent className="xxl:max-w-7xl max-w-6xl" lang={lang} />
-      <Hero heading={caseStudyErpFisheriesTitle(lang)} />
+      <Hero heading={caseStudyCtoaasMediaTitle(lang)} />
       {children}
-      <Footer lang={lang} type="erp-fisheries" />
+      <Footer lang={lang} type="ctoaas-media" />
     </div>
   );
 }
