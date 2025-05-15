@@ -27,12 +27,14 @@ import { mainCtaLabel } from "@/locales/.generated/server";
 type NavProps = {
   className?: string;
   isTransparent?: boolean;
+  isBlack?: boolean;
   lang: SupportedLanguage;
 };
 
 export default function Nav({
   lang,
   isTransparent = false,
+  isBlack = false,
   className = "max-w-5xl"
 }: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,6 +55,7 @@ export default function Nav({
             className
           )}>
           <HyperjumpLogo
+            isBlack={isBlack}
             isTransparent={isTransparent}
             isOpen={isOpen}
             onClose={() => setIsOpen(!isOpen)}
@@ -206,12 +209,14 @@ export function RightNavItems({ children }: { children: React.ReactNode }) {
 type HyperjumpLogoProps = {
   isOpen: boolean;
   isTransparent: boolean;
+  isBlack: boolean;
   onClose?: () => void;
 };
 
 export function HyperjumpLogo({
   isOpen,
   isTransparent,
+  isBlack,
   onClose
 }: HyperjumpLogoProps) {
   return (
@@ -244,7 +249,11 @@ export function HyperjumpLogo({
                 fileName: "hyperjump-svg.svg"
               }
             ]}>
-            <Logo isOpen={isOpen} isTransparent={isTransparent} />
+            <Logo
+              isOpen={isOpen}
+              isTransparent={isTransparent}
+              isBlack={isBlack}
+            />
           </LogoWithContextMenu>
         </ClientOnly>
       </Link>
@@ -255,10 +264,15 @@ export function HyperjumpLogo({
 type LogoProps = {
   isOpen: boolean;
   isTransparent: boolean;
+  isBlack: boolean;
 };
 
-function Logo({ isOpen, isTransparent }: LogoProps) {
-  const logos = isTransparent ? [ColoredLogo, WhiteLogo] : [ColoredLogo];
+function Logo({ isOpen, isTransparent, isBlack }: LogoProps) {
+  const logos = isTransparent
+    ? [ColoredLogo, WhiteLogo]
+    : isBlack
+      ? [BlackLogo]
+      : [ColoredLogo];
 
   return logos.map((image) => {
     const { src } = image;
