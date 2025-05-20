@@ -139,7 +139,8 @@ export const getCaseStudies = (lang: SupportedLanguage) => {
     {
       title: inferenceaiCaseStudies0Title(lang),
       category: inferenceaiCaseStudies0Category(lang),
-      description: inferenceaiCaseStudies0Text(lang)
+      description: inferenceaiCaseStudies0Text(lang),
+      url: "/inferenceai/rag-chatbot"
     },
     {
       title: inferenceaiCaseStudies1Title(lang),
