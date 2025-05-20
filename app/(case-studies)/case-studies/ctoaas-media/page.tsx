@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import CtoaasMediaLangLayout from "./[lang]/layout";
 import CtoaasMediaPage from "./[lang]/page";
+import { caseStudyCtoaasMediaTitle } from "@/locales/.generated/server";
+
+export const metadata: Metadata = {
+  title: `Case Studies - ${caseStudyCtoaasMediaTitle("en")}`
+};
 
 export default function NoLangCtoaasMedia() {
   return (
