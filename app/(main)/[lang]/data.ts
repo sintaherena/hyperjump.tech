@@ -49,22 +49,26 @@ export const getServices = (lang: SupportedLanguage) => {
     {
       title: mainServices0Title(lang),
       description: mainServices0Text(lang),
-      icon: "/images/services/cto-as-a-service.svg"
+      icon: "/images/services/cto-as-a-service.svg",
+      url: "/services/cto-as-a-service"
     },
     {
       title: mainServices1Title(lang),
       description: mainServices1Text(lang),
-      icon: "/images/services/software-as-a-service.svg"
+      icon: "/images/services/software-as-a-service.svg",
+      url: "/services/software-as-a-service"
     },
     {
       title: mainServices2Title(lang),
       description: mainServices2Text(lang),
-      icon: "/images/services/tech-due-diligence.svg"
+      icon: "/images/services/tech-due-diligence.svg",
+      url: "/services/tech-due-diligence"
     },
     {
       title: mainServices3Title(lang),
       description: mainServices3Text(lang),
-      icon: "/images/services/erp-implementation.svg"
+      icon: "/images/services/erp-implementation.svg",
+      url: "/services/erp-implementation"
     }
   ];
 
