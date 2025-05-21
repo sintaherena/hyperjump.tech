@@ -102,7 +102,7 @@ function Home({ lang }: { lang: SupportedLanguage }) {
         </div>
 
         {/* Our Approach */}
-        <div className="text-hyperjump-black pt-4 text-left">
+        <div className="text-hyperjump-black pt-5 text-left">
           <h3 className="mb-2 text-2xl font-semibold capitalize md:text-[28px]">
             {caseStudyErpFisheriesApproachTitle(lang)}
           </h3>
@@ -133,7 +133,7 @@ function Home({ lang }: { lang: SupportedLanguage }) {
         </div>
 
         {/* From Zero to Launch */}
-        <div className="text-hyperjump-black text-left">
+        <div className="text-hyperjump-black mt-5 text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
             {caseStudyErpFisheriesLaunchTitle(lang)}
           </h3>
@@ -154,7 +154,7 @@ function Home({ lang }: { lang: SupportedLanguage }) {
         </div>
 
         {/* Engineering Maturity */}
-        <div className="text-hyperjump-black text-left">
+        <div className="text-hyperjump-black mt-5 text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
             {caseStudyErpFisheriesEngineeringTitle(lang)}
           </h3>
@@ -176,7 +176,7 @@ function Home({ lang }: { lang: SupportedLanguage }) {
         </div>
 
         {/* Full-System Rollouts */}
-        <div className="text-hyperjump-black text-left">
+        <div className="text-hyperjump-black mt-5 text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
             {caseStudyErpFisheriesFullSystemRolloutsTitle(lang)}
           </h3>
