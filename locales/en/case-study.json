@@ -10,9 +10,9 @@
   },
   "explore": "Explore Our Case Studies",
   "button": "Read Case Study",
-  "category": "Case Studies",
+  "category": "CTO as a Service",
   "erp_fisheries": {
-    "title": "Transforming a Fisheries Tech Team into a Scalable Product Engine: CTO as a Service",
+    "title": "Transforming a Fisheries Tech Team into a Scalable Product Engine",
     "text": "Empowering a mission-driven startup to digitize Indonesia’s fisheries supply chain—coast to customer.",
     "desc": "A junior but passionate tech team. Zero products in production. High impact at stake. We embedded deeply with their team to introduce structure, build confidence, and ship a functional MVP within 3 months. Through rigorous agile practices and full-system rollouts, we helped evolve a fragile tech org into a reliable product engine.",
     "overview": {
@@ -71,7 +71,7 @@
     }
   },
   "ctoaas_media": {
-    "title": "Elevating a Media-Tech Engineering Team from Feature Factory to Innovation Powerhouse: CTO as a Service",
+    "title": "Elevating a Media-Tech Engineering Team from Feature Factory to Innovation Powerhouse",
     "text": "Helping a leading digital media platform shift from reactive delivery to strategic innovation.",
     "desc": "When rapid growth outpaced engineering maturity, this team needed more than features—they needed transformation. We restructured their agile practices, automated DevOps, established measurable KPIs, and helped them move from task execution to true product ownership and experimentation.",
     "overview": {

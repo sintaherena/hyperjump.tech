@@ -10,9 +10,9 @@
   },
   "explore": "Jelajahi Studi Kasus Kami",
   "button": "Baca Studi Kasus",
-  "category": "Studi Kasus",
+  "category": "CTO as a Service",
   "erp_fisheries": {
-    "title": "Mengubah Tim Teknologi Perikanan Menjadi Mesin Produk yang Skalabel: CTO as a Service",
+    "title": "Mengubah Tim Teknologi Perikanan Menjadi Mesin Produk yang Skalabel",
     "text": "Mendukung startup berbasis misi dalam mendigitalkan rantai pasok perikanan Indonesia—dari pesisir ke pelanggan.",
     "desc": "Tim teknologi yang masih junior namun penuh semangat. Tidak ada produk yang berjalan. Taruhan dampak besar. Kami terjun langsung mendampingi tim mereka untuk membangun struktur, meningkatkan kepercayaan diri, dan meluncurkan MVP yang fungsional dalam 3 bulan. Lewat praktik agile yang ketat dan peluncuran sistem penuh, kami bantu mengubah organisasi teknologi yang rapuh menjadi mesin produk yang andal.",
     "overview": {
@@ -71,7 +71,7 @@
     }
   },
   "ctoaas_media": {
-    "title": "Meningkatkan Tim Engineering Media-Tech dari Feature Factory ke Pusat Inovasi: CTO as a Service",
+    "title": "Meningkatkan Tim Engineering Media-Tech dari Feature Factory ke Pusat Inovasi",
     "text": "Membantu platform media digital terkemuka beralih dari sekadar eksekusi ke inovasi strategis.",
     "desc": "Ketika pertumbuhan cepat melampaui kematangan engineering, tim ini butuh lebih dari sekadar fitur—mereka butuh transformasi. Kami restrukturisasi praktik agile mereka, otomatisasi DevOps, tetapkan KPI terukur, dan bantu mereka beralih dari eksekutor tugas ke pemilik produk sejati yang inovatif.",
     "overview": {
