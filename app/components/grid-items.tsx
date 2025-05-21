@@ -240,7 +240,7 @@ export function GridItems({
               {category && (
                 <p
                   className={cn(
-                    "mb-2 w-28 rounded-3xl px-2 py-1.5 text-center text-sm font-medium",
+                    "mb-2 w-36 rounded-3xl px-2 py-1.5 text-center text-sm font-medium",
                     categoryClassName
                   )}>
                   {category}
