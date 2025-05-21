@@ -5,10 +5,27 @@ import {
   servicesHeroDesc,
   servicesHeroHeading
 } from "@/locales/.generated/server";
+import data from "@/data.json";
 
 export const metadata: Metadata = {
-  title: `Services - ${servicesHeroHeading("en")}`,
-  description: servicesHeroDesc("en")
+  title: `${data.title} - Services}`,
+  description: servicesHeroDesc("en"),
+  openGraph: {
+    title: `Services - ${servicesHeroHeading("en")}`,
+    description: servicesHeroDesc("en"),
+    url: `${data.url}/services`,
+    siteName: servicesHeroHeading("en"),
+    type: "website",
+    images: [
+      {
+        url: "https://hyperjump.tech/images/hyperjump-og.png",
+        width: 1200,
+        height: 630,
+        alt: `${servicesHeroHeading("en")} Logo`,
+        type: "image/png"
+      }
+    ]
+  }
 };
 
 export default function NoLangServices() {

@@ -2,10 +2,27 @@ import { Metadata } from "next";
 import SaasLangLayout from "./[lang]/layout";
 import SaasPage from "./[lang]/page";
 import { saasHeroDesc, saasHeroHeading } from "@/locales/.generated/server";
+import data from "@/data.json";
 
 export const metadata: Metadata = {
   title: `Services - ${saasHeroHeading("en")}`,
-  description: saasHeroDesc("en")
+  description: saasHeroDesc("en"),
+  openGraph: {
+    title: `Services - ${saasHeroHeading("en")}`,
+    description: saasHeroDesc("en"),
+    url: `${data.url}/services/software-as-a-service`,
+    siteName: saasHeroHeading("en"),
+    type: "website",
+    images: [
+      {
+        url: "https://hyperjump.tech/images/hyperjump-og.png",
+        width: 1200,
+        height: 630,
+        alt: `${saasHeroHeading("en")} Logo`,
+        type: "image/png"
+      }
+    ]
+  }
 };
 
 export default function NoLangSaas() {
