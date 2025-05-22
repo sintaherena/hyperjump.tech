@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  
+    <url>
+      <loc>https://hyperjump.tech</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/services</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/services" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/services/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/services/cto-as-a-service</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/services/cto-as-a-service" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/services/cto-as-a-service/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/services/software-as-a-service</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/services/software-as-a-service" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/services/software-as-a-service/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/services/tech-due-diligence</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/services/tech-due-diligence" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/services/tech-due-diligence/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/services/erp-implementation</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/services/erp-implementation" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/services/erp-implementation/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/case-studies</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/case-studies" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/case-studies/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/case-studies/erp-fisheries</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/case-studies/erp-fisheries" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/case-studies/erp-fisheries/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/case-studies/ctoaas-media</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/case-studies/ctoaas-media" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/case-studies/ctoaas-media/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/inferenceai</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/inferenceai" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/inferenceai/id" />
+    </url>
+    <url>
+      <loc>https://hyperjump.tech/inferenceai/rag-chatbot</loc>
+      <lastmod>2025-05-22T02:49:05.192Z</lastmod>
+      
+      <xhtml:link rel="alternate" hreflang="en" href="https://hyperjump.tech/inferenceai/rag-chatbot" />
+      <xhtml:link rel="alternate" hreflang="id" href="https://hyperjump.tech/inferenceai/rag-chatbot/id" />
+    </url>
+</urlset>
