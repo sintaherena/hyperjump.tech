@@ -240,18 +240,14 @@ export function GridItems({
               {category && (
                 <p
                   className={cn(
-                    "mb-2 w-28 rounded-3xl px-2 py-1.5 text-center text-sm font-medium",
+                    "mb-2 w-36 rounded-3xl px-2 py-1.5 text-center text-sm font-medium",
                     categoryClassName
                   )}>
                   {category}
                 </p>
               )}
               {url ? (
-                <Link
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition hover:underline">
+                <Link href={url} className="transition hover:underline">
                   <CardTitle
                     className={cn(
                       "text-xl font-semibold md:text-[22px]",

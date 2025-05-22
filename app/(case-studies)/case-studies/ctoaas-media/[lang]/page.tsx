@@ -140,47 +140,41 @@ function Home({ lang }: { lang: SupportedLanguage }) {
         </div>
 
         {/* CI/CD Transformation  */}
-        <div className="text-hyperjump-black text-left">
+        <div className="text-hyperjump-black mt-5 text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
             {caseStudyCtoaasMediaCiCdTitle(lang)}
           </h3>
           <ul
-            className="list-disc pl-5"
+            className="list-outside list-disc space-y-2 pl-5 text-lg"
             dangerouslySetInnerHTML={{
               __html: [
                 caseStudyCtoaasMediaCiCd1,
                 caseStudyCtoaasMediaCiCd2,
                 caseStudyCtoaasMediaCiCd3
               ]
-                .map(
-                  (point, index) =>
-                    `<li key=${index} className="mb-2 text-lg">${point(lang)}</li>`
-                )
+                .map((point) => `<li>${point(lang)}</li>`)
                 .join("")
             }}
           />
         </div>
 
         {/* Quality Assurance Reinforcement  */}
-        <div className="text-hyperjump-black text-left">
+        <div className="text-hyperjump-black mt-5 text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
             {caseStudyCtoaasMediaQaTitle(lang)}
           </h3>
           <ul
-            className="list-disc pl-5"
+            className="list-outside list-disc space-y-2 pl-5 text-lg"
             dangerouslySetInnerHTML={{
               __html: [caseStudyCtoaasMediaQa1, caseStudyCtoaasMediaQa2]
-                .map(
-                  (point, index) =>
-                    `<li key=${index} className="mb-2 text-lg">${point(lang)}</li>`
-                )
+                .map((point) => `<li>${point(lang)}</li>`)
                 .join("")
             }}
           />
         </div>
 
         {/* KPI-Driven Growth  */}
-        <div className="text-hyperjump-black text-left">
+        <div className="text-hyperjump-black mt-5 text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
             {caseStudyCtoaasMediaKpiTitle(lang)}
           </h3>
@@ -202,28 +196,25 @@ function Home({ lang }: { lang: SupportedLanguage }) {
         </div>
 
         {/* Centralized Feedback Handling  */}
-        <div className="text-hyperjump-black text-left">
+        <div className="text-hyperjump-black mt-5 text-left">
           <h3 className="mb-2 text-lg font-semibold capitalize md:text-[22px]">
             {caseStudyCtoaasMediaCentralizedTitle(lang)}
           </h3>
           <ul
-            className="list-disc pl-5"
+            className="list-outside list-disc space-y-2 pl-5 text-lg"
             dangerouslySetInnerHTML={{
               __html: [
                 caseStudyCtoaasMediaCentralized1,
                 caseStudyCtoaasMediaCentralized2
               ]
-                .map(
-                  (point, index) =>
-                    `<li key=${index} className="mb-2 text-lg">${point(lang)}</li>`
-                )
+                .map((point) => `<li>${point(lang)}</li>`)
                 .join("")
             }}
           />
         </div>
 
         {/* Key Learnings */}
-        <div className="text-hyperjump-black py-4 text-left">
+        <div className="text-hyperjump-black py-5 text-left">
           <h3 className="mb-2 text-2xl font-semibold capitalize md:text-[28px]">
             {caseStudyCtoaasMediaKeyLearningsTitle(lang)}
           </h3>

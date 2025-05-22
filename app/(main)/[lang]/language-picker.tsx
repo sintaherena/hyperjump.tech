@@ -71,7 +71,7 @@ export function LanguagePicker({
     <select
       value={lang}
       onChange={handleChange}
-      className="max-w-32 rounded-full border border-[#2D364A] bg-transparent px-3 py-2 text-sm font-medium text-white">
+      className="max-w-32 appearance-none rounded-full border border-[#2D364A] bg-transparent px-3 py-2 text-sm font-medium text-white focus:ring-1 focus:ring-white/30 focus:outline-none">
       {supportedLanguages.map((l) => (
         <option key={l} value={l}>
           {labelByLang[l]}

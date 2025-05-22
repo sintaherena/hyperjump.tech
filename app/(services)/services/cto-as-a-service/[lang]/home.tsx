@@ -160,7 +160,7 @@ function WhatWeDeliver({ lang }: { lang: SupportedLanguage }) {
                 {service.description}
               </p>
               <ul
-                className="text-hyperjump-gray list-inside list-disc space-y-1 [&_b]:mt-4 [&_b]:block"
+                className="text-hyperjump-gray list-outside list-disc space-y-1 pl-4 [&_b]:mt-4 [&_b]:block"
                 dangerouslySetInnerHTML={{
                   __html: service.items
                     .map((item) => `<li>${item}</li>`)
