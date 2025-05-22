@@ -8,20 +8,6 @@ const nextConfig = {
   assetPrefix: basePath,
   images: {
     unoptimized: true
-  },
-  webpack(config, { isServer }) {
-    if (isServer) {
-      config.plugins.push({
-        apply: (compiler) => {
-          compiler.hooks.afterEmit.tap("GenerateSitemap", () => {
-            console.log("Build complete. Generating sitemap...");
-            execSync("bun run ./scripts/generate-sitemap.ts");
-          });
-        }
-      });
-    }
-
-    return config;
   }
 };
 

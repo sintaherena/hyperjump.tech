@@ -38,14 +38,65 @@ function findAllPages(dir, baseDir = dir, result = []) {
           : file.replace(".html", "");
 
       // Skip duplicate routes (e.g., /index.html and /)
-      if (!result.includes(pagePath)) {
-        result.push(pagePath);
+      const normalized = normalizePath("/" + pagePath).replace(/\\/g, "/");
+
+      if (!result.includes(normalized)) {
+        result.push(normalized);
       }
     }
   }
 
   return result;
 }
+
+function normalizePath(pagePath) {
+  return pagePath.replace(/\/(en|id)$/, "");
+}
+
+async function generateSitemap() {
+  const outDir = path.join(process.cwd(), "out");
+  const publicDir = path.join(process.cwd(), "public");
+
+  if (!fs.existsSync(outDir)) {
+    console.error("❌ Output directory 'out' not found.");
+    return;
+  }
+
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir);
+  }
+
+  const paths = findAllPages(outDir);
+  const lastModified = new Date().toISOString();
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${paths
+  .map((p) => {
+    const basePath = p.replace(/\/en$/, "").replace(/\/id$/, "");
+    return `
+  <url>
+    <loc>${SERVER_URL}${basePath}</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="${SERVER_URL}${basePath}"/>
+    <xhtml:link
+      rel="alternate"
+      hreflang="id"
+      href="${SERVER_URL}${basePath}/id"/>
+    <lastmod>${lastModified}</lastmod>
+  </url>`;
+  })
+  .join("\n")}
+</urlset>`;
+
+  fs.writeFileSync(path.join(publicDir, "sitemap.xml"), sitemap.trim());
+  console.log("✅ Sitemap generated");
+}
+
+generateSitemap();
 
 // Function to scroll the page to load lazy images
 async function autoScroll(page) {
