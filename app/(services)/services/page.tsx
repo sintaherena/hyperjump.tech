@@ -10,6 +10,7 @@ import data from "@/data.json";
 export const metadata: Metadata = {
   title: `${data.title} - Services}`,
   description: servicesHeroDesc("en"),
+  metadataBase: new URL("https://hyperjump.tech"),
   openGraph: {
     title: `Services - ${servicesHeroHeading("en")}`,
     description: servicesHeroDesc("en"),
