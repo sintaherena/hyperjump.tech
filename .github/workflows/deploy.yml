@@ -26,9 +26,6 @@ jobs:
         env:
           NEXT_PUBLIC_AI_AGENT_URL: ${{ vars.NEXT_PUBLIC_AI_AGENT_URL }}
 
-      - name: Generate Sitemap
-        run: bun .github/scripts/generate-sitemap.js
-
       - name: Create CNAME file
         run: echo "hyperjump.tech" > out/CNAME
 
