@@ -1,28 +1,20 @@
 import { Metadata } from "next";
 import TechDueDilligenceLangLayout from "./[lang]/layout";
 import TechDueDilligencePage from "./[lang]/page";
-import { tddHeroDesc, tddHeroHeading } from "@/locales/.generated/server";
-import data from "@/data.json";
+import { defaultOpenGraph } from "@/lib/default-metadata";
+import { data } from "./[lang]/data";
+
+const { title, description } = data;
 
 export const metadata: Metadata = {
-  title: `Services - ${tddHeroHeading("en")}`,
-  description: tddHeroDesc("en"),
-  metadataBase: new URL("https://hyperjump.tech"),
+  title,
+  description,
   openGraph: {
-    title: `Services - ${tddHeroHeading("en")}`,
-    description: tddHeroDesc("en"),
-    url: `${data.url}/services/tech-due-diligence`,
-    siteName: tddHeroHeading("en"),
-    type: "website",
-    images: [
-      {
-        url: "https://hyperjump.tech/images/hyperjump-og.png",
-        width: 1200,
-        height: 630,
-        alt: `${tddHeroHeading("en")} Logo`,
-        type: "image/png"
-      }
-    ]
+    ...defaultOpenGraph,
+    title,
+    description,
+    url: `/services/tech-due-diligence`,
+    siteName: title
   }
 };
 

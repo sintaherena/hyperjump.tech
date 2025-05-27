@@ -2,9 +2,24 @@ import {
   caseStudyCtoaasMediaDesc,
   caseStudyCtoaasMediaTitle,
   caseStudyErpFisheriesDesc,
-  caseStudyErpFisheriesTitle
+  caseStudyErpFisheriesTitle,
+  caseStudyHeroDesc,
+  caseStudyTitle
 } from "@/locales/.generated/server";
 import { SupportedLanguage } from "@/locales/.generated/types";
+
+export const caseStudy = {
+  title: `Case Studies - ${caseStudyTitle("en")}`,
+  description: caseStudyHeroDesc("en")
+};
+
+export const ctoaasMedia = {
+  title: `Case Studies - ${caseStudyCtoaasMediaTitle("en")}`
+};
+
+export const erpFisheries = {
+  title: `Case Studies - ${caseStudyErpFisheriesTitle("en")}`
+};
 
 export const getCaseStudies = (lang: SupportedLanguage) => {
   const data = [

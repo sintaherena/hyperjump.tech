@@ -1,31 +1,20 @@
 import { Metadata } from "next";
 import ServicesLangLayout from "./[lang]/layout";
 import ServicesPage from "./[lang]/page";
-import {
-  servicesHeroDesc,
-  servicesHeroHeading
-} from "@/locales/.generated/server";
-import data from "@/data.json";
+import { defaultOpenGraph } from "@/lib/default-metadata";
+import { data } from "./[lang]/data";
+
+const { title, description } = data;
 
 export const metadata: Metadata = {
-  title: `${data.title} - Services}`,
-  description: servicesHeroDesc("en"),
-  metadataBase: new URL("https://hyperjump.tech"),
+  title,
+  description,
   openGraph: {
-    title: `Services - ${servicesHeroHeading("en")}`,
-    description: servicesHeroDesc("en"),
-    url: `${data.url}/services`,
-    siteName: servicesHeroHeading("en"),
-    type: "website",
-    images: [
-      {
-        url: "https://hyperjump.tech/images/hyperjump-og.png",
-        width: 1200,
-        height: 630,
-        alt: `${servicesHeroHeading("en")} Logo`,
-        type: "image/png"
-      }
-    ]
+    ...defaultOpenGraph,
+    title,
+    description,
+    url: `/services`,
+    siteName: title
   }
 };
 

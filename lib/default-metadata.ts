@@ -1,13 +1,19 @@
-// lib/default-metadata.ts
+import data from "@/data.json";
+
+const { description, title, url } = data;
+
 export const defaultOpenGraph = {
-  siteName: "Hyperjump",
+  title,
+  description,
   type: "website",
+  url,
+  siteName: title,
   images: [
     {
-      url: "https://hyperjump.tech/images/hyperjump-og.png",
+      url: "/images/hyperjump-og.png",
       width: 1200,
       height: 630,
-      alt: "Hyperjump OG Image",
+      alt: `${title} Logo`,
       type: "image/png"
     }
   ]
