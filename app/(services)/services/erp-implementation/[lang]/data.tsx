@@ -26,9 +26,16 @@ import {
   erpHowItWorksStep2Text,
   erpHowItWorksStep3Text,
   erpHowItWorksStep4Title,
-  erpHowItWorksStep4Text
+  erpHowItWorksStep4Text,
+  erpHeroHeading,
+  erpHeroDesc
 } from "@/locales/.generated/server";
 import { SupportedLanguage } from "@/locales/.generated/types";
+
+export const data = {
+  title: `Services - ${erpHeroHeading("en")}`,
+  description: erpHeroDesc("en")
+};
 
 export const whatWeDeliverData = (lang: SupportedLanguage) => {
   const data = [

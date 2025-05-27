@@ -24,9 +24,16 @@ import {
   tddHowItWorksStep0Text,
   tddHowItWorksStep1Text,
   tddHowItWorksStep2Text,
-  tddHowItWorksStep3Text
+  tddHowItWorksStep3Text,
+  tddHeroHeading,
+  tddHeroDesc
 } from "@/locales/.generated/server";
 import { SupportedLanguage } from "@/locales/.generated/types";
+
+export const data = {
+  title: `Services - ${tddHeroHeading("en")}`,
+  description: tddHeroDesc("en")
+};
 
 export const whatWeDeliverData = (lang: SupportedLanguage) => {
   const data = [

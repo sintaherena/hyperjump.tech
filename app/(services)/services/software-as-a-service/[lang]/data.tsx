@@ -21,9 +21,16 @@ import {
   saasHowItWorksStep0Text,
   saasHowItWorksStep1Text,
   saasHowItWorksStep2Text,
-  saasHowItWorksStep3Text
+  saasHowItWorksStep3Text,
+  saasHeroHeading,
+  saasHeroDesc
 } from "@/locales/.generated/server";
 import { SupportedLanguage } from "@/locales/.generated/types";
+
+export const data = {
+  title: `Services - ${saasHeroHeading("en")}`,
+  description: saasHeroDesc("en")
+};
 
 export const whatWeDeliverData = (lang: SupportedLanguage) => {
   const data = [
