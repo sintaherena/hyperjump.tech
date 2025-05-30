@@ -11,6 +11,8 @@ import {
   servicesWhatYouGet,
   servicesWhyHyperjump
 } from "@/locales/.generated/server";
+import { Recommendation } from "../../components/case-studies-recommendation";
+import { getCaseStudies } from "../../[lang]/data";
 
 type HomeProps = { lang: SupportedLanguage };
 
@@ -29,6 +31,7 @@ export default function Home({ lang }: HomeProps) {
       <HowItWorks lang={lang} service={service} />
       <WhatYouGet lang={lang} service={service} />
       <WhyUs lang={lang} service={service} />
+      <Recommendation caseStudies={getCaseStudies(lang)} lang={lang} />
     </>
   );
 }
