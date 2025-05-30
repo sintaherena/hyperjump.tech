@@ -2,22 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { SupportedLanguage } from "@/locales/.generated/types";
-import {
-  ragChatbotHeroHeading,
-  ragChatbotHeroDesc,
-  inferenceaiHeroHeading,
-  inferenceaiHeroDesc
-} from "@/locales/.generated/server";
-import { HeroCTAButton } from "./hero-cta-button";
 
-export default function Hero({
-  lang,
-  type = "inferenceai"
-}: {
-  lang: SupportedLanguage;
-  type?: "inferenceai" | "rag-chatbot";
-}) {
+type HeroProps = {
+  heading: string;
+  subheading: string;
+};
+
+export default function Hero({ heading, subheading }: HeroProps) {
   return (
     <section
       id="hero"
@@ -44,9 +35,7 @@ export default function Hero({
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex w-full flex-col items-center justify-center">
           <h1 className="mt-28 mb-4 text-center text-5xl font-semibold md:mb-6 md:max-w-4xl md:text-6xl">
-            {type === "inferenceai"
-              ? inferenceaiHeroHeading(lang)
-              : ragChatbotHeroHeading(lang)}
+            {heading}
           </h1>
 
           <motion.p
@@ -54,17 +43,8 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
             className="my-6 text-center text-base font-medium text-[#AFB0C3] md:my-10 md:max-w-3xl md:text-[22px]">
-            {type === "inferenceai"
-              ? inferenceaiHeroDesc(lang)
-              : ragChatbotHeroDesc(lang)}
+            {subheading}
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}>
-            <HeroCTAButton lang={lang} />
-          </motion.div>
         </motion.div>
       </article>
 
