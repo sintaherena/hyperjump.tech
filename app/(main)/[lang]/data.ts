@@ -41,18 +41,18 @@ export const getProject = (lang: SupportedLanguage) => {
     {
       title: mainProject0Title(lang),
       description: mainProject0Text(lang),
-      image: "/images/open-source/monika.svg",
-      url: "https://github.com/hyperjumptech/monika",
+      image: "/images/open-source/grule.svg",
+      url: "https://github.com/hyperjumptech/grule-rule-engine",
       button: true,
-      repo: "monika"
+      repo: "grule-rule-engine"
     },
     {
       title: mainProject1Title(lang),
       description: mainProject1Text(lang),
-      image: "/images/open-source/firebase-cronjob.svg",
-      url: "https://github.com/hyperjumptech/firebase-cronjob",
+      image: "/images/open-source/monika.svg",
+      url: "https://github.com/hyperjumptech/monika",
       button: true,
-      repo: "firebase-cronjob"
+      repo: "monika"
     },
     {
       title: mainProject2Title(lang),
