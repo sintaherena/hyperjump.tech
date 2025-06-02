@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import Footer from "@/app/components/footer";
-import { HeroCTAButton } from "@/app/components/hero-cta-button";
 import Nav from "@/app/components/nav";
 import { Clients } from "@/app/components/clients";
 import ScrollObserver from "@/app/components/scroll-observer";
@@ -50,15 +49,14 @@ function Hero({ lang }: HeroProps) {
         />
       </div>
 
-      <div className="relative z-10 flex h-[648px] flex-col items-center justify-around">
+      <div className="relative z-10 flex h-[648px] flex-col items-center justify-center">
         <div className="max-w-5xl text-center">
-          <h1 className="md:mb-6l mt-28 mb-4 text-4xl font-medium sm:text-5xl md:text-6xl">
+          <h1 className="mb-4 text-4xl font-medium sm:text-5xl md:mb-6 md:text-6xl">
             {mainHeroHeading(lang)}
           </h1>
-          <p className="mb-6 text-sm font-medium text-white sm:text-base md:mb-10 md:text-xl">
+          <p className="text-sm font-medium text-white sm:text-base md:text-xl">
             {mainHeroDesc(lang)}
           </p>
-          <HeroCTAButton lang={lang} />
         </div>
         <Clients clients={data.clients} isPriorityLoad />
       </div>
