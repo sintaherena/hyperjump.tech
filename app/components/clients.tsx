@@ -15,7 +15,7 @@ export function Clients({
   isPriorityLoad = false
 }: ClientsProps) {
   return (
-    <div className="relative top-15 px-8 py-4 md:px-20">
+    <div className="relative px-8 py-4 md:px-20">
       <div className="flex flex-wrap items-center justify-center gap-8">
         {clients.map(({ imageUrl, name }) => (
           <Image

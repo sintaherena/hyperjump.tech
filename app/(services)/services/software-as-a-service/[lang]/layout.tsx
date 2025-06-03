@@ -19,7 +19,7 @@ export default async function SaasLangLayout({
   return (
     <>
       <ScrollObserver />
-      <Nav className="xxl:max-w-7xl max-w-6xl" isTransparent lang={lang} />
+      <Nav isTransparent lang={lang} />
       <Hero heading={saasHeroHeading(lang)} subheading={saasHeroDesc(lang)} />
       {children}
       <Footer lang={lang} type="software-as-a-service" />

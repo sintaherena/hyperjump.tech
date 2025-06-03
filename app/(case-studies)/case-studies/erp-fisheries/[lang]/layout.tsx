@@ -19,7 +19,7 @@ export default async function ErpFisheriesLangLayout({
   return (
     <div className="bg-white">
       <ScrollObserver />
-      <Nav isTransparent className="xxl:max-w-7xl max-w-6xl" lang={lang} />
+      <Nav isTransparent lang={lang} />
       <Hero heading={caseStudyErpFisheriesTitle(lang)} />
       {children}
       <Footer lang={lang} type="erp-fisheries" />

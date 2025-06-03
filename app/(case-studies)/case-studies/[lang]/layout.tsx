@@ -18,7 +18,7 @@ export default async function CaseStudiesLangLayout({
   return (
     <div className="bg-white">
       <ScrollObserver />
-      <Nav className="xxl:max-w-7xl max-w-6xl" lang={lang} />
+      <Nav lang={lang} />
       <Hero lang={lang} />
       {children}
       <Footer lang={lang} type="case-studies" />
