@@ -19,7 +19,7 @@ export default async function TechDueDilligenceLangLayout({
   return (
     <>
       <ScrollObserver />
-      <Nav className="xxl:max-w-7xl max-w-6xl" isTransparent lang={lang} />
+      <Nav isTransparent lang={lang} />
       <Hero heading={tddHeroHeading(lang)} subheading={tddHeroDesc(lang)} />
       {children}
       <Footer lang={lang} type="tech-due-diligence" />

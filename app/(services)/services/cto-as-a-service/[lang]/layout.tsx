@@ -19,7 +19,7 @@ export default async function CTOAsAServiceLangLayout({
   return (
     <>
       <ScrollObserver />
-      <Nav className="xxl:max-w-7xl max-w-6xl" isTransparent lang={lang} />
+      <Nav isTransparent lang={lang} />
       <Hero
         heading={ctoaasHeroHeading(lang)}
         subheading={ctoaasHeroDesc(lang)}

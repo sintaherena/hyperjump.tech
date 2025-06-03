@@ -58,7 +58,9 @@ function Hero({ lang }: HeroProps) {
             {mainHeroDesc(lang)}
           </p>
         </div>
-        <Clients clients={data.clients} isPriorityLoad />
+        <div className="relative top-15">
+          <Clients clients={data.clients} isPriorityLoad />
+        </div>
       </div>
     </section>
   );
