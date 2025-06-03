@@ -14,20 +14,10 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import React, {
-  Children,
-  isValidElement,
-  useEffect,
-  useRef,
-  useState
-} from "react";
+import React, { Children, isValidElement, useEffect, useState } from "react";
 import { GitFork, Star } from "lucide-react";
 import { SupportedLanguage } from "@/locales/.generated/types";
-import {
-  mainCaseStudiesButton,
-  mainSeeLess,
-  mainSeeMore
-} from "@/locales/.generated/server";
+import { mainCaseStudiesButton } from "@/locales/.generated/server";
 
 type GridItemsTitleProps = {
   id?: string;
@@ -118,20 +108,9 @@ export function GridItems({
   titleClassName?: string;
   lang: SupportedLanguage;
 }) {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [overflowMap, setOverflowMap] = useState<Record<number, boolean>>({});
   const [repoStats, setRepoStats] = useState<
     Record<number, { stars: number; forks: number }>
   >({});
-
-  useEffect(() => {
-    const newOverflowMap: Record<number, boolean> = {};
-    textRefs.current.forEach((el, index) => {
-      if (el) newOverflowMap[index] = el.scrollHeight > el.clientHeight;
-    });
-    setOverflowMap(newOverflowMap);
-  }, [items]);
 
   useEffect(() => {
     const fetchRepoStats = async () => {
@@ -268,30 +247,10 @@ export function GridItems({
             </CardHeader>
 
             <CardContent className="-mt-3 flex flex-1 flex-col justify-between gap-4">
-              <div>
-                <CardDescription
-                  ref={(el) => {
-                    textRefs.current[idx] = el;
-                  }}
-                  className={cn(
-                    "text-base font-medium transition-all duration-300",
-                    expandedIndex !== idx && "line-clamp-4"
-                  )}>
-                  {description}
-                </CardDescription>
+              <CardDescription className="text-base font-medium transition-all duration-300">
+                {description}
+              </CardDescription>
 
-                {overflowMap[idx] && (
-                  <button
-                    onClick={() =>
-                      setExpandedIndex((prev) => (prev === idx ? null : idx))
-                    }
-                    className="mt-1 text-sm text-gray-600 transition hover:underline">
-                    {expandedIndex === idx
-                      ? mainSeeLess(lang)
-                      : mainSeeMore(lang)}
-                  </button>
-                )}
-              </div>
               {urlCaseStudy && (
                 <Button
                   asChild
