@@ -11,12 +11,17 @@ import {
   WhyUs
 } from "../../cto-as-a-service/[lang]/home";
 import { Recommendation } from "../../components/case-studies-recommendation";
-import { getCaseStudies } from "../../[lang]/data";
+import { getCaseStudies } from "../../data/services";
 
 type HomeProps = { lang: SupportedLanguage };
 
 export default function Home({ lang }: HomeProps) {
   const service = serviceBySlug({ lang, slug: ServiceSlug.ErpImplementation });
+  const filteredCaseStudies = getCaseStudies(lang).filter(
+    (i) =>
+      i.category.trim().toLowerCase() ===
+      "ERP Implementation".trim().toLowerCase()
+  );
 
   if (!service) {
     notFound();
@@ -30,7 +35,7 @@ export default function Home({ lang }: HomeProps) {
       <HowItWorks lang={lang} service={service} />
       <WhatYouGet lang={lang} service={service} />
       <WhyUs lang={lang} service={service} />
-      <Recommendation caseStudies={getCaseStudies(lang)} lang={lang} />
+      <Recommendation caseStudies={filteredCaseStudies} lang={lang} />
     </>
   );
 }
