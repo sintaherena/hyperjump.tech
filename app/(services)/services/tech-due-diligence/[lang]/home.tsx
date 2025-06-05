@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { serviceBySlug, ServiceSlug } from "@/app/data/service";
+import { getCaseStudies, serviceBySlug, ServiceSlug } from "@/app/data/service";
 import type { SupportedLanguage } from "@/locales/.generated/types";
 import {
   About,
@@ -11,7 +11,6 @@ import {
   WhyUs
 } from "../../cto-as-a-service/[lang]/home";
 import { Recommendation } from "../../components/case-studies-recommendation";
-import { getCaseStudies } from "../../data/services";
 
 type HomeProps = { lang: SupportedLanguage };
 
