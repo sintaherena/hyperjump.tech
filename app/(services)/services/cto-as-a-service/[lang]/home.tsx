@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { type Service, serviceBySlug, ServiceSlug } from "@/app/data/service";
+import {
+  getCaseStudies,
+  type Service,
+  serviceBySlug,
+  ServiceSlug
+} from "@/app/data/service";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import type { SupportedLanguage } from "@/locales/.generated/types";
 import {
@@ -12,7 +17,6 @@ import {
   servicesWhyHyperjump
 } from "@/locales/.generated/server";
 import { Recommendation } from "../../components/case-studies-recommendation";
-import { getCaseStudies } from "../../data/services";
 
 type HomeProps = { lang: SupportedLanguage };
 
