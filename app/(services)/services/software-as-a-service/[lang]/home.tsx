@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { getCaseStudies, serviceBySlug, ServiceSlug } from "@/app/data/service";
+import { serviceBySlug, ServiceSlug } from "@/app/data/service";
 import type { SupportedLanguage } from "@/locales/.generated/types";
 import {
   About,
@@ -16,11 +16,6 @@ type HomeProps = { lang: SupportedLanguage };
 
 export default function Home({ lang }: HomeProps) {
   const service = serviceBySlug({ lang, slug: ServiceSlug.SoftwareAsAService });
-  const filteredCaseStudies = getCaseStudies(lang).filter(
-    (i) =>
-      i.category.trim().toLowerCase() ===
-      "Software as a Service".trim().toLowerCase()
-  );
 
   if (!service) {
     notFound();
@@ -34,7 +29,7 @@ export default function Home({ lang }: HomeProps) {
       <HowItWorks lang={lang} service={service} />
       <WhatYouGet lang={lang} service={service} />
       <WhyUs lang={lang} service={service} />
-      <Recommendation caseStudies={filteredCaseStudies} lang={lang} />
+      <Recommendation caseStudies={service.caseStudies} lang={lang} />
     </>
   );
 }

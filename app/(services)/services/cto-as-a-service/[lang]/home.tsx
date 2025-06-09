@@ -1,12 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import {
-  getCaseStudies,
-  type Service,
-  serviceBySlug,
-  ServiceSlug
-} from "@/app/data/service";
+import { type Service, serviceBySlug, ServiceSlug } from "@/app/data/service";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import type { SupportedLanguage } from "@/locales/.generated/types";
 import {
@@ -22,11 +17,6 @@ type HomeProps = { lang: SupportedLanguage };
 
 export default function Home({ lang }: HomeProps) {
   const service = serviceBySlug({ lang, slug: ServiceSlug.CtoAsAService });
-  const filteredCaseStudies = getCaseStudies(lang).filter(
-    (i) =>
-      i.category.trim().toLowerCase() ===
-      "CTO as a Service".trim().toLowerCase()
-  );
 
   if (!service) {
     notFound();
@@ -40,7 +30,7 @@ export default function Home({ lang }: HomeProps) {
       <HowItWorks lang={lang} service={service} />
       <WhatYouGet lang={lang} service={service} />
       <WhyUs lang={lang} service={service} />
-      <Recommendation caseStudies={filteredCaseStudies} lang={lang} />
+      <Recommendation caseStudies={service.caseStudies} lang={lang} />
     </>
   );
 }

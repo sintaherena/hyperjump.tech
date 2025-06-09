@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
 import {
   caseStudyButton,
@@ -15,12 +14,12 @@ type CaseStudy = {
 };
 
 type RecommendationProps = {
-  caseStudies: CaseStudy[];
+  caseStudies?: CaseStudy[];
   lang: SupportedLanguage;
 };
 
 export function Recommendation({ caseStudies, lang }: RecommendationProps) {
-  if (caseStudies.length === 0) return null;
+  if (!caseStudies || caseStudies.length === 0) return null;
 
   return (
     <section className="flex bg-white px-4 py-8 md:px-20 md:py-16">
@@ -29,7 +28,7 @@ export function Recommendation({ caseStudies, lang }: RecommendationProps) {
           {servicesCaseStudies(lang)}
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
-          {caseStudies.map(({ description, title, url, category }) => (
+          {caseStudies.map(({ title, description, url, category }) => (
             <div
               key={title}
               className="flex h-full flex-col justify-between rounded-xl border border-gray-200 p-6 text-left shadow-sm transition duration-300 hover:shadow-md">
@@ -44,7 +43,6 @@ export function Recommendation({ caseStudies, lang }: RecommendationProps) {
                   {description}
                 </p>
               </div>
-
               <Button
                 asChild
                 variant="outline"

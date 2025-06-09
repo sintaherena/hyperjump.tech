@@ -30,7 +30,6 @@ import {
   ctoaasWhatWeDeliverCard2Items3,
   ctoaasWhatWeDeliverCard2Text,
   ctoaasWhatWeDeliverCard2Title,
-  ctoaasWhatWeDeliverDesc,
   ctoaasWhatYouGetDesc,
   ctoaasWhatYouGetItems0,
   ctoaasWhatYouGetItems1,
@@ -250,8 +249,16 @@ export enum ServiceSlug {
   ErpImplementation = "erp-implementation"
 }
 
+type CaseStudy = {
+  title: string;
+  description: string;
+  category: string;
+  url: string;
+};
+
 export type Service = {
   bestFor: string[];
+  caseStudies?: CaseStudy[];
   content: Content;
   description: string;
   features: string[];
@@ -261,13 +268,6 @@ export type Service = {
   shortDescription: string;
   slug: ServiceSlug;
   title: string;
-};
-
-type CaseStudy = {
-  title: string;
-  description: string;
-  category: string;
-  url: string;
 };
 
 export function services(lang: SupportedLanguage): Service[] {
@@ -412,7 +412,21 @@ export function services(lang: SupportedLanguage): Service[] {
       imageUrl: `/images/services/${ServiceSlug.CtoAsAService}/image.webp`,
       shortDescription: servicesCtoaasText(lang),
       slug: ServiceSlug.CtoAsAService,
-      title: servicesCtoaasTitle(lang)
+      title: servicesCtoaasTitle(lang),
+      caseStudies: [
+        {
+          title: caseStudyErpFisheriesTitle(lang),
+          description: caseStudyErpFisheriesDesc(lang),
+          category: caseStudyErpFisheriesCategory(lang),
+          url: "/case-studies/erp-fisheries"
+        },
+        {
+          title: caseStudyCtoaasMediaTitle(lang),
+          description: caseStudyCtoaasMediaDesc(lang),
+          category: caseStudyCtoaasMediaCategory(lang),
+          url: "/case-studies/ctoaas-media"
+        }
+      ]
     },
     {
       bestFor: servicesSaasDesc(lang),
@@ -784,18 +798,3 @@ type ServiceBySlugParameters = {
 export function serviceBySlug({ lang, slug }: ServiceBySlugParameters) {
   return services(lang).find((service) => service.slug === slug);
 }
-
-export const getCaseStudies = (lang: SupportedLanguage): CaseStudy[] => [
-  {
-    title: caseStudyErpFisheriesTitle(lang),
-    description: caseStudyErpFisheriesDesc(lang),
-    category: caseStudyErpFisheriesCategory(lang),
-    url: "/case-studies/erp-fisheries"
-  },
-  {
-    title: caseStudyCtoaasMediaTitle(lang),
-    description: caseStudyCtoaasMediaDesc(lang),
-    category: caseStudyCtoaasMediaCategory(lang),
-    url: "/case-studies/ctoaas-media"
-  }
-];
