@@ -5,21 +5,15 @@ import {
   servicesCaseStudies
 } from "@/locales/.generated/server";
 import type { SupportedLanguage } from "@/locales/.generated/types";
-
-type CaseStudy = {
-  description: string;
-  title: string;
-  url: string;
-  category: string;
-};
+import { CaseStudy } from "@/app/data/service";
 
 type RecommendationProps = {
-  caseStudies?: CaseStudy[];
+  caseStudies: CaseStudy[];
   lang: SupportedLanguage;
 };
 
 export function Recommendation({ caseStudies, lang }: RecommendationProps) {
-  if (!caseStudies || caseStudies.length === 0) return null;
+  if (caseStudies.length === 0) return null;
 
   return (
     <section className="flex bg-white px-4 py-8 md:px-20 md:py-16">

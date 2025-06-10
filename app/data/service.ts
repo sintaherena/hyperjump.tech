@@ -249,7 +249,7 @@ export enum ServiceSlug {
   ErpImplementation = "erp-implementation"
 }
 
-type CaseStudy = {
+export type CaseStudy = {
   title: string;
   description: string;
   category: string;
@@ -258,7 +258,7 @@ type CaseStudy = {
 
 export type Service = {
   bestFor: string[];
-  caseStudies?: CaseStudy[];
+  caseStudies: CaseStudy[];
   content: Content;
   description: string;
   features: string[];
@@ -535,7 +535,8 @@ export function services(lang: SupportedLanguage): Service[] {
       imageUrl: `/images/services/${ServiceSlug.SoftwareAsAService}/image.webp`,
       shortDescription: servicesSaasText(lang),
       slug: ServiceSlug.SoftwareAsAService,
-      title: servicesSaasTitle(lang)
+      title: servicesSaasTitle(lang),
+      caseStudies: []
     },
     {
       bestFor: servicesTechDueDiligenceDesc(lang),
@@ -668,7 +669,8 @@ export function services(lang: SupportedLanguage): Service[] {
       imageUrl: `/images/services/${ServiceSlug.TechDueDiligence}/image.webp`,
       shortDescription: servicesTechDueDiligenceText(lang),
       slug: ServiceSlug.TechDueDiligence,
-      title: servicesTechDueDiligenceTitle(lang)
+      title: servicesTechDueDiligenceTitle(lang),
+      caseStudies: []
     },
     {
       bestFor: servicesErpDesc(lang),
@@ -785,7 +787,8 @@ export function services(lang: SupportedLanguage): Service[] {
       imageUrl: `/images/services/${ServiceSlug.ErpImplementation}/image.webp`,
       shortDescription: servicesErpText(lang),
       slug: ServiceSlug.ErpImplementation,
-      title: servicesErpTitle(lang)
+      title: servicesErpTitle(lang),
+      caseStudies: []
     }
   ];
 }
