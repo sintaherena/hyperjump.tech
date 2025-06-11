@@ -3,13 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { caseStudyButton, caseStudyMore } from "@/locales/.generated/server";
 import type { SupportedLanguage } from "@/locales/.generated/types";
-
-type CaseStudy = {
-  description: string;
-  title: string;
-  url: string;
-  category: string;
-};
+import { CaseStudy } from "@/app/data/service";
 
 type RecommendationProps = {
   caseStudies: CaseStudy[];
