@@ -30,7 +30,6 @@ import {
   ctoaasWhatWeDeliverCard2Items3,
   ctoaasWhatWeDeliverCard2Text,
   ctoaasWhatWeDeliverCard2Title,
-  ctoaasWhatWeDeliverDesc,
   ctoaasWhatYouGetDesc,
   ctoaasWhatYouGetItems0,
   ctoaasWhatYouGetItems1,
@@ -204,7 +203,13 @@ import {
   tddWhyUsDesc,
   tddWhyUsReasons0,
   tddWhyUsReasons1,
-  tddWhyUsReasons2
+  tddWhyUsReasons2,
+  caseStudyErpFisheriesTitle,
+  caseStudyErpFisheriesDesc,
+  caseStudyErpFisheriesCategory,
+  caseStudyCtoaasMediaTitle,
+  caseStudyCtoaasMediaDesc,
+  caseStudyCtoaasMediaCategory
 } from "@/locales/.generated/server";
 
 type ListWithIcon = {
@@ -244,8 +249,16 @@ export enum ServiceSlug {
   ErpImplementation = "erp-implementation"
 }
 
+export type CaseStudy = {
+  title: string;
+  description: string;
+  category: string;
+  url: string;
+};
+
 export type Service = {
   bestFor: string[];
+  caseStudies: CaseStudy[];
   content: Content;
   description: string;
   features: string[];
@@ -399,7 +412,21 @@ export function services(lang: SupportedLanguage): Service[] {
       imageUrl: `/images/services/${ServiceSlug.CtoAsAService}/image.webp`,
       shortDescription: servicesCtoaasText(lang),
       slug: ServiceSlug.CtoAsAService,
-      title: servicesCtoaasTitle(lang)
+      title: servicesCtoaasTitle(lang),
+      caseStudies: [
+        {
+          title: caseStudyErpFisheriesTitle(lang),
+          description: caseStudyErpFisheriesDesc(lang),
+          category: caseStudyErpFisheriesCategory(lang),
+          url: "/case-studies/erp-fisheries"
+        },
+        {
+          title: caseStudyCtoaasMediaTitle(lang),
+          description: caseStudyCtoaasMediaDesc(lang),
+          category: caseStudyCtoaasMediaCategory(lang),
+          url: "/case-studies/ctoaas-media"
+        }
+      ]
     },
     {
       bestFor: servicesSaasDesc(lang),
@@ -508,7 +535,8 @@ export function services(lang: SupportedLanguage): Service[] {
       imageUrl: `/images/services/${ServiceSlug.SoftwareAsAService}/image.webp`,
       shortDescription: servicesSaasText(lang),
       slug: ServiceSlug.SoftwareAsAService,
-      title: servicesSaasTitle(lang)
+      title: servicesSaasTitle(lang),
+      caseStudies: []
     },
     {
       bestFor: servicesTechDueDiligenceDesc(lang),
@@ -641,7 +669,8 @@ export function services(lang: SupportedLanguage): Service[] {
       imageUrl: `/images/services/${ServiceSlug.TechDueDiligence}/image.webp`,
       shortDescription: servicesTechDueDiligenceText(lang),
       slug: ServiceSlug.TechDueDiligence,
-      title: servicesTechDueDiligenceTitle(lang)
+      title: servicesTechDueDiligenceTitle(lang),
+      caseStudies: []
     },
     {
       bestFor: servicesErpDesc(lang),
@@ -758,7 +787,8 @@ export function services(lang: SupportedLanguage): Service[] {
       imageUrl: `/images/services/${ServiceSlug.ErpImplementation}/image.webp`,
       shortDescription: servicesErpText(lang),
       slug: ServiceSlug.ErpImplementation,
-      title: servicesErpTitle(lang)
+      title: servicesErpTitle(lang),
+      caseStudies: []
     }
   ];
 }
