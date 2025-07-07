@@ -48,7 +48,24 @@ import {
 
 export const data = {
   name: "RAG Chatbot",
-  baseUrl: "https://hyperjump.tech/inferenceai/rag-chatbot"
+  baseUrl: "https://hyperjump.tech/inferenceai/rag-chatbot",
+  socials: [
+    {
+      platform: "GitHub",
+      url: "https://github.com/hyperjumptech",
+      icon: "/images/inferenceai/socials/github.svg"
+    },
+    {
+      platform: "LinkedIn",
+      url: "https://www.linkedin.com/company/hyperjump",
+      icon: "/images/inferenceai/socials/linkedin.svg"
+    },
+    {
+      platform: "Medium",
+      url: "https://medium.com/hyperjump-tech",
+      icon: "/images/inferenceai/socials/medium.svg"
+    }
+  ]
 };
 
 export const navRagChatbot = (lang: SupportedLanguage) => {

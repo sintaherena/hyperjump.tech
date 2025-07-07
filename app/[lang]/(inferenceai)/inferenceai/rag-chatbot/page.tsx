@@ -1,6 +1,6 @@
 import {
-  SupportedLanguage,
-  supportedLanguages
+  supportedLanguages,
+  SupportedLanguage
 } from "@/locales/.generated/types";
 import Home from "./home";
 
@@ -9,9 +9,10 @@ export const generateStaticParams = async () => {
 };
 
 type RagChatbotProps = {
-  params: Promise<{ lang: SupportedLanguage }>;
+  params: { lang: SupportedLanguage };
 };
 
 export default async function RagChatbotPage({ params }: RagChatbotProps) {
-  return <Home lang={(await params).lang} />;
+  const { lang } = await params;
+  return <Home lang={lang} />;
 }
