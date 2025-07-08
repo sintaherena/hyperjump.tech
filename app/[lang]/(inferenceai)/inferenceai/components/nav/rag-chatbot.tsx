@@ -25,7 +25,9 @@ export default function NavRagChatbot({ lang }: NavProps) {
     <StickyNavigationMain>
       <div className={cn("w-full px-4 py-5 md:px-8", isOpen && "bg-white")}>
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between transition-all duration-300 group-data-[scroll='false']:border-none">
-          <Link href="/inferenceai/rag-chatbot" className="flex items-center">
+          <Link
+            href={`/${lang}/inferenceai/rag-chatbot`}
+            className="flex items-center">
             <Image
               src="/images/inferenceai/inference-ai-white.svg"
               alt="Inference AI Logo"
