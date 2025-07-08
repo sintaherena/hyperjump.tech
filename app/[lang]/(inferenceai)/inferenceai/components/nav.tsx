@@ -12,13 +12,18 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import type { SupportedLanguage } from "@/locales/.generated/types";
-import { navRagChatbot } from "../../rag-chatbot/data";
+import { navRagChatbot } from "../rag-chatbot/data";
+import { navInferenceai } from "../data";
 
 type NavProps = {
   lang: SupportedLanguage;
+  type?: "inferenceai" | "rag-chatbot";
 };
 
-export default function NavRagChatbot({ lang }: NavProps) {
+export default function NavInferenceAI({
+  lang,
+  type = "inferenceai"
+}: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -26,7 +31,9 @@ export default function NavRagChatbot({ lang }: NavProps) {
       <div className={cn("w-full px-4 py-5 md:px-8", isOpen && "bg-white")}>
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between transition-all duration-300 group-data-[scroll='false']:border-none">
           <Link
-            href={`/${lang}/inferenceai/rag-chatbot`}
+            href={
+              type ? `/${lang}/inferenceai` : `/${lang}/inferenceai/rag-chatbot`
+            }
             className="flex items-center">
             <Image
               src="/images/inferenceai/inference-ai-white.svg"
@@ -53,7 +60,10 @@ export default function NavRagChatbot({ lang }: NavProps) {
           <div className="hidden items-center justify-center space-x-8 xl:flex">
             <NavigationMenu className="mx-8 xl:mx-0">
               <NavigationMenuList className="flex gap-5">
-                {navRagChatbot(lang).map(({ href, label }) => (
+                {(type === "inferenceai"
+                  ? navInferenceai(lang)
+                  : navRagChatbot(lang)
+                ).map(({ href, label }) => (
                   <NavigationMenuItem key={href} className="text-center">
                     <Link
                       href={href}
@@ -107,7 +117,10 @@ export default function NavRagChatbot({ lang }: NavProps) {
       {isOpen && (
         <div className="bg-white shadow-md xl:hidden">
           <div className="mx-auto flex w-full flex-col space-y-4 px-4 py-5 md:px-8">
-            {navRagChatbot(lang).map(({ href, label }) => (
+            {(type === "inferenceai"
+              ? navInferenceai(lang)
+              : navRagChatbot(lang)
+            ).map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}

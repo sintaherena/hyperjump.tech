@@ -3,11 +3,10 @@
 import { usePathname } from "next/navigation";
 import { SupportedLanguage } from "@/locales/.generated/types";
 import Nav from "@/app/components/nav";
-import NavInferenceAI from "../(inferenceai)/inferenceai/components/nav/inferenceai";
-import NavRagChatbot from "@/app/[lang]/(inferenceai)/inferenceai/components/nav/rag-chatbot";
 import Footer from "@/app/components/footer";
-import FooterInferenceAI from "@/app/[lang]/(inferenceai)/inferenceai/components/footer/inferenceai";
-import FooterRagChatbot from "@/app/[lang]/(inferenceai)/inferenceai/components/footer/rag-chatbot";
+
+import NavInferenceAI from "../(inferenceai)/inferenceai/components/nav";
+import FooterInferenceAI from "../(inferenceai)/inferenceai/components/footer";
 
 export default function ClientWrapper({
   children,
@@ -25,7 +24,7 @@ export default function ClientWrapper({
       {isInferenceAi ? (
         <NavInferenceAI lang={lang} />
       ) : isRagChatbot ? (
-        <NavRagChatbot lang={lang} />
+        <NavInferenceAI type="rag-chatbot" lang={lang} />
       ) : (
         <Nav lang={lang} />
       )}
@@ -33,7 +32,7 @@ export default function ClientWrapper({
       {isInferenceAi ? (
         <FooterInferenceAI lang={lang} />
       ) : isRagChatbot ? (
-        <FooterRagChatbot lang={lang} />
+        <FooterInferenceAI type="rag-chatbot" lang={lang} />
       ) : (
         <Footer lang={lang} />
       )}

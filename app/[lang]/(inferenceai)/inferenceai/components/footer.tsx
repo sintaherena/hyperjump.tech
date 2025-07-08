@@ -4,19 +4,25 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { type SupportedLanguage } from "@/locales/.generated/types";
 import { copyright, inferenceaiFooter } from "@/locales/.generated/server";
-import { data } from "../../data";
+
 import { LanguagePicker } from "@/app/[lang]/components/language-picker";
+import { getData } from "../data";
 
 export default function FooterInferenceAI({
-  lang
+  lang,
+  type = "inferenceai"
 }: {
   lang: SupportedLanguage;
+  type?: "inferenceai" | "rag-chatbot";
 }) {
   return (
     <footer className="relative overflow-hidden border border-[#29223E] px-4 py-10 text-[#AFB0C3] md:px-20 md:py-14">
       <div className="flex flex-col space-y-6 md:items-center">
         <div className="flex items-center">
-          <Link href={`/${lang}/inferenceai`}>
+          <Link
+            href={
+              type ? `/${lang}/inferenceai` : `/${lang}/inferenceai/rag-chatbot`
+            }>
             <Image
               src="/images/inferenceai/inference-ai-white.svg"
               alt="Inference AI Logo"
@@ -32,7 +38,7 @@ export default function FooterInferenceAI({
         </p>
 
         <div className="flex space-x-6">
-          {data.socials.map(({ icon, platform, url }) => (
+          {getData(lang).socials.map(({ icon, platform, url }) => (
             <a
               key={platform}
               href={url}

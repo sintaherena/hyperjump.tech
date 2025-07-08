@@ -177,9 +177,9 @@ export const getFaqs = (lang: SupportedLanguage) => {
   ];
 };
 
-export const data = {
-  baseUrl: "https://hyperjump.tech/inferenceai",
+export const getData = (lang: SupportedLanguage) => ({
   name: "Inference AI",
+  baseUrl: `https://hyperjump.tech/${lang}/inferenceai`,
   socials: [
     {
       platform: "GitHub",
@@ -197,4 +197,4 @@ export const data = {
       icon: "/images/inferenceai/socials/medium.svg"
     }
   ]
-};
+});
