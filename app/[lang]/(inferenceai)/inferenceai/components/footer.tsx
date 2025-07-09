@@ -2,13 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { Separator } from "@/components/ui/separator";
-import { SupportedLanguage } from "@/locales/.generated/types";
+import { type SupportedLanguage } from "@/locales/.generated/types";
 import { copyright, inferenceaiFooter } from "@/locales/.generated/server";
 
-import { data } from "../data";
-import LanguagePicker from "./language-picker";
+import { LanguagePicker } from "@/app/[lang]/components/language-picker";
+import { getData } from "../data";
 
-export default function Footer({
+export default function FooterInferenceAI({
   lang,
   type = "inferenceai"
 }: {
@@ -21,9 +21,7 @@ export default function Footer({
         <div className="flex items-center">
           <Link
             href={
-              type === "inferenceai"
-                ? "/inferenceai"
-                : "/inferenceai/rag-chatbot"
+              type ? `/${lang}/inferenceai` : `/${lang}/inferenceai/rag-chatbot`
             }>
             <Image
               src="/images/inferenceai/inference-ai-white.svg"
@@ -40,7 +38,7 @@ export default function Footer({
         </p>
 
         <div className="flex space-x-6">
-          {data.socials.map(({ icon, platform, url }) => (
+          {getData(lang).socials.map(({ icon, platform, url }) => (
             <a
               key={platform}
               href={url}
@@ -59,7 +57,7 @@ export default function Footer({
           ))}
         </div>
 
-        <LanguagePicker lang={lang} type={type} />
+        <LanguagePicker lang={lang} />
 
         <Separator className="w-full bg-[#29223E]" />
 

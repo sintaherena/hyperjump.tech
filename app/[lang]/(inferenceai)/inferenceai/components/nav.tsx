@@ -12,16 +12,18 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import type { SupportedLanguage } from "@/locales/.generated/types";
-
-import { navInferenceai } from "../[lang]/data";
-import { navRagChatbot } from "../rag-chatbot/[lang]/data";
+import { navRagChatbot } from "../rag-chatbot/data";
+import { navInferenceai } from "../data";
 
 type NavProps = {
   lang: SupportedLanguage;
   type?: "inferenceai" | "rag-chatbot";
 };
 
-export default function Nav({ lang, type = "inferenceai" }: NavProps) {
+export default function NavInferenceAI({
+  lang,
+  type = "inferenceai"
+}: NavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,9 +32,7 @@ export default function Nav({ lang, type = "inferenceai" }: NavProps) {
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between transition-all duration-300 group-data-[scroll='false']:border-none">
           <Link
             href={
-              type === "inferenceai"
-                ? "/inferenceai"
-                : "/inferenceai/rag-chatbot"
+              type ? `/${lang}/inferenceai` : `/${lang}/inferenceai/rag-chatbot`
             }
             className="flex items-center">
             <Image

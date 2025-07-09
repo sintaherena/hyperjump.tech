@@ -46,10 +46,10 @@ import {
   ReloadIcon
 } from "@radix-ui/react-icons";
 
-export const data = {
+export const getData = (lang: SupportedLanguage) => ({
   name: "RAG Chatbot",
-  baseUrl: "https://hyperjump.tech/inferenceai/rag-chatbot"
-};
+  baseUrl: `https://hyperjump.tech/${lang}/inferenceai/rag-chatbot`
+});
 
 export const navRagChatbot = (lang: SupportedLanguage) => {
   const data = [
