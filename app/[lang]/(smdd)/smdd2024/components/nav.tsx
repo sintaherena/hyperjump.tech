@@ -7,7 +7,7 @@ import StickyNavigation from "@/app/components/sticky-nav";
 import LanguagePicker from "./language-picker";
 import { SupportedLanguage } from "@/locales/.generated/types";
 
-export default function Nav({ lang }: { lang: SupportedLanguage }) {
+export default function NavSmdd2024({ lang }: { lang: SupportedLanguage }) {
   return (
     <StickyNavigation>
       <NavContainer className="container">

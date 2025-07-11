@@ -7,9 +7,9 @@ import { SupportedLanguage } from "@/locales/.generated/types";
 import { copyright, mainFooter } from "@/locales/.generated/server";
 import { LanguagePicker } from "../[lang]/components/language-picker";
 
-type FooterProps = { lang: SupportedLanguage };
+type FooterProps = { lang: SupportedLanguage; type?: "hyperjump" | "smdd2024" };
 
-export default function Footer({ lang }: FooterProps) {
+export default function Footer({ lang, type = "hyperjump" }: FooterProps) {
   return (
     <footer className="relative overflow-hidden px-4 py-10 text-white md:px-20 md:py-14">
       <div className="absolute inset-0 z-0">
@@ -28,7 +28,7 @@ export default function Footer({ lang }: FooterProps) {
       <div className="relative z-20 container mx-auto px-4">
         <div className="flex flex-col space-y-6 md:items-center">
           <div className="flex items-center">
-            <Link href="/">
+            <Link href={type === "smdd2024" ? `/${lang}/smdd2024` : "/"}>
               <Image
                 src="/images/hyperjump-white.png"
                 alt="Hyperjump Logo"
